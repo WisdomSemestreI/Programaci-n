@@ -1,0 +1,611 @@
+
+
+Microchip MPLAB XC8 Assembler V2.10 build 88905656 
+                                                                                               Sun Nov 17 19:19:26 2019
+
+Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
+     1                           	processor	18F4585
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	flic
+     5                           	psect	nvCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     8                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     9                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    13                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    14                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    15  0000                     
+    16                           ; Version 2.10
+    17                           ; Generated 31/07/2019 GMT
+    18                           ; 
+    19                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    20                           ; All rights reserved.
+    21                           ; 
+    22                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    23                           ; 
+    24                           ; Redistribution and use in source and binary forms, with or without modification, are
+    25                           ; permitted provided that the following conditions are met:
+    26                           ; 
+    27                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    28                           ;        conditions and the following disclaimer.
+    29                           ; 
+    30                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    31                           ;        of conditions and the following disclaimer in the documentation and/or other
+    32                           ;        materials provided with the distribution.
+    33                           ; 
+    34                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    35                           ;        software without specific prior written permission.
+    36                           ; 
+    37                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    38                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    39                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    40                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    41                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    42                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    43                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    44                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    45                           ; 
+    46                           ; 
+    47                           ; Code-generator required, PIC18F4585 Definitions
+    48                           ; 
+    49                           ; SFR Addresses
+    50  0000                     
+    51                           	psect	nvCOMRAM
+    52  000001                     __pnvCOMRAM:
+    53                           	opt callstack 0
+    54  000001                     _Recibir:
+    55                           	opt callstack 0
+    56  000001                     	ds	1
+    57  0000                     _ADCON1	set	4033
+    58  0000                     _CVRCONbits	set	4021
+    59  0000                     _CMCON	set	4020
+    60  0000                     _OSCCON	set	4051
+    61  0000                     _RCREG1	set	4014
+    62  0000                     _PIR1bits	set	3998
+    63  0000                     _TXREG	set	4013
+    64  0000                     _TXSTAbits	set	4012
+    65  0000                     _SPBRG	set	4015
+    66  0000                     _RCSTA	set	4011
+    67  0000                     _TXSTA	set	4012
+    68  0000                     _TRISCbits	set	3988
+    69                           
+    70                           ; #config settings
+    71  0000                     
+    72                           	psect	cinit
+    73  00BF84                     __pcinit:
+    74                           	opt callstack 0
+    75  00BF84                     start_initialization:
+    76                           	opt callstack 0
+    77  00BF84                     __initialization:
+    78                           	opt callstack 0
+    79                           
+    80                           ; Clear objects allocated to COMRAM (1 bytes)
+    81  00BF84  6A02               	clrf	__pbssCOMRAM& (0+255),c
+    82  00BF86                     end_of_initialization:
+    83                           	opt callstack 0
+    84  00BF86                     __end_of__initialization:
+    85                           	opt callstack 0
+    86  00BF86  0100               	movlb	0
+    87  00BF88  EFDC  F05F         	goto	_main	;jump to C main() function
+    88                           
+    89                           	psect	bssCOMRAM
+    90  000002                     __pbssCOMRAM:
+    91                           	opt callstack 0
+    92  000002                     _RX_Data:
+    93                           	opt callstack 0
+    94  000002                     	ds	1
+    95                           
+    96                           	psect	cstackCOMRAM
+    97  000003                     __pcstackCOMRAM:
+    98                           	opt callstack 0
+    99  000003                     SEND_UART@TX_Data:
+   100                           	opt callstack 0
+   101                           
+   102                           ; 1 bytes @ 0x0
+   103  000003                     	ds	1
+   104  000004                     
+   105                           ; 1 bytes @ 0x1
+   106 ;;
+   107 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   108 ;;
+   109 ;; *************** function _main *****************
+   110 ;; Defined at:
+   111 ;;		line 14 in file "Uart_Uso.c"
+   112 ;; Parameters:    Size  Location     Type
+   113 ;;		None
+   114 ;; Auto vars:     Size  Location     Type
+   115 ;;		None
+   116 ;; Return value:  Size  Location     Type
+   117 ;;                  1    wreg      void 
+   118 ;; Registers used:
+   119 ;;		wreg, status,2, cstack
+   120 ;; Tracked objects:
+   121 ;;		On entry : 0/0
+   122 ;;		On exit  : 0/0
+   123 ;;		Unchanged: 0/0
+   124 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   125 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   126 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   127 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   128 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   129 ;;Total ram usage:        0 bytes
+   130 ;; Hardware stack levels required when called:    1
+   131 ;; This function calls:
+   132 ;;		_INIT_UART
+   133 ;;		_RECEIVE_UART
+   134 ;;		_SEND_UART
+   135 ;; This function is called by:
+   136 ;;		Startup code after reset
+   137 ;; This function uses a non-reentrant model
+   138 ;;
+   139                           
+   140                           	psect	text0
+   141  00BFB8                     __ptext0:
+   142                           	opt callstack 0
+   143  00BFB8                     _main:
+   144                           	opt callstack 30
+   145  00BFB8                     
+   146                           ;Uart_Uso.c: 17:     SEND_UART(Recibir);
+   147  00BFB8  0E60               	movlw	96
+   148  00BFBA  6ED3               	movwf	211,c	;volatile
+   149  00BFBC                     
+   150                           ;Uart_Uso.c: 20: 
+   151  00BFBC  68B4               	setf	180,c	;volatile
+   152  00BFBE                     
+   153                           ;Uart_Uso.c: 21:     }
+   154  00BFBE  9EB5               	bcf	181,7,c	;volatile
+   155                           
+   156                           ;Uart_Uso.c: 22: }
+   157  00BFC0  0E0F               	movlw	15
+   158  00BFC2  6EC1               	movwf	193,c	;volatile
+   159  00BFC4  ECC6  F05F         	call	_INIT_UART	;wreg free
+   160  00BFC8  ECCF  F05F         	call	_RECEIVE_UART	;wreg free
+   161  00BFCC  6E01               	movwf	_Recibir^0,c
+   162  00BFCE  5001               	movf	_Recibir^0,w,c
+   163  00BFD0  ECEC  F05F         	call	_SEND_UART
+   164  00BFD4  EF00  F000         	goto	start
+   165  00BFD8                     __end_of_main:
+   166                           	opt callstack 0
+   167                           
+   168 ;; *************** function _SEND_UART *****************
+   169 ;; Defined at:
+   170 ;;		line 16 in file "UART.c"
+   171 ;; Parameters:    Size  Location     Type
+   172 ;;  TX_Data         1    wreg     unsigned char 
+   173 ;; Auto vars:     Size  Location     Type
+   174 ;;  TX_Data         1    0[COMRAM] unsigned char 
+   175 ;; Return value:  Size  Location     Type
+   176 ;;                  1    wreg      void 
+   177 ;; Registers used:
+   178 ;;		wreg
+   179 ;; Tracked objects:
+   180 ;;		On entry : 0/0
+   181 ;;		On exit  : 0/0
+   182 ;;		Unchanged: 0/0
+   183 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   184 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   185 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   186 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   187 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   188 ;;Total ram usage:        1 bytes
+   189 ;; Hardware stack levels used:    1
+   190 ;; This function calls:
+   191 ;;		Nothing
+   192 ;; This function is called by:
+   193 ;;		_main
+   194 ;; This function uses a non-reentrant model
+   195 ;;
+   196                           
+   197                           	psect	text1
+   198  00BFD8                     __ptext1:
+   199                           	opt callstack 0
+   200  00BFD8                     _SEND_UART:
+   201                           	opt callstack 30
+   202                           
+   203                           ;incstack = 0
+   204                           ;SEND_UART@TX_Data stored from wreg
+   205  00BFD8  6E03               	movwf	SEND_UART@TX_Data^0,c
+   206  00BFDA                     l24:
+   207                           
+   208                           ;UART.c: 17:     while (!TXSTAbits.TRMT) {
+   209  00BFDA  A2AC               	btfss	172,1,c	;volatile
+   210  00BFDC  EFF2  F05F         	goto	u11
+   211  00BFE0  EFF4  F05F         	goto	u10
+   212  00BFE4                     u11:
+   213  00BFE4  EFED  F05F         	goto	l24
+   214  00BFE8                     u10:
+   215  00BFE8  EFF8  F05F         	goto	l746
+   216  00BFEC                     l744:
+   217                           
+   218                           ;UART.c: 20:         TXREG = TX_Data;
+   219  00BFEC  C003  FFAD         	movff	SEND_UART@TX_Data,4013	;volatile
+   220  00BFF0                     l746:
+   221                           
+   222                           ;UART.c: 19:     while (TXSTAbits.TRMT) {
+   223  00BFF0  B2AC               	btfsc	172,1,c	;volatile
+   224  00BFF2  EFFD  F05F         	goto	u21
+   225  00BFF6  EFFF  F05F         	goto	u20
+   226  00BFFA                     u21:
+   227  00BFFA  EFF6  F05F         	goto	l744
+   228  00BFFE                     u20:
+   229  00BFFE  0012               	return		;funcret
+   230  00C000                     __end_of_SEND_UART:
+   231                           	opt callstack 0
+   232                           
+   233 ;; *************** function _RECEIVE_UART *****************
+   234 ;; Defined at:
+   235 ;;		line 25 in file "UART.c"
+   236 ;; Parameters:    Size  Location     Type
+   237 ;;		None
+   238 ;; Auto vars:     Size  Location     Type
+   239 ;;		None
+   240 ;; Return value:  Size  Location     Type
+   241 ;;                  1    wreg      unsigned char 
+   242 ;; Registers used:
+   243 ;;		wreg, status,2
+   244 ;; Tracked objects:
+   245 ;;		On entry : 0/0
+   246 ;;		On exit  : 0/0
+   247 ;;		Unchanged: 0/0
+   248 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   249 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   250 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   251 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   252 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   253 ;;Total ram usage:        0 bytes
+   254 ;; Hardware stack levels used:    1
+   255 ;; This function calls:
+   256 ;;		Nothing
+   257 ;; This function is called by:
+   258 ;;		_main
+   259 ;; This function uses a non-reentrant model
+   260 ;;
+   261                           
+   262                           	psect	text2
+   263  00BF9E                     __ptext2:
+   264                           	opt callstack 0
+   265  00BF9E                     _RECEIVE_UART:
+   266                           	opt callstack 30
+   267  00BF9E                     l33:
+   268                           
+   269                           ;UART.c: 26:     while (PIR1bits.RCIF == 0) {
+   270  00BF9E  AA9E               	btfss	158,5,c	;volatile
+   271  00BFA0  EFD4  F05F         	goto	u31
+   272  00BFA4  EFD6  F05F         	goto	u30
+   273  00BFA8                     u31:
+   274  00BFA8  EFCF  F05F         	goto	l33
+   275  00BFAC                     u30:
+   276  00BFAC                     
+   277                           ;UART.c: 28:     RX_Data = RCREG1;
+   278  00BFAC  CFAE F002          	movff	4014,_RX_Data	;volatile
+   279  00BFB0                     
+   280                           ;UART.c: 29:     RCREG1 = 0;
+   281  00BFB0  0E00               	movlw	0
+   282  00BFB2  6EAE               	movwf	174,c	;volatile
+   283                           
+   284                           ;UART.c: 30:     return RX_Data;
+   285  00BFB4  5002               	movf	_RX_Data^0,w,c
+   286  00BFB6  0012               	return		;funcret
+   287  00BFB8                     __end_of_RECEIVE_UART:
+   288                           	opt callstack 0
+   289                           
+   290 ;; *************** function _INIT_UART *****************
+   291 ;; Defined at:
+   292 ;;		line 4 in file "UART.c"
+   293 ;; Parameters:    Size  Location     Type
+   294 ;;		None
+   295 ;; Auto vars:     Size  Location     Type
+   296 ;;		None
+   297 ;; Return value:  Size  Location     Type
+   298 ;;                  1    wreg      void 
+   299 ;; Registers used:
+   300 ;;		wreg, status,2
+   301 ;; Tracked objects:
+   302 ;;		On entry : 0/0
+   303 ;;		On exit  : 0/0
+   304 ;;		Unchanged: 0/0
+   305 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   306 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   307 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   308 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   309 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   310 ;;Total ram usage:        0 bytes
+   311 ;; Hardware stack levels used:    1
+   312 ;; This function calls:
+   313 ;;		Nothing
+   314 ;; This function is called by:
+   315 ;;		_main
+   316 ;; This function uses a non-reentrant model
+   317 ;;
+   318                           
+   319                           	psect	text3
+   320  00BF8C                     __ptext3:
+   321                           	opt callstack 0
+   322  00BF8C                     _INIT_UART:
+   323                           	opt callstack 30
+   324  00BF8C                     
+   325                           ;UART.c: 8:     TRISCbits.TRISC7 = 1;
+   326  00BF8C  8E94               	bsf	148,7,c	;volatile
+   327                           
+   328                           ;UART.c: 9:     TRISCbits.TRISC6 = 0;
+   329  00BF8E  9C94               	bcf	148,6,c	;volatile
+   330  00BF90                     
+   331                           ;UART.c: 10:     TXSTA = 0b00100110;
+   332  00BF90  0E26               	movlw	38
+   333  00BF92  6EAC               	movwf	172,c	;volatile
+   334                           
+   335                           ;UART.c: 11:     RCSTA = 0b10010000;
+   336  00BF94  0E90               	movlw	144
+   337  00BF96  6EAB               	movwf	171,c	;volatile
+   338                           
+   339                           ;UART.c: 13:     SPBRG = 25;
+   340  00BF98  0E19               	movlw	25
+   341  00BF9A  6EAF               	movwf	175,c	;volatile
+   342  00BF9C  0012               	return		;funcret
+   343  00BF9E                     __end_of_INIT_UART:
+   344                           	opt callstack 0
+   345  0000                     
+   346                           	psect	rparam
+   347  0000                     tosu	equ	0xFFF
+   348                           tosh	equ	0xFFE
+   349                           tosl	equ	0xFFD
+   350                           stkptr	equ	0xFFC
+   351                           pclatu	equ	0xFFB
+   352                           pclath	equ	0xFFA
+   353                           pcl	equ	0xFF9
+   354                           tblptru	equ	0xFF8
+   355                           tblptrh	equ	0xFF7
+   356                           tblptrl	equ	0xFF6
+   357                           tablat	equ	0xFF5
+   358                           prodh	equ	0xFF4
+   359                           prodl	equ	0xFF3
+   360                           indf0	equ	0xFEF
+   361                           postinc0	equ	0xFEE
+   362                           postdec0	equ	0xFED
+   363                           preinc0	equ	0xFEC
+   364                           plusw0	equ	0xFEB
+   365                           fsr0h	equ	0xFEA
+   366                           fsr0l	equ	0xFE9
+   367                           wreg	equ	0xFE8
+   368                           indf1	equ	0xFE7
+   369                           postinc1	equ	0xFE6
+   370                           postdec1	equ	0xFE5
+   371                           preinc1	equ	0xFE4
+   372                           plusw1	equ	0xFE3
+   373                           fsr1h	equ	0xFE2
+   374                           fsr1l	equ	0xFE1
+   375                           bsr	equ	0xFE0
+   376                           indf2	equ	0xFDF
+   377                           postinc2	equ	0xFDE
+   378                           postdec2	equ	0xFDD
+   379                           preinc2	equ	0xFDC
+   380                           plusw2	equ	0xFDB
+   381                           fsr2h	equ	0xFDA
+   382                           fsr2l	equ	0xFD9
+   383                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         1
+    Persistent  1
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      1       3
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+    BANK8           256      0       0
+    BANK9           256      0       0
+    BANK10          256      0       0
+    BANK11          256      0       0
+    BANK12          256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_SEND_UART
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _main in BANK8
+
+    None.
+
+Critical Paths under _main in BANK9
+
+    None.
+
+Critical Paths under _main in BANK10
+
+    None.
+
+Critical Paths under _main in BANK11
+
+    None.
+
+Critical Paths under _main in BANK12
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0      15
+                          _INIT_UART
+                       _RECEIVE_UART
+                          _SEND_UART
+ ---------------------------------------------------------------------------------
+ (1) _SEND_UART                                            1     1      0      15
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _RECEIVE_UART                                         0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _INIT_UART                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _INIT_UART
+   _RECEIVE_UART
+   _SEND_UART
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             CFF      0       0      31        0.0%
+EEDATA             400      0       0       0        0.0%
+BITBANK12          100      0       0      29        0.0%
+BANK12             100      0       0      30        0.0%
+BITBANK11          100      0       0      27        0.0%
+BANK11             100      0       0      28        0.0%
+BITBANK10          100      0       0      25        0.0%
+BANK10             100      0       0      26        0.0%
+BITBANK9           100      0       0      23        0.0%
+BANK9              100      0       0      24        0.0%
+BITBANK8           100      0       0      21        0.0%
+BANK8              100      0       0      22        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F      1       3       1        3.2%
+BITSFR_3             0      0       0     200        0.0%
+SFR_3                0      0       0     200        0.0%
+BITSFR_2             0      0       0     200        0.0%
+SFR_2                0      0       0     200        0.0%
+BITSFR_1             0      0       0     200        0.0%
+SFR_1                0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0       3      20        0.0%
+DATA                 0      0       3       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
+Symbol Table                                                                                   Sun Nov 17 19:19:26 2019
+
+                     l21 BF9C                       l30 BFFE                       l24 BFDA  
+                     l33 BF9E                       l35 BFAC                       l36 BFB6  
+                     l60 BFD4                       u10 BFE8                       u11 BFE4  
+                     u20 BFFE                       u21 BFFA                       u30 BFAC  
+                     u31 BFA8                      l740 BF90                      l750 BFB0  
+                    l742 BFDA                      l744 BFEC                      l760 BFC4  
+                    l738 BF8C                      l746 BFF0                      l762 BFC8  
+                    l754 BFB8                      l748 BF9E                      l764 BFCE  
+                    l756 BFBC                      l758 BFBE             __CFG_LVP$OFF 000000  
+           __CFG_WDT$OFF 000000                     _main BFB8                     start 0000  
+     __size_of_INIT_UART 0012            __CFG_MCLRE$ON 000000             ___param_bank 000000  
+     __size_of_SEND_UART 0028                    ?_main 0003                    _CMCON 000FB4  
+                  _RCSTA 000FAB                    _SPBRG 000FAF                    _TXREG 000FAD  
+                  _TXSTA 000FAC            ?_RECEIVE_UART 0003          __initialization BF84  
+           __end_of_main BFD8                   ??_main 0004            __activetblptr 000000  
+         ??_RECEIVE_UART 0003        __end_of_INIT_UART BF9E                   _ADCON1 000FC1  
+                 _RCREG1 000FAE                   _OSCCON 000FD3        __end_of_SEND_UART C000  
+             __accesstop 0060  __end_of__initialization BF86          __CFG_PBADEN$OFF 000000  
+          ___rparam_used 000001           __pcstackCOMRAM 0003               __pnvCOMRAM 0001  
+   __end_of_RECEIVE_UART BFB8                  _RX_Data 0002                  _Recibir 0001  
+                __Hparam 0000                  __Lparam 0000         SEND_UART@TX_Data 0003  
+                __pcinit BF84                  __ramtop 0D00                  __ptext0 BFB8  
+                __ptext1 BFD8                  __ptext2 BF9E                  __ptext3 BF8C  
+   end_of_initialization BF86                _INIT_UART BF8C                _SEND_UART BFD8  
+              _TRISCbits 000F94               ?_INIT_UART 0003    __size_of_RECEIVE_UART 001A  
+              _TXSTAbits 000FAC               ?_SEND_UART 0003      start_initialization BF84  
+           _RECEIVE_UART BF9E         __CFG_OSC$IRCIO67 000000              __pbssCOMRAM 0002  
+            ??_INIT_UART 0003              ??_SEND_UART 0003                 _PIR1bits 000F9E  
+               __Hrparam 0000                 __Lrparam 0000            __size_of_main 0020  
+             _CVRCONbits 000FB5  

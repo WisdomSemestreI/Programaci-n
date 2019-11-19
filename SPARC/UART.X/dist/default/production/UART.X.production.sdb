@@ -1,0 +1,161 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4585 ]
+[d frameptr 4065 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"4 D:\MPLABXProjects\SPARC\UART.X\UART.c
+[v _INIT_UART INIT_UART `(v  1 e 1 0 ]
+"16
+[v _SEND_UART SEND_UART `(v  1 e 1 0 ]
+"25
+[v _RECEIVE_UART RECEIVE_UART `(uc  1 e 1 0 ]
+"14 D:\MPLABXProjects\SPARC\UART.X\Uart_Uso.c
+[v _main main `(v  1 e 1 0 ]
+"4 D:\MPLABXProjects\SPARC\UART.X/UART.h
+[v _RX_Data RX_Data `uc  1 e 1 0 ]
+[s S24 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"27307 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h
+[s S33 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S42 . 1 `S24 1 . 1 0 `S33 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES42  1 e 1 @3988 ]
+[s S120 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"28042
+[s S129 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+]
+[u S133 . 1 `S120 1 . 1 0 `S129 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES133  1 e 1 @3998 ]
+"28780
+[v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
+"28990
+[v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
+[s S67 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"29029
+[s S76 . 1 `uc 1 TX9D1 1 0 :1:0 
+`uc 1 TRMT1 1 0 :1:1 
+`uc 1 BRGH1 1 0 :1:2 
+`uc 1 SENDB1 1 0 :1:3 
+`uc 1 SYNC1 1 0 :1:4 
+`uc 1 TXEN1 1 0 :1:5 
+`uc 1 TX91 1 0 :1:6 
+`uc 1 CSRC1 1 0 :1:7 
+]
+[s S85 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[s S88 . 1 `uc 1 TXD8 1 0 :1:0 
+]
+[u S90 . 1 `S67 1 . 1 0 `S76 1 . 1 0 `S85 1 . 1 0 `S88 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES90  1 e 1 @4012 ]
+"29246
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"29263
+[v _RCREG1 RCREG1 `VEuc  1 e 1 @4014 ]
+"29270
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+"29437
+[v _CMCON CMCON `VEuc  1 e 1 @4020 ]
+[s S182 . 1 `uc 1 CVR 1 0 :4:0 
+`uc 1 CVRSS 1 0 :1:4 
+`uc 1 CVRR 1 0 :1:5 
+`uc 1 CVROE 1 0 :1:6 
+`uc 1 CVREN 1 0 :1:7 
+]
+"29552
+[s S188 . 1 `uc 1 CVR0 1 0 :1:0 
+`uc 1 CVR1 1 0 :1:1 
+`uc 1 CVR2 1 0 :1:2 
+`uc 1 CVR3 1 0 :1:3 
+`uc 1 CVREF 1 0 :1:4 
+]
+[s S194 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 CVROEN 1 0 :1:6 
+]
+[u S197 . 1 `S182 1 . 1 0 `S188 1 . 1 0 `S194 1 . 1 0 ]
+[v _CVRCONbits CVRCONbits `VES197  1 e 1 @4021 ]
+"30189
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"31596
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"12 D:\MPLABXProjects\SPARC\UART.X\Uart_Uso.c
+[v _Recibir Recibir `uc  1 e 1 0 ]
+"14
+[v _main main `(v  1 e 1 0 ]
+{
+"34
+} 0
+"16 D:\MPLABXProjects\SPARC\UART.X\UART.c
+[v _SEND_UART SEND_UART `(v  1 e 1 0 ]
+{
+[v SEND_UART@TX_Data TX_Data `uc  1 a 1 wreg ]
+[v SEND_UART@TX_Data TX_Data `uc  1 a 1 wreg ]
+[v SEND_UART@TX_Data TX_Data `uc  1 a 1 0 ]
+"23
+} 0
+"25
+[v _RECEIVE_UART RECEIVE_UART `(uc  1 e 1 0 ]
+{
+"31
+} 0
+"4
+[v _INIT_UART INIT_UART `(v  1 e 1 0 ]
+{
+"14
+} 0
