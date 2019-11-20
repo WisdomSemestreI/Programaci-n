@@ -3,81 +3,81 @@
 
 void INIT_GPIO(void);
 
-#define RA0_SetHigh()            do { LATAbits.LATA0 = 1; } while(0)
-#define RA0_SetLow()             do { LATAbits.LATA0 = 0; } while(0)
-#define RA0_Toggle()             do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0)
-#define RA0_GetValue()           PORTAbits.RA0
-#define RA0_SetDigitalInput()    do { TRISAbits.TRISA0 = 1; } while(0)
-#define RA0_SetDigitalOutput()   do { TRISAbits.TRISA0 = 0; } while(0)
+#define GPIO_RA0_SetHigh()            (do { LATAbits.LATA0 = 1; } while(0))
+#define GPIO_RA0_SetLow()             do { LATAbits.LATA0 = 0; } while(0)
+#define GPIO_RA0_Toggle()             do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0)
+#define GPIO_RA0_GetValue()           PORTAbits.RA0
+#define GPIO_RA0_SetDigitalInput()    do { TRISAbits.TRISA0 = 1; } while(0)
+#define GPIO_RA0_SetDigitalOutput()   do { TRISAbits.TRISA0 = 0; } while(0)
 
-#define RA1_SetHigh()            do { LATAbits.LATA1 = 1; } while(0)
-#define RA1_SetLow()             do { LATAbits.LATA1 = 0; } while(0)
-#define RA1_Toggle()             do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0)
-#define RA1_GetValue()           PORTAbits.RA1
-#define RA1_SetDigitalInput()    do { TRISAbits.TRISA1 = 1; } while(0)
-#define RA1_SetDigitalOutput()   do { TRISAbits.TRISA1 = 0; } while(0)
+#define GPIO_RA1_SetHigh()            do { LATAbits.LATA1 = 1; } while(0)
+#define GPIO_RA1_SetLow()             do { LATAbits.LATA1 = 0; } while(0)
+#define GPIO_RA1_Toggle()             do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0)
+#define GPIO_RA1_GetValue()           PORTAbits.RA1
+#define GPIO_RA1_SetDigitalInput()    do { TRISAbits.TRISA1 = 1; } while(0)
+#define GPIO_RA1_SetDigitalOutput()   do { TRISAbits.TRISA1 = 0; } while(0)
 
-#define RA2_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
-#define RA2_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
-#define RA2_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
-#define RA2_GetValue()           PORTAbits.RA2
-#define RA2_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
-#define RA2_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
+#define GPIO_RA2_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
+#define GPIO_RA2_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
+#define GPIO_RA2_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
+#define GPIO_RA2_GetValue()           PORTAbits.RA2
+#define GPIO_RA2_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
+#define GPIO_RA2_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
 
-#define RA3_SetHigh()            do { LATAbits.LATA3 = 1; } while(0)
-#define RA3_SetLow()             do { LATAbits.LATA3 = 0; } while(0)
-#define RA3_Toggle()             do { LATAbits.LATA3 = ~LATAbits.LATA3; } while(0)
-#define RA3_GetValue()           PORTAbits.RA3
-#define RA3_SetDigitalInput()    do { TRISAbits.TRISA3 = 1; } while(0)
-#define RA3_SetDigitalOutput()   do { TRISAbits.TRISA3 = 0; } while(0)
+#define GPIO_RA3_SetHigh()            do { LATAbits.LATA3 = 1; } while(0)
+#define GPIO_RA3_SetLow()             do { LATAbits.LATA3 = 0; } while(0)
+#define GPIO_RA3_Toggle()             do { LATAbits.LATA3 = ~LATAbits.LATA3; } while(0)
+#define GPIO_RA3_GetValue()           PORTAbits.RA3
+#define GPIO_RA3_SetDigitalInput()    do { TRISAbits.TRISA3 = 1; } while(0)
+#define GPIO_RA3_SetDigitalOutput()   do { TRISAbits.TRISA3 = 0; } while(0)
 
-#define RA4_SetHigh()            do { LATAbits.LATA4 = 1; } while(0)
-#define RA4_SetLow()             do { LATAbits.LATA4 = 0; } while(0)
-#define RA4_Toggle()             do { LATAbits.LATA4 = ~LATAbits.LATA4; } while(0)
-#define RA4_GetValue()           PORTAbits.RA4
-#define RA4_SetDigitalInput()    do { TRISAbits.TRISA4 = 1; } while(0)
-#define RA4_SetDigitalOutput()   do { TRISAbits.TRISA4 = 0; } while(0)
+#define GPIO_RA4_SetHigh()            do { LATAbits.LATA4 = 1; } while(0)
+#define GPIO_RA4_SetLow()             do { LATAbits.LATA4 = 0; } while(0)
+#define GPIO_RA4_Toggle()             do { LATAbits.LATA4 = ~LATAbits.LATA4; } while(0)
+#define GPIO_RA4_GetValue()           PORTAbits.RA4
+#define GPIO_RA4_SetDigitalInput()    do { TRISAbits.TRISA4 = 1; } while(0)
+#define GPIO_RA4_SetDigitalOutput()   do { TRISAbits.TRISA4 = 0; } while(0)
 
-#define RA5_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
-#define RA5_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
-#define RA5_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
-#define RA5_GetValue()           PORTAbits.RA5
-#define RA5_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
-#define RA5_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
+#define GPIO_RA5_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
+#define GPIO_RA5_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
+#define GPIO_RA5_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
+#define GPIO_RA5_GetValue()           PORTAbits.RA5
+#define GPIO_RA5_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
+#define GPIO_RA5_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
 
-#define RA6_SetHigh()            do { LATAbits.LATA6 = 1; } while(0)
-#define RA6_SetLow()             do { LATAbits.LATA6 = 0; } while(0)
-#define RA6_Toggle()             do { LATAbits.LATA6 = ~LATAbits.LATA6; } while(0)
-#define RA6_GetValue()           PORTAbits.RA6
-#define RA6_SetDigitalInput()    do { TRISAbits.TRISA6 = 1; } while(0)
-#define RA6_SetDigitalOutput()   do { TRISAbits.TRISA6 = 0; } while(0)
+#define GPIO_RA6_SetHigh()            do { LATAbits.LATA6 = 1; } while(0)
+#define GPIO_RA6_SetLow()             do { LATAbits.LATA6 = 0; } while(0)
+#define GPIO_RA6_Toggle()             do { LATAbits.LATA6 = ~LATAbits.LATA6; } while(0)
+#define GPIO_RA6_GetValue()           PORTAbits.RA6
+#define GPIO_RA6_SetDigitalInput()    do { TRISAbits.TRISA6 = 1; } while(0)
+#define GPIO_RA6_SetDigitalOutput()   do { TRISAbits.TRISA6 = 0; } while(0)
 
-#define RA7_SetHigh()            do { LATAbits.LATA7 = 1; } while(0)
-#define RA7_SetLow()             do { LATAbits.LATA7 = 0; } while(0)
-#define RA7_Toggle()             do { LATAbits.LATA7 = ~LATAbits.LATA7; } while(0)
-#define RA7_GetValue()           PORTAbits.RA7
-#define RA7_SetDigitalInput()    do { TRISAbits.TRISA7 = 1; } while(0)
-#define RA7_SetDigitalOutput()   do { TRISAbits.TRISA7 = 0; } while(0)
+#define GPIO_RA7_SetHigh()            do { LATAbits.LATA7 = 1; } while(0)
+#define GPIO_RA7_SetLow()             do { LATAbits.LATA7 = 0; } while(0)
+#define GPIO_RA7_Toggle()             do { LATAbits.LATA7 = ~LATAbits.LATA7; } while(0)
+#define GPIO_RA7_GetValue()           PORTAbits.RA7
+#define GPIO_RA7_SetDigitalInput()    do { TRISAbits.TRISA7 = 1; } while(0)
+#define GPIO_RA7_SetDigitalOutput()   do { TRISAbits.TRISA7 = 0; } while(0)
 
-#define RB0_SetHigh()            do { LATBbits.LATB0 = 1; } while(0)
-#define RB0_SetLow()             do { LATBbits.LATB0 = 0; } while(0)
-#define RB0_Toggle()             do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0)
-#define RB0_GetValue()           PORTBbits.RB0
-#define RB0_SetDigitalInput()    do { TRISBbits.TRISB0 = 1; } while(0)
-#define RB0_SetDigitalOutput()   do { TRISBbits.TRISB0 = 0; } while(0)
+#define GPIO_RB0_SetHigh()            do { LATBbits.LATB0 = 1; } while(0)
+#define GPIO_RB0_SetLow()             do { LATBbits.LATB0 = 0; } while(0)
+#define GPIO_RB0_Toggle()             do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0)
+#define GPIO_RB0_GetValue()           PORTBbits.RB0
+#define GPIO_RB0_SetDigitalInput()    do { TRISBbits.TRISB0 = 1; } while(0)
+#define GPIO_RB0_SetDigitalOutput()   do { TRISBbits.TRISB0 = 0; } while(0)
 
-#define RB1_SetHigh()            do { LATBbits.LATB1 = 1; } while(0)
-#define RB1_SetLow()             do { LATBbits.LATB1 = 0; } while(0)
-#define RB1_Toggle()             do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0)
-#define RB1_GetValue()           PORTBbits.RB1
-#define RB1_SetDigitalInput()    do { TRISBbits.TRISB1 = 1; } while(0)
-#define RB1_SetDigitalOutput()   do { TRISBbits.TRISB1 = 0; } while(0)
+#define GPIO_RB1_SetHigh()            do { LATBbits.LATB1 = 1; } while(0)
+#define GPIO_RB1_SetLow()             do { LATBbits.LATB1 = 0; } while(0)
+#define GPIO_RB1_Toggle()             do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0)
+#define GPIO_RB1_GetValue()           PORTBbits.RB1
+#define GPIO_RB1_SetDigitalInput()    do { TRISBbits.TRISB1 = 1; } while(0)
+#define GPIO_RB1_SetDigitalOutput()   do { TRISBbits.TRISB1 = 0; } while(0)
 
-#define RB2_SetHigh()            do { LATBbits.LATB2 = 1; } while(0)
-#define RB2_SetLow()             do { LATBbits.LATB2 = 0; } while(0)
-#define RB2_Toggle()             do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0)
-#define RB2_GetValue()           PORTBbits.RB2
-#define RB2_SetDigitalInput()    do { TRISBbits.TRISB2 = 1; } while(0)
+#define GPIO_RB2_SetHigh()            do { LATBbits.LATB2 = 1; } while(0)
+#define GPIO_RB2_SetLow()             do { LATBbits.LATB2 = 0; } while(0)
+#define GPIO_RB2_Toggle()             do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0)
+#define GPIO_RB2_GetValue()           PORTBbits.RB2
+#define GPIO_RB2_SetDigitalInput()    do { TRISBbits.TRISB2 = 1; } while(0)
 #define RB2_SetDigitalOutput()   do { TRISBbits.TRISB2 = 0; } while(0)
 
 #define RB3_SetHigh()            do { LATBbits.LATB3 = 1; } while(0)
