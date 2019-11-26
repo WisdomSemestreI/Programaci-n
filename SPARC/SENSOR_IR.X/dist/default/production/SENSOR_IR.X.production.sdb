@@ -1,0 +1,577 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4585 ]
+[d frameptr 4065 ]
+"4 D:\MPLABXProjects\SPARC/UART.X/UART.c
+[v _INIT_UART INIT_UART `(v  1 e 1 0 ]
+"16
+[v _SEND_UART SEND_UART `(v  1 e 1 0 ]
+"4 D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+[v _INIT_ADC INIT_ADC `(v  1 e 1 0 ]
+"213
+[v _VOLTAGE_REF VOLTAGE_REF `(v  1 e 1 0 ]
+"226
+[v _ACTIVE_AN ACTIVE_AN `(v  1 e 1 0 ]
+"271
+[v _RESOLUTION RESOLUTION `(v  1 e 1 0 ]
+"280
+[v _ADC_PROCESS ADC_PROCESS `(v  1 e 1 0 ]
+"288
+[v _CONVERT_A_D CONVERT_A_D `(v  1 e 1 0 ]
+"299
+[v _READPORT READPORT `(v  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fabsf.c
+[v _fabsf fabsf `(f  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nanf.c
+[v _nanf nanf `(f  1 e 4 0 ]
+"52 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+[v _powf powf `JJ(f  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+[v _scalbnf scalbnf `(f  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"22 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+[v _sqrtf sqrtf `(f  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"7 D:\MPLABXProjects\SPARC\SENSOR_IR.X\SENSOR_IR.c
+[v _DISTANCIA DISTANCIA `(uc  1 e 1 0 ]
+"16 D:\MPLABXProjects\SPARC\SENSOR_IR.X\Sensor_IR_uso.c
+[v _main main `(v  1 e 1 0 ]
+"6 D:\MPLABXProjects\SPARC/UART.X/UART.h
+[v _RX_Data RX_Data `uc  1 e 1 0 ]
+"7 D:\MPLABXProjects\SPARC\SENSOR_IR.X/ADC.h
+[v _TAD TAD `us  1 e 2 0 ]
+"8
+[v _Tosc Tosc `us  1 e 2 0 ]
+"11
+[v _LSB LSB `uc  1 e 1 0 ]
+"12
+[v _MSB MSB `uc  1 e 1 0 ]
+"6 D:\MPLABXProjects\SPARC\SENSOR_IR.X/SENSOR_IR.h
+[v _analog_value analog_value `us  1 e 2 0 ]
+[s S235 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"26863 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h
+[s S244 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+[u S253 . 1 `S235 1 . 1 0 `S244 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES253  1 e 1 @3986 ]
+[s S319 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"27307
+[s S328 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S337 . 1 `S319 1 . 1 0 `S328 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES337  1 e 1 @3988 ]
+"27497
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+[s S415 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"28042
+[s S424 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+]
+[u S428 . 1 `S415 1 . 1 0 `S424 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES428  1 e 1 @3998 ]
+"28780
+[v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
+"28990
+[v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
+[s S362 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"29029
+[s S371 . 1 `uc 1 TX9D1 1 0 :1:0 
+`uc 1 TRMT1 1 0 :1:1 
+`uc 1 BRGH1 1 0 :1:2 
+`uc 1 SENDB1 1 0 :1:3 
+`uc 1 SYNC1 1 0 :1:4 
+`uc 1 TXEN1 1 0 :1:5 
+`uc 1 TX91 1 0 :1:6 
+`uc 1 CSRC1 1 0 :1:7 
+]
+[s S380 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[s S383 . 1 `uc 1 TXD8 1 0 :1:0 
+]
+[u S385 . 1 `S362 1 . 1 0 `S371 1 . 1 0 `S380 1 . 1 0 `S383 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES385  1 e 1 @4012 ]
+"29246
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"29258
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
+"29270
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+[s S122 . 1 `uc 1 ADCS 1 0 :3:0 
+`uc 1 ACQT 1 0 :3:3 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"30139
+[s S127 . 1 `uc 1 ADCS0 1 0 :1:0 
+`uc 1 ADCS1 1 0 :1:1 
+`uc 1 ADCS2 1 0 :1:2 
+`uc 1 ACQT0 1 0 :1:3 
+`uc 1 ACQT1 1 0 :1:4 
+`uc 1 ACQT2 1 0 :1:5 
+]
+[u S134 . 1 `S122 1 . 1 0 `S127 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES134  1 e 1 @4032 ]
+[s S150 . 1 `uc 1 PCFG 1 0 :4:0 
+`uc 1 VCFG 1 0 :2:4 
+]
+"30214
+[s S153 . 1 `uc 1 PCFG0 1 0 :1:0 
+`uc 1 PCFG1 1 0 :1:1 
+`uc 1 PCFG2 1 0 :1:2 
+`uc 1 PCFG3 1 0 :1:3 
+`uc 1 VCFG0 1 0 :1:4 
+`uc 1 VCFG1 1 0 :1:5 
+]
+[s S160 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CHSN3 1 0 :1:3 
+`uc 1 VCFG01 1 0 :1:4 
+`uc 1 VCFG11 1 0 :1:5 
+]
+[u S165 . 1 `S150 1 . 1 0 `S153 1 . 1 0 `S160 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES165  1 e 1 @4033 ]
+[s S39 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"30318
+[s S42 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+]
+[s S46 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+]
+[s S53 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+]
+[s S56 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[s S59 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+[s S62 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S65 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+[u S68 . 1 `S39 1 . 1 0 `S42 1 . 1 0 `S46 1 . 1 0 `S53 1 . 1 0 `S56 1 . 1 0 `S59 1 . 1 0 `S62 1 . 1 0 `S65 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES68  1 e 1 @4034 ]
+"30400
+[v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
+"30407
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"31596
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\errno.c
+[v _errno errno `i  1 e 2 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+[v _bp bp `C[2]f  1 s 8 bp ]
+"20
+[v _dp_h dp_h `C[2]f  1 s 8 dp_h ]
+"21
+[v _dp_l dp_l `C[2]f  1 s 8 dp_l ]
+"16 D:\MPLABXProjects\SPARC\SENSOR_IR.X\Sensor_IR_uso.c
+[v _main main `(v  1 e 1 0 ]
+{
+"33
+[v main@Distancia_cm Distancia_cm `uc  1 a 1 87 ]
+"40
+} 0
+"16 D:\MPLABXProjects\SPARC/UART.X/UART.c
+[v _SEND_UART SEND_UART `(v  1 e 1 0 ]
+{
+[v SEND_UART@TX_Data TX_Data `uc  1 a 1 wreg ]
+[v SEND_UART@TX_Data TX_Data `uc  1 a 1 wreg ]
+[v SEND_UART@TX_Data TX_Data `uc  1 a 1 0 ]
+"21
+} 0
+"299 D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+[v _READPORT READPORT `(v  1 e 1 0 ]
+{
+[v READPORT@PortToRead PortToRead `uc  1 a 1 wreg ]
+[v READPORT@PortToRead PortToRead `uc  1 a 1 wreg ]
+[v READPORT@PortToRead PortToRead `uc  1 a 1 0 ]
+"341
+} 0
+"4 D:\MPLABXProjects\SPARC/UART.X/UART.c
+[v _INIT_UART INIT_UART `(v  1 e 1 0 ]
+{
+"14
+} 0
+"4 D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+[v _INIT_ADC INIT_ADC `(v  1 e 1 0 ]
+{
+[v INIT_ADC@NumberOfPorts NumberOfPorts `uc  1 a 1 wreg ]
+[v INIT_ADC@NumberOfPorts NumberOfPorts `uc  1 a 1 wreg ]
+[v INIT_ADC@ON_OFF ON_OFF `uc  1 p 1 6 ]
+[v INIT_ADC@Resolution Resolution `uc  1 p 1 7 ]
+"6
+[v INIT_ADC@NumberOfPorts NumberOfPorts `uc  1 a 1 8 ]
+"211
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"213 D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+[v _VOLTAGE_REF VOLTAGE_REF `(v  1 e 1 0 ]
+{
+[v VOLTAGE_REF@ON_OFF ON_OFF `uc  1 a 1 wreg ]
+[v VOLTAGE_REF@ON_OFF ON_OFF `uc  1 a 1 wreg ]
+[v VOLTAGE_REF@ON_OFF ON_OFF `uc  1 a 1 0 ]
+"224
+} 0
+"271
+[v _RESOLUTION RESOLUTION `(v  1 e 1 0 ]
+{
+[v RESOLUTION@Bits Bits `uc  1 a 1 wreg ]
+[v RESOLUTION@Bits Bits `uc  1 a 1 wreg ]
+[v RESOLUTION@Bits Bits `uc  1 a 1 0 ]
+"278
+} 0
+"226
+[v _ACTIVE_AN ACTIVE_AN `(v  1 e 1 0 ]
+{
+[v ACTIVE_AN@Port Port `uc  1 a 1 wreg ]
+[v ACTIVE_AN@Port Port `uc  1 a 1 wreg ]
+[v ACTIVE_AN@Port Port `uc  1 a 1 0 ]
+"269
+} 0
+"7 D:\MPLABXProjects\SPARC\SENSOR_IR.X\SENSOR_IR.c
+[v _DISTANCIA DISTANCIA `(uc  1 e 1 0 ]
+{
+"11
+[v DISTANCIA@Distancia Distancia `f  1 a 4 48 ]
+"15
+} 0
+"52 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+[v _powf powf `JJ(f  1 e 4 0 ]
+{
+"151
+[v powf@s2 s2 `f  1 a 4 140 ]
+[v powf@s_h s_h `f  1 a 4 108 ]
+[v powf@t_h t_h `f  1 a 4 104 ]
+[v powf@t_l t_l `f  1 a 4 52 ]
+[v powf@s_l s_l `f  1 a 4 48 ]
+[u S912 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"58
+[v powf@__xc8_float_word __xc8_float_word `S912  1 a 4 184 ]
+"54
+[v powf@z z `f  1 a 4 180 ]
+"55
+[v powf@t t `f  1 a 4 176 ]
+"56
+[v powf@j j `l  1 a 4 172 ]
+"57
+[v powf@ix ix `l  1 a 4 168 ]
+"56
+[v powf@k k `l  1 a 4 160 ]
+"54
+[v powf@p_h p_h `f  1 a 4 156 ]
+"57
+[v powf@iy iy `l  1 a 4 152 ]
+[v powf@is is `l  1 a 4 144 ]
+"55
+[v powf@sn sn `f  1 a 4 136 ]
+"57
+[v powf@hy hy `l  1 a 4 132 ]
+"55
+[v powf@t1 t1 `f  1 a 4 128 ]
+"56
+[v powf@n n `l  1 a 4 124 ]
+"55
+[v powf@v v `f  1 a 4 120 ]
+[v powf@u u `f  1 a 4 116 ]
+"54
+[v powf@ax ax `f  1 a 4 112 ]
+[v powf@p_l p_l `f  1 a 4 100 ]
+"57
+[v powf@hx hx `l  1 a 4 96 ]
+"55
+[v powf@s s `f  1 a 4 92 ]
+"56
+[v powf@yisint yisint `l  1 a 4 80 ]
+"55
+[v powf@r r `f  1 a 4 76 ]
+[v powf@w w `f  1 a 4 68 ]
+"56
+[v powf@i i `l  1 a 4 44 ]
+"55
+[v powf@y1 y1 `f  1 a 4 40 ]
+"54
+[v powf@z_l z_l `f  1 a 4 36 ]
+[v powf@z_h z_h `f  1 a 4 32 ]
+"55
+[v powf@t2 t2 `f  1 a 4 28 ]
+"52
+[v powf@x x `f  1 p 4 40 ]
+[v powf@y y `f  1 p 4 44 ]
+"264
+} 0
+"22 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+[v _sqrtf sqrtf `(f  1 e 4 0 ]
+{
+"26
+[v sqrtf@ix ix `l  1 a 4 36 ]
+"27
+[v sqrtf@r r `ul  1 a 4 32 ]
+"26
+[v sqrtf@m m `l  1 a 4 28 ]
+"24
+[v sqrtf@z z `f  1 a 4 24 ]
+"26
+[v sqrtf@t t `l  1 a 4 20 ]
+[v sqrtf@q q `l  1 a 4 16 ]
+[u S912 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"28
+[v sqrtf@__xc8_float_word __xc8_float_word `S912  1 a 4 12 ]
+"26
+[v sqrtf@i i `l  1 a 4 8 ]
+[v sqrtf@s s `l  1 a 4 4 ]
+"22
+[v sqrtf@x x `f  1 p 4 61 ]
+"89
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nanf.c
+[v _nanf nanf `(f  1 e 4 0 ]
+{
+[u S912 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"6
+[v nanf@u u `S912  1 a 4 4 ]
+"4
+[v nanf@s s `*.32Cuc  1 p 2 0 ]
+"9
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 49 ]
+[v ___flge@ff2 ff2 `d  1 p 4 53 ]
+"19
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+[v _scalbnf scalbnf `(f  1 e 4 0 ]
+{
+"7
+[v scalbnf@y y `f  1 a 4 55 ]
+[u S912 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"6
+[v scalbnf@u u `S912  1 a 4 51 ]
+"4
+[v scalbnf@x x `f  1 p 4 41 ]
+[v scalbnf@n n `i  1 p 2 45 ]
+"31
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S777 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S782 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S785 . 4 `l 1 i 4 0 `d 1 f 4 0 `S777 1 fAsBytes 4 0 `S782 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S785  1 a 4 35 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 29 ]
+[s S853 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S856 . 2 `s 1 i 2 0 `us 1 n 2 0 `S853 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S856  1 a 2 39 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 34 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 33 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 28 ]
+"8
+[v ___flmul@b b `d  1 p 4 16 ]
+[v ___flmul@a a `d  1 p 4 20 ]
+"205
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fabsf.c
+[v _fabsf fabsf `(f  1 e 4 0 ]
+{
+[u S912 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"6
+[v fabsf@u u `S912  1 a 4 4 ]
+"4
+[v fabsf@x x `f  1 p 4 0 ]
+"5
+[v fabsf@F463 F463 `S912  1 s 4 F463 ]
+"9
+} 0
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+"44
+} 0
+"245 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@b b `d  1 p 4 41 ]
+[v ___flsub@a a `d  1 p 4 45 ]
+"250
+} 0
+"10
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 15 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 14 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 13 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 12 ]
+"10
+[v ___fladd@b b `d  1 p 4 0 ]
+[v ___fladd@a a `d  1 p 4 4 ]
+"237
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+{
+[v ___flneg@f1 f1 `d  1 p 4 0 ]
+"20
+} 0
+"11 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 68 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 61 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 66 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 73 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 72 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 65 ]
+"11
+[v ___fldiv@b b `d  1 p 4 49 ]
+[v ___fldiv@a a `d  1 p 4 53 ]
+"185
+} 0
+"43 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 9 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 8 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 0 ]
+"70
+} 0
+"280 D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+[v _ADC_PROCESS ADC_PROCESS `(v  1 e 1 0 ]
+{
+"286
+} 0
+"288
+[v _CONVERT_A_D CONVERT_A_D `(v  1 e 1 0 ]
+{
+"297
+} 0

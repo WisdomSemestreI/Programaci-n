@@ -1,0 +1,1416 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\araba\AppData\Local\Temp\sa84.o
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 0 0 4 1
+config CONFIG 0 300000 300000 E 1
+$dist/default/production\SENSOR_IR.X.production.o
+cinit CODE 0 528E 528E 26 1
+text0 CODE 0 5130 5130 50 1
+text1 CODE 0 531A 531A 16 1
+text2 CODE 0 4CB0 4CB0 11A 1
+text3 CODE 0 5330 5330 12 1
+text4 CODE 0 508C 508C A4 1
+text5 CODE 0 52B4 52B4 26 1
+text6 CODE 0 5232 5232 30 1
+text7 CODE 0 5262 5262 2C 1
+text8 CODE 0 4B90 4B90 120 1
+text9 CODE 0 4FD4 4FD4 B8 1
+text10 CODE 0 D80 D80 28E4 1
+text11 CODE 0 3664 3664 4C0 1
+text12 CODE 0 52DA 52DA 22 1
+text13 CODE 0 4ED0 4ED0 104 1
+text14 CODE 0 47A8 47A8 234 1
+text15 CODE 0 3FE4 3FE4 42A 1
+text16 CODE 0 51FE 51FE 34 1
+text17 CODE 0 49DC 49DC 1B4 1
+text18 CODE 0 5180 5180 46 1
+text19 CODE 0 3B24 3B24 4C0 1
+text20 CODE 0 51C6 51C6 38 1
+text21 CODE 0 440E 440E 39A 1
+text22 CODE 0 4DCA 4DCA 106 1
+text23 CODE 0 5342 5342 8 1
+text24 CODE 0 52FC 52FC 1E 1
+cstackCOMRAM COMRAM 1 1 1 58 1
+cstackBANK0 BANK0 1 60 60 3C 1
+cstackBANK1 BANK1 1 100 100 BC 1
+bssBANK0 BANK0 1 9C 9C 8 1
+smallconst SMALLCONST 0 D00 D00 80 1
+bssCOMRAM COMRAM 1 59 59 7 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM A4-FF 1
+RAM 1BC-CFF 1
+SFR D00-FFF 1
+BANK0 A4-FF 1
+BANK1 1BC-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+BANK8 800-8FF 1
+BANK9 900-9FF 1
+CONST 4-CFF 1
+CONST 534A-BFFF 1
+STACK 1BC-CFF 1
+SMALLCONST 534A-BFFF 1
+CODE 4-CFF 1
+CODE 534A-BFFF 1
+BANK10 A00-AFF 1
+BANK11 B00-BFF 1
+BANK12 C00-CFF 1
+BIGRAM A4-FF 1
+BIGRAM 1BC-CFF 1
+EEDATA F00000-F003FF 1
+MEDIUMCONST 534A-BFFF 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\SENSOR_IR.X.production.o
+52FC text24 CODE >288:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+52FC text24 CODE >289:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+52FE text24 CODE >290:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5300 text24 CODE >291:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5300 text24 CODE >292:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+530E text24 CODE >293:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5310 text24 CODE >294:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5314 text24 CODE >295:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5318 text24 CODE >297:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5342 text23 CODE >280:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5342 text23 CODE >281:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5344 text23 CODE >283:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5348 text23 CODE >286:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4DCA text22 CODE >43:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4DCA text22 CODE >47:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4DE0 text22 CODE >48:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4DF4 text22 CODE >49:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4E1E text22 CODE >50:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4E20 text22 CODE >51:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4E30 text22 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4E34 text22 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4E42 text22 CODE >54:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4E5A text22 CODE >57:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4E6E text22 CODE >60:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4E82 text22 CODE >63:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4E8C text22 CODE >64:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4E8E text22 CODE >62:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4E9E text22 CODE >67:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4EAE text22 CODE >68:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4EBE text22 CODE >69:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+4ECE text22 CODE >70:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
+440E text21 CODE >11:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+440E text21 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4414 text21 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+441A text21 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4428 text21 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+442A text21 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+443A text21 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+444A text21 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+445A text21 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+445C text21 CODE >42:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4460 text21 CODE >43:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4464 text21 CODE >46:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4474 text21 CODE >49:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+447A text21 CODE >50:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4480 text21 CODE >51:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+448E text21 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4490 text21 CODE >56:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+44A0 text21 CODE >58:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+44B0 text21 CODE >60:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+44C0 text21 CODE >63:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+44C2 text21 CODE >65:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+44C6 text21 CODE >66:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+44CA text21 CODE >69:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+44DA text21 CODE >75:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+44F0 text21 CODE >76:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4500 text21 CODE >77:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4508 text21 CODE >78:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+450C text21 CODE >79:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4520 text21 CODE >83:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4530 text21 CODE >84:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4530 text21 CODE >85:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4544 text21 CODE >89:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+455E text21 CODE >92:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+456E text21 CODE >93:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+457E text21 CODE >94:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+458E text21 CODE >96:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4592 text21 CODE >97:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4596 text21 CODE >100:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+45A6 text21 CODE >101:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+45B0 text21 CODE >102:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+45BA text21 CODE >103:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+45C8 text21 CODE >104:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+45CA text21 CODE >105:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+45CA text21 CODE >106:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+45D4 text21 CODE >112:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+45F2 text21 CODE >115:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+45F4 text21 CODE >116:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4604 text21 CODE >118:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4606 text21 CODE >97:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4606 text21 CODE >119:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4616 text21 CODE >122:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+462C text21 CODE >123:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4632 text21 CODE >128:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+463C text21 CODE >129:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+464A text21 CODE >130:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+464C text21 CODE >131:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+464C text21 CODE >132:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4656 text21 CODE >133:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+465C text21 CODE >127:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+466A text21 CODE >139:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+466E text21 CODE >140:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+467C text21 CODE >141:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+46AA text21 CODE >142:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+46AE text21 CODE >143:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+46B2 text21 CODE >144:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+46B2 text21 CODE >145:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+46C4 text21 CODE >149:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+46C4 text21 CODE >150:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+46D4 text21 CODE >151:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+46E0 text21 CODE >152:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+46EE text21 CODE >153:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4718 text21 CODE >154:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+471C text21 CODE >159:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4736 text21 CODE >160:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+473C text21 CODE >161:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+474C text21 CODE >165:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4766 text21 CODE >166:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+476E text21 CODE >167:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+477E text21 CODE >169:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4782 text21 CODE >173:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4786 text21 CODE >175:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4794 text21 CODE >176:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+4796 text21 CODE >177:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+479A text21 CODE >180:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+479C text21 CODE >182:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+47A6 text21 CODE >185:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+51C6 text20 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flneg.c
+51C6 text20 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flneg.c
+51DC text20 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flneg.c
+51EC text20 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flneg.c
+51FC text20 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flneg.c
+3B24 text19 CODE >10:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3B24 text19 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3B2A text19 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3B30 text19 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3B3E text19 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3B40 text19 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3B50 text19 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3B60 text19 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3B70 text19 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3B72 text19 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3B76 text19 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3B7A text19 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3B8A text19 CODE >44:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3B90 text19 CODE >46:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3BA2 text19 CODE >47:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3BA4 text19 CODE >49:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3BAA text19 CODE >50:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3BB8 text19 CODE >51:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3BBA text19 CODE >55:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3BCA text19 CODE >57:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3BDA text19 CODE >59:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3BEA text19 CODE >62:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3BEC text19 CODE >64:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3BF0 text19 CODE >65:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3BF4 text19 CODE >68:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C04 text19 CODE >75:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C16 text19 CODE >77:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C24 text19 CODE >78:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C28 text19 CODE >81:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C2C text19 CODE >82:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C30 text19 CODE >83:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C34 text19 CODE >84:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C38 text19 CODE >85:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C3C text19 CODE >86:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C40 text19 CODE >87:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C44 text19 CODE >88:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C48 text19 CODE >89:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C4C text19 CODE >90:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C50 text19 CODE >91:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C54 text19 CODE >92:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C58 text19 CODE >93:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C5C text19 CODE >94:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C60 text19 CODE >95:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C64 text19 CODE >98:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C68 text19 CODE >100:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3C92 text19 CODE >101:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3CAE text19 CODE >102:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3CBE text19 CODE >103:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3CC2 text19 CODE >104:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3CC6 text19 CODE >106:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3CC6 text19 CODE >109:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3CD4 text19 CODE >110:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3CDC text19 CODE >111:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3CE0 text19 CODE >113:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3CE4 text19 CODE >115:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3CF2 text19 CODE >116:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3CF4 text19 CODE >118:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3CFE text19 CODE >119:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D00 text19 CODE >106:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D00 text19 CODE >120:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D12 text19 CODE >121:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D12 text19 CODE >124:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D20 text19 CODE >127:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D30 text19 CODE >128:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D44 text19 CODE >132:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D54 text19 CODE >134:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D62 text19 CODE >135:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D70 text19 CODE >136:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D78 text19 CODE >137:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D7C text19 CODE >139:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D80 text19 CODE >141:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D8E text19 CODE >142:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D90 text19 CODE >144:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3D9A text19 CODE >145:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3DA0 text19 CODE >153:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3DC6 text19 CODE >154:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3DF6 text19 CODE >155:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3DFA text19 CODE >156:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3DFC text19 CODE >157:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3E0C text19 CODE >158:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3E1C text19 CODE >162:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3E2C text19 CODE >163:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3E2C text19 CODE >166:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3E52 text19 CODE >167:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3E66 text19 CODE >172:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3E70 text19 CODE >173:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3E7E text19 CODE >174:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3E80 text19 CODE >176:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3E8E text19 CODE >177:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3E92 text19 CODE >178:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3E96 text19 CODE >180:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3E9A text19 CODE >182:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3EAA text19 CODE >183:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3EAC text19 CODE >171:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3EBA text19 CODE >192:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3EBE text19 CODE >193:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3ECC text19 CODE >194:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3EE2 text19 CODE >195:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3EE6 text19 CODE >196:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3EEA text19 CODE >197:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3EEA text19 CODE >198:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3EFC text19 CODE >202:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3EFC text19 CODE >203:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3F0C text19 CODE >204:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3F18 text19 CODE >205:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3F26 text19 CODE >206:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3F50 text19 CODE >207:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3F60 text19 CODE >208:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3F62 text19 CODE >215:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3F82 text19 CODE >216:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3F92 text19 CODE >218:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3FA2 text19 CODE >219:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3FA6 text19 CODE >225:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3FB4 text19 CODE >226:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3FB6 text19 CODE >227:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3FBA text19 CODE >230:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3FBC text19 CODE >232:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3FC2 text19 CODE >233:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3FD0 text19 CODE >234:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3FD2 text19 CODE >236:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+3FE2 text19 CODE >237:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+5180 text18 CODE >245:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+5180 text18 CODE >248:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+5190 text18 CODE >249:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+51C4 text18 CODE >250:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+49DC text17 CODE >10:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+49DE text17 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+49FC text17 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4A2E text17 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4A32 text17 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4A32 text17 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4A42 text17 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4A58 text17 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4A6C text17 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4A70 text17 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4A74 text17 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4A76 text17 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4A80 text17 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4AB2 text17 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4AB4 text17 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4AC0 text17 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4ACA text17 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4ACA text17 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4AFC text17 CODE >34:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4AFE text17 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4B08 text17 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4B26 text17 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4B34 text17 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4B36 text17 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4B3A text17 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4B5E text17 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4B7C text17 CODE >42:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4B7E text17 CODE >43:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+4B8E text17 CODE >44:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
+51FE text16 CODE >4:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fabsf.c
+51FE text16 CODE >6:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fabsf.c
+521E text16 CODE >7:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fabsf.c
+5220 text16 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fabsf.c
+5230 text16 CODE >9:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fabsf.c
+3FE4 text15 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+3FE4 text15 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+3FEA text15 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+3FF0 text15 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+3FFE text15 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4000 text15 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4010 text15 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4020 text15 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4030 text15 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4032 text15 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4036 text15 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4046 text15 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+404C text15 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4052 text15 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4060 text15 CODE >42:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4062 text15 CODE >45:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4072 text15 CODE >48:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4082 text15 CODE >50:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4092 text15 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4094 text15 CODE >54:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4098 text15 CODE >57:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+40A8 text15 CODE >58:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+40A8 text15 CODE >65:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+40C8 text15 CODE >66:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+40DC text15 CODE >95:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+40E8 text15 CODE >96:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+40F2 text15 CODE >97:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+40FC text15 CODE >98:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4108 text15 CODE >99:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4114 text15 CODE >100:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4120 text15 CODE >101:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+412C text15 CODE >102:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4138 text15 CODE >103:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4144 text15 CODE >104:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4152 text15 CODE >105:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+415E text15 CODE >106:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+416E text15 CODE >107:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+417A text15 CODE >108:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+418A text15 CODE >109:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4198 text15 CODE >110:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+41A4 text15 CODE >111:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+41B4 text15 CODE >112:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+41C0 text15 CODE >113:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+41D0 text15 CODE >114:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+41DC text15 CODE >115:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+41EC text15 CODE >116:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+41F8 text15 CODE >117:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4222 text15 CODE >145:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4258 text15 CODE >146:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4266 text15 CODE >149:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4280 text15 CODE >152:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4284 text15 CODE >153:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+428E text15 CODE >154:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+429C text15 CODE >155:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+429E text15 CODE >156:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+429E text15 CODE >157:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+42A8 text15 CODE >158:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+42AE text15 CODE >152:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+42BC text15 CODE >163:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+42C0 text15 CODE >164:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+42CE text15 CODE >165:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+42FC text15 CODE >166:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4300 text15 CODE >167:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4304 text15 CODE >168:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4304 text15 CODE >169:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4316 text15 CODE >173:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4316 text15 CODE >174:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4326 text15 CODE >175:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4332 text15 CODE >176:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4340 text15 CODE >177:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+436A text15 CODE >178:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+436E text15 CODE >183:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4388 text15 CODE >184:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+4398 text15 CODE >185:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+439C text15 CODE >187:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+43B6 text15 CODE >188:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+43C6 text15 CODE >190:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+43CA text15 CODE >191:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+43CE text15 CODE >192:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+43CE text15 CODE >194:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+43D2 text15 CODE >195:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+43E2 text15 CODE >196:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+43F0 text15 CODE >197:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+43F2 text15 CODE >199:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+43F8 text15 CODE >201:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+43FC text15 CODE >203:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+440C text15 CODE >205:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+47A8 text14 CODE >4:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+47A8 text14 CODE >7:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+47B8 text14 CODE >9:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+47D4 text14 CODE >10:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+4808 text14 CODE >11:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+4810 text14 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+482C text14 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+4860 text14 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+4868 text14 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+4884 text14 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+4890 text14 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+48AC text14 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+48E0 text14 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+48E8 text14 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+4904 text14 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+4938 text14 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+4940 text14 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+495C text14 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+4964 text14 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+4996 text14 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+49CA text14 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+49DA text14 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\scalbnf.c
+4ED0 text13 CODE >4:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+4ED0 text13 CODE >7:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+4EFE text13 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+4F0E text13 CODE >9:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+4F3C text13 CODE >10:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+4F4C text13 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+4F5A text13 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+4F6C text13 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+4F7A text13 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+4F8C text13 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+4F9C text13 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+4FAC text13 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+4FD2 text13 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+52DA text12 CODE >4:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nanf.c
+52DA text12 CODE >7:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nanf.c
+52EA text12 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nanf.c
+52FA text12 CODE >9:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nanf.c
+3664 text11 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3664 text11 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3664 text11 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3684 text11 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+36BA text11 CODE >34:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3716 text11 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3734 text11 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3762 text11 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3776 text11 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3784 text11 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+378C text11 CODE >42:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+37AC text11 CODE >46:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+37EA text11 CODE >47:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3802 text11 CODE >48:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3816 text11 CODE >49:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+383A text11 CODE >50:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3862 text11 CODE >51:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3862 text11 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3872 text11 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+38A2 text11 CODE >54:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+38B0 text11 CODE >55:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+38C0 text11 CODE >56:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+38CA text11 CODE >59:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+38DA text11 CODE >60:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+38FA text11 CODE >61:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+390A text11 CODE >63:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+390E text11 CODE >64:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3926 text11 CODE >65:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+394C text11 CODE >66:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3964 text11 CODE >67:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3974 text11 CODE >68:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3984 text11 CODE >69:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3984 text11 CODE >70:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3994 text11 CODE >71:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+399E text11 CODE >63:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+39B4 text11 CODE >75:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+39CA text11 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+39DA text11 CODE >77:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3A0C text11 CODE >78:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3A1E text11 CODE >79:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3A50 text11 CODE >80:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3A62 text11 CODE >82:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3A8C text11 CODE >84:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3A8C text11 CODE >85:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3AC0 text11 CODE >86:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3AF2 text11 CODE >87:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3B12 text11 CODE >88:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+3B22 text11 CODE >89:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sqrtf.c
+D80 text10 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+D80 text10 CODE >60:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+DA0 text10 CODE >61:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+DC0 text10 CODE >62:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+DDA text10 CODE >63:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+DF2 text10 CODE >66:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+E08 text10 CODE >67:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+E1E text10 CODE >69:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+E3A text10 CODE >70:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+E50 text10 CODE >72:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+E94 text10 CODE >73:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+ECC text10 CODE >80:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+EDC text10 CODE >81:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+EEA text10 CODE >82:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+F06 text10 CODE >83:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+F1A text10 CODE >84:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+F36 text10 CODE >85:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+F7E text10 CODE >86:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+FBE text10 CODE >87:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1010 text10 CODE >88:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1040 text10 CODE >90:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1040 text10 CODE >93:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+105C text10 CODE >94:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1078 text10 CODE >95:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+108E text10 CODE >96:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+10B0 text10 CODE >97:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+10E8 text10 CODE >99:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1134 text10 CODE >101:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1150 text10 CODE >102:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+11AA text10 CODE >103:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+11C2 text10 CODE >104:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+11FA text10 CODE >105:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1212 text10 CODE >106:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1220 text10 CODE >107:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1248 text10 CODE >110:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+126C text10 CODE >112:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+12BC text10 CODE >113:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+12CC text10 CODE >114:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+12DA text10 CODE >115:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+130E text10 CODE >116:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+131E text10 CODE >117:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1364 text10 CODE >118:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+13E0 text10 CODE >119:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+13FA text10 CODE >120:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+141E text10 CODE >122:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1432 text10 CODE >125:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1442 text10 CODE >126:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1450 text10 CODE >127:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1466 text10 CODE >128:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+14E6 text10 CODE >129:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+14FC text10 CODE >130:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+150C text10 CODE >134:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+152E text10 CODE >136:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1552 text10 CODE >137:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1560 text10 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+15C8 text10 CODE >137:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+15CC text10 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1638 text10 CODE >138:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+165C text10 CODE >139:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+167A text10 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+16E2 text10 CODE >139:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+16E6 text10 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1752 text10 CODE >142:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1786 text10 CODE >143:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+189E text10 CODE >45:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+18D2 text10 CODE >44:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+194E text10 CODE >146:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1982 text10 CODE >147:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+19A2 text10 CODE >148:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+19CC text10 CODE >149:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1A34 text10 CODE >150:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1A38 text10 CODE >152:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1A48 text10 CODE >154:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1A64 text10 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1A98 text10 CODE >156:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1AAA text10 CODE >157:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1ACA text10 CODE >159:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1B22 text10 CODE >160:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1B3A text10 CODE >162:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1B52 text10 CODE >163:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1B76 text10 CODE >164:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1B8A text10 CODE >165:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1BAE text10 CODE >166:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1BC2 text10 CODE >168:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1BD2 text10 CODE >169:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1BDE text10 CODE >170:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1BEE text10 CODE >172:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1C0E text10 CODE >175:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1C6A text10 CODE >176:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1CEA text10 CODE >177:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1D1E text10 CODE >178:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1D2E text10 CODE >179:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1D4E text10 CODE >180:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1D78 text10 CODE >182:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1DC2 text10 CODE >183:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1E24 text10 CODE >184:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1EB4 text10 CODE >185:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1F98 text10 CODE >187:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+1FCC text10 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2024 text10 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+207C text10 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+20D4 text10 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+212C text10 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2184 text10 CODE >188:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+21EC text10 CODE >189:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2278 text10 CODE >190:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+22AC text10 CODE >191:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2314 text10 CODE >192:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2334 text10 CODE >193:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+235E text10 CODE >194:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+23FA text10 CODE >196:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+242E text10 CODE >197:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+24AA text10 CODE >199:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+24DE text10 CODE >200:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+24FE text10 CODE >201:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2528 text10 CODE >202:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2590 text10 CODE >42:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+25C4 text10 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2640 text10 CODE >204:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+269C text10 CODE >206:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+26C2 text10 CODE >207:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2786 text10 CODE >208:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+27A6 text10 CODE >209:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+27D0 text10 CODE >210:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+28C8 text10 CODE >214:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+28E8 text10 CODE >215:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2912 text10 CODE >216:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+29C2 text10 CODE >217:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+29F6 text10 CODE >218:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2A2A text10 CODE >219:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2A4A text10 CODE >220:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2A6E text10 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2ADA text10 CODE >222:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2AF2 text10 CODE >223:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2B6C text10 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2BD8 text10 CODE >225:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2C12 text10 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2C7E text10 CODE >227:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2C9A text10 CODE >228:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2CF0 text10 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2D5C text10 CODE >234:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2D76 text10 CODE >235:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2DBE text10 CODE >236:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2DCE text10 CODE >237:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2DF0 text10 CODE >238:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2E3C text10 CODE >239:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2E94 text10 CODE >240:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2EFC text10 CODE >241:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2F5C text10 CODE >242:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2F6C text10 CODE >243:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2F7C text10 CODE >244:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2FB0 text10 CODE >246:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+2FE4 text10 CODE >247:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+3004 text10 CODE >248:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+302E text10 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+3062 text10 CODE >250:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+3096 text10 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+30EE text10 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+3146 text10 CODE >251:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+317A text10 CODE >252:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+31E2 text10 CODE >253:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+3216 text10 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+326E text10 CODE >34:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+32C6 text10 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+331E text10 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+3376 text10 CODE >254:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+33CE text10 CODE >255:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+34D6 text10 CODE >256:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+353E text10 CODE >257:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+355E text10 CODE >258:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+3592 text10 CODE >259:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+35DE text10 CODE >260:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+360E text10 CODE >262:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+362E text10 CODE >263:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+3662 text10 CODE >264:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\powf.c
+4FD4 text9 CODE >7:D:\MPLABXProjects\SPARC\SENSOR_IR.X\SENSOR_IR.c
+4FD4 text9 CODE >9:D:\MPLABXProjects\SPARC\SENSOR_IR.X\SENSOR_IR.c
+4FE8 text9 CODE >11:D:\MPLABXProjects\SPARC\SENSOR_IR.X\SENSOR_IR.c
+5074 text9 CODE >13:D:\MPLABXProjects\SPARC\SENSOR_IR.X\SENSOR_IR.c
+508A text9 CODE >15:D:\MPLABXProjects\SPARC\SENSOR_IR.X\SENSOR_IR.c
+4B90 text8 CODE >226:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4B92 text8 CODE >227:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4BA2 text8 CODE >228:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4BAA text8 CODE >230:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4BBC text8 CODE >231:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4BC4 text8 CODE >233:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4BD6 text8 CODE >234:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4BDE text8 CODE >236:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4BF0 text8 CODE >237:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4BF8 text8 CODE >239:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4C0A text8 CODE >240:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4C12 text8 CODE >242:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4C24 text8 CODE >243:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4C2C text8 CODE >245:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4C3E text8 CODE >246:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4C46 text8 CODE >248:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4C58 text8 CODE >249:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4C60 text8 CODE >251:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4C72 text8 CODE >252:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4C7A text8 CODE >254:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4C8C text8 CODE >255:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4C94 text8 CODE >257:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4CA6 text8 CODE >258:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4CAE text8 CODE >269:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5262 text7 CODE >271:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5264 text7 CODE >272:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5276 text7 CODE >273:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5278 text7 CODE >275:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+528A text7 CODE >276:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+528C text7 CODE >278:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5232 text6 CODE >213:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5234 text6 CODE >214:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5244 text6 CODE >215:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+524C text6 CODE >218:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+525C text6 CODE >219:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+525E text6 CODE >220:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5260 text6 CODE >224:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+52B4 text5 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+52B4 text5 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+52C0 text5 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+52C8 text5 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+52D0 text5 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+52D8 text5 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+508C text4 CODE >4:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+508E text4 CODE >6:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5090 text4 CODE >8:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5096 text4 CODE >10:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+509C text4 CODE >12:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+50A2 text4 CODE >14:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+50AA text4 CODE >48:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+50AA text4 CODE >49:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+50B2 text4 CODE >50:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+50BA text4 CODE >59:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+50E4 text4 CODE >60:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+50F0 text4 CODE >63:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+50F0 text4 CODE >67:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+511A text4 CODE >68:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5126 text4 CODE >71:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5126 text4 CODE >72:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+512E text4 CODE >211:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+5330 text3 CODE >4:D:\MPLABXProjects\SPARC/UART.X/UART.c
+5330 text3 CODE >8:D:\MPLABXProjects\SPARC/UART.X/UART.c
+5332 text3 CODE >9:D:\MPLABXProjects\SPARC/UART.X/UART.c
+5334 text3 CODE >10:D:\MPLABXProjects\SPARC/UART.X/UART.c
+5338 text3 CODE >11:D:\MPLABXProjects\SPARC/UART.X/UART.c
+533C text3 CODE >13:D:\MPLABXProjects\SPARC/UART.X/UART.c
+5340 text3 CODE >14:D:\MPLABXProjects\SPARC/UART.X/UART.c
+4CB0 text2 CODE >299:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4CB2 text2 CODE >300:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4CC2 text2 CODE >301:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4CC6 text2 CODE >303:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4CD6 text2 CODE >304:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4CDE text2 CODE >306:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4CF0 text2 CODE >307:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4CF8 text2 CODE >309:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4D0A text2 CODE >310:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4D12 text2 CODE >312:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4D24 text2 CODE >313:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4D2C text2 CODE >315:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4D3E text2 CODE >316:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4D46 text2 CODE >318:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4D58 text2 CODE >319:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4D60 text2 CODE >321:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4D72 text2 CODE >322:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4D7A text2 CODE >324:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4D8C text2 CODE >325:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4D94 text2 CODE >327:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4DA6 text2 CODE >328:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4DAE text2 CODE >330:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4DC0 text2 CODE >331:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+4DC8 text2 CODE >341:D:\MPLABXProjects\SPARC\SENSOR_IR.X\ADC.c
+531A text1 CODE >16:D:\MPLABXProjects\SPARC/UART.X/UART.c
+531C text1 CODE >17:D:\MPLABXProjects\SPARC/UART.X/UART.c
+531C text1 CODE >18:D:\MPLABXProjects\SPARC/UART.X/UART.c
+532A text1 CODE >19:D:\MPLABXProjects\SPARC/UART.X/UART.c
+532E text1 CODE >21:D:\MPLABXProjects\SPARC/UART.X/UART.c
+5130 text0 CODE >16:D:\MPLABXProjects\SPARC\SENSOR_IR.X\Sensor_IR_uso.c
+5130 text0 CODE >18:D:\MPLABXProjects\SPARC\SENSOR_IR.X\Sensor_IR_uso.c
+5134 text0 CODE >20:D:\MPLABXProjects\SPARC\SENSOR_IR.X\Sensor_IR_uso.c
+5136 text0 CODE >21:D:\MPLABXProjects\SPARC\SENSOR_IR.X\Sensor_IR_uso.c
+513A text0 CODE >22:D:\MPLABXProjects\SPARC\SENSOR_IR.X\Sensor_IR_uso.c
+513E text0 CODE >25:D:\MPLABXProjects\SPARC\SENSOR_IR.X\Sensor_IR_uso.c
+514C text0 CODE >27:D:\MPLABXProjects\SPARC\SENSOR_IR.X\Sensor_IR_uso.c
+5152 text0 CODE >31:D:\MPLABXProjects\SPARC\SENSOR_IR.X\Sensor_IR_uso.c
+5156 text0 CODE >33:D:\MPLABXProjects\SPARC\SENSOR_IR.X\Sensor_IR_uso.c
+515C text0 CODE >35:D:\MPLABXProjects\SPARC\SENSOR_IR.X\Sensor_IR_uso.c
+5162 text0 CODE >37:D:\MPLABXProjects\SPARC\SENSOR_IR.X\Sensor_IR_uso.c
+528E cinit CODE >3749:C:\Users\araba\AppData\Local\Temp\sa84.s
+528E cinit CODE >3751:C:\Users\araba\AppData\Local\Temp\sa84.s
+528E cinit CODE >3754:C:\Users\araba\AppData\Local\Temp\sa84.s
+528E cinit CODE >3789:C:\Users\araba\AppData\Local\Temp\sa84.s
+5292 cinit CODE >3790:C:\Users\araba\AppData\Local\Temp\sa84.s
+5294 cinit CODE >3791:C:\Users\araba\AppData\Local\Temp\sa84.s
+5294 cinit CODE >3792:C:\Users\araba\AppData\Local\Temp\sa84.s
+5296 cinit CODE >3793:C:\Users\araba\AppData\Local\Temp\sa84.s
+5298 cinit CODE >3794:C:\Users\araba\AppData\Local\Temp\sa84.s
+529A cinit CODE >3797:C:\Users\araba\AppData\Local\Temp\sa84.s
+529E cinit CODE >3798:C:\Users\araba\AppData\Local\Temp\sa84.s
+52A0 cinit CODE >3799:C:\Users\araba\AppData\Local\Temp\sa84.s
+52A0 cinit CODE >3800:C:\Users\araba\AppData\Local\Temp\sa84.s
+52A2 cinit CODE >3801:C:\Users\araba\AppData\Local\Temp\sa84.s
+52A4 cinit CODE >3802:C:\Users\araba\AppData\Local\Temp\sa84.s
+52A6 cinit CODE >3808:C:\Users\araba\AppData\Local\Temp\sa84.s
+52A6 cinit CODE >3811:C:\Users\araba\AppData\Local\Temp\sa84.s
+52A8 cinit CODE >3812:C:\Users\araba\AppData\Local\Temp\sa84.s
+52AA cinit CODE >3813:C:\Users\araba\AppData\Local\Temp\sa84.s
+52AC cinit CODE >3814:C:\Users\araba\AppData\Local\Temp\sa84.s
+52AE cinit CODE >3815:C:\Users\araba\AppData\Local\Temp\sa84.s
+52B0 cinit CODE >3816:C:\Users\araba\AppData\Local\Temp\sa84.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_ACTIVE_AN 4CB0 0 CODE 0 text8 dist/default/production\SENSOR_IR.X.production.o
+__Hspace_0 30000E 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Hspace_1 1BC 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Hspace_2 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__size_of_ACTIVE_AN 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/production\SENSOR_IR.X.production.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\araba\AppData\Local\Temp\sa84.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\SENSOR_IR.X.production.o
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+_CONVERT_A_D 52FC 0 CODE 0 text24 dist/default/production\SENSOR_IR.X.production.o
+_bp D69 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__Lsmallconst D00 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+_Tosc 5B 0 COMRAM 1 bssCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\araba\AppData\Local\Temp\sa84.o
+_dp_h D09 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+_dp_l D01 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+_main 5130 0 CODE 0 text0 dist/default/production\SENSOR_IR.X.production.o
+_nanf 52DA 0 CODE 0 text12 dist/default/production\SENSOR_IR.X.production.o
+_powf D80 0 CODE 0 text10 dist/default/production\SENSOR_IR.X.production.o
+nanf@s 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+nanf@u 5 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+start 0 0 CODE 0 init C:\Users\araba\AppData\Local\Temp\sa84.o
+___flmul@aexp 22 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___flmul@bexp 23 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___flmul@prod 24 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___flmul@sign 1D 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___flmul@temp 28 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+_ACTIVE_AN 4B90 0 CODE 0 text8 dist/default/production\SENSOR_IR.X.production.o
+__size_of___fladd 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__size_of___fldiv 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__size_of___flmul 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__size_of___flneg 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__size_of___flsub 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__size_of___fltol 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__size_of_main 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__size_of_nanf 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__size_of_powf 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\SENSOR_IR.X.production.o
+powf@i 12C 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@j 1AC 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@k 1A0 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@n 17C 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@r 14C 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@s 15C 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@t 1B0 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@u 174 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@v 178 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@w 144 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@x 88 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+powf@y 8C 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+powf@z 1B4 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+?___wmul 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__size_of_READPORT 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+SEND_UART@TX_Data 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+_DISTANCIA$1231 94 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+_DISTANCIA$1232 98 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+__size_of_ADC_PROCESS 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Hpowerup 0 0 CODE 0 powerup dist/default/production\SENSOR_IR.X.production.o
+__size_of_scalbnf 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__accesstop 60 0 ABS 0 - C:\Users\araba\AppData\Local\Temp\sa84.o
+intlevel0 0 0 CODE 0 text C:\Users\araba\AppData\Local\Temp\sa84.o
+intlevel1 0 0 CODE 0 text C:\Users\araba\AppData\Local\Temp\sa84.o
+intlevel2 0 0 CODE 0 text C:\Users\araba\AppData\Local\Temp\sa84.o
+intlevel3 0 0 CODE 0 text C:\Users\araba\AppData\Local\Temp\sa84.o
+INIT_ADC@NumberOfPorts 9 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\SENSOR_IR.X.production.o
+__Hifardata 0 0 CODE 0 ifardata dist/default/production\SENSOR_IR.X.production.o
+__Hclrtext 0 0 ABS 0 clrtext dist/default/production\SENSOR_IR.X.production.o
+_RESOLUTION 5262 0 CODE 0 text7 dist/default/production\SENSOR_IR.X.production.o
+INIT_ADC@ON_OFF 7 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___wmul@multiplicand 3 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+_ADRESH FC4 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+_ADRESL FC3 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__end_of_SEND_UART 5330 0 CODE 0 text1 dist/default/production\SENSOR_IR.X.production.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\araba\AppData\Local\Temp\sa84.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\araba\AppData\Local\Temp\sa84.o
+__size_of_SEND_UART 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+_READPORT 4CB0 0 CODE 0 text2 dist/default/production\SENSOR_IR.X.production.o
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\SENSOR_IR.X.production.o
+__end_of___flge 4FD4 0 CODE 0 text13 dist/default/production\SENSOR_IR.X.production.o
+__end_of___wmul 52DA 0 CODE 0 text5 dist/default/production\SENSOR_IR.X.production.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\SENSOR_IR.X.production.o
+__end_of_READPORT 4DCA 0 CODE 0 text2 dist/default/production\SENSOR_IR.X.production.o
+___fldiv@aexp 4A 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___fldiv@bexp 49 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___fldiv@sign 42 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\SENSOR_IR.X.production.o
+__Hintcodelo 0 0 CODE 0 intcodelo dist/default/production\SENSOR_IR.X.production.o
+__end_of___fladd 3FE4 0 CODE 0 text19 dist/default/production\SENSOR_IR.X.production.o
+__end_of___fldiv 47A8 0 CODE 0 text21 dist/default/production\SENSOR_IR.X.production.o
+__end_of___flmul 440E 0 CODE 0 text15 dist/default/production\SENSOR_IR.X.production.o
+__end_of___flneg 51FE 0 CODE 0 text20 dist/default/production\SENSOR_IR.X.production.o
+__end_of___flsub 51C6 0 CODE 0 text18 dist/default/production\SENSOR_IR.X.production.o
+__end_of___fltol 4ED0 0 CODE 0 text22 dist/default/production\SENSOR_IR.X.production.o
+_SEND_UART 531A 0 CODE 0 text1 dist/default/production\SENSOR_IR.X.production.o
+__end_of_VOLTAGE_REF 5262 0 CODE 0 text6 dist/default/production\SENSOR_IR.X.production.o
+__size_of_fabsf 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+___fladd@a 5 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___fladd@b 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___fldiv@a 36 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___fldiv@b 32 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__size_of_sqrtf 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+___flmul@a 15 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___flmul@b 11 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___flsub@a 2E 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___flsub@b 2A 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__end_of_scalbnf 49DC 0 CODE 0 text14 dist/default/production\SENSOR_IR.X.production.o
+__end_of_RESOLUTION 528E 0 CODE 0 text7 dist/default/production\SENSOR_IR.X.production.o
+__Lintcodelo 0 0 CODE 0 intcodelo dist/default/production\SENSOR_IR.X.production.o
+DISTANCIA@Distancia 90 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+start_initialization 528E 0 CODE 0 cinit dist/default/production\SENSOR_IR.X.production.o
+_OSCCON FD3 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\SENSOR_IR.X.production.o
+_TRISAbits F92 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+_TRISCbits F94 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+powf@p_h 19C 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@p_l 164 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@s_h 16C 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@s_l 130 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@t_h 168 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@t_l 134 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@z_h 120 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@z_l 124 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+READPORT@PortToRead 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___rparam_used 1 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__end_of_L1 D5D 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_L2 D59 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_L3 D55 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_L4 D51 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_L5 D4D 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_L6 D49 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_P1 D45 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_P2 D41 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_P3 D3D 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_P4 D39 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_P5 D35 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_bp D71 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_cp D21 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+__pcstackBANK1 100 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@__xc8_float_word 1B8 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+__Hbank0 0 0 ABS 0 bank0 dist/default/production\SENSOR_IR.X.production.o
+__Hbank1 0 0 ABS 0 bank1 dist/default/production\SENSOR_IR.X.production.o
+__Hbank2 0 0 ABS 0 bank2 dist/default/production\SENSOR_IR.X.production.o
+__Hbank3 0 0 ABS 0 bank3 dist/default/production\SENSOR_IR.X.production.o
+__Hbank4 0 0 ABS 0 bank4 dist/default/production\SENSOR_IR.X.production.o
+__Hbank5 0 0 ABS 0 bank5 dist/default/production\SENSOR_IR.X.production.o
+__Hbank6 0 0 ABS 0 bank6 dist/default/production\SENSOR_IR.X.production.o
+__Hbank7 0 0 ABS 0 bank7 dist/default/production\SENSOR_IR.X.production.o
+__Hbank8 0 0 ABS 0 bank8 dist/default/production\SENSOR_IR.X.production.o
+__Hbank9 0 0 ABS 0 bank9 dist/default/production\SENSOR_IR.X.production.o
+__Hcinit 0 0 ABS 0 cinit dist/default/production\SENSOR_IR.X.production.o
+__Hconst 0 0 CONST 0 const dist/default/production\SENSOR_IR.X.production.o
+__Hidata 0 0 CODE 0 idata dist/default/production\SENSOR_IR.X.production.o
+__Hidloc 200008 0 IDLOC 0 idloc dist/default/production\SENSOR_IR.X.production.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/production\SENSOR_IR.X.production.o
+__Hparam 0 0 COMRAM 1 rparam dist/default/production\SENSOR_IR.X.production.o
+__Hrdata 0 0 COMRAM 1 rdata dist/default/production\SENSOR_IR.X.production.o
+__Hstack 0 0 STACK 2 stack dist/default/production\SENSOR_IR.X.production.o
+__Htext0 0 0 ABS 0 text0 dist/default/production\SENSOR_IR.X.production.o
+__Htext1 0 0 ABS 0 text1 dist/default/production\SENSOR_IR.X.production.o
+__Htext2 0 0 ABS 0 text2 dist/default/production\SENSOR_IR.X.production.o
+__Htext3 0 0 ABS 0 text3 dist/default/production\SENSOR_IR.X.production.o
+__Htext4 0 0 ABS 0 text4 dist/default/production\SENSOR_IR.X.production.o
+__Htext5 0 0 ABS 0 text5 dist/default/production\SENSOR_IR.X.production.o
+__Htext6 0 0 ABS 0 text6 dist/default/production\SENSOR_IR.X.production.o
+__Htext7 0 0 ABS 0 text7 dist/default/production\SENSOR_IR.X.production.o
+__Htext8 0 0 ABS 0 text8 dist/default/production\SENSOR_IR.X.production.o
+__Htext9 0 0 ABS 0 text9 dist/default/production\SENSOR_IR.X.production.o
+__Hbank10 0 0 ABS 0 bank10 dist/default/production\SENSOR_IR.X.production.o
+__Hbank11 0 0 ABS 0 bank11 dist/default/production\SENSOR_IR.X.production.o
+__Hbank12 0 0 ABS 0 bank12 dist/default/production\SENSOR_IR.X.production.o
+__size_of___xxtofl 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\SENSOR_IR.X.production.o
+__Hbigram 0 0 ABS 0 bigram dist/default/production\SENSOR_IR.X.production.o
+__smallconst D00 0 SMALLCONST 0 smallconst C:\Users\araba\AppData\Local\Temp\sa84.o
+__end_ofsqrtf@tiny D15 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+___xxtofl@arg B 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___xxtofl@exp A 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___xxtofl@val 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__Hcomram 0 0 ABS 0 comram dist/default/production\SENSOR_IR.X.production.o
+__Hconfig 30000E 0 CONFIG 0 config dist/default/production\SENSOR_IR.X.production.o
+_ADC_PROCESS 5342 0 CODE 0 text23 dist/default/production\SENSOR_IR.X.production.o
+__end_of_CONVERT_A_D 531A 0 CODE 0 text24 dist/default/production\SENSOR_IR.X.production.o
+__Lbank0 0 0 ABS 0 bank0 dist/default/production\SENSOR_IR.X.production.o
+__Lbank1 0 0 ABS 0 bank1 dist/default/production\SENSOR_IR.X.production.o
+__Lbank2 0 0 ABS 0 bank2 dist/default/production\SENSOR_IR.X.production.o
+__Lbank3 0 0 ABS 0 bank3 dist/default/production\SENSOR_IR.X.production.o
+__Lbank4 0 0 ABS 0 bank4 dist/default/production\SENSOR_IR.X.production.o
+__Lbank5 0 0 ABS 0 bank5 dist/default/production\SENSOR_IR.X.production.o
+__Lbank6 0 0 ABS 0 bank6 dist/default/production\SENSOR_IR.X.production.o
+__Lbank7 0 0 ABS 0 bank7 dist/default/production\SENSOR_IR.X.production.o
+__Lbank8 0 0 ABS 0 bank8 dist/default/production\SENSOR_IR.X.production.o
+__Lbank9 0 0 ABS 0 bank9 dist/default/production\SENSOR_IR.X.production.o
+__Lcinit 0 0 ABS 0 cinit dist/default/production\SENSOR_IR.X.production.o
+__Lconst 0 0 CONST 0 const dist/default/production\SENSOR_IR.X.production.o
+__Lidata 0 0 CODE 0 idata dist/default/production\SENSOR_IR.X.production.o
+__Lidloc 200000 0 IDLOC 0 idloc dist/default/production\SENSOR_IR.X.production.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\SENSOR_IR.X.production.o
+__Lparam 0 0 COMRAM 1 rparam dist/default/production\SENSOR_IR.X.production.o
+__Lrdata 0 0 COMRAM 1 rdata dist/default/production\SENSOR_IR.X.production.o
+__Lstack 0 0 STACK 2 stack dist/default/production\SENSOR_IR.X.production.o
+__Ltext0 0 0 ABS 0 text0 dist/default/production\SENSOR_IR.X.production.o
+__Ltext1 0 0 ABS 0 text1 dist/default/production\SENSOR_IR.X.production.o
+__Ltext2 0 0 ABS 0 text2 dist/default/production\SENSOR_IR.X.production.o
+__Ltext3 0 0 ABS 0 text3 dist/default/production\SENSOR_IR.X.production.o
+__Ltext4 0 0 ABS 0 text4 dist/default/production\SENSOR_IR.X.production.o
+__Ltext5 0 0 ABS 0 text5 dist/default/production\SENSOR_IR.X.production.o
+__Ltext6 0 0 ABS 0 text6 dist/default/production\SENSOR_IR.X.production.o
+__Ltext7 0 0 ABS 0 text7 dist/default/production\SENSOR_IR.X.production.o
+__Ltext8 0 0 ABS 0 text8 dist/default/production\SENSOR_IR.X.production.o
+__Ltext9 0 0 ABS 0 text9 dist/default/production\SENSOR_IR.X.production.o
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/production\SENSOR_IR.X.production.o
+sqrtf@__xc8_float_word 6C 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+___flmul@grs 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\SENSOR_IR.X.production.o
+__Habs1 0 0 ABS 0 abs1 dist/default/production\SENSOR_IR.X.production.o
+__Hdata 0 0 ABS 0 data dist/default/production\SENSOR_IR.X.production.o
+__Hinit 4 0 CODE 0 init dist/default/production\SENSOR_IR.X.production.o
+__Hrbit 0 0 COMRAM 1 rbit dist/default/production\SENSOR_IR.X.production.o
+__Hrbss 0 0 COMRAM 1 rbss dist/default/production\SENSOR_IR.X.production.o
+__Htemp 0 0 COMRAM 1 temp dist/default/production\SENSOR_IR.X.production.o
+__Htext 0 0 ABS 0 text dist/default/production\SENSOR_IR.X.production.o
+__Labs1 0 0 ABS 0 abs1 dist/default/production\SENSOR_IR.X.production.o
+__Ldata 0 0 ABS 0 data dist/default/production\SENSOR_IR.X.production.o
+__Linit 0 0 CODE 0 init dist/default/production\SENSOR_IR.X.production.o
+__Lrbit 0 0 COMRAM 1 rbit dist/default/production\SENSOR_IR.X.production.o
+__Lrbss 0 0 COMRAM 1 rbss dist/default/production\SENSOR_IR.X.production.o
+__Ltemp 0 0 COMRAM 1 temp dist/default/production\SENSOR_IR.X.production.o
+__Ltext 0 0 ABS 0 text dist/default/production\SENSOR_IR.X.production.o
+__end_of_ivln2_h D75 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_ivln2_l D19 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+___flge 4ED0 0 CODE 0 text13 dist/default/production\SENSOR_IR.X.production.o
+___wmul 52B4 0 CODE 0 text5 dist/default/production\SENSOR_IR.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+__LcstackBANK1 0 0 ABS 0 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__Hintret 0 0 ABS 0 intret dist/default/production\SENSOR_IR.X.production.o
+__Hirdata 0 0 CODE 0 irdata dist/default/production\SENSOR_IR.X.production.o
+_LSB A3 0 BANK0 1 bssBANK0 dist/default/production\SENSOR_IR.X.production.o
+_MSB A2 0 BANK0 1 bssBANK0 dist/default/production\SENSOR_IR.X.production.o
+_TAD 5D 0 COMRAM 1 bssCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__S0 30000E 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__S1 1BC 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__S2 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__CFG_OSC$IRCIO67 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__CFG_PBADEN$OFF 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\SENSOR_IR.X.production.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\SENSOR_IR.X.production.o
+___xxtofl 49DC 0 CODE 0 text17 dist/default/production\SENSOR_IR.X.production.o
+__end_of_lg2 D31 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_ovt D25 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__size_of_VOLTAGE_REF 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Lintentry 0 0 ABS 0 intentry dist/default/production\SENSOR_IR.X.production.o
+__Hramtop D00 0 RAM 0 ramtop dist/default/production\SENSOR_IR.X.production.o
+__size_of_INIT_ADC 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Hrparam 0 0 COMRAM 1 rparam dist/default/production\SENSOR_IR.X.production.o
+__end_of___xxtofl 4B90 0 CODE 0 text17 dist/default/production\SENSOR_IR.X.production.o
+__activetblptr 1 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Hstruct 0 0 COMRAM 1 struct dist/default/production\SENSOR_IR.X.production.o
+__size_of___flge 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__size_of___wmul 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\SENSOR_IR.X.production.o
+__Htext10 0 0 ABS 0 text10 dist/default/production\SENSOR_IR.X.production.o
+__Htext11 0 0 ABS 0 text11 dist/default/production\SENSOR_IR.X.production.o
+__Htext12 0 0 ABS 0 text12 dist/default/production\SENSOR_IR.X.production.o
+__Htext13 0 0 ABS 0 text13 dist/default/production\SENSOR_IR.X.production.o
+__Htext14 0 0 ABS 0 text14 dist/default/production\SENSOR_IR.X.production.o
+__Htext15 0 0 ABS 0 text15 dist/default/production\SENSOR_IR.X.production.o
+__Htext16 0 0 ABS 0 text16 dist/default/production\SENSOR_IR.X.production.o
+__Htext17 0 0 ABS 0 text17 dist/default/production\SENSOR_IR.X.production.o
+__Htext18 0 0 ABS 0 text18 dist/default/production\SENSOR_IR.X.production.o
+__Htext19 0 0 ABS 0 text19 dist/default/production\SENSOR_IR.X.production.o
+__Htext20 0 0 ABS 0 text20 dist/default/production\SENSOR_IR.X.production.o
+__Htext21 0 0 ABS 0 text21 dist/default/production\SENSOR_IR.X.production.o
+__Htext22 0 0 ABS 0 text22 dist/default/production\SENSOR_IR.X.production.o
+__Htext23 0 0 ABS 0 text23 dist/default/production\SENSOR_IR.X.production.o
+__Htext24 0 0 ABS 0 text24 dist/default/production\SENSOR_IR.X.production.o
+__end_of_INIT_UART 5342 0 CODE 0 text3 dist/default/production\SENSOR_IR.X.production.o
+fabsf@u 5 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+fabsf@x 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__size_of_INIT_UART 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+___fladd@signs D 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__ptext10 D80 0 CODE 0 text10 dist/default/production\SENSOR_IR.X.production.o
+__ptext11 3664 0 CODE 0 text11 dist/default/production\SENSOR_IR.X.production.o
+__ptext12 52DA 0 CODE 0 text12 dist/default/production\SENSOR_IR.X.production.o
+__ptext13 4ED0 0 CODE 0 text13 dist/default/production\SENSOR_IR.X.production.o
+__ptext14 47A8 0 CODE 0 text14 dist/default/production\SENSOR_IR.X.production.o
+__ptext15 3FE4 0 CODE 0 text15 dist/default/production\SENSOR_IR.X.production.o
+__ptext16 51FE 0 CODE 0 text16 dist/default/production\SENSOR_IR.X.production.o
+__ptext17 49DC 0 CODE 0 text17 dist/default/production\SENSOR_IR.X.production.o
+__ptext18 5180 0 CODE 0 text18 dist/default/production\SENSOR_IR.X.production.o
+__ptext19 3B24 0 CODE 0 text19 dist/default/production\SENSOR_IR.X.production.o
+__ptext20 51C6 0 CODE 0 text20 dist/default/production\SENSOR_IR.X.production.o
+__ptext21 440E 0 CODE 0 text21 dist/default/production\SENSOR_IR.X.production.o
+__ptext22 4DCA 0 CODE 0 text22 dist/default/production\SENSOR_IR.X.production.o
+__ptext23 5342 0 CODE 0 text23 dist/default/production\SENSOR_IR.X.production.o
+__ptext24 52FC 0 CODE 0 text24 dist/default/production\SENSOR_IR.X.production.o
+__size_of_RESOLUTION 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+___fladd 3B24 0 CODE 0 text19 dist/default/production\SENSOR_IR.X.production.o
+___fldiv 440E 0 CODE 0 text21 dist/default/production\SENSOR_IR.X.production.o
+___flmul 3FE4 0 CODE 0 text15 dist/default/production\SENSOR_IR.X.production.o
+___flneg 51C6 0 CODE 0 text20 dist/default/production\SENSOR_IR.X.production.o
+___flsub 5180 0 CODE 0 text18 dist/default/production\SENSOR_IR.X.production.o
+___fltol 4DCA 0 CODE 0 text22 dist/default/production\SENSOR_IR.X.production.o
+__Lbank10 0 0 ABS 0 bank10 dist/default/production\SENSOR_IR.X.production.o
+__Lbank11 0 0 ABS 0 bank11 dist/default/production\SENSOR_IR.X.production.o
+__Lbank12 0 0 ABS 0 bank12 dist/default/production\SENSOR_IR.X.production.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\SENSOR_IR.X.production.o
+__Lbigram 0 0 ABS 0 bigram dist/default/production\SENSOR_IR.X.production.o
+?_nanf 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+?_powf 88 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+__Lcomram 0 0 ABS 0 comram dist/default/production\SENSOR_IR.X.production.o
+__Lconfig 300000 0 CONFIG 0 config dist/default/production\SENSOR_IR.X.production.o
+___wmul@multiplier 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+_RX_Data 5F 0 COMRAM 1 bssCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___fldiv@grs 45 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___fldiv@rem 3E 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+_INIT_UART 5330 0 CODE 0 text3 dist/default/production\SENSOR_IR.X.production.o
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/production\SENSOR_IR.X.production.o
+sqrtf@i 68 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+sqrtf@m 7C 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+sqrtf@q 70 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+sqrtf@r 80 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+sqrtf@s 64 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+sqrtf@t 74 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+sqrtf@x 3E 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+sqrtf@z 78 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+ACTIVE_AN@Port 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__Lfardata 0 0 FARRAM 0 fardata dist/default/production\SENSOR_IR.X.production.o
+sqrtf@ix 84 0 BANK0 1 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+___fldiv@new_exp 43 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+_scalbnf 47A8 0 CODE 0 text14 dist/default/production\SENSOR_IR.X.production.o
+powf@yisint 150 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+stackhi CFF 0 ABS 0 - C:\Users\araba\AppData\Local\Temp\sa84.o
+stacklo 1BC 0 ABS 0 - C:\Users\araba\AppData\Local\Temp\sa84.o
+__Lintcode 0 0 CODE 0 intcode dist/default/production\SENSOR_IR.X.production.o
+_INIT_ADC 508C 0 CODE 0 text4 dist/default/production\SENSOR_IR.X.production.o
+__Lintret 0 0 ABS 0 intret dist/default/production\SENSOR_IR.X.production.o
+__Lirdata 0 0 CODE 0 irdata dist/default/production\SENSOR_IR.X.production.o
+_ADCON0bits FC2 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+_ADCON1bits FC1 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+_ADCON2bits FC0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+___fladd@grs 10 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Lspace_0 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Lspace_1 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Lspace_2 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+INIT_ADC@Resolution 8 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__pbssCOMRAM 59 0 COMRAM 1 bssCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__end_of_DISTANCIA 508C 0 CODE 0 text9 dist/default/production\SENSOR_IR.X.production.o
+__size_of_CONVERT_A_D 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\SENSOR_IR.X.production.o
+__HcstackBANK1 0 0 ABS 0 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+___flge@ff1 32 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___flge@ff2 36 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__end_of_INIT_ADC 5130 0 CODE 0 text4 dist/default/production\SENSOR_IR.X.production.o
+_PIR1bits F9E 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+_analog_value A0 0 BANK0 1 bssBANK0 dist/default/production\SENSOR_IR.X.production.o
+__size_of_DISTANCIA 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+main@Distancia_cm 58 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+RESOLUTION@Bits 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___fltol@exp1 A 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+end_of_initialization 52A6 0 CODE 0 cinit dist/default/production\SENSOR_IR.X.production.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\SENSOR_IR.X.production.o
+__Hintentry 0 0 ABS 0 intentry dist/default/production\SENSOR_IR.X.production.o
+powf@ax 170 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@hx 160 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@hy 184 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@is 190 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@ix 1A8 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@iy 198 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@s2 18C 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@t1 180 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@t2 11C 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@sn 188 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+powf@y1 128 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+?___fladd 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+?___fldiv 32 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+?___flmul 11 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+?___flneg 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+?___flsub 2A 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+?___fltol 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\SENSOR_IR.X.production.o
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\SENSOR_IR.X.production.o
+_DISTANCIA 4FD4 0 CODE 0 text9 dist/default/production\SENSOR_IR.X.production.o
+__Lramtop D00 0 RAM 0 ramtop dist/default/production\SENSOR_IR.X.production.o
+__Lrparam 0 0 COMRAM 1 rparam dist/default/production\SENSOR_IR.X.production.o
+__pcinit 528E 0 CODE 0 cinit dist/default/production\SENSOR_IR.X.production.o
+___flneg@f1 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__ptext0 5130 0 CODE 0 text0 dist/default/production\SENSOR_IR.X.production.o
+__ptext1 531A 0 CODE 0 text1 dist/default/production\SENSOR_IR.X.production.o
+__ptext2 4CB0 0 CODE 0 text2 dist/default/production\SENSOR_IR.X.production.o
+__ptext3 5330 0 CODE 0 text3 dist/default/production\SENSOR_IR.X.production.o
+__ptext4 508C 0 CODE 0 text4 dist/default/production\SENSOR_IR.X.production.o
+__ptext5 52B4 0 CODE 0 text5 dist/default/production\SENSOR_IR.X.production.o
+__ptext6 5232 0 CODE 0 text6 dist/default/production\SENSOR_IR.X.production.o
+__ptext7 5262 0 CODE 0 text7 dist/default/production\SENSOR_IR.X.production.o
+__ptext8 4B90 0 CODE 0 text8 dist/default/production\SENSOR_IR.X.production.o
+__ptext9 4FD4 0 CODE 0 text9 dist/default/production\SENSOR_IR.X.production.o
+__Lstruct 0 0 COMRAM 1 struct dist/default/production\SENSOR_IR.X.production.o
+__Ltext10 0 0 ABS 0 text10 dist/default/production\SENSOR_IR.X.production.o
+__Ltext11 0 0 ABS 0 text11 dist/default/production\SENSOR_IR.X.production.o
+__Ltext12 0 0 ABS 0 text12 dist/default/production\SENSOR_IR.X.production.o
+__Ltext13 0 0 ABS 0 text13 dist/default/production\SENSOR_IR.X.production.o
+__Ltext14 0 0 ABS 0 text14 dist/default/production\SENSOR_IR.X.production.o
+__Ltext15 0 0 ABS 0 text15 dist/default/production\SENSOR_IR.X.production.o
+__Ltext16 0 0 ABS 0 text16 dist/default/production\SENSOR_IR.X.production.o
+__Ltext17 0 0 ABS 0 text17 dist/default/production\SENSOR_IR.X.production.o
+__Ltext18 0 0 ABS 0 text18 dist/default/production\SENSOR_IR.X.production.o
+__Ltext19 0 0 ABS 0 text19 dist/default/production\SENSOR_IR.X.production.o
+__Ltext20 0 0 ABS 0 text20 dist/default/production\SENSOR_IR.X.production.o
+__Ltext21 0 0 ABS 0 text21 dist/default/production\SENSOR_IR.X.production.o
+__Ltext22 0 0 ABS 0 text22 dist/default/production\SENSOR_IR.X.production.o
+__Ltext23 0 0 ABS 0 text23 dist/default/production\SENSOR_IR.X.production.o
+__Ltext24 0 0 ABS 0 text24 dist/default/production\SENSOR_IR.X.production.o
+__ramtop D00 0 RAM 0 ramtop C:\Users\araba\AppData\Local\Temp\sa84.o
+?_scalbnf 2A 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__Lpowerup 0 0 CODE 0 powerup dist/default/production\SENSOR_IR.X.production.o
+?___xxtofl 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\SENSOR_IR.X.production.o
+___fladd@aexp E 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___fladd@bexp F 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+___fltol@sign1 9 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__psmallconst D00 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\SENSOR_IR.X.production.o
+scalbnf@n 2E 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+scalbnf@u 34 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+scalbnf@x 2A 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+scalbnf@y 38 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__end_of_ADC_PROCESS 534A 0 CODE 0 text23 dist/default/production\SENSOR_IR.X.production.o
+___fltol@f1 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+_powf$1233 1A4 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+_powf$1234 154 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+_powf$1235 148 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+_powf$1236 194 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+_powf$1237 138 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+_powf$1238 100 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+_powf$1239 104 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+_powf$1240 158 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+_powf$1241 13C 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+_powf$1242 140 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+_powf$1243 108 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+_powf$1244 10C 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+_powf$1245 110 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+_powf$1246 114 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+_powf$1247 118 0 BANK1 1 cstackBANK1 dist/default/production\SENSOR_IR.X.production.o
+___param_bank 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__CFG_WDT$OFF 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\SENSOR_IR.X.production.o
+__end_of__initialization 52A6 0 CODE 0 cinit dist/default/production\SENSOR_IR.X.production.o
+__Libigdata 0 0 CODE 0 ibigdata dist/default/production\SENSOR_IR.X.production.o
+?_fabsf 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+?_sqrtf 3E 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__Lclrtext 0 0 ABS 0 clrtext dist/default/production\SENSOR_IR.X.production.o
+_VOLTAGE_REF 5232 0 CODE 0 text6 dist/default/production\SENSOR_IR.X.production.o
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+_TXSTAbits FAC 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+VOLTAGE_REF@ON_OFF 1 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__end_of_cp_h D7D 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_cp_l D79 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_dp_h D11 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_dp_l D09 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_huge D65 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_main 5180 0 CODE 0 text0 dist/default/production\SENSOR_IR.X.production.o
+__end_of_nanf 52FC 0 CODE 0 text12 dist/default/production\SENSOR_IR.X.production.o
+__end_of_powf 3664 0 CODE 0 text10 dist/default/production\SENSOR_IR.X.production.o
+__end_of_tiny D61 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_fabsf 5232 0 CODE 0 text16 dist/default/production\SENSOR_IR.X.production.o
+__end_of_ivln2 D1D 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_lg2_h D2D 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__end_of_lg2_l D29 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+_RCREG FAE 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+_RCSTA FAB 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+_SPBRG FAF 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+_TRISD F95 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+_TXREG FAD 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+_TXSTA FAC 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__end_of_sqrtf 3B24 0 CODE 0 text11 dist/default/production\SENSOR_IR.X.production.o
+__end_of_two24 D69 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__HRAM 0 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Hbss 0 0 RAM 1 bss dist/default/production\SENSOR_IR.X.production.o
+__Hram 0 0 ABS 0 ram dist/default/production\SENSOR_IR.X.production.o
+__Hsfr 0 0 ABS 0 sfr dist/default/production\SENSOR_IR.X.production.o
+__LRAM 1 0 ABS 0 - dist/default/production\SENSOR_IR.X.production.o
+__Lbss 0 0 RAM 1 bss dist/default/production\SENSOR_IR.X.production.o
+__Lram 0 0 ABS 0 ram dist/default/production\SENSOR_IR.X.production.o
+__Lsfr 0 0 ABS 0 sfr dist/default/production\SENSOR_IR.X.production.o
+_errno 59 0 COMRAM 1 bssCOMRAM dist/default/production\SENSOR_IR.X.production.o
+_fabsf 51FE 0 CODE 0 text16 dist/default/production\SENSOR_IR.X.production.o
+fabsf@F463 9C 0 BANK0 1 bssBANK0 dist/default/production\SENSOR_IR.X.production.o
+_sqrtf 3664 0 CODE 0 text11 dist/default/production\SENSOR_IR.X.production.o
+__initialization 528E 0 CODE 0 cinit dist/default/production\SENSOR_IR.X.production.o
+___xxtofl@sign 9 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__pbssBANK0 9C 0 BANK0 1 bssBANK0 dist/default/production\SENSOR_IR.X.production.o
+__Hfardata 0 0 FARRAM 0 fardata dist/default/production\SENSOR_IR.X.production.o
+___wmul@product 5 0 COMRAM 1 cstackCOMRAM dist/default/production\SENSOR_IR.X.production.o
+__Hsmallconst D80 0 SMALLCONST 0 smallconst dist/default/production\SENSOR_IR.X.production.o
+__Lifardata 0 0 CODE 0 ifardata dist/default/production\SENSOR_IR.X.production.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\SENSOR_IR.X.production.o
+__Hintcode 0 0 CODE 0 intcode dist/default/production\SENSOR_IR.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+idloc 0 200000 200000 8 1
+text10 0 D80 D80 45CA 1
+cstackCOMRAM 1 1 1 5F 1
+cstackBANK0 1 60 60 44 1
+cstackBANK1 1 100 100 BC 1
+reset_vec 0 0 0 4 1
+smallconst 0 D00 D00 80 1
+config 0 300000 300000 E 1
+# OTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by OTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
