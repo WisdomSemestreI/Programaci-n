@@ -1,0 +1,153 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4585 ]
+[d frameptr 4065 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"5 D:\MPLABXProjects\SPARC\MOTORES DC.X\GPIO.c
+[v _INIT_GPIO INIT_GPIO `(v  1 e 1 0 ]
+"5 D:\MPLABXProjects\SPARC\MOTORES DC.X\MOTORES_DC.c
+[v _INIT_DC INIT_DC `(v  1 e 1 0 ]
+"11
+[v _MOV_R_DC MOV_R_DC `(v  1 e 1 0 ]
+"23
+[v _MOV_STOP_DC MOV_STOP_DC `(v  1 e 1 0 ]
+"16 D:\MPLABXProjects\SPARC\MOTORES DC.X\Motores_DC_Uso.c
+[v _main main `(v  1 e 1 0 ]
+[s S64 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"26694 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h
+[s S73 . 1 `uc 1 LD0 1 0 :1:0 
+`uc 1 LD1 1 0 :1:1 
+`uc 1 LD2 1 0 :1:2 
+`uc 1 LD3 1 0 :1:3 
+`uc 1 LD4 1 0 :1:4 
+`uc 1 LD5 1 0 :1:5 
+`uc 1 LD6 1 0 :1:6 
+`uc 1 LD7 1 0 :1:7 
+]
+[u S82 . 1 `S64 1 . 1 0 `S73 1 . 1 0 ]
+[v _LATDbits LATDbits `VES82  1 e 1 @3980 ]
+[s S170 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"27085
+[s S179 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+[u S188 . 1 `S170 1 . 1 0 `S179 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES188  1 e 1 @3987 ]
+[s S24 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"27529
+[s S33 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+[u S42 . 1 `S24 1 . 1 0 `S33 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES42  1 e 1 @3989 ]
+"29437
+[v _CMCON CMCON `VEuc  1 e 1 @4020 ]
+[s S126 . 1 `uc 1 CVR 1 0 :4:0 
+`uc 1 CVRSS 1 0 :1:4 
+`uc 1 CVRR 1 0 :1:5 
+`uc 1 CVROE 1 0 :1:6 
+`uc 1 CVREN 1 0 :1:7 
+]
+"29552
+[s S132 . 1 `uc 1 CVR0 1 0 :1:0 
+`uc 1 CVR1 1 0 :1:1 
+`uc 1 CVR2 1 0 :1:2 
+`uc 1 CVR3 1 0 :1:3 
+`uc 1 CVREF 1 0 :1:4 
+]
+[s S138 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 CVROEN 1 0 :1:6 
+]
+[u S141 . 1 `S126 1 . 1 0 `S132 1 . 1 0 `S138 1 . 1 0 ]
+[v _CVRCONbits CVRCONbits `VES141  1 e 1 @4021 ]
+"30189
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"31596
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"36226
+[v _RB0 RB0 `VEb  1 e 0 @31752 ]
+"16 D:\MPLABXProjects\SPARC\MOTORES DC.X\Motores_DC_Uso.c
+[v _main main `(v  1 e 1 0 ]
+{
+"36
+} 0
+"23 D:\MPLABXProjects\SPARC\MOTORES DC.X\MOTORES_DC.c
+[v _MOV_STOP_DC MOV_STOP_DC `(v  1 e 1 0 ]
+{
+"28
+} 0
+"11
+[v _MOV_R_DC MOV_R_DC `(v  1 e 1 0 ]
+{
+"15
+} 0
+"5 D:\MPLABXProjects\SPARC\MOTORES DC.X\GPIO.c
+[v _INIT_GPIO INIT_GPIO `(v  1 e 1 0 ]
+{
+"12
+} 0
+"5 D:\MPLABXProjects\SPARC\MOTORES DC.X\MOTORES_DC.c
+[v _INIT_DC INIT_DC `(v  1 e 1 0 ]
+{
+"9
+} 0

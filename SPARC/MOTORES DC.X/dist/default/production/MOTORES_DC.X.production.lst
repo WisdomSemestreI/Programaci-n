@@ -1,0 +1,588 @@
+
+
+Microchip MPLAB XC8 Assembler V2.10 build 88905656 
+                                                                                               Mon Nov 25 11:17:12 2019
+
+Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
+     1                           	processor	18F4585
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	flic
+     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     7                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     8                           	psect	text1,global,reloc=2,class=CODE,delta=1
+     9                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    12                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    13                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    14  0000                     
+    15                           ; Version 2.10
+    16                           ; Generated 31/07/2019 GMT
+    17                           ; 
+    18                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    19                           ; All rights reserved.
+    20                           ; 
+    21                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    22                           ; 
+    23                           ; Redistribution and use in source and binary forms, with or without modification, are
+    24                           ; permitted provided that the following conditions are met:
+    25                           ; 
+    26                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    27                           ;        conditions and the following disclaimer.
+    28                           ; 
+    29                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    30                           ;        of conditions and the following disclaimer in the documentation and/or other
+    31                           ;        materials provided with the distribution.
+    32                           ; 
+    33                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    34                           ;        software without specific prior written permission.
+    35                           ; 
+    36                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    37                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    38                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    39                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    40                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    41                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    42                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    43                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    44                           ; 
+    45                           ; 
+    46                           ; Code-generator required, PIC18F4585 Definitions
+    47                           ; 
+    48                           ; SFR Addresses
+    49  0000                     _TRISBbits	set	3987
+    50  0000                     _ADCON1	set	4033
+    51  0000                     _CVRCONbits	set	4021
+    52  0000                     _CMCON	set	4020
+    53  0000                     _OSCCON	set	4051
+    54  0000                     _LATDbits	set	3980
+    55  0000                     _TRISDbits	set	3989
+    56  0000                     _RB0	set	31752
+    57                           
+    58                           ; #config settings
+    59  0000                     
+    60                           	psect	cinit
+    61  00BFA8                     __pcinit:
+    62                           	opt callstack 0
+    63  00BFA8                     start_initialization:
+    64                           	opt callstack 0
+    65  00BFA8                     __initialization:
+    66                           	opt callstack 0
+    67  00BFA8                     end_of_initialization:
+    68                           	opt callstack 0
+    69  00BFA8                     __end_of__initialization:
+    70                           	opt callstack 0
+    71  00BFA8  0100               	movlb	0
+    72  00BFAA  EFEA  F05F         	goto	_main	;jump to C main() function
+    73                           
+    74                           	psect	cstackCOMRAM
+    75  000000                     __pcstackCOMRAM:
+    76                           	opt callstack 0
+    77  000000                     
+    78                           ; 1 bytes @ 0x0
+    79 ;;
+    80 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    81 ;;
+    82 ;; *************** function _main *****************
+    83 ;; Defined at:
+    84 ;;		line 16 in file "Motores_DC_Uso.c"
+    85 ;; Parameters:    Size  Location     Type
+    86 ;;		None
+    87 ;; Auto vars:     Size  Location     Type
+    88 ;;		None
+    89 ;; Return value:  Size  Location     Type
+    90 ;;                  1    wreg      void 
+    91 ;; Registers used:
+    92 ;;		wreg, status,2, cstack
+    93 ;; Tracked objects:
+    94 ;;		On entry : 0/0
+    95 ;;		On exit  : 0/0
+    96 ;;		Unchanged: 0/0
+    97 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+    98 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+    99 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   100 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   101 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   102 ;;Total ram usage:        0 bytes
+   103 ;; Hardware stack levels required when called:    1
+   104 ;; This function calls:
+   105 ;;		_INIT_DC
+   106 ;;		_INIT_GPIO
+   107 ;;		_MOV_R_DC
+   108 ;;		_MOV_STOP_DC
+   109 ;; This function is called by:
+   110 ;;		Startup code after reset
+   111 ;; This function uses a non-reentrant model
+   112 ;;
+   113                           
+   114                           	psect	text0
+   115  00BFD4                     __ptext0:
+   116                           	opt callstack 0
+   117  00BFD4                     _main:
+   118                           	opt callstack 30
+   119  00BFD4                     
+   120                           ;Motores_DC_Uso.c: 19:     return;
+   121  00BFD4  ECE3  F05F         	call	_INIT_GPIO	;wreg free
+   122  00BFD8                     
+   123                           ;Motores_DC_Uso.c: 20: }
+   124  00BFD8  ECD7  F05F         	call	_INIT_DC	;wreg free
+   125  00BFDC  8093               	bsf	147,0,c	;volatile
+   126  00BFDE                     l763:
+   127  00BFDE  A081               	btfss	3969,0,c	;volatile
+   128  00BFE0  EFF4  F05F         	goto	u11
+   129  00BFE4  EFF6  F05F         	goto	u10
+   130  00BFE8                     u11:
+   131  00BFE8  EFFA  F05F         	goto	l767
+   132  00BFEC                     u10:
+   133  00BFEC  ECDB  F05F         	call	_MOV_R_DC	;wreg free
+   134  00BFF0  EFEF  F05F         	goto	l763
+   135  00BFF4                     l767:
+   136  00BFF4  ECDF  F05F         	call	_MOV_STOP_DC	;wreg free
+   137  00BFF8  EFEF  F05F         	goto	l763
+   138  00BFFC  EF00  F000         	goto	start
+   139  00C000                     __end_of_main:
+   140                           	opt callstack 0
+   141                           
+   142 ;; *************** function _MOV_STOP_DC *****************
+   143 ;; Defined at:
+   144 ;;		line 23 in file "MOTORES_DC.c"
+   145 ;; Parameters:    Size  Location     Type
+   146 ;;		None
+   147 ;; Auto vars:     Size  Location     Type
+   148 ;;		None
+   149 ;; Return value:  Size  Location     Type
+   150 ;;                  1    wreg      void 
+   151 ;; Registers used:
+   152 ;;		None
+   153 ;; Tracked objects:
+   154 ;;		On entry : 0/0
+   155 ;;		On exit  : 0/0
+   156 ;;		Unchanged: 0/0
+   157 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   158 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   159 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   160 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   161 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   162 ;;Total ram usage:        0 bytes
+   163 ;; Hardware stack levels used:    1
+   164 ;; This function calls:
+   165 ;;		Nothing
+   166 ;; This function is called by:
+   167 ;;		_main
+   168 ;; This function uses a non-reentrant model
+   169 ;;
+   170                           
+   171                           	psect	text1
+   172  00BFBE                     __ptext1:
+   173                           	opt callstack 0
+   174  00BFBE                     _MOV_STOP_DC:
+   175                           	opt callstack 30
+   176  00BFBE  988C               	bcf	140,4,c	;volatile
+   177  00BFC0  9C8C               	bcf	140,6,c	;volatile
+   178  00BFC2  9A8C               	bcf	140,5,c	;volatile
+   179  00BFC4  0012               	return		;funcret
+   180  00BFC6                     __end_of_MOV_STOP_DC:
+   181                           	opt callstack 0
+   182                           
+   183 ;; *************** function _MOV_R_DC *****************
+   184 ;; Defined at:
+   185 ;;		line 11 in file "MOTORES_DC.c"
+   186 ;; Parameters:    Size  Location     Type
+   187 ;;		None
+   188 ;; Auto vars:     Size  Location     Type
+   189 ;;		None
+   190 ;; Return value:  Size  Location     Type
+   191 ;;                  1    wreg      void 
+   192 ;; Registers used:
+   193 ;;		None
+   194 ;; Tracked objects:
+   195 ;;		On entry : 0/0
+   196 ;;		On exit  : 0/0
+   197 ;;		Unchanged: 0/0
+   198 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   199 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   200 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   201 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   202 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   203 ;;Total ram usage:        0 bytes
+   204 ;; Hardware stack levels used:    1
+   205 ;; This function calls:
+   206 ;;		Nothing
+   207 ;; This function is called by:
+   208 ;;		_main
+   209 ;; This function uses a non-reentrant model
+   210 ;;
+   211                           
+   212                           	psect	text2
+   213  00BFB6                     __ptext2:
+   214                           	opt callstack 0
+   215  00BFB6                     _MOV_R_DC:
+   216                           	opt callstack 30
+   217  00BFB6  888C               	bsf	140,4,c	;volatile
+   218  00BFB8  8A8C               	bsf	140,5,c	;volatile
+   219  00BFBA  9C8C               	bcf	140,6,c	;volatile
+   220  00BFBC  0012               	return		;funcret
+   221  00BFBE                     __end_of_MOV_R_DC:
+   222                           	opt callstack 0
+   223                           
+   224 ;; *************** function _INIT_GPIO *****************
+   225 ;; Defined at:
+   226 ;;		line 5 in file "GPIO.c"
+   227 ;; Parameters:    Size  Location     Type
+   228 ;;		None
+   229 ;; Auto vars:     Size  Location     Type
+   230 ;;		None
+   231 ;; Return value:  Size  Location     Type
+   232 ;;                  1    wreg      void 
+   233 ;; Registers used:
+   234 ;;		wreg, status,2
+   235 ;; Tracked objects:
+   236 ;;		On entry : 0/0
+   237 ;;		On exit  : 0/0
+   238 ;;		Unchanged: 0/0
+   239 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   240 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   241 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   242 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   243 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   244 ;;Total ram usage:        0 bytes
+   245 ;; Hardware stack levels used:    1
+   246 ;; This function calls:
+   247 ;;		Nothing
+   248 ;; This function is called by:
+   249 ;;		_main
+   250 ;; This function uses a non-reentrant model
+   251 ;;
+   252                           
+   253                           	psect	text3
+   254  00BFC6                     __ptext3:
+   255                           	opt callstack 0
+   256  00BFC6                     _INIT_GPIO:
+   257                           	opt callstack 30
+   258  00BFC6                     
+   259                           ;GPIO.c: 7:     OSCCON = 0X60;
+   260  00BFC6  0E60               	movlw	96
+   261  00BFC8  6ED3               	movwf	211,c	;volatile
+   262  00BFCA                     
+   263                           ;GPIO.c: 9:     CMCON = 0XFF;
+   264  00BFCA  68B4               	setf	180,c	;volatile
+   265  00BFCC                     
+   266                           ;GPIO.c: 10:     CVRCONbits.CVREN = 0;
+   267  00BFCC  9EB5               	bcf	181,7,c	;volatile
+   268                           
+   269                           ;GPIO.c: 11:     ADCON1 = 0X0F;
+   270  00BFCE  0E0F               	movlw	15
+   271  00BFD0  6EC1               	movwf	193,c	;volatile
+   272  00BFD2  0012               	return		;funcret
+   273  00BFD4                     __end_of_INIT_GPIO:
+   274                           	opt callstack 0
+   275                           
+   276 ;; *************** function _INIT_DC *****************
+   277 ;; Defined at:
+   278 ;;		line 5 in file "MOTORES_DC.c"
+   279 ;; Parameters:    Size  Location     Type
+   280 ;;		None
+   281 ;; Auto vars:     Size  Location     Type
+   282 ;;		None
+   283 ;; Return value:  Size  Location     Type
+   284 ;;                  1    wreg      void 
+   285 ;; Registers used:
+   286 ;;		None
+   287 ;; Tracked objects:
+   288 ;;		On entry : 0/0
+   289 ;;		On exit  : 0/0
+   290 ;;		Unchanged: 0/0
+   291 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   292 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   293 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   294 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   295 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   296 ;;Total ram usage:        0 bytes
+   297 ;; Hardware stack levels used:    1
+   298 ;; This function calls:
+   299 ;;		Nothing
+   300 ;; This function is called by:
+   301 ;;		_main
+   302 ;; This function uses a non-reentrant model
+   303 ;;
+   304                           
+   305                           	psect	text4
+   306  00BFAE                     __ptext4:
+   307                           	opt callstack 0
+   308  00BFAE                     _INIT_DC:
+   309                           	opt callstack 30
+   310  00BFAE  9895               	bcf	149,4,c	;volatile
+   311  00BFB0  9A95               	bcf	149,5,c	;volatile
+   312  00BFB2  9C95               	bcf	149,6,c	;volatile
+   313  00BFB4  0012               	return		;funcret
+   314  00BFB6                     __end_of_INIT_DC:
+   315                           	opt callstack 0
+   316  0000                     
+   317                           	psect	rparam
+   318  0000                     tosu	equ	0xFFF
+   319                           tosh	equ	0xFFE
+   320                           tosl	equ	0xFFD
+   321                           stkptr	equ	0xFFC
+   322                           pclatu	equ	0xFFB
+   323                           pclath	equ	0xFFA
+   324                           pcl	equ	0xFF9
+   325                           tblptru	equ	0xFF8
+   326                           tblptrh	equ	0xFF7
+   327                           tblptrl	equ	0xFF6
+   328                           tablat	equ	0xFF5
+   329                           prodh	equ	0xFF4
+   330                           prodl	equ	0xFF3
+   331                           indf0	equ	0xFEF
+   332                           postinc0	equ	0xFEE
+   333                           postdec0	equ	0xFED
+   334                           preinc0	equ	0xFEC
+   335                           plusw0	equ	0xFEB
+   336                           fsr0h	equ	0xFEA
+   337                           fsr0l	equ	0xFE9
+   338                           wreg	equ	0xFE8
+   339                           indf1	equ	0xFE7
+   340                           postinc1	equ	0xFE6
+   341                           postdec1	equ	0xFE5
+   342                           preinc1	equ	0xFE4
+   343                           plusw1	equ	0xFE3
+   344                           fsr1h	equ	0xFE2
+   345                           fsr1l	equ	0xFE1
+   346                           bsr	equ	0xFE0
+   347                           indf2	equ	0xFDF
+   348                           postinc2	equ	0xFDE
+   349                           postdec2	equ	0xFDD
+   350                           preinc2	equ	0xFDC
+   351                           plusw2	equ	0xFDB
+   352                           fsr2h	equ	0xFDA
+   353                           fsr2l	equ	0xFD9
+   354                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      0       0
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+    BANK8           256      0       0
+    BANK9           256      0       0
+    BANK10          256      0       0
+    BANK11          256      0       0
+    BANK12          256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _main in BANK8
+
+    None.
+
+Critical Paths under _main in BANK9
+
+    None.
+
+Critical Paths under _main in BANK10
+
+    None.
+
+Critical Paths under _main in BANK11
+
+    None.
+
+Critical Paths under _main in BANK12
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+                            _INIT_DC
+                          _INIT_GPIO
+                           _MOV_R_DC
+                        _MOV_STOP_DC
+ ---------------------------------------------------------------------------------
+ (1) _MOV_STOP_DC                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _MOV_R_DC                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _INIT_GPIO                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _INIT_DC                                              0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _INIT_DC
+   _INIT_GPIO
+   _MOV_R_DC
+   _MOV_STOP_DC
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             400      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      0       0       1        0.0%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+ABS                  0      0       0      20        0.0%
+BITBANK8           100      0       0      21        0.0%
+BANK8              100      0       0      22        0.0%
+BITBANK9           100      0       0      23        0.0%
+BANK9              100      0       0      24        0.0%
+BITBANK10          100      0       0      25        0.0%
+BANK10             100      0       0      26        0.0%
+BITBANK11          100      0       0      27        0.0%
+BANK11             100      0       0      28        0.0%
+BITBANK12          100      0       0      29        0.0%
+BANK12             100      0       0      30        0.0%
+BIGRAM             CFF      0       0      31        0.0%
+BITSFR_3             0      0       0     200        0.0%
+SFR_3                0      0       0     200        0.0%
+BITSFR_2             0      0       0     200        0.0%
+SFR_2                0      0       0     200        0.0%
+BITSFR_1             0      0       0     200        0.0%
+SFR_1                0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
+Symbol Table                                                                                   Mon Nov 25 11:17:12 2019
+
+                      l7 BFAE                        l9 BFB0                       l11 BFB2  
+                     l20 BFBA                       l13 BFB4                       l22 BFBC  
+                     l16 BFB6                       l40 BFC4                       l18 BFB8  
+                     l34 BFBE                       l51 BFD2                       l36 BFC0  
+                     l38 BFC2                       u10 BFEC                       u11 BFE8  
+                    l751 BFC6                      l753 BFCA                      l761 BFDC  
+                    l755 BFCC                      l763 BFDE                      l765 BFEC  
+                    l757 BFD4                      l767 BFF4                      l759 BFD8  
+                    _RB0 007C08             __CFG_LVP$OFF 000000          __end_of_INIT_DC BFB6  
+           __CFG_WDT$OFF 000000                     _main BFD4                     start 0000  
+     __size_of_INIT_GPIO 000E            __CFG_MCLRE$ON 000000             ___param_bank 000000  
+                  ?_main 0000                    _CMCON 000FB4         __end_of_MOV_R_DC BFBE  
+        __initialization BFA8             __end_of_main C000                   ??_main 0000  
+          __activetblptr 000000                ??_INIT_DC 0000        __end_of_INIT_GPIO BFD4  
+                 _ADCON1 000FC1                   _OSCCON 000FD3             ?_MOV_STOP_DC 0000  
+             __accesstop 0060  __end_of__initialization BFA8          __CFG_PBADEN$OFF 000000  
+          ___rparam_used 000001           __pcstackCOMRAM 0000                ?_MOV_R_DC 0000  
+             ??_MOV_R_DC 0000                  _INIT_DC BFAE                  __Hparam 0000  
+                __Lparam 0000     __size_of_MOV_STOP_DC 0008                  __pcinit BFA8  
+                __ramtop 0D00                  __ptext0 BFD4                  __ptext1 BFBE  
+                __ptext2 BFB6                  __ptext3 BFC6                  __ptext4 BFAE  
+   end_of_initialization BFA8                _INIT_GPIO BFC6                _TRISBbits 000F93  
+              _TRISDbits 000F95               ?_INIT_GPIO 0000        __size_of_MOV_R_DC 0008  
+    start_initialization BFA8         __CFG_OSC$IRCIO67 000000                 ?_INIT_DC 0000  
+            ??_INIT_GPIO 0000                 _LATDbits 000F8C            ??_MOV_STOP_DC 0000  
+               _MOV_R_DC BFB6         __size_of_INIT_DC 0008                 __Hrparam 0000  
+               __Lrparam 0000      __end_of_MOV_STOP_DC BFC6            __size_of_main 002C  
+             _CVRCONbits 000FB5              _MOV_STOP_DC BFBE  
