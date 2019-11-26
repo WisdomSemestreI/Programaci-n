@@ -17924,19 +17924,358 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
+
+
+unsigned short TAD;
+unsigned short Tosc;
+
+
 unsigned char LSB;
 unsigned char MSB;
-# 70 "./ADC.h"
+# 85 "./ADC.h"
+void INIT_ADC(unsigned char NumberOfPorts, unsigned char ON_OFF, unsigned char Resolution);
+
+
+void ACTIVE_AN(unsigned char Port);
+
+
+void RESOLUTION(unsigned char Bits);
+
+
+void ADC_PROCESS(void);
+
+
 void CONVERT_A_D(void);
+
+
+void VOLTAGE_REF(unsigned char ON_OFF);
+
+
+void READPORT (unsigned char PortToRead);
 # 2 "ADC.c" 2
 
 
+void INIT_ADC(unsigned char NumberOfPorts, unsigned char ON_OFF, unsigned char Resolution) {
+
+    do{ADCON0bits.ADON = 0;}while(0);
+
+    ACTIVE_AN(NumberOfPorts);
+
+    VOLTAGE_REF(ON_OFF);
+
+    RESOLUTION(Resolution);
+
+    Tosc = (100000000 / 4000000);
+
+    if ((Tosc * 2) >= 70) {
+        TAD = Tosc * 2;
+        do{ADCON2bits.ADCS = 0b000;} while(0);
+        if ((2 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b001;} while(0);
+            return;
+        }
+        if ((4 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b010;} while(0);
+            return;
+        }
+        if ((6 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b011;} while(0);
+            return;
+        }
+        if ((8 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b100;} while(0);
+            return;
+        }
+        if ((12 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b101;} while(0);
+            return;
+        }
+        if ((16 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b110;} while(0);
+            return;
+        }
+        if ((20 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b111;} while(0);
+            return;
+        }
+    }
+    if ((Tosc * 4) >= 70) {
+        TAD = Tosc * 4;
+        do{ADCON2bits.ADCS = 0b100;} while(0);
+        if ((2 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b001;} while(0);
+            return;
+        }
+        if ((4 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b010;} while(0);
+            return;
+        }
+        if ((6 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b011;} while(0);
+            return;
+        }
+        if ((8 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b100;} while(0);
+            return;
+        }
+        if ((12 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b101;} while(0);
+            return;
+        }
+        if ((16 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b110;} while(0);
+            return;
+        }
+        if ((20 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b111;} while(0);
+            return;
+        }
+    }
+    if ((Tosc * 8) >= 70) {
+        TAD = Tosc * 8;
+        do{ADCON2bits.ADCS = 0b001;} while(0);
+        if ((2 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b001;} while(0);
+            return;
+        }
+        if ((4 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b010;} while(0);
+            return;
+        }
+        if ((6 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b011;} while(0);
+            return;
+        }
+        if ((8 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b100;} while(0);
+            return;
+        }
+        if ((12 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b101;} while(0);
+            return;
+        }
+        if ((16 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b110;} while(0);
+            return;
+        }
+        if ((20 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b111;} while(0);
+            return;
+        }
+    }
+    if ((Tosc * 16) >= 70) {
+        TAD = Tosc * 16;
+        do{ADCON2bits.ADCS = 0b101;} while(0);
+        if ((2 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b001;} while(0);
+            return;
+        }
+        if ((4 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b010;} while(0);
+            return;
+        }
+        if ((6 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b011;} while(0);
+            return;
+        }
+        if ((8 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b100;} while(0);
+            return;
+        }
+        if ((12 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b101;} while(0);
+            return;
+        }
+        if ((16 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b110;} while(0);
+            return;
+        }
+        if ((20 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b111;} while(0);
+            return;
+        }
+    }
+    if ((Tosc * 32) >= 70) {
+        TAD = Tosc * 32;
+        do{ADCON2bits.ADCS = 0b010;} while(0);
+        if ((2 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b001;} while(0);
+            return;
+        }
+        if ((4 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b010;} while(0);
+            return;
+        }
+        if ((6 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b011;} while(0);
+            return;
+        }
+        if ((8 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b100;} while(0);
+            return;
+        }
+        if ((12 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b101;} while(0);
+            return;
+        }
+        if ((16 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b110;} while(0);
+            return;
+        }
+        if ((20 * TAD) >= 1286) {
+            do{ADCON2bits.ACQT = 0b111;} while(0);
+            return;
+        }
+        if ((Tosc * 64) >= 70) {
+            TAD = Tosc * 64;
+            do{ADCON2bits.ADCS = 0b110;} while(0);
+            if ((2 * TAD) >= 1286) {
+                do{ADCON2bits.ACQT = 0b001;} while(0);
+                return;
+            }
+            if ((4 * TAD) >= 1286) {
+                do{ADCON2bits.ACQT = 0b010;} while(0);
+                return;
+            }
+            if ((6 * TAD) >= 1286) {
+                do{ADCON2bits.ACQT = 0b011;} while(0);
+                return;
+            }
+            if ((8 * TAD) >= 1286) {
+                do{ADCON2bits.ACQT = 0b100;} while(0);
+                return;
+            }
+            if ((12 * TAD) >= 1286) {
+                do{ADCON2bits.ACQT = 0b101;} while(0);
+                return;
+            }
+            if ((16 * TAD) >= 1286) {
+                do{ADCON2bits.ACQT = 0b110;} while(0);
+                return;
+            }
+            if ((20 * TAD) >= 1286) {
+                do{ADCON2bits.ACQT = 0b111;} while(0);
+                return;
+            }
+        } else {
+            do{ADCON2bits.ADCS = 0b111;} while(0);
+            do{ADCON2bits.ACQT = 0b000;} while(0);
+        }
+    }
+}
+
+void VOLTAGE_REF(unsigned char ON_OFF) {
+    if (ON_OFF == 0) {
+        do{ADCON1bits.VCFG = 0;}while(0);
+        return;
+    }
+    if (ON_OFF == 1) {
+        do{ADCON1bits.VCFG1 = 1;}while(0);
+        do{ADCON1bits.VCFG0 = 1;}while(0);
+        return;
+    }
+    return;
+}
+
+void ACTIVE_AN(unsigned char Port) {
+    if (Port == 1) {
+        do{ADCON1bits.PCFG = 0xE;} while(0);
+    }
+    if (Port == 2) {
+        do{ADCON1bits.PCFG = 0xD;} while(0);
+    }
+    if (Port == 3) {
+        do{ADCON1bits.PCFG = 0xC;} while(0);
+    }
+    if (Port == 4) {
+        do{ADCON1bits.PCFG = 0xB;} while(0);
+    }
+    if (Port == 5) {
+        do{ADCON1bits.PCFG = 0xA;} while(0);
+    }
+    if (Port == 6) {
+        do{ADCON1bits.PCFG = 0x9;} while(0);
+    }
+    if (Port == 7) {
+        do{ADCON1bits.PCFG = 0x8;} while(0);
+    }
+    if (Port == 8) {
+        do{ADCON1bits.PCFG = 0x7;} while(0);
+    }
+    if (Port == 9) {
+        do{ADCON1bits.PCFG = 0x6;} while(0);
+    }
+    if (Port == 10) {
+        do{ADCON1bits.PCFG = 0x5;} while(0);
+    }
+    if (Port == 11) {
+        do{ADCON1bits.PCFG = 0x4;} while(0);
+    }
+# 268 "ADC.c"
+    return;
+}
+
+void RESOLUTION(unsigned char Bits) {
+    if (Bits == 8) {
+        do{ADCON2bits.ADFM = 0;}while(0);
+    }
+    if (Bits == 10) {
+        do{ADCON2bits.ADFM = 1;}while(0);
+    }
+}
+
+void ADC_PROCESS() {
+    do{ADCON0bits.ADON = 1;}while(0);
+    while (1) {
+        CONVERT_A_D();
+        return;
+    }
+}
+
 void CONVERT_A_D() {
-    do{ADCON0bits.GO = 1;} while(0);
+    do{ADCON0bits.GO_DONE = 1;} while(0);
     __nop();
-    while (ADCON0bits.GO == 1) {
+    while (ADCON0bits.GO_DONE == 1) {
     }
     __nop();
     LSB = ADRESL;
     MSB = ADRESH;
+    return;
+}
+
+void READPORT(unsigned char PortToRead) {
+    if (PortToRead == 0) {
+        do{ ADCON0bits.CHS = 0b000000;} while(0);
+    }
+    if (PortToRead == 1) {
+        do{ ADCON0bits.CHS = 0b000001;} while(0);
+    }
+    if (PortToRead == 2) {
+        do{ ADCON0bits.CHS = 0b000010;} while(0);
+    }
+    if (PortToRead == 3) {
+        do{ ADCON0bits.CHS = 0b000011;} while(0);
+    }
+    if (PortToRead == 4) {
+        do{ ADCON0bits.CHS = 0b000100;} while(0);
+    }
+    if (PortToRead == 5) {
+        do{ ADCON0bits.CHS = 0b000101;} while(0);
+    }
+    if (PortToRead == 6) {
+        do{ ADCON0bits.CHS = 0b000110;} while(0);
+    }
+    if (PortToRead == 7) {
+        do{ ADCON0bits.CHS = 0b000111;} while(0);
+    }
+    if (PortToRead == 8) {
+        do{ ADCON0bits.CHS = 0b001000;} while(0);
+    }
+    if (PortToRead == 9) {
+        do{ ADCON0bits.CHS = 0b001001;} while(0);
+    }
+    if (PortToRead == 10) {
+        do{ ADCON0bits.CHS = 0b001010;} while(0);
+    }
+# 341 "ADC.c"
 }

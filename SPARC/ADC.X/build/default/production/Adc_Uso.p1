@@ -1,6 +1,9 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"26842 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h
+"31596 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 31596: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
+[v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
+"26842
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 26842:     struct {
 [s S860 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S860 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
@@ -18,85 +21,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27275
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 27275: extern volatile unsigned char TRISC __attribute__((address(0xF94)));
 [v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
-"30195
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30195:     struct {
-[s S992 :4 `uc 1 :2 `uc 1 ]
-[n S992 . PCFG VCFG ]
-"30199
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30199:     struct {
-[s S993 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S993 . PCFG0 PCFG1 PCFG2 PCFG3 VCFG0 VCFG1 ]
-"30207
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30207:     struct {
-[s S994 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S994 . . CHSN3 VCFG01 VCFG11 ]
-"30194
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30194: typedef union {
-[u S991 `S992 1 `S993 1 `S994 1 ]
-[n S991 . . . . ]
-"30214
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30214: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0xFC1)));
-[v _ADCON1bits `VS991 ~T0 @X0 0 e@4033 ]
-"30280
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30280:     struct {
-[s S996 :1 `uc 1 :1 `uc 1 ]
-[n S996 . . GO_NOT_DONE ]
-"30284
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30284:     struct {
-[s S997 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
-[n S997 . ADON GO_nDONE CHS ]
-"30289
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30289:     struct {
-[s S998 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S998 . . GO_DONE CHS0 CHS1 CHS2 CHS3 ]
-"30297
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30297:     struct {
-[s S999 :1 `uc 1 :1 `uc 1 ]
-[n S999 . . DONE ]
-"30301
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30301:     struct {
-[s S1000 :1 `uc 1 :1 `uc 1 ]
-[n S1000 . . GO ]
-"30305
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30305:     struct {
-[s S1001 :1 `uc 1 :1 `uc 1 ]
-[n S1001 . . NOT_DONE ]
-"30309
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30309:     struct {
-[s S1002 :1 `uc 1 :1 `uc 1 ]
-[n S1002 . . nDONE ]
-"30313
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30313:     struct {
-[s S1003 :1 `uc 1 :1 `uc 1 ]
-[n S1003 . . GODONE ]
-"30279
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30279: typedef union {
-[u S995 `S996 1 `S997 1 `S998 1 `S999 1 `S1000 1 `S1001 1 `S1002 1 `S1003 1 ]
-[n S995 . . . . . . . . . ]
-"30318
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30318: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0xFC2)));
-[v _ADCON0bits `VS995 ~T0 @X0 0 e@4034 ]
-"30124
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30124:     struct {
-[s S989 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S989 . ADCS ACQT . ADFM ]
-"30130
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30130:     struct {
-[s S990 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S990 . ADCS0 ADCS1 ADCS2 ACQT0 ACQT1 ACQT2 ]
-"30123
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30123: typedef union {
-[u S988 `S989 1 `S990 1 ]
-[n S988 . . . ]
-"30139
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 30139: extern volatile ADCON2bits_t ADCON2bits __attribute__((address(0xFC0)));
-[v _ADCON2bits `VS988 ~T0 @X0 0 e@4032 ]
-"70 ./ADC.h
-[; ;./ADC.h: 70: void CONVERT_A_D(void);
-[v _CONVERT_A_D `(v ~T0 @X0 0 ef ]
+"27497
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 27497: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
+[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"85 ./ADC.h
+[; ;./ADC.h: 85: void INIT_ADC(unsigned char NumberOfPorts, unsigned char ON_OFF, unsigned char Resolution);
+[v _INIT_ADC `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"103
+[; ;./ADC.h: 103: void READPORT (unsigned char PortToRead);
+[v _READPORT `(v ~T0 @X0 0 ef1`uc ]
+"94
+[; ;./ADC.h: 94: void ADC_PROCESS(void);
+[v _ADC_PROCESS `(v ~T0 @X0 0 ef ]
 "25882 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 25882: extern volatile unsigned char PORTC __attribute__((address(0xF82)));
 [v _PORTC `Vuc ~T0 @X0 0 e@3970 ]
+"26052
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 26052: extern volatile unsigned char PORTD __attribute__((address(0xF83)));
+[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 54: __asm("RXF6SIDH equ 0D60h");
 [; <" RXF6SIDH equ 0D60h ;# ">
@@ -1339,94 +1281,60 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32501
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 32501: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"5 ./ADC.h
-[; ;./ADC.h: 5: unsigned char LSB;
-[v _LSB `uc ~T0 @X0 1 e ]
-"6
-[; ;./ADC.h: 6: unsigned char MSB;
-[v _MSB `uc ~T0 @X0 1 e ]
-"5 Adc_Uso.c
-[; ;Adc_Uso.c: 5: 
-[p x OSC = IRCIO67 ]
-"6
-[; ;Adc_Uso.c: 6:     do{ADCON1bits.PCFG = 0xE;} while(0);
-[p x MCLRE = ON ]
-"7
-[; ;Adc_Uso.c: 7:     do{ADCON1bits.VCFG = 0;}while(0);
-[p x PBADEN = OFF ]
+"7 ./ADC.h
+[; ;./ADC.h: 7: unsigned short TAD;
+[v _TAD `us ~T0 @X0 1 e ]
 "8
-[; ;Adc_Uso.c: 8:     do{ ADCON0bits.CHS = 0b000000;} while(0);
-[p x LVP = OFF ]
+[; ;./ADC.h: 8: unsigned short Tosc;
+[v _Tosc `us ~T0 @X0 1 e ]
 "11
-[; ;Adc_Uso.c: 11:     do{ADCON2bits.ADCS = 0b100;} while(0);
+[; ;./ADC.h: 11: unsigned char LSB;
+[v _LSB `uc ~T0 @X0 1 e ]
+"12
+[; ;./ADC.h: 12: unsigned char MSB;
+[v _MSB `uc ~T0 @X0 1 e ]
+"6 Adc_Uso.c
+[; ;Adc_Uso.c: 6: 
+[p x OSC = IRCIO67 ]
+"7
+[; ;Adc_Uso.c: 7:     INIT_ADC(1, 0, 10);
+[p x MCLRE = ON ]
+"8
+[; ;Adc_Uso.c: 8: 
+[p x PBADEN = OFF ]
+"9
+[; ;Adc_Uso.c: 9:     READPORT(0);
+[p x LVP = OFF ]
+"12
+[; ;Adc_Uso.c: 12: 
 [p x WDT = OFF ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "14
-[; ;Adc_Uso.c: 14:     CONVERT_A_D();
+[; ;Adc_Uso.c: 14:     PORTD = MSB;
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"16
-[; ;Adc_Uso.c: 16:     }
-[e = . . _TRISAbits 1 0 -> -> 1 `i `uc ]
+"15
+[; ;Adc_Uso.c: 15: 
+[e = _OSCCON -> -> 96 `i `uc ]
 "17
-[; ;Adc_Uso.c: 17:     return;
+[; ;Adc_Uso.c: 17: }
+[e = . . _TRISAbits 1 0 -> -> 1 `i `uc ]
+"18
 [e = _TRISC -> -> 0 `i `uc ]
 "19
-[e :U 1093 ]
-{
-[e = . . _ADCON1bits 0 0 -> -> 14 `i `uc ]
-}
-[e :U 1092 ]
-"20
-[e :U 1096 ]
-{
-[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1095 ]
+[e = _TRISD -> -> 0 `i `uc ]
 "21
-[e :U 1099 ]
-{
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-}
-[e :U 1098 ]
-"22
-[e :U 1102 ]
-{
-[e = . . _ADCON2bits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 1101 ]
+[e ( _INIT_ADC (3 , , -> -> 1 `i `uc -> -> 0 `i `uc -> -> 10 `i `uc ]
 "23
-[e :U 1105 ]
-{
-[e = . . _ADCON2bits 0 1 -> -> 6 `i `uc ]
-}
-[e :U 1104 ]
-"24
-[e :U 1108 ]
-{
-[e = . . _ADCON2bits 0 0 -> -> 4 `i `uc ]
-}
-[e :U 1107 ]
+[e ( _READPORT (1 -> -> 0 `i `uc ]
 "25
-[e :U 1110 ]
-{
-"26
-[e :U 1114 ]
-{
-[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-}
-[e :U 1113 ]
+[e ( _ADC_PROCESS ..  ]
 "27
-[e ( _CONVERT_A_D ..  ]
-"28
 [e = _PORTC _LSB ]
-"29
-}
-[e :U 1109 ]
-[e $U 1110  ]
-[e :U 1111 ]
+"28
+[e = _PORTD _MSB ]
 "30
 [e $UE 1090  ]
 "31

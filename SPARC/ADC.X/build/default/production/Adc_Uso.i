@@ -17924,11 +17924,36 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
+
+
+unsigned short TAD;
+unsigned short Tosc;
+
+
 unsigned char LSB;
 unsigned char MSB;
-# 70 "./ADC.h"
+# 85 "./ADC.h"
+void INIT_ADC(unsigned char NumberOfPorts, unsigned char ON_OFF, unsigned char Resolution);
+
+
+void ACTIVE_AN(unsigned char Port);
+
+
+void RESOLUTION(unsigned char Bits);
+
+
+void ADC_PROCESS(void);
+
+
 void CONVERT_A_D(void);
+
+
+void VOLTAGE_REF(unsigned char ON_OFF);
+
+
+void READPORT (unsigned char PortToRead);
 # 2 "Adc_Uso.c" 2
+
 
 
 
@@ -17940,22 +17965,21 @@ void CONVERT_A_D(void);
 
 #pragma config WDT = OFF
 
-
 void main(void) {
+    OSCCON = 0X60;
 
     TRISAbits.RA0 = 1;
     TRISC = 0x00;
+    TRISD = 0x00;
 
-    do{ADCON1bits.PCFG = 0xE;} while(0);
-    do{ADCON1bits.VCFG = 0;}while(0);
-    do{ ADCON0bits.CHS = 0b000000;} while(0);
-    do{ADCON2bits.ADFM = 1;}while(0);
-    do{ADCON2bits.ACQT = 0b110;} while(0);
-    do{ADCON2bits.ADCS = 0b100;} while(0);
-    while(1){
-    do{ADCON0bits.ADON = 1;}while(0);
-    CONVERT_A_D();
+    INIT_ADC(1, 0, 10);
+
+    READPORT(0);
+
+    ADC_PROCESS();
+
     PORTC = LSB;
-    }
+    PORTD = MSB;
+
     return;
 }

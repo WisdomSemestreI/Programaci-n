@@ -1,6 +1,7 @@
 #include <xc.h>
 #include "ADC.h"
 
+
 //OSCILLATOR SOURCE AND DIGITAL I/O CONFIGURATION BITS
 #pragma config OSC = IRCIO67    // Oscillator Selection bits (Internal oscillator block, port function on RA6 and RA7)
 #pragma config MCLRE = ON       // MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
@@ -10,22 +11,21 @@
 //DEBUGGER SETUP CONFIGURATION BITS
 #pragma config WDT = OFF        // Watchdog Timer Enable bit (WDT disabled (control is placed on the SWDTEN bit))
 
-
 void main(void) {
-    
+    OSCCON = 0X60; //4 MHz internal oscillator
+
     TRISAbits.RA0 = 1;
     TRISC = 0x00;
+    TRISD = 0x00;
+
+    INIT_ADC(1, 0, 10);
+
+    READPORT(0);
+
+    ADC_PROCESS();
     
-    ActAN0();
-    NoVref();
-    SelAN0();
-    RightJust();
-    TACQ_16TAD();
-    ConvClk4();  
-    while(1){  
-    EnADC();
-    CONVERT_A_D();
     PORTC = LSB;
-    }
+    PORTD = MSB;
+
     return;
 }

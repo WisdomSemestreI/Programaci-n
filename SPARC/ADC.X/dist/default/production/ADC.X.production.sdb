@@ -4,7 +4,19 @@
 [d chip 18F4585 ]
 [d frameptr 4065 ]
 "4 D:\MPLABXProjects\SPARC\ADC.X\ADC.c
+[v _INIT_ADC INIT_ADC `(v  1 e 1 0 ]
+"213
+[v _VOLTAGE_REF VOLTAGE_REF `(v  1 e 1 0 ]
+"226
+[v _ACTIVE_AN ACTIVE_AN `(v  1 e 1 0 ]
+"271
+[v _RESOLUTION RESOLUTION `(v  1 e 1 0 ]
+"280
+[v _ADC_PROCESS ADC_PROCESS `(v  1 e 1 0 ]
+"288
 [v _CONVERT_A_D CONVERT_A_D `(v  1 e 1 0 ]
+"299
+[v _READPORT READPORT `(v  1 e 1 0 ]
 "14 D:\MPLABXProjects\SPARC\ADC.X\Adc_Uso.c
 [v _main main `(v  1 e 1 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
@@ -27,17 +39,25 @@
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"5 D:\MPLABXProjects\SPARC\ADC.X/ADC.h
+"7 D:\MPLABXProjects\SPARC\ADC.X/ADC.h
+[v _TAD TAD `us  1 e 2 0 ]
+"8
+[v _Tosc Tosc `us  1 e 2 0 ]
+"11
 [v _LSB LSB `uc  1 e 1 0 ]
-"6
+"12
 [v _MSB MSB `uc  1 e 1 0 ]
 "25882 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h
 [v _PORTC PORTC `VEuc  1 e 1 @3970 ]
-[s S103 . 1 `uc 1 TRISA0 1 0 :1:0 
+"26052
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
+[s S220 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -47,7 +67,7 @@
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "26863
-[s S112 . 1 `uc 1 RA0 1 0 :1:0 
+[s S229 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -56,43 +76,45 @@
 `uc 1 RA6 1 0 :1:6 
 `uc 1 RA7 1 0 :1:7 
 ]
-[u S121 . 1 `S103 1 . 1 0 `S112 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES121  1 e 1 @3986 ]
+[u S238 . 1 `S220 1 . 1 0 `S229 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES238  1 e 1 @3986 ]
 "27275
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S218 . 1 `uc 1 ADCS 1 0 :3:0 
+"27497
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+[s S107 . 1 `uc 1 ADCS 1 0 :3:0 
 `uc 1 ACQT 1 0 :3:3 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "30139
-[s S223 . 1 `uc 1 ADCS0 1 0 :1:0 
+[s S112 . 1 `uc 1 ADCS0 1 0 :1:0 
 `uc 1 ADCS1 1 0 :1:1 
 `uc 1 ADCS2 1 0 :1:2 
 `uc 1 ACQT0 1 0 :1:3 
 `uc 1 ACQT1 1 0 :1:4 
 `uc 1 ACQT2 1 0 :1:5 
 ]
-[u S230 . 1 `S218 1 . 1 0 `S223 1 . 1 0 ]
-[v _ADCON2bits ADCON2bits `VES230  1 e 1 @4032 ]
-[s S144 . 1 `uc 1 PCFG 1 0 :4:0 
+[u S119 . 1 `S107 1 . 1 0 `S112 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES119  1 e 1 @4032 ]
+[s S135 . 1 `uc 1 PCFG 1 0 :4:0 
 `uc 1 VCFG 1 0 :2:4 
 ]
 "30214
-[s S147 . 1 `uc 1 PCFG0 1 0 :1:0 
+[s S138 . 1 `uc 1 PCFG0 1 0 :1:0 
 `uc 1 PCFG1 1 0 :1:1 
 `uc 1 PCFG2 1 0 :1:2 
 `uc 1 PCFG3 1 0 :1:3 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 ]
-[s S154 . 1 `uc 1 . 1 0 :3:0 
+[s S145 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CHSN3 1 0 :1:3 
 `uc 1 VCFG01 1 0 :1:4 
 `uc 1 VCFG11 1 0 :1:5 
 ]
-[u S159 . 1 `S144 1 . 1 0 `S147 1 . 1 0 `S154 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES159  1 e 1 @4033 ]
+[u S150 . 1 `S135 1 . 1 0 `S138 1 . 1 0 `S145 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES150  1 e 1 @4033 ]
 [s S24 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
@@ -129,13 +151,73 @@
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "30407
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"31596
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 "14 D:\MPLABXProjects\SPARC\ADC.X\Adc_Uso.c
 [v _main main `(v  1 e 1 0 ]
 {
 "31
 } 0
-"4 D:\MPLABXProjects\SPARC\ADC.X\ADC.c
+"299 D:\MPLABXProjects\SPARC\ADC.X\ADC.c
+[v _READPORT READPORT `(v  1 e 1 0 ]
+{
+[v READPORT@PortToRead PortToRead `uc  1 a 1 wreg ]
+[v READPORT@PortToRead PortToRead `uc  1 a 1 wreg ]
+[v READPORT@PortToRead PortToRead `uc  1 a 1 0 ]
+"341
+} 0
+"4
+[v _INIT_ADC INIT_ADC `(v  1 e 1 0 ]
+{
+[v INIT_ADC@NumberOfPorts NumberOfPorts `uc  1 a 1 wreg ]
+[v INIT_ADC@NumberOfPorts NumberOfPorts `uc  1 a 1 wreg ]
+[v INIT_ADC@ON_OFF ON_OFF `uc  1 p 1 6 ]
+[v INIT_ADC@Resolution Resolution `uc  1 p 1 7 ]
+"6
+[v INIT_ADC@NumberOfPorts NumberOfPorts `uc  1 a 1 8 ]
+"211
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"213 D:\MPLABXProjects\SPARC\ADC.X\ADC.c
+[v _VOLTAGE_REF VOLTAGE_REF `(v  1 e 1 0 ]
+{
+[v VOLTAGE_REF@ON_OFF ON_OFF `uc  1 a 1 wreg ]
+[v VOLTAGE_REF@ON_OFF ON_OFF `uc  1 a 1 wreg ]
+[v VOLTAGE_REF@ON_OFF ON_OFF `uc  1 a 1 0 ]
+"224
+} 0
+"271
+[v _RESOLUTION RESOLUTION `(v  1 e 1 0 ]
+{
+[v RESOLUTION@Bits Bits `uc  1 a 1 wreg ]
+[v RESOLUTION@Bits Bits `uc  1 a 1 wreg ]
+[v RESOLUTION@Bits Bits `uc  1 a 1 0 ]
+"278
+} 0
+"226
+[v _ACTIVE_AN ACTIVE_AN `(v  1 e 1 0 ]
+{
+[v ACTIVE_AN@Port Port `uc  1 a 1 wreg ]
+[v ACTIVE_AN@Port Port `uc  1 a 1 wreg ]
+[v ACTIVE_AN@Port Port `uc  1 a 1 0 ]
+"269
+} 0
+"280
+[v _ADC_PROCESS ADC_PROCESS `(v  1 e 1 0 ]
+{
+"286
+} 0
+"288
 [v _CONVERT_A_D CONVERT_A_D `(v  1 e 1 0 ]
 {
-"12
+"297
 } 0

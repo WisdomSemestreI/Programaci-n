@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Tue Nov 19 14:16:55 2019
+                                                                                               Thu Nov 21 12:07:38 2019
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F4585
@@ -13,286 +13,1150 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
      7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
      8                           	psect	text0,global,reloc=2,class=CODE,delta=1
      9                           	psect	text1,global,reloc=2,class=CODE,delta=1
-    10                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
-    11                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
-    12  0000                     
-    13                           ; Version 2.10
-    14                           ; Generated 31/07/2019 GMT
-    15                           ; 
-    16                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
-    17                           ; All rights reserved.
-    18                           ; 
-    19                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+    10                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text3,global,reloc=2,class=CODE,delta=1,group=1
+    12                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    17                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    18                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    19  0000                     
+    20                           ; Version 2.10
+    21                           ; Generated 31/07/2019 GMT
+    22                           ; 
+    23                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    24                           ; All rights reserved.
+    25                           ; 
+    26                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
       +                          ip").
-    20                           ; 
-    21                           ; Redistribution and use in source and binary forms, with or without modification, are
-    22                           ; permitted provided that the following conditions are met:
-    23                           ; 
-    24                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
-      +                          t of
-    25                           ;        conditions and the following disclaimer.
-    26                           ; 
-    27                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
-      +                          list
-    28                           ;        of conditions and the following disclaimer in the documentation and/or other
-    29                           ;        materials provided with the distribution.
+    27                           ; 
+    28                           ; Redistribution and use in source and binary forms, with or without modification, are
+    29                           ; permitted provided that the following conditions are met:
     30                           ; 
-    31                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
-      +                          is
-    32                           ;        software without specific prior written permission.
+    31                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    32                           ;        conditions and the following disclaimer.
     33                           ; 
-    34                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-    35                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+    34                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    35                           ;        of conditions and the following disclaimer in the documentation and/or other
+    36                           ;        materials provided with the distribution.
+    37                           ; 
+    38                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    39                           ;        software without specific prior written permission.
+    40                           ; 
+    41                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    42                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
       +                          OR
-    36                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+    43                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
       +                          T,
-    37                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
-    38                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
-    39                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+    44                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    45                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    46                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
       +                          RICT
-    40                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+    47                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
       +                          SE OF
-    41                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    42                           ; 
-    43                           ; 
-    44                           ; Code-generator required, PIC18F4585 Definitions
-    45                           ; 
-    46                           ; SFR Addresses
-    47  0000                     _PORTC	set	3970
-    48  0000                     _ADCON2bits	set	4032
-    49  0000                     _ADCON1bits	set	4033
-    50  0000                     _TRISC	set	3988
-    51  0000                     _TRISAbits	set	3986
-    52  0000                     _ADRESH	set	4036
-    53  0000                     _ADRESL	set	4035
-    54  0000                     _ADCON0bits	set	4034
-    55                           
-    56                           ; #config settings
-    57  0000                     
-    58                           	psect	cinit
-    59  00BF9E                     __pcinit:
-    60                           	opt callstack 0
-    61  00BF9E                     start_initialization:
-    62                           	opt callstack 0
-    63  00BF9E                     __initialization:
-    64                           	opt callstack 0
+    48                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    49                           ; 
+    50                           ; 
+    51                           ; Code-generator required, PIC18F4585 Definitions
+    52                           ; 
+    53                           ; SFR Addresses
+    54  0000                     _PORTD	set	3971
+    55  0000                     _PORTC	set	3970
+    56  0000                     _TRISD	set	3989
+    57  0000                     _TRISC	set	3988
+    58  0000                     _TRISAbits	set	3986
+    59  0000                     _OSCCON	set	4051
+    60  0000                     _ADRESH	set	4036
+    61  0000                     _ADRESL	set	4035
+    62  0000                     _ADCON1bits	set	4033
+    63  0000                     _ADCON2bits	set	4032
+    64  0000                     _ADCON0bits	set	4034
     65                           
-    66                           ; Clear objects allocated to COMRAM (2 bytes)
-    67  00BF9E  6A02               	clrf	(__pbssCOMRAM+1)& (0+255),c
-    68  00BFA0  6A01               	clrf	__pbssCOMRAM& (0+255),c
-    69  00BFA2                     end_of_initialization:
+    66                           ; #config settings
+    67  0000                     
+    68                           	psect	cinit
+    69  00BC3E                     __pcinit:
     70                           	opt callstack 0
-    71  00BFA2                     __end_of__initialization:
+    71  00BC3E                     start_initialization:
     72                           	opt callstack 0
-    73  00BFA2  0100               	movlb	0
-    74  00BFA4  EFE3  F05F         	goto	_main	;jump to C main() function
+    73  00BC3E                     __initialization:
+    74                           	opt callstack 0
     75                           
-    76                           	psect	bssCOMRAM
-    77  000001                     __pbssCOMRAM:
-    78                           	opt callstack 0
-    79  000001                     _MSB:
-    80                           	opt callstack 0
-    81  000001                     	ds	1
-    82  000002                     _LSB:
-    83                           	opt callstack 0
-    84  000002                     	ds	1
-    85                           
-    86                           	psect	cstackCOMRAM
-    87  000000                     __pcstackCOMRAM:
-    88                           	opt callstack 0
-    89  000000                     
-    90                           ; 1 bytes @ 0x0
-    91 ;;
-    92 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-    93 ;;
-    94 ;; *************** function _main *****************
-    95 ;; Defined at:
-    96 ;;		line 14 in file "Adc_Uso.c"
-    97 ;; Parameters:    Size  Location     Type
-    98 ;;		None
-    99 ;; Auto vars:     Size  Location     Type
-   100 ;;		None
-   101 ;; Return value:  Size  Location     Type
-   102 ;;                  1    wreg      void 
-   103 ;; Registers used:
-   104 ;;		wreg, status,2, cstack
-   105 ;; Tracked objects:
-   106 ;;		On entry : 0/0
-   107 ;;		On exit  : 0/0
-   108 ;;		Unchanged: 0/0
-   109 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
-      +1  BANK12
-   110 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
-      +0       0
-   111 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
-      +0       0
-   112 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
-      +0       0
-   113 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
-      +0       0
-   114 ;;Total ram usage:        0 bytes
-   115 ;; Hardware stack levels required when called:    1
-   116 ;; This function calls:
-   117 ;;		_CONVERT_A_D
-   118 ;; This function is called by:
-   119 ;;		Startup code after reset
-   120 ;; This function uses a non-reentrant model
-   121 ;;
-   122                           
-   123                           	psect	text0
-   124  00BFC6                     __ptext0:
+    76                           ; Clear objects allocated to COMRAM (6 bytes)
+    77  00BC3E  6A0F               	clrf	(__pbssCOMRAM+5)& (0+255),c
+    78  00BC40  6A0E               	clrf	(__pbssCOMRAM+4)& (0+255),c
+    79  00BC42  6A0D               	clrf	(__pbssCOMRAM+3)& (0+255),c
+    80  00BC44  6A0C               	clrf	(__pbssCOMRAM+2)& (0+255),c
+    81  00BC46  6A0B               	clrf	(__pbssCOMRAM+1)& (0+255),c
+    82  00BC48  6A0A               	clrf	__pbssCOMRAM& (0+255),c
+    83  00BC4A                     end_of_initialization:
+    84                           	opt callstack 0
+    85  00BC4A                     __end_of__initialization:
+    86                           	opt callstack 0
+    87  00BC4A  0100               	movlb	0
+    88  00BC4C  EF78  F05E         	goto	_main	;jump to C main() function
+    89                           
+    90                           	psect	bssCOMRAM
+    91  00000A                     __pbssCOMRAM:
+    92                           	opt callstack 0
+    93  00000A                     _Tosc:
+    94                           	opt callstack 0
+    95  00000A                     	ds	2
+    96  00000C                     _TAD:
+    97                           	opt callstack 0
+    98  00000C                     	ds	2
+    99  00000E                     _MSB:
+   100                           	opt callstack 0
+   101  00000E                     	ds	1
+   102  00000F                     _LSB:
+   103                           	opt callstack 0
+   104  00000F                     	ds	1
+   105                           
+   106                           	psect	cstackCOMRAM
+   107  000001                     __pcstackCOMRAM:
+   108                           	opt callstack 0
+   109  000001                     ?___wmul:
+   110                           	opt callstack 0
+   111  000001                     VOLTAGE_REF@ON_OFF:
+   112                           	opt callstack 0
+   113  000001                     ACTIVE_AN@Port:
+   114                           	opt callstack 0
+   115  000001                     RESOLUTION@Bits:
+   116                           	opt callstack 0
+   117  000001                     READPORT@PortToRead:
+   118                           	opt callstack 0
+   119  000001                     ___wmul@multiplier:
+   120                           	opt callstack 0
+   121                           
+   122                           ; 2 bytes @ 0x0
+   123  000001                     	ds	2
+   124  000003                     ___wmul@multiplicand:
    125                           	opt callstack 0
-   126  00BFC6                     _main:
-   127                           	opt callstack 30
-   128  00BFC6                     
-   129                           ;Adc_Uso.c: 16:     }
-   130  00BFC6  8092               	bsf	146,0,c	;volatile
-   131  00BFC8                     
-   132                           ;Adc_Uso.c: 17:     return;
-   133  00BFC8  0E00               	movlw	0
-   134  00BFCA  6E94               	movwf	148,c	;volatile
-   135  00BFCC  50C1               	movf	193,w,c	;volatile
-   136  00BFCE  0BF0               	andlw	-16
-   137  00BFD0  090E               	iorlw	14
-   138  00BFD2  6EC1               	movwf	193,c	;volatile
-   139  00BFD4  0ECF               	movlw	-49
-   140  00BFD6  16C1               	andwf	193,f,c	;volatile
-   141  00BFD8  0EC3               	movlw	-61
-   142  00BFDA  16C2               	andwf	194,f,c	;volatile
-   143  00BFDC  8EC0               	bsf	192,7,c	;volatile
-   144  00BFDE  50C0               	movf	192,w,c	;volatile
-   145  00BFE0  0BC7               	andlw	-57
-   146  00BFE2  0930               	iorlw	48
-   147  00BFE4  6EC0               	movwf	192,c	;volatile
-   148  00BFE6  50C0               	movf	192,w,c	;volatile
-   149  00BFE8  0BF8               	andlw	-8
-   150  00BFEA  0904               	iorlw	4
-   151  00BFEC  6EC0               	movwf	192,c	;volatile
-   152  00BFEE                     l742:
-   153  00BFEE  80C2               	bsf	194,0,c	;volatile
-   154  00BFF0  ECD4  F05F         	call	_CONVERT_A_D	;wreg free
-   155  00BFF4  C002  FF82         	movff	_LSB,3970	;volatile
-   156  00BFF8  EFF7  F05F         	goto	l742
-   157  00BFFC  EF00  F000         	goto	start
-   158  00C000                     __end_of_main:
-   159                           	opt callstack 0
-   160                           
-   161 ;; *************** function _CONVERT_A_D *****************
-   162 ;; Defined at:
-   163 ;;		line 4 in file "ADC.c"
-   164 ;; Parameters:    Size  Location     Type
-   165 ;;		None
-   166 ;; Auto vars:     Size  Location     Type
-   167 ;;		None
-   168 ;; Return value:  Size  Location     Type
-   169 ;;                  1    wreg      void 
-   170 ;; Registers used:
-   171 ;;		None
-   172 ;; Tracked objects:
-   173 ;;		On entry : 0/0
-   174 ;;		On exit  : 0/0
-   175 ;;		Unchanged: 0/0
-   176 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   126                           
+   127                           ; 2 bytes @ 0x2
+   128  000003                     	ds	2
+   129  000005                     ___wmul@product:
+   130                           	opt callstack 0
+   131                           
+   132                           ; 2 bytes @ 0x4
+   133  000005                     	ds	2
+   134  000007                     INIT_ADC@ON_OFF:
+   135                           	opt callstack 0
+   136                           
+   137                           ; 1 bytes @ 0x6
+   138  000007                     	ds	1
+   139  000008                     INIT_ADC@Resolution:
+   140                           	opt callstack 0
+   141                           
+   142                           ; 1 bytes @ 0x7
+   143  000008                     	ds	1
+   144  000009                     INIT_ADC@NumberOfPorts:
+   145                           	opt callstack 0
+   146                           
+   147                           ; 1 bytes @ 0x8
+   148  000009                     	ds	1
+   149  00000A                     
+   150                           ; 1 bytes @ 0x9
+   151 ;;
+   152 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   153 ;;
+   154 ;; *************** function _main *****************
+   155 ;; Defined at:
+   156 ;;		line 14 in file "Adc_Uso.c"
+   157 ;; Parameters:    Size  Location     Type
+   158 ;;		None
+   159 ;; Auto vars:     Size  Location     Type
+   160 ;;		None
+   161 ;; Return value:  Size  Location     Type
+   162 ;;                  1    wreg      void 
+   163 ;; Registers used:
+   164 ;;		wreg, status,2, status,0, prodl, prodh, cstack
+   165 ;; Tracked objects:
+   166 ;;		On entry : 0/0
+   167 ;;		On exit  : 0/0
+   168 ;;		Unchanged: 0/0
+   169 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-   177 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   170 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   178 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   171 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   179 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   172 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   180 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   173 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   181 ;;Total ram usage:        0 bytes
-   182 ;; Hardware stack levels used:    1
-   183 ;; This function calls:
-   184 ;;		Nothing
-   185 ;; This function is called by:
-   186 ;;		_main
-   187 ;; This function uses a non-reentrant model
-   188 ;;
-   189                           
-   190                           	psect	text1
-   191  00BFA8                     __ptext1:
-   192                           	opt callstack 0
-   193  00BFA8                     _CONVERT_A_D:
-   194                           	opt callstack 30
-   195  00BFA8  82C2               	bsf	194,1,c	;volatile
-   196  00BFAA                     
-   197                           ;ADC.c: 6:     __nop();
-   198  00BFAA  F000               	nop	
-   199  00BFAC                     l17:
-   200                           
-   201                           ;ADC.c: 7:     while (ADCON0bits.GO == 1) {
-   202  00BFAC  B2C2               	btfsc	194,1,c	;volatile
-   203  00BFAE  EFDB  F05F         	goto	u11
-   204  00BFB2  EFDD  F05F         	goto	u10
-   205  00BFB6                     u11:
-   206  00BFB6  EFD6  F05F         	goto	l17
-   207  00BFBA                     u10:
-   208  00BFBA                     
-   209                           ;ADC.c: 9:     __nop();
-   210  00BFBA  F000               	nop	
-   211                           
-   212                           ;ADC.c: 10:     LSB = ADRESL;
-   213  00BFBC  CFC3 F002          	movff	4035,_LSB	;volatile
-   214                           
-   215                           ;ADC.c: 11:     MSB = ADRESH;
-   216  00BFC0  CFC4 F001          	movff	4036,_MSB	;volatile
-   217  00BFC4  0012               	return		;funcret
-   218  00BFC6                     __end_of_CONVERT_A_D:
-   219                           	opt callstack 0
-   220  0000                     
-   221                           	psect	rparam
-   222  0000                     tosu	equ	0xFFF
-   223                           tosh	equ	0xFFE
-   224                           tosl	equ	0xFFD
-   225                           stkptr	equ	0xFFC
-   226                           pclatu	equ	0xFFB
-   227                           pclath	equ	0xFFA
-   228                           pcl	equ	0xFF9
-   229                           tblptru	equ	0xFF8
-   230                           tblptrh	equ	0xFF7
-   231                           tblptrl	equ	0xFF6
-   232                           tablat	equ	0xFF5
-   233                           prodh	equ	0xFF4
-   234                           prodl	equ	0xFF3
-   235                           indf0	equ	0xFEF
-   236                           postinc0	equ	0xFEE
-   237                           postdec0	equ	0xFED
-   238                           preinc0	equ	0xFEC
-   239                           plusw0	equ	0xFEB
-   240                           fsr0h	equ	0xFEA
-   241                           fsr0l	equ	0xFE9
-   242                           wreg	equ	0xFE8
-   243                           indf1	equ	0xFE7
-   244                           postinc1	equ	0xFE6
-   245                           postdec1	equ	0xFE5
-   246                           preinc1	equ	0xFE4
-   247                           plusw1	equ	0xFE3
-   248                           fsr1h	equ	0xFE2
-   249                           fsr1l	equ	0xFE1
-   250                           bsr	equ	0xFE0
-   251                           indf2	equ	0xFDF
-   252                           postinc2	equ	0xFDE
-   253                           postdec2	equ	0xFDD
-   254                           preinc2	equ	0xFDC
-   255                           plusw2	equ	0xFDB
-   256                           fsr2h	equ	0xFDA
-   257                           fsr2l	equ	0xFD9
-   258                           status	equ	0xFD8
+   174 ;;Total ram usage:        0 bytes
+   175 ;; Hardware stack levels required when called:    2
+   176 ;; This function calls:
+   177 ;;		_ADC_PROCESS
+   178 ;;		_INIT_ADC
+   179 ;;		_READPORT
+   180 ;; This function is called by:
+   181 ;;		Startup code after reset
+   182 ;; This function uses a non-reentrant model
+   183 ;;
+   184                           
+   185                           	psect	text0
+   186  00BCF0                     __ptext0:
+   187                           	opt callstack 0
+   188  00BCF0                     _main:
+   189                           	opt callstack 29
+   190  00BCF0                     
+   191                           ;Adc_Uso.c: 15: 
+   192  00BCF0  0E60               	movlw	96
+   193  00BCF2  6ED3               	movwf	211,c	;volatile
+   194  00BCF4                     
+   195                           ;Adc_Uso.c: 17: }
+   196  00BCF4  8092               	bsf	146,0,c	;volatile
+   197  00BCF6  0E00               	movlw	0
+   198  00BCF8  6E94               	movwf	148,c	;volatile
+   199  00BCFA  0E00               	movlw	0
+   200  00BCFC  6E95               	movwf	149,c	;volatile
+   201  00BCFE  0E00               	movlw	0
+   202  00BD00  6E07               	movwf	INIT_ADC@ON_OFF^0,c
+   203  00BD02  0E0A               	movlw	10
+   204  00BD04  6E08               	movwf	INIT_ADC@Resolution^0,c
+   205  00BD06  0E01               	movlw	1
+   206  00BD08  EC91  F05E         	call	_INIT_ADC
+   207  00BD0C  0E00               	movlw	0
+   208  00BD0E  ECE3  F05E         	call	_READPORT
+   209  00BD12  EC1B  F05E         	call	_ADC_PROCESS	;wreg free
+   210  00BD16  C00F  FF82         	movff	_LSB,3970	;volatile
+   211  00BD1A  C00E  FF83         	movff	_MSB,3971	;volatile
+   212  00BD1E  EF00  F000         	goto	start
+   213  00BD22                     __end_of_main:
+   214                           	opt callstack 0
+   215                           
+   216 ;; *************** function _READPORT *****************
+   217 ;; Defined at:
+   218 ;;		line 299 in file "ADC.c"
+   219 ;; Parameters:    Size  Location     Type
+   220 ;;  PortToRead      1    wreg     unsigned char 
+   221 ;; Auto vars:     Size  Location     Type
+   222 ;;  PortToRead      1    0[COMRAM] unsigned char 
+   223 ;; Return value:  Size  Location     Type
+   224 ;;                  1    wreg      void 
+   225 ;; Registers used:
+   226 ;;		wreg, status,2, status,0
+   227 ;; Tracked objects:
+   228 ;;		On entry : 0/0
+   229 ;;		On exit  : 0/0
+   230 ;;		Unchanged: 0/0
+   231 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   232 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   233 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   234 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   235 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   236 ;;Total ram usage:        1 bytes
+   237 ;; Hardware stack levels used:    1
+   238 ;; This function calls:
+   239 ;;		Nothing
+   240 ;; This function is called by:
+   241 ;;		_main
+   242 ;; This function uses a non-reentrant model
+   243 ;;
+   244                           
+   245                           	psect	text1
+   246  00BDC6                     __ptext1:
+   247                           	opt callstack 0
+   248  00BDC6                     _READPORT:
+   249                           	opt callstack 30
+   250                           
+   251                           ;incstack = 0
+   252                           ;READPORT@PortToRead stored from wreg
+   253  00BDC6  6E01               	movwf	READPORT@PortToRead^0,c
+   254  00BDC8                     
+   255                           ;ADC.c: 300:     if (PortToRead == 0) {
+   256  00BDC8  5001               	movf	READPORT@PortToRead^0,w,c
+   257  00BDCA  A4D8               	btfss	status,2,c
+   258  00BDCC  EFEA  F05E         	goto	u191
+   259  00BDD0  EFEC  F05E         	goto	u190
+   260  00BDD4                     u191:
+   261  00BDD4  EFEE  F05E         	goto	l1363
+   262  00BDD8                     u190:
+   263  00BDD8  0EC3               	movlw	-61
+   264  00BDDA  16C2               	andwf	194,f,c	;volatile
+   265  00BDDC                     l1363:
+   266                           
+   267                           ;ADC.c: 303:     if (PortToRead == 1) {
+   268  00BDDC  0401               	decf	READPORT@PortToRead^0,w,c
+   269  00BDDE  A4D8               	btfss	status,2,c
+   270  00BDE0  EFF4  F05E         	goto	u201
+   271  00BDE4  EFF6  F05E         	goto	u200
+   272  00BDE8                     u201:
+   273  00BDE8  EFFA  F05E         	goto	l1367
+   274  00BDEC                     u200:
+   275  00BDEC  50C2               	movf	194,w,c	;volatile
+   276  00BDEE  0BC3               	andlw	-61
+   277  00BDF0  0904               	iorlw	4
+   278  00BDF2  6EC2               	movwf	194,c	;volatile
+   279  00BDF4                     l1367:
+   280                           
+   281                           ;ADC.c: 306:     if (PortToRead == 2) {
+   282  00BDF4  0E02               	movlw	2
+   283  00BDF6  1801               	xorwf	READPORT@PortToRead^0,w,c
+   284  00BDF8  A4D8               	btfss	status,2,c
+   285  00BDFA  EF01  F05F         	goto	u211
+   286  00BDFE  EF03  F05F         	goto	u210
+   287  00BE02                     u211:
+   288  00BE02  EF07  F05F         	goto	l1371
+   289  00BE06                     u210:
+   290  00BE06  50C2               	movf	194,w,c	;volatile
+   291  00BE08  0BC3               	andlw	-61
+   292  00BE0A  0908               	iorlw	8
+   293  00BE0C  6EC2               	movwf	194,c	;volatile
+   294  00BE0E                     l1371:
+   295                           
+   296                           ;ADC.c: 309:     if (PortToRead == 3) {
+   297  00BE0E  0E03               	movlw	3
+   298  00BE10  1801               	xorwf	READPORT@PortToRead^0,w,c
+   299  00BE12  A4D8               	btfss	status,2,c
+   300  00BE14  EF0E  F05F         	goto	u221
+   301  00BE18  EF10  F05F         	goto	u220
+   302  00BE1C                     u221:
+   303  00BE1C  EF14  F05F         	goto	l1375
+   304  00BE20                     u220:
+   305  00BE20  50C2               	movf	194,w,c	;volatile
+   306  00BE22  0BC3               	andlw	-61
+   307  00BE24  090C               	iorlw	12
+   308  00BE26  6EC2               	movwf	194,c	;volatile
+   309  00BE28                     l1375:
+   310                           
+   311                           ;ADC.c: 312:     if (PortToRead == 4) {
+   312  00BE28  0E04               	movlw	4
+   313  00BE2A  1801               	xorwf	READPORT@PortToRead^0,w,c
+   314  00BE2C  A4D8               	btfss	status,2,c
+   315  00BE2E  EF1B  F05F         	goto	u231
+   316  00BE32  EF1D  F05F         	goto	u230
+   317  00BE36                     u231:
+   318  00BE36  EF21  F05F         	goto	l1379
+   319  00BE3A                     u230:
+   320  00BE3A  50C2               	movf	194,w,c	;volatile
+   321  00BE3C  0BC3               	andlw	-61
+   322  00BE3E  0910               	iorlw	16
+   323  00BE40  6EC2               	movwf	194,c	;volatile
+   324  00BE42                     l1379:
+   325                           
+   326                           ;ADC.c: 315:     if (PortToRead == 5) {
+   327  00BE42  0E05               	movlw	5
+   328  00BE44  1801               	xorwf	READPORT@PortToRead^0,w,c
+   329  00BE46  A4D8               	btfss	status,2,c
+   330  00BE48  EF28  F05F         	goto	u241
+   331  00BE4C  EF2A  F05F         	goto	u240
+   332  00BE50                     u241:
+   333  00BE50  EF2E  F05F         	goto	l1383
+   334  00BE54                     u240:
+   335  00BE54  50C2               	movf	194,w,c	;volatile
+   336  00BE56  0BC3               	andlw	-61
+   337  00BE58  0914               	iorlw	20
+   338  00BE5A  6EC2               	movwf	194,c	;volatile
+   339  00BE5C                     l1383:
+   340                           
+   341                           ;ADC.c: 318:     if (PortToRead == 6) {
+   342  00BE5C  0E06               	movlw	6
+   343  00BE5E  1801               	xorwf	READPORT@PortToRead^0,w,c
+   344  00BE60  A4D8               	btfss	status,2,c
+   345  00BE62  EF35  F05F         	goto	u251
+   346  00BE66  EF37  F05F         	goto	u250
+   347  00BE6A                     u251:
+   348  00BE6A  EF3B  F05F         	goto	l1387
+   349  00BE6E                     u250:
+   350  00BE6E  50C2               	movf	194,w,c	;volatile
+   351  00BE70  0BC3               	andlw	-61
+   352  00BE72  0918               	iorlw	24
+   353  00BE74  6EC2               	movwf	194,c	;volatile
+   354  00BE76                     l1387:
+   355                           
+   356                           ;ADC.c: 321:     if (PortToRead == 7) {
+   357  00BE76  0E07               	movlw	7
+   358  00BE78  1801               	xorwf	READPORT@PortToRead^0,w,c
+   359  00BE7A  A4D8               	btfss	status,2,c
+   360  00BE7C  EF42  F05F         	goto	u261
+   361  00BE80  EF44  F05F         	goto	u260
+   362  00BE84                     u261:
+   363  00BE84  EF48  F05F         	goto	l1391
+   364  00BE88                     u260:
+   365  00BE88  50C2               	movf	194,w,c	;volatile
+   366  00BE8A  0BC3               	andlw	-61
+   367  00BE8C  091C               	iorlw	28
+   368  00BE8E  6EC2               	movwf	194,c	;volatile
+   369  00BE90                     l1391:
+   370                           
+   371                           ;ADC.c: 324:     if (PortToRead == 8) {
+   372  00BE90  0E08               	movlw	8
+   373  00BE92  1801               	xorwf	READPORT@PortToRead^0,w,c
+   374  00BE94  A4D8               	btfss	status,2,c
+   375  00BE96  EF4F  F05F         	goto	u271
+   376  00BE9A  EF51  F05F         	goto	u270
+   377  00BE9E                     u271:
+   378  00BE9E  EF55  F05F         	goto	l1395
+   379  00BEA2                     u270:
+   380  00BEA2  50C2               	movf	194,w,c	;volatile
+   381  00BEA4  0BC3               	andlw	-61
+   382  00BEA6  0920               	iorlw	32
+   383  00BEA8  6EC2               	movwf	194,c	;volatile
+   384  00BEAA                     l1395:
+   385                           
+   386                           ;ADC.c: 327:     if (PortToRead == 9) {
+   387  00BEAA  0E09               	movlw	9
+   388  00BEAC  1801               	xorwf	READPORT@PortToRead^0,w,c
+   389  00BEAE  A4D8               	btfss	status,2,c
+   390  00BEB0  EF5C  F05F         	goto	u281
+   391  00BEB4  EF5E  F05F         	goto	u280
+   392  00BEB8                     u281:
+   393  00BEB8  EF62  F05F         	goto	l1399
+   394  00BEBC                     u280:
+   395  00BEBC  50C2               	movf	194,w,c	;volatile
+   396  00BEBE  0BC3               	andlw	-61
+   397  00BEC0  0924               	iorlw	36
+   398  00BEC2  6EC2               	movwf	194,c	;volatile
+   399  00BEC4                     l1399:
+   400                           
+   401                           ;ADC.c: 330:     if (PortToRead == 10) {
+   402  00BEC4  0E0A               	movlw	10
+   403  00BEC6  1801               	xorwf	READPORT@PortToRead^0,w,c
+   404  00BEC8  A4D8               	btfss	status,2,c
+   405  00BECA  EF69  F05F         	goto	u291
+   406  00BECE  EF6B  F05F         	goto	u290
+   407  00BED2                     u291:
+   408  00BED2  EF6F  F05F         	goto	l290
+   409  00BED6                     u290:
+   410  00BED6  50C2               	movf	194,w,c	;volatile
+   411  00BED8  0BC3               	andlw	-61
+   412  00BEDA  0928               	iorlw	40
+   413  00BEDC  6EC2               	movwf	194,c	;volatile
+   414  00BEDE                     l290:
+   415  00BEDE  0012               	return		;funcret
+   416  00BEE0                     __end_of_READPORT:
+   417                           	opt callstack 0
+   418                           
+   419 ;; *************** function _INIT_ADC *****************
+   420 ;; Defined at:
+   421 ;;		line 4 in file "ADC.c"
+   422 ;; Parameters:    Size  Location     Type
+   423 ;;  NumberOfPort    1    wreg     unsigned char 
+   424 ;;  ON_OFF          1    6[COMRAM] unsigned char 
+   425 ;;  Resolution      1    7[COMRAM] unsigned char 
+   426 ;; Auto vars:     Size  Location     Type
+   427 ;;  NumberOfPort    1    8[COMRAM] unsigned char 
+   428 ;; Return value:  Size  Location     Type
+   429 ;;                  1    wreg      void 
+   430 ;; Registers used:
+   431 ;;		wreg, status,2, status,0, prodl, prodh, cstack
+   432 ;; Tracked objects:
+   433 ;;		On entry : 0/0
+   434 ;;		On exit  : 0/0
+   435 ;;		Unchanged: 0/0
+   436 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   437 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   438 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   439 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   440 ;;      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   441 ;;Total ram usage:        3 bytes
+   442 ;; Hardware stack levels used:    1
+   443 ;; Hardware stack levels required when called:    1
+   444 ;; This function calls:
+   445 ;;		_ACTIVE_AN
+   446 ;;		_RESOLUTION
+   447 ;;		_VOLTAGE_REF
+   448 ;;		___wmul
+   449 ;; This function is called by:
+   450 ;;		_main
+   451 ;; This function uses a non-reentrant model
+   452 ;;
+   453                           
+   454                           	psect	text2
+   455  00BD22                     __ptext2:
+   456                           	opt callstack 0
+   457  00BD22                     _INIT_ADC:
+   458                           	opt callstack 29
+   459                           
+   460                           ;incstack = 0
+   461                           ;INIT_ADC@NumberOfPorts stored from wreg
+   462  00BD22  6E09               	movwf	INIT_ADC@NumberOfPorts^0,c
+   463  00BD24  90C2               	bcf	194,0,c	;volatile
+   464  00BD26                     
+   465                           ;ADC.c: 8:     ACTIVE_AN(NumberOfPorts);
+   466  00BD26  5009               	movf	INIT_ADC@NumberOfPorts^0,w,c
+   467  00BD28  EC70  F05F         	call	_ACTIVE_AN
+   468                           
+   469                           ;ADC.c: 10:     VOLTAGE_REF(ON_OFF);
+   470  00BD2C  5007               	movf	INIT_ADC@ON_OFF^0,w,c
+   471  00BD2E  EC60  F05E         	call	_VOLTAGE_REF
+   472                           
+   473                           ;ADC.c: 12:     RESOLUTION(Resolution);
+   474  00BD32  5008               	movf	INIT_ADC@Resolution^0,w,c
+   475  00BD34  EC4A  F05E         	call	_RESOLUTION
+   476  00BD38                     
+   477                           ;ADC.c: 14:     Tosc = (100000000 / 4000000);
+   478  00BD38  0E00               	movlw	0
+   479  00BD3A  6E0B               	movwf	(_Tosc+1)^0,c
+   480  00BD3C  0E19               	movlw	25
+   481  00BD3E  6E0A               	movwf	_Tosc^0,c
+   482  00BD40                     
+   483                           ;ADC.c: 49:         TAD = Tosc * 4;
+   484  00BD40  0E00               	movlw	0
+   485  00BD42  6E0D               	movwf	(_TAD+1)^0,c
+   486  00BD44  0E64               	movlw	100
+   487  00BD46  6E0C               	movwf	_TAD^0,c
+   488  00BD48  50C0               	movf	192,w,c	;volatile
+   489  00BD4A  0BF8               	andlw	-8
+   490  00BD4C  0904               	iorlw	4
+   491  00BD4E  6EC0               	movwf	192,c	;volatile
+   492  00BD50                     
+   493                           ;ADC.c: 59:         if ((6 * TAD) >= 1286) {
+   494  00BD50  0E00               	movlw	0
+   495  00BD52  6E02               	movwf	(___wmul@multiplier+1)^0,c
+   496  00BD54  0E64               	movlw	100
+   497  00BD56  6E01               	movwf	___wmul@multiplier^0,c
+   498  00BD58  0E00               	movlw	0
+   499  00BD5A  6E04               	movwf	(___wmul@multiplicand+1)^0,c
+   500  00BD5C  0E06               	movlw	6
+   501  00BD5E  6E03               	movwf	___wmul@multiplicand^0,c
+   502  00BD60  EC37  F05E         	call	___wmul	;wreg free
+   503  00BD64  0E06               	movlw	6
+   504  00BD66  5C01               	subwf	?___wmul^0,w,c
+   505  00BD68  0E05               	movlw	5
+   506  00BD6A  5802               	subwfb	(?___wmul+1)^0,w,c
+   507  00BD6C  A0D8               	btfss	status,0,c
+   508  00BD6E  EFBB  F05E         	goto	u301
+   509  00BD72  EFBD  F05E         	goto	u300
+   510  00BD76                     u301:
+   511  00BD76  EFC3  F05E         	goto	l1501
+   512  00BD7A                     u300:
+   513  00BD7A  50C0               	movf	192,w,c	;volatile
+   514  00BD7C  0BC7               	andlw	-57
+   515  00BD7E  0918               	iorlw	24
+   516  00BD80  6EC0               	movwf	192,c	;volatile
+   517  00BD82  EFE2  F05E         	goto	l39
+   518  00BD86                     l1501:
+   519  00BD86                     
+   520                           ;ADC.c: 67:         if ((12 * TAD) >= 1286) {
+   521  00BD86  0E00               	movlw	0
+   522  00BD88  6E02               	movwf	(___wmul@multiplier+1)^0,c
+   523  00BD8A  0E64               	movlw	100
+   524  00BD8C  6E01               	movwf	___wmul@multiplier^0,c
+   525  00BD8E  0E00               	movlw	0
+   526  00BD90  6E04               	movwf	(___wmul@multiplicand+1)^0,c
+   527  00BD92  0E0C               	movlw	12
+   528  00BD94  6E03               	movwf	___wmul@multiplicand^0,c
+   529  00BD96  EC37  F05E         	call	___wmul	;wreg free
+   530  00BD9A  0E06               	movlw	6
+   531  00BD9C  5C01               	subwf	?___wmul^0,w,c
+   532  00BD9E  0E05               	movlw	5
+   533  00BDA0  5802               	subwfb	(?___wmul+1)^0,w,c
+   534  00BDA2  A0D8               	btfss	status,0,c
+   535  00BDA4  EFD6  F05E         	goto	u311
+   536  00BDA8  EFD8  F05E         	goto	u310
+   537  00BDAC                     u311:
+   538  00BDAC  EFDE  F05E         	goto	l1513
+   539  00BDB0                     u310:
+   540  00BDB0  50C0               	movf	192,w,c	;volatile
+   541  00BDB2  0BC7               	andlw	-57
+   542  00BDB4  0928               	iorlw	40
+   543  00BDB6  6EC0               	movwf	192,c	;volatile
+   544  00BDB8  EFE2  F05E         	goto	l39
+   545  00BDBC                     l1513:
+   546  00BDBC  50C0               	movf	192,w,c	;volatile
+   547  00BDBE  0BC7               	andlw	-57
+   548  00BDC0  0930               	iorlw	48
+   549  00BDC2  6EC0               	movwf	192,c	;volatile
+   550  00BDC4                     l39:
+   551  00BDC4  0012               	return		;funcret
+   552  00BDC6                     __end_of_INIT_ADC:
+   553                           	opt callstack 0
+   554                           
+   555 ;; *************** function ___wmul *****************
+   556 ;; Defined at:
+   557 ;;		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c"
+   558 ;; Parameters:    Size  Location     Type
+   559 ;;  multiplier      2    0[COMRAM] unsigned int 
+   560 ;;  multiplicand    2    2[COMRAM] unsigned int 
+   561 ;; Auto vars:     Size  Location     Type
+   562 ;;  product         2    4[COMRAM] unsigned int 
+   563 ;; Return value:  Size  Location     Type
+   564 ;;                  2    0[COMRAM] unsigned int 
+   565 ;; Registers used:
+   566 ;;		wreg, status,2, status,0, prodl, prodh
+   567 ;; Tracked objects:
+   568 ;;		On entry : 0/0
+   569 ;;		On exit  : 0/0
+   570 ;;		Unchanged: 0/0
+   571 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   572 ;;      Params:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   573 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   574 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   575 ;;      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   576 ;;Total ram usage:        6 bytes
+   577 ;; Hardware stack levels used:    1
+   578 ;; This function calls:
+   579 ;;		Nothing
+   580 ;; This function is called by:
+   581 ;;		_INIT_ADC
+   582 ;; This function uses a non-reentrant model
+   583 ;;
+   584                           
+   585                           	psect	text3
+   586  00BC6E                     __ptext3:
+   587                           	opt callstack 0
+   588  00BC6E                     ___wmul:
+   589                           	opt callstack 29
+   590  00BC6E  5001               	movf	___wmul@multiplier^0,w,c
+   591  00BC70  0203               	mulwf	___wmul@multiplicand^0,c
+   592  00BC72  CFF3 F005          	movff	prodl,___wmul@product
+   593  00BC76  CFF4 F006          	movff	prodh,___wmul@product+1
+   594  00BC7A  5001               	movf	___wmul@multiplier^0,w,c
+   595  00BC7C  0204               	mulwf	(___wmul@multiplicand+1)^0,c
+   596  00BC7E  50F3               	movf	243,w,c
+   597  00BC80  2606               	addwf	(___wmul@product+1)^0,f,c
+   598  00BC82  5002               	movf	(___wmul@multiplier+1)^0,w,c
+   599  00BC84  0203               	mulwf	___wmul@multiplicand^0,c
+   600  00BC86  50F3               	movf	243,w,c
+   601  00BC88  2606               	addwf	(___wmul@product+1)^0,f,c
+   602  00BC8A  C005  F001         	movff	___wmul@product,?___wmul
+   603  00BC8E  C006  F002         	movff	___wmul@product+1,?___wmul+1
+   604  00BC92  0012               	return		;funcret
+   605  00BC94                     __end_of___wmul:
+   606                           	opt callstack 0
+   607                           
+   608 ;; *************** function _VOLTAGE_REF *****************
+   609 ;; Defined at:
+   610 ;;		line 213 in file "ADC.c"
+   611 ;; Parameters:    Size  Location     Type
+   612 ;;  ON_OFF          1    wreg     unsigned char 
+   613 ;; Auto vars:     Size  Location     Type
+   614 ;;  ON_OFF          1    0[COMRAM] unsigned char 
+   615 ;; Return value:  Size  Location     Type
+   616 ;;                  1    wreg      void 
+   617 ;; Registers used:
+   618 ;;		wreg, status,2, status,0
+   619 ;; Tracked objects:
+   620 ;;		On entry : 0/0
+   621 ;;		On exit  : 0/0
+   622 ;;		Unchanged: 0/0
+   623 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   624 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   625 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   626 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   627 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   628 ;;Total ram usage:        1 bytes
+   629 ;; Hardware stack levels used:    1
+   630 ;; This function calls:
+   631 ;;		Nothing
+   632 ;; This function is called by:
+   633 ;;		_INIT_ADC
+   634 ;; This function uses a non-reentrant model
+   635 ;;
+   636                           
+   637                           	psect	text4
+   638  00BCC0                     __ptext4:
+   639                           	opt callstack 0
+   640  00BCC0                     _VOLTAGE_REF:
+   641                           	opt callstack 29
+   642                           
+   643                           ;incstack = 0
+   644                           ;VOLTAGE_REF@ON_OFF stored from wreg
+   645  00BCC0  6E01               	movwf	VOLTAGE_REF@ON_OFF^0,c
+   646  00BCC2                     
+   647                           ;ADC.c: 214:     if (ON_OFF == 0) {
+   648  00BCC2  5001               	movf	VOLTAGE_REF@ON_OFF^0,w,c
+   649  00BCC4  A4D8               	btfss	status,2,c
+   650  00BCC6  EF67  F05E         	goto	u121
+   651  00BCCA  EF69  F05E         	goto	u120
+   652  00BCCE                     u121:
+   653  00BCCE  EF6D  F05E         	goto	l1049
+   654  00BCD2                     u120:
+   655  00BCD2  0ECF               	movlw	-49
+   656  00BCD4  16C1               	andwf	193,f,c	;volatile
+   657  00BCD6  EF77  F05E         	goto	l188
+   658  00BCDA                     l1049:
+   659                           
+   660                           ;ADC.c: 218:     if (ON_OFF == 1) {
+   661  00BCDA  0401               	decf	VOLTAGE_REF@ON_OFF^0,w,c
+   662  00BCDC  A4D8               	btfss	status,2,c
+   663  00BCDE  EF73  F05E         	goto	u131
+   664  00BCE2  EF75  F05E         	goto	u130
+   665  00BCE6                     u131:
+   666  00BCE6  EF77  F05E         	goto	l188
+   667  00BCEA                     u130:
+   668  00BCEA  8AC1               	bsf	193,5,c	;volatile
+   669  00BCEC  88C1               	bsf	193,4,c	;volatile
+   670  00BCEE                     l188:
+   671  00BCEE  0012               	return		;funcret
+   672  00BCF0                     __end_of_VOLTAGE_REF:
+   673                           	opt callstack 0
+   674                           
+   675 ;; *************** function _RESOLUTION *****************
+   676 ;; Defined at:
+   677 ;;		line 271 in file "ADC.c"
+   678 ;; Parameters:    Size  Location     Type
+   679 ;;  Bits            1    wreg     unsigned char 
+   680 ;; Auto vars:     Size  Location     Type
+   681 ;;  Bits            1    0[COMRAM] unsigned char 
+   682 ;; Return value:  Size  Location     Type
+   683 ;;                  1    wreg      void 
+   684 ;; Registers used:
+   685 ;;		wreg, status,2, status,0
+   686 ;; Tracked objects:
+   687 ;;		On entry : 0/0
+   688 ;;		On exit  : 0/0
+   689 ;;		Unchanged: 0/0
+   690 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   691 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   692 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   693 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   694 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   695 ;;Total ram usage:        1 bytes
+   696 ;; Hardware stack levels used:    1
+   697 ;; This function calls:
+   698 ;;		Nothing
+   699 ;; This function is called by:
+   700 ;;		_INIT_ADC
+   701 ;; This function uses a non-reentrant model
+   702 ;;
+   703                           
+   704                           	psect	text5
+   705  00BC94                     __ptext5:
+   706                           	opt callstack 0
+   707  00BC94                     _RESOLUTION:
+   708                           	opt callstack 29
+   709                           
+   710                           ;incstack = 0
+   711                           ;RESOLUTION@Bits stored from wreg
+   712  00BC94  6E01               	movwf	RESOLUTION@Bits^0,c
+   713  00BC96                     
+   714                           ;ADC.c: 272:     if (Bits == 8) {
+   715  00BC96  0E08               	movlw	8
+   716  00BC98  1801               	xorwf	RESOLUTION@Bits^0,w,c
+   717  00BC9A  A4D8               	btfss	status,2,c
+   718  00BC9C  EF52  F05E         	goto	u141
+   719  00BCA0  EF54  F05E         	goto	u140
+   720  00BCA4                     u141:
+   721  00BCA4  EF55  F05E         	goto	l1053
+   722  00BCA8                     u140:
+   723  00BCA8  9EC0               	bcf	192,7,c	;volatile
+   724  00BCAA                     l1053:
+   725                           
+   726                           ;ADC.c: 275:     if (Bits == 10) {
+   727  00BCAA  0E0A               	movlw	10
+   728  00BCAC  1801               	xorwf	RESOLUTION@Bits^0,w,c
+   729  00BCAE  A4D8               	btfss	status,2,c
+   730  00BCB0  EF5C  F05E         	goto	u151
+   731  00BCB4  EF5E  F05E         	goto	u150
+   732  00BCB8                     u151:
+   733  00BCB8  EF5F  F05E         	goto	l238
+   734  00BCBC                     u150:
+   735  00BCBC  8EC0               	bsf	192,7,c	;volatile
+   736  00BCBE                     l238:
+   737  00BCBE  0012               	return		;funcret
+   738  00BCC0                     __end_of_RESOLUTION:
+   739                           	opt callstack 0
+   740                           
+   741 ;; *************** function _ACTIVE_AN *****************
+   742 ;; Defined at:
+   743 ;;		line 226 in file "ADC.c"
+   744 ;; Parameters:    Size  Location     Type
+   745 ;;  Port            1    wreg     unsigned char 
+   746 ;; Auto vars:     Size  Location     Type
+   747 ;;  Port            1    0[COMRAM] unsigned char 
+   748 ;; Return value:  Size  Location     Type
+   749 ;;                  1    wreg      void 
+   750 ;; Registers used:
+   751 ;;		wreg, status,2, status,0
+   752 ;; Tracked objects:
+   753 ;;		On entry : 0/0
+   754 ;;		On exit  : 0/0
+   755 ;;		Unchanged: 0/0
+   756 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   757 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   758 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   759 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   760 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   761 ;;Total ram usage:        1 bytes
+   762 ;; Hardware stack levels used:    1
+   763 ;; This function calls:
+   764 ;;		Nothing
+   765 ;; This function is called by:
+   766 ;;		_INIT_ADC
+   767 ;; This function uses a non-reentrant model
+   768 ;;
+   769                           
+   770                           	psect	text6
+   771  00BEE0                     __ptext6:
+   772                           	opt callstack 0
+   773  00BEE0                     _ACTIVE_AN:
+   774                           	opt callstack 29
+   775                           
+   776                           ;incstack = 0
+   777                           ;ACTIVE_AN@Port stored from wreg
+   778  00BEE0  6E01               	movwf	ACTIVE_AN@Port^0,c
+   779  00BEE2                     
+   780                           ;ADC.c: 227:     if (Port == 1) {
+   781  00BEE2  0401               	decf	ACTIVE_AN@Port^0,w,c
+   782  00BEE4  A4D8               	btfss	status,2,c
+   783  00BEE6  EF77  F05F         	goto	u11
+   784  00BEEA  EF79  F05F         	goto	u10
+   785  00BEEE                     u11:
+   786  00BEEE  EF7D  F05F         	goto	l1001
+   787  00BEF2                     u10:
+   788  00BEF2  50C1               	movf	193,w,c	;volatile
+   789  00BEF4  0BF0               	andlw	-16
+   790  00BEF6  090E               	iorlw	14
+   791  00BEF8  6EC1               	movwf	193,c	;volatile
+   792  00BEFA                     l1001:
+   793                           
+   794                           ;ADC.c: 230:     if (Port == 2) {
+   795  00BEFA  0E02               	movlw	2
+   796  00BEFC  1801               	xorwf	ACTIVE_AN@Port^0,w,c
+   797  00BEFE  A4D8               	btfss	status,2,c
+   798  00BF00  EF84  F05F         	goto	u21
+   799  00BF04  EF86  F05F         	goto	u20
+   800  00BF08                     u21:
+   801  00BF08  EF8A  F05F         	goto	l1005
+   802  00BF0C                     u20:
+   803  00BF0C  50C1               	movf	193,w,c	;volatile
+   804  00BF0E  0BF0               	andlw	-16
+   805  00BF10  090D               	iorlw	13
+   806  00BF12  6EC1               	movwf	193,c	;volatile
+   807  00BF14                     l1005:
+   808                           
+   809                           ;ADC.c: 233:     if (Port == 3) {
+   810  00BF14  0E03               	movlw	3
+   811  00BF16  1801               	xorwf	ACTIVE_AN@Port^0,w,c
+   812  00BF18  A4D8               	btfss	status,2,c
+   813  00BF1A  EF91  F05F         	goto	u31
+   814  00BF1E  EF93  F05F         	goto	u30
+   815  00BF22                     u31:
+   816  00BF22  EF97  F05F         	goto	l1009
+   817  00BF26                     u30:
+   818  00BF26  50C1               	movf	193,w,c	;volatile
+   819  00BF28  0BF0               	andlw	-16
+   820  00BF2A  090C               	iorlw	12
+   821  00BF2C  6EC1               	movwf	193,c	;volatile
+   822  00BF2E                     l1009:
+   823                           
+   824                           ;ADC.c: 236:     if (Port == 4) {
+   825  00BF2E  0E04               	movlw	4
+   826  00BF30  1801               	xorwf	ACTIVE_AN@Port^0,w,c
+   827  00BF32  A4D8               	btfss	status,2,c
+   828  00BF34  EF9E  F05F         	goto	u41
+   829  00BF38  EFA0  F05F         	goto	u40
+   830  00BF3C                     u41:
+   831  00BF3C  EFA4  F05F         	goto	l1013
+   832  00BF40                     u40:
+   833  00BF40  50C1               	movf	193,w,c	;volatile
+   834  00BF42  0BF0               	andlw	-16
+   835  00BF44  090B               	iorlw	11
+   836  00BF46  6EC1               	movwf	193,c	;volatile
+   837  00BF48                     l1013:
+   838                           
+   839                           ;ADC.c: 239:     if (Port == 5) {
+   840  00BF48  0E05               	movlw	5
+   841  00BF4A  1801               	xorwf	ACTIVE_AN@Port^0,w,c
+   842  00BF4C  A4D8               	btfss	status,2,c
+   843  00BF4E  EFAB  F05F         	goto	u51
+   844  00BF52  EFAD  F05F         	goto	u50
+   845  00BF56                     u51:
+   846  00BF56  EFB1  F05F         	goto	l1017
+   847  00BF5A                     u50:
+   848  00BF5A  50C1               	movf	193,w,c	;volatile
+   849  00BF5C  0BF0               	andlw	-16
+   850  00BF5E  090A               	iorlw	10
+   851  00BF60  6EC1               	movwf	193,c	;volatile
+   852  00BF62                     l1017:
+   853                           
+   854                           ;ADC.c: 242:     if (Port == 6) {
+   855  00BF62  0E06               	movlw	6
+   856  00BF64  1801               	xorwf	ACTIVE_AN@Port^0,w,c
+   857  00BF66  A4D8               	btfss	status,2,c
+   858  00BF68  EFB8  F05F         	goto	u61
+   859  00BF6C  EFBA  F05F         	goto	u60
+   860  00BF70                     u61:
+   861  00BF70  EFBE  F05F         	goto	l1021
+   862  00BF74                     u60:
+   863  00BF74  50C1               	movf	193,w,c	;volatile
+   864  00BF76  0BF0               	andlw	-16
+   865  00BF78  0909               	iorlw	9
+   866  00BF7A  6EC1               	movwf	193,c	;volatile
+   867  00BF7C                     l1021:
+   868                           
+   869                           ;ADC.c: 245:     if (Port == 7) {
+   870  00BF7C  0E07               	movlw	7
+   871  00BF7E  1801               	xorwf	ACTIVE_AN@Port^0,w,c
+   872  00BF80  A4D8               	btfss	status,2,c
+   873  00BF82  EFC5  F05F         	goto	u71
+   874  00BF86  EFC7  F05F         	goto	u70
+   875  00BF8A                     u71:
+   876  00BF8A  EFCB  F05F         	goto	l1025
+   877  00BF8E                     u70:
+   878  00BF8E  50C1               	movf	193,w,c	;volatile
+   879  00BF90  0BF0               	andlw	-16
+   880  00BF92  0908               	iorlw	8
+   881  00BF94  6EC1               	movwf	193,c	;volatile
+   882  00BF96                     l1025:
+   883                           
+   884                           ;ADC.c: 248:     if (Port == 8) {
+   885  00BF96  0E08               	movlw	8
+   886  00BF98  1801               	xorwf	ACTIVE_AN@Port^0,w,c
+   887  00BF9A  A4D8               	btfss	status,2,c
+   888  00BF9C  EFD2  F05F         	goto	u81
+   889  00BFA0  EFD4  F05F         	goto	u80
+   890  00BFA4                     u81:
+   891  00BFA4  EFD8  F05F         	goto	l1029
+   892  00BFA8                     u80:
+   893  00BFA8  50C1               	movf	193,w,c	;volatile
+   894  00BFAA  0BF0               	andlw	-16
+   895  00BFAC  0907               	iorlw	7
+   896  00BFAE  6EC1               	movwf	193,c	;volatile
+   897  00BFB0                     l1029:
+   898                           
+   899                           ;ADC.c: 251:     if (Port == 9) {
+   900  00BFB0  0E09               	movlw	9
+   901  00BFB2  1801               	xorwf	ACTIVE_AN@Port^0,w,c
+   902  00BFB4  A4D8               	btfss	status,2,c
+   903  00BFB6  EFDF  F05F         	goto	u91
+   904  00BFBA  EFE1  F05F         	goto	u90
+   905  00BFBE                     u91:
+   906  00BFBE  EFE5  F05F         	goto	l1033
+   907  00BFC2                     u90:
+   908  00BFC2  50C1               	movf	193,w,c	;volatile
+   909  00BFC4  0BF0               	andlw	-16
+   910  00BFC6  0906               	iorlw	6
+   911  00BFC8  6EC1               	movwf	193,c	;volatile
+   912  00BFCA                     l1033:
+   913                           
+   914                           ;ADC.c: 254:     if (Port == 10) {
+   915  00BFCA  0E0A               	movlw	10
+   916  00BFCC  1801               	xorwf	ACTIVE_AN@Port^0,w,c
+   917  00BFCE  A4D8               	btfss	status,2,c
+   918  00BFD0  EFEC  F05F         	goto	u101
+   919  00BFD4  EFEE  F05F         	goto	u100
+   920  00BFD8                     u101:
+   921  00BFD8  EFF2  F05F         	goto	l1037
+   922  00BFDC                     u100:
+   923  00BFDC  50C1               	movf	193,w,c	;volatile
+   924  00BFDE  0BF0               	andlw	-16
+   925  00BFE0  0905               	iorlw	5
+   926  00BFE2  6EC1               	movwf	193,c	;volatile
+   927  00BFE4                     l1037:
+   928                           
+   929                           ;ADC.c: 257:     if (Port == 11) {
+   930  00BFE4  0E0B               	movlw	11
+   931  00BFE6  1801               	xorwf	ACTIVE_AN@Port^0,w,c
+   932  00BFE8  A4D8               	btfss	status,2,c
+   933  00BFEA  EFF9  F05F         	goto	u111
+   934  00BFEE  EFFB  F05F         	goto	u110
+   935  00BFF2                     u111:
+   936  00BFF2  EFFF  F05F         	goto	l229
+   937  00BFF6                     u110:
+   938  00BFF6  50C1               	movf	193,w,c	;volatile
+   939  00BFF8  0BF0               	andlw	-16
+   940  00BFFA  0904               	iorlw	4
+   941  00BFFC  6EC1               	movwf	193,c	;volatile
+   942  00BFFE                     l229:
+   943  00BFFE  0012               	return		;funcret
+   944  00C000                     __end_of_ACTIVE_AN:
+   945                           	opt callstack 0
+   946                           
+   947 ;; *************** function _ADC_PROCESS *****************
+   948 ;; Defined at:
+   949 ;;		line 280 in file "ADC.c"
+   950 ;; Parameters:    Size  Location     Type
+   951 ;;		None
+   952 ;; Auto vars:     Size  Location     Type
+   953 ;;		None
+   954 ;; Return value:  Size  Location     Type
+   955 ;;                  1    wreg      void 
+   956 ;; Registers used:
+   957 ;;		cstack
+   958 ;; Tracked objects:
+   959 ;;		On entry : 0/0
+   960 ;;		On exit  : 0/0
+   961 ;;		Unchanged: 0/0
+   962 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   963 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   964 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   965 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   966 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   967 ;;Total ram usage:        0 bytes
+   968 ;; Hardware stack levels used:    1
+   969 ;; Hardware stack levels required when called:    1
+   970 ;; This function calls:
+   971 ;;		_CONVERT_A_D
+   972 ;; This function is called by:
+   973 ;;		_main
+   974 ;; This function uses a non-reentrant model
+   975 ;;
+   976                           
+   977                           	psect	text7
+   978  00BC36                     __ptext7:
+   979                           	opt callstack 0
+   980  00BC36                     _ADC_PROCESS:
+   981                           	opt callstack 29
+   982  00BC36  80C2               	bsf	194,0,c	;volatile
+   983  00BC38                     
+   984                           ;ADC.c: 283:         CONVERT_A_D();
+   985  00BC38  EC28  F05E         	call	_CONVERT_A_D	;wreg free
+   986  00BC3C  0012               	return		;funcret
+   987  00BC3E                     __end_of_ADC_PROCESS:
+   988                           	opt callstack 0
+   989                           
+   990 ;; *************** function _CONVERT_A_D *****************
+   991 ;; Defined at:
+   992 ;;		line 288 in file "ADC.c"
+   993 ;; Parameters:    Size  Location     Type
+   994 ;;		None
+   995 ;; Auto vars:     Size  Location     Type
+   996 ;;		None
+   997 ;; Return value:  Size  Location     Type
+   998 ;;                  1    wreg      void 
+   999 ;; Registers used:
+  1000 ;;		None
+  1001 ;; Tracked objects:
+  1002 ;;		On entry : 0/0
+  1003 ;;		On exit  : 0/0
+  1004 ;;		Unchanged: 0/0
+  1005 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+  1006 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+  1007 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+  1008 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+  1009 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+  1010 ;;Total ram usage:        0 bytes
+  1011 ;; Hardware stack levels used:    1
+  1012 ;; This function calls:
+  1013 ;;		Nothing
+  1014 ;; This function is called by:
+  1015 ;;		_ADC_PROCESS
+  1016 ;; This function uses a non-reentrant model
+  1017 ;;
+  1018                           
+  1019                           	psect	text8
+  1020  00BC50                     __ptext8:
+  1021                           	opt callstack 0
+  1022  00BC50                     _CONVERT_A_D:
+  1023                           	opt callstack 29
+  1024  00BC50  82C2               	bsf	194,1,c	;volatile
+  1025  00BC52                     
+  1026                           ;ADC.c: 290:     __nop();
+  1027  00BC52  F000               	nop	
+  1028  00BC54                     l251:
+  1029                           
+  1030                           ;ADC.c: 291:     while (ADCON0bits.GO_DONE == 1) {
+  1031  00BC54  B2C2               	btfsc	194,1,c	;volatile
+  1032  00BC56  EF2F  F05E         	goto	u161
+  1033  00BC5A  EF31  F05E         	goto	u160
+  1034  00BC5E                     u161:
+  1035  00BC5E  EF2A  F05E         	goto	l251
+  1036  00BC62                     u160:
+  1037  00BC62                     
+  1038                           ;ADC.c: 293:     __nop();
+  1039  00BC62  F000               	nop	
+  1040                           
+  1041                           ;ADC.c: 294:     LSB = ADRESL;
+  1042  00BC64  CFC3 F00F          	movff	4035,_LSB	;volatile
+  1043                           
+  1044                           ;ADC.c: 295:     MSB = ADRESH;
+  1045  00BC68  CFC4 F00E          	movff	4036,_MSB	;volatile
+  1046  00BC6C  0012               	return		;funcret
+  1047  00BC6E                     __end_of_CONVERT_A_D:
+  1048                           	opt callstack 0
+  1049  0000                     
+  1050                           	psect	rparam
+  1051  0000                     tosu	equ	0xFFF
+  1052                           tosh	equ	0xFFE
+  1053                           tosl	equ	0xFFD
+  1054                           stkptr	equ	0xFFC
+  1055                           pclatu	equ	0xFFB
+  1056                           pclath	equ	0xFFA
+  1057                           pcl	equ	0xFF9
+  1058                           tblptru	equ	0xFF8
+  1059                           tblptrh	equ	0xFF7
+  1060                           tblptrl	equ	0xFF6
+  1061                           tablat	equ	0xFF5
+  1062                           prodh	equ	0xFF4
+  1063                           prodl	equ	0xFF3
+  1064                           indf0	equ	0xFEF
+  1065                           postinc0	equ	0xFEE
+  1066                           postdec0	equ	0xFED
+  1067                           preinc0	equ	0xFEC
+  1068                           plusw0	equ	0xFEB
+  1069                           fsr0h	equ	0xFEA
+  1070                           fsr0l	equ	0xFE9
+  1071                           wreg	equ	0xFE8
+  1072                           indf1	equ	0xFE7
+  1073                           postinc1	equ	0xFE6
+  1074                           postdec1	equ	0xFE5
+  1075                           preinc1	equ	0xFE4
+  1076                           plusw1	equ	0xFE3
+  1077                           fsr1h	equ	0xFE2
+  1078                           fsr1l	equ	0xFE1
+  1079                           bsr	equ	0xFE0
+  1080                           indf2	equ	0xFDF
+  1081                           postinc2	equ	0xFDE
+  1082                           postdec2	equ	0xFDD
+  1083                           preinc2	equ	0xFDC
+  1084                           plusw2	equ	0xFDB
+  1085                           fsr2h	equ	0xFDA
+  1086                           fsr2l	equ	0xFD9
+  1087                           status	equ	0xFD8
 
 
 Data Sizes:
     Strings     0
     Constant    0
     Data        0
-    BSS         2
+    BSS         6
     Persistent  0
     Stack       0
 
 Auto Spaces:
     Space          Size  Autos    Used
-    COMRAM           95      0       2
+    COMRAM           95      9      15
     BANK0           160      0       0
     BANK1           256      0       0
     BANK2           256      0       0
@@ -313,7 +1177,8 @@ Pointer List with Targets:
 
 Critical Paths under _main in COMRAM
 
-    None.
+    _main->_INIT_ADC
+    _INIT_ADC->___wmul
 
 Critical Paths under _main in BANK0
 
@@ -372,18 +1237,52 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 0     0      0       0
+ (0) _main                                                 0     0      0    3503
+                        _ADC_PROCESS
+                           _INIT_ADC
+                           _READPORT
+ ---------------------------------------------------------------------------------
+ (1) _READPORT                                             1     1      0     165
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _INIT_ADC                                             3     1      2    3338
+                                              6 COMRAM     3     1      2
+                          _ACTIVE_AN
+                         _RESOLUTION
+                        _VOLTAGE_REF
+                             ___wmul
+ ---------------------------------------------------------------------------------
+ (2) ___wmul                                               6     2      4    2895
+                                              0 COMRAM     6     2      4
+ ---------------------------------------------------------------------------------
+ (2) _VOLTAGE_REF                                          1     1      0      30
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (2) _RESOLUTION                                           1     1      0      30
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (2) _ACTIVE_AN                                            1     1      0     165
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _ADC_PROCESS                                          0     0      0       0
                         _CONVERT_A_D
  ---------------------------------------------------------------------------------
- (1) _CONVERT_A_D                                          0     0      0       0
+ (2) _CONVERT_A_D                                          0     0      0       0
  ---------------------------------------------------------------------------------
- Estimated maximum stack depth 1
+ Estimated maximum stack depth 2
  ---------------------------------------------------------------------------------
 
  Call Graph Graphs:
 
  _main (ROOT)
-   _CONVERT_A_D
+   _ADC_PROCESS
+     _CONVERT_A_D
+   _INIT_ADC
+     _ACTIVE_AN
+     _RESOLUTION
+     _VOLTAGE_REF
+     ___wmul
+   _READPORT
 
  Address spaces:
 Name               Size   Autos  Total    Cost      Usage
@@ -416,7 +1315,7 @@ BANK1              100      0       0       7        0.0%
 BITBANK0            A0      0       0       4        0.0%
 BANK0               A0      0       0       5        0.0%
 BITCOMRAM           5F      0       0       0        0.0%
-COMRAM              5F      0       2       1        2.1%
+COMRAM              5F      9       F       1       15.8%
 BITSFR_3             0      0       0     200        0.0%
 SFR_3                0      0       0     200        0.0%
 BITSFR_2             0      0       0     200        0.0%
@@ -427,32 +1326,95 @@ BITSFR               0      0       0     200        0.0%
 SFR                  0      0       0     200        0.0%
 STACK                0      0       0       2        0.0%
 NULL                 0      0       0       0        0.0%
-ABS                  0      0       2      20        0.0%
-DATA                 0      0       2       3        0.0%
+ABS                  0      0       F      20        0.0%
+DATA                 0      0       F       3        0.0%
 CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Tue Nov 19 14:16:55 2019
+Symbol Table                                                                                   Thu Nov 21 12:07:38 2019
 
-                     l20 BFC4                       l15 BFA8                       l16 BFAA  
-                     l17 BFAC                       l19 BFBA                       l51 BFDE  
-                     l43 BFCC                       l53 BFE6                       l45 BFD4  
-                     l47 BFD8                       u10 BFBA                       u11 BFB6  
-                    l740 BFDC                      l742 BFEE                      l744 BFF0  
-                    l736 BFC6                      l746 BFF4                      l738 BFC8  
-                    _LSB 0002                      _MSB 0001             __CFG_LVP$OFF 000000  
-           __CFG_WDT$OFF 000000                     _main BFC6                     start 0000  
-          __CFG_MCLRE$ON 000000             ___param_bank 000000                    ?_main 0000  
-                  _PORTC 000F82                    _TRISC 000F94          __initialization BF9E  
-           __end_of_main C000                   ??_main 0000            __activetblptr 000000  
-   __size_of_CONVERT_A_D 001E                   _ADRESH 000FC4                   _ADRESL 000FC3  
-             __accesstop 0060  __end_of__initialization BFA2          __CFG_PBADEN$OFF 000000  
-          ___rparam_used 000001           __pcstackCOMRAM 0000                  __Hparam 0000  
-                __Lparam 0000                  __pcinit BF9E                  __ramtop 0D00  
-                __ptext0 BFC6                  __ptext1 BFA8     end_of_initialization BFA2  
-          ??_CONVERT_A_D 0000                _TRISAbits 000F92      start_initialization BF9E  
-    __end_of_CONVERT_A_D BFC6         __CFG_OSC$IRCIO67 000000              __pbssCOMRAM 0001  
-            _CONVERT_A_D BFA8               _ADCON0bits 000FC2               _ADCON1bits 000FC1  
-             _ADCON2bits 000FC0                 __Hrparam 0000                 __Lrparam 0000  
-          __size_of_main 003A             ?_CONVERT_A_D 0000  
+     __size_of_ACTIVE_AN 0120                       l31 BD24                       l39 BDC4  
+                     u10 BEF2                       u11 BEEE                       u20 BF0C  
+                     u21 BF08                       u30 BF26                       u31 BF22  
+                     u40 BF40                       u41 BF3C                       u50 BF5A  
+                     u51 BF56                       u60 BF74                       u61 BF70  
+                     u70 BF8E                       u71 BF8A                       u80 BFA8  
+                     u81 BFA4                       u90 BFC2                       u91 BFBE  
+    ___wmul@multiplicand 0003     __size_of_ADC_PROCESS 0008                      l241 BC36  
+                    l233 BCA8                      l321 BD1E                      l250 BC52  
+                    l251 BC54                      l244 BC3C                      l236 BCBC  
+                    l324 BC92                      l253 BC62                      l229 BFFE  
+                    l254 BC6C                      l238 BCBE                      l190 BCEA  
+                    l192 BCEC                      l249 BC50                      l290 BEDE  
+                    l188 BCEE       INIT_ADC@Resolution 0008                      l997 BEE2  
+                    l999 BEF2                      u100 BFDC                      u101 BFD8  
+                    u110 BFF6                      u111 BFF2                      u120 BCD2  
+                    u200 BDEC                      u121 BCCE                      u201 BDE8  
+                    u130 BCEA                      u210 BE06                      u131 BCE6  
+                    u211 BE02                      u140 BCA8                      u300 BD7A  
+                    u220 BE20                      u141 BCA4                      u301 BD76  
+                    u221 BE1C                      u150 BCBC                      u310 BDB0  
+                    u230 BE3A                      u151 BCB8                      u311 BDAC  
+                    u231 BE36                      u160 BC62                      u240 BE54  
+                    u161 BC5E                      u241 BE50                      u250 BE6E  
+                    u251 BE6A                      u260 BE88                      u261 BE84  
+                    u270 BEA2                      u190 BDD8                      _TAD 000C  
+                    u271 BE9E                      u191 BDD4                      u280 BEBC  
+                    _LSB 000F                      u281 BEB8                      u290 BED6  
+                    u291 BED2                      _MSB 000E             __CFG_LVP$OFF 000000  
+           __CFG_WDT$OFF 000000                     l1001 BEFA                     l1011 BF40  
+                   l1003 BF0C                     l1021 BF7C                     l1013 BF48  
+                   l1005 BF14                     l1031 BFC2                     l1023 BF8E  
+                   l1015 BF5A                     l1007 BF26                     l1033 BFCA  
+                   l1025 BF96                     l1017 BF62                     l1009 BF2E  
+                   l1035 BFDC                     l1027 BFA8                     l1019 BF74  
+                   l1051 BC96                     l1043 BCC2                     l1037 BFE4  
+                   l1029 BFB0                     l1053 BCAA                     l1045 BCD2  
+                   l1039 BFF6                     l1049 BCDA                     l1401 BED6  
+                   l1421 BC8A                     l1501 BD86                     l1513 BDBC  
+                   l1425 BD26                     l1361 BDD8                     l1355 BC38  
+                   l1419 BC6E                     l1515 BDBC                     l1507 BD86  
+                   l1427 BD38                     l1371 BE0E                     l1363 BDDC  
+                   l1509 BDB0                     l1381 BE54                     l1373 BE20  
+                   l1365 BDEC                     l1391 BE90                     l1383 BE5C  
+                   l1375 BE28                     l1367 BDF4                     l1359 BDC8  
+                   l1481 BD48                     l1393 BEA2                     l1385 BE6E  
+                   l1377 BE3A                     l1369 BE06                     l1721 BCF4  
+                   l1395 BEAA                     l1387 BE76                     l1379 BE42  
+                   l1731 BD1A                     l1723 BCFE                     l1477 BD40  
+                   l1397 BEBC                     l1389 BE88                     l1725 BD0C  
+                   l1495 BD50                     l1479 BD40                     l1399 BEC4  
+                   l1727 BD12                     l1719 BCF0                     l1497 BD7A  
+                   l1729 BD16                     _Tosc 000A                     _main BCF0  
+                   prodh 000FF4                     prodl 000FF3                     start 0000  
+          __CFG_MCLRE$ON 000000             ___param_bank 000000              ?_RESOLUTION 0001  
+       __end_of_INIT_ADC BDC6         __end_of_READPORT BEE0                    ?_main 0001  
+                  _PORTC 000F82                    _PORTD 000F83                    _TRISC 000F94  
+                  _TRISD 000F95        __end_of_ACTIVE_AN C000                    status 000FD8  
+        __initialization BC3E             __end_of_main BD22                   ??_main 000A  
+  INIT_ADC@NumberOfPorts 0009            __activetblptr 000000     __size_of_CONVERT_A_D 001E  
+                 _ADRESH 000FC4                   _ADRESL 000FC3      __size_of_RESOLUTION 002C  
+                 _OSCCON 000FD3                   ___wmul BC6E               __accesstop 0060  
+__end_of__initialization BC4A          __CFG_PBADEN$OFF 000000             ?_VOLTAGE_REF 0001  
+              ?_INIT_ADC 0007                ?_READPORT 0001            ___rparam_used 000001  
+         __pcstackCOMRAM 0001               ??_INIT_ADC 0009               ??_READPORT 0001  
+           ??_RESOLUTION 0001                  ?___wmul 0001            ??_ADC_PROCESS 0001  
+     __end_of_RESOLUTION BCC0                _ACTIVE_AN BEE0                  __Hparam 0000  
+                __Lparam 0000          __size_of___wmul 0026                  __pcinit BC3E  
+                __ramtop 0D00                  __ptext0 BCF0                  __ptext1 BDC6  
+                __ptext2 BD22                  __ptext3 BC6E                  __ptext4 BCC0  
+                __ptext5 BC94                  __ptext6 BEE0                  __ptext7 BC36  
+                __ptext8 BC50      __end_of_ADC_PROCESS BC3E     end_of_initialization BC4A  
+             ?_ACTIVE_AN 0001     __size_of_VOLTAGE_REF 0030            ??_CONVERT_A_D 0001  
+              _TRISAbits 000F92           RESOLUTION@Bits 0001        __size_of_INIT_ADC 00A4  
+      __size_of_READPORT 011A              _ADC_PROCESS BC36           __end_of___wmul BC94  
+     READPORT@PortToRead 0001      start_initialization BC3E      __end_of_CONVERT_A_D BC6E  
+       __CFG_OSC$IRCIO67 000000              ??_ACTIVE_AN 0001                 ??___wmul 0005  
+            __pbssCOMRAM 000A        VOLTAGE_REF@ON_OFF 0001              _CONVERT_A_D BC50  
+         ___wmul@product 0005                 _INIT_ADC BD22                 _READPORT BDC6  
+             _ADCON0bits 000FC2               _ADCON1bits 000FC1               _ADCON2bits 000FC0  
+      ___wmul@multiplier 0001            ??_VOLTAGE_REF 0001            ACTIVE_AN@Port 0001  
+               __Hrparam 0000                 __Lrparam 0000             ?_ADC_PROCESS 0001  
+          __size_of_main 0032           INIT_ADC@ON_OFF 0007      __end_of_VOLTAGE_REF BCF0  
+             _RESOLUTION BC94             ?_CONVERT_A_D 0001              _VOLTAGE_REF BCC0  
