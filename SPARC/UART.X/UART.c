@@ -10,7 +10,7 @@ void INIT_UART() {
     TXSTA = 0b00100110; // 8bits, transmisión habilitada, asíncrono, alta velocidad
     RCSTA = 0b10010000; //habilitado el USART PIC, recepción 8 bits,  
     //habilitada, asíncrono
-    SPBRG = 25; //para una velocidad de 9600 baudios con un oscilador de 4Mhz
+    SPBRG = 25; //((__XTAL_FREQ/BAUD)/64)-1; //para una velocidad de 9600 baudios con un oscilador de 4Mhz
 }
 
 void SEND_UART(unsigned char TX_Data) {

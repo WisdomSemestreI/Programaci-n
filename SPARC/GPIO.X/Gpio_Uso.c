@@ -15,21 +15,21 @@
 int main()
 {
   INIT_GPIO();  
-  RB0_SetDigitalOutput();
-  RA0_SetDigitalOutput();
-  RD0_SetDigitalOutput();
-  RC0_SetDigitalOutput();
+  GPIO_RB0_SetDigitalOutput();
+  GPIO_RA0_SetDigitalOutput();
+  GPIO_RD0_SetDigitalOutput();
+  GPIO_RC0_SetDigitalOutput();
   while(1)
   {
-    RB0_SetHigh();
-    RD0_SetHigh();
-    RA0_SetLow();
-    RC0_SetLow();
+    GPIO_RB0_SetHigh();
+    GPIO_RD0_SetHigh();
+    GPIO_RA0_SetLow();
+    GPIO_RC0_SetLow();
     __delay_ms(1000); // 1 Second Delay
-    RB0_Toggle();
-    RD0_Toggle();
-    RA0_Toggle();
-    RC0_Toggle();
+    GPIO_RB0_Toggle();
+    GPIO_RD0_Toggle();
+    GPIO_RA0_Toggle();
+    GPIO_RC0_Toggle();
     __delay_ms(1000); // 1 Second Delay
   }
   return 0;

@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Mon Nov 18 11:41:05 2019
+                                                                                               Thu Nov 21 15:51:59 2019
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F4585
@@ -99,7 +99,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
     85 ;;
     86 ;; *************** function _main *****************
     87 ;; Defined at:
-    88 ;;		line 16 in file "Gpio_Uso.c"
+    88 ;;		line 15 in file "Gpio_Uso.c"
     89 ;; Parameters:    Size  Location     Type
     90 ;;		None
     91 ;; Auto vars:     Size  Location     Type
@@ -137,7 +137,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    118  00BF38                     _main:
    119                           	opt callstack 30
    120  00BF38                     
-   121                           ;Gpio_Uso.c: 18:     do { LATCbits.LATC0 = ~LATCbits.LATC0; } while(0);
+   121                           ;Gpio_Uso.c: 17:     do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
    122  00BF38  EC95  F05F         	call	_INIT_GPIO	;wreg free
    123  00BF3C  9093               	bcf	147,0,c	;volatile
    124  00BF3E  9092               	bcf	146,0,c	;volatile
@@ -490,7 +490,7 @@ SFR                  0      0       0     200        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Mon Nov 18 11:41:05 2019
+Symbol Table                                                                                   Thu Nov 21 15:51:59 2019
 
                      l11 BF36                       u10 BF72                       u11 BF6C  
                      u20 BF92                       u21 BF8C                       u30 BFB2  

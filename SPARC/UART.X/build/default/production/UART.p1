@@ -64,9 +64,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28042
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 28042: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
 [v _PIR1bits `VS895 ~T0 @X0 0 e@3998 ]
-"29263
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 29263: extern volatile unsigned char RCREG1 __attribute__((address(0xFAE)));
-[v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
+"29258
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 29258: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
+[v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 54: __asm("RXF6SIDH equ 0D60h");
 [; <" RXF6SIDH equ 0D60h ;# ">
@@ -1309,8 +1309,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32501
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 32501: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"4 ./UART.h
-[; ;./UART.h: 4: unsigned char RX_Data;
+"6 ./UART.h
+[; ;./UART.h: 6: unsigned char RX_Data;
 [v _RX_Data `uc ~T0 @X0 1 e ]
 "4 UART.c
 [; ;UART.c: 4: void INIT_UART() {
@@ -1345,7 +1345,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _TX_Data `uc ~T0 @X0 1 r1 ]
 [f ]
 "17
-[; ;UART.c: 17:     while (!TXSTAbits.TRMT) {
+[; ;UART.c: 17:     while (TXSTAbits.TRMT == 0) {
 [e $U 1092  ]
 [e :U 1093 ]
 {
@@ -1354,62 +1354,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 1092 ]
 "17
-[; ;UART.c: 17:     while (!TXSTAbits.TRMT) {
-[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 1093  ]
+[; ;UART.c: 17:     while (TXSTAbits.TRMT == 0) {
+[e $ == -> . . _TXSTAbits 0 1 `i -> 0 `i 1093  ]
 [e :U 1094 ]
 "19
-[; ;UART.c: 19:     while (TXSTAbits.TRMT) {
-[e $U 1095  ]
-[e :U 1096 ]
-{
-"20
-[; ;UART.c: 20:         TXREG = TX_Data;
+[; ;UART.c: 19:     TXREG = TX_Data;
 [e = _TXREG _TX_Data ]
-"21
-[; ;UART.c: 21:     }
-}
-[e :U 1095 ]
-"19
-[; ;UART.c: 19:     while (TXSTAbits.TRMT) {
-[e $ != -> . . _TXSTAbits 0 1 `i -> 0 `i 1096  ]
-[e :U 1097 ]
-"22
-[; ;UART.c: 22:     return;
+"20
+[; ;UART.c: 20:     return;
 [e $UE 1091  ]
-"23
-[; ;UART.c: 23: }
+"21
+[; ;UART.c: 21: }
 [e :UE 1091 ]
 }
-"25
-[; ;UART.c: 25: unsigned char RECEIVE_UART() {
+"23
+[; ;UART.c: 23: unsigned char RECEIVE_UART() {
 [v _RECEIVE_UART `(uc ~T0 @X0 1 ef ]
 {
 [e :U _RECEIVE_UART ]
 [f ]
-"26
-[; ;UART.c: 26:     while (PIR1bits.RCIF == 0) {
-[e $U 1099  ]
-[e :U 1100 ]
+"24
+[; ;UART.c: 24:     while (PIR1bits.RCIF == 0) {
+[e $U 1096  ]
+[e :U 1097 ]
 {
-"27
-[; ;UART.c: 27:     }
+"25
+[; ;UART.c: 25:     }
 }
-[e :U 1099 ]
-"26
-[; ;UART.c: 26:     while (PIR1bits.RCIF == 0) {
-[e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 1100  ]
-[e :U 1101 ]
+[e :U 1096 ]
+"24
+[; ;UART.c: 24:     while (PIR1bits.RCIF == 0) {
+[e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 1097  ]
+[e :U 1098 ]
+"27
+[; ;UART.c: 27:     RX_Data = RCREG;
+[e = _RX_Data _RCREG ]
 "28
-[; ;UART.c: 28:     RX_Data = RCREG1;
-[e = _RX_Data _RCREG1 ]
+[; ;UART.c: 28:     RCREG = 0;
+[e = _RCREG -> -> 0 `i `uc ]
 "29
-[; ;UART.c: 29:     RCREG1 = 0;
-[e = _RCREG1 -> -> 0 `i `uc ]
-"30
-[; ;UART.c: 30:     return RX_Data;
+[; ;UART.c: 29:     return RX_Data;
 [e ) _RX_Data ]
-[e $UE 1098  ]
-"31
-[; ;UART.c: 31: }
-[e :UE 1098 ]
+[e $UE 1095  ]
+"30
+[; ;UART.c: 30: }
+[e :UE 1095 ]
 }

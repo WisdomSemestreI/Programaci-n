@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\araba\AppData\Local\Temp\sj4g.o
+$C:\Users\araba\AppData\Local\Temp\sa28.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
@@ -69,28 +69,28 @@ BF2E text1 CODE >9:D:\MPLABXProjects\SPARC\GPIO.X\GPIO.c
 BF30 text1 CODE >10:D:\MPLABXProjects\SPARC\GPIO.X\GPIO.c
 BF32 text1 CODE >11:D:\MPLABXProjects\SPARC\GPIO.X\GPIO.c
 BF36 text1 CODE >12:D:\MPLABXProjects\SPARC\GPIO.X\GPIO.c
-BF38 text0 CODE >16:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BF38 text0 CODE >18:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BF3C text0 CODE >19:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BF3E text0 CODE >20:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BF40 text0 CODE >21:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BF42 text0 CODE >22:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BF44 text0 CODE >25:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BF46 text0 CODE >26:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BF48 text0 CODE >27:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BF4A text0 CODE >28:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BF4C text0 CODE >29:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BF62 text0 CODE >30:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BF82 text0 CODE >31:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BFA2 text0 CODE >32:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BFC2 text0 CODE >33:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BFE2 text0 CODE >34:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
-BF24 cinit CODE >1805:C:\Users\araba\AppData\Local\Temp\sj4g.s
-BF24 cinit CODE >1807:C:\Users\araba\AppData\Local\Temp\sj4g.s
-BF24 cinit CODE >1810:C:\Users\araba\AppData\Local\Temp\sj4g.s
-BF24 cinit CODE >1816:C:\Users\araba\AppData\Local\Temp\sj4g.s
-BF24 cinit CODE >1818:C:\Users\araba\AppData\Local\Temp\sj4g.s
-BF26 cinit CODE >1819:C:\Users\araba\AppData\Local\Temp\sj4g.s
+BF38 text0 CODE >15:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BF38 text0 CODE >17:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BF3C text0 CODE >18:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BF3E text0 CODE >19:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BF40 text0 CODE >20:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BF42 text0 CODE >21:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BF44 text0 CODE >24:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BF46 text0 CODE >25:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BF48 text0 CODE >26:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BF4A text0 CODE >27:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BF4C text0 CODE >28:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BF62 text0 CODE >29:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BF82 text0 CODE >30:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BFA2 text0 CODE >31:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BFC2 text0 CODE >32:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BFE2 text0 CODE >33:D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+BF24 cinit CODE >1805:C:\Users\araba\AppData\Local\Temp\sa28.s
+BF24 cinit CODE >1807:C:\Users\araba\AppData\Local\Temp\sa28.s
+BF24 cinit CODE >1810:C:\Users\araba\AppData\Local\Temp\sa28.s
+BF24 cinit CODE >1816:C:\Users\araba\AppData\Local\Temp\sa28.s
+BF24 cinit CODE >1818:C:\Users\araba\AppData\Local\Temp\sa28.s
+BF26 cinit CODE >1819:C:\Users\araba\AppData\Local\Temp\sa28.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -108,27 +108,27 @@ __Hspace_0 30000E 0 ABS 0 - dist/default/production\GPIO.X.production.o
 __Hspace_1 3 0 ABS 0 - dist/default/production\GPIO.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\GPIO.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\GPIO.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\araba\AppData\Local\Temp\sj4g.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\araba\AppData\Local\Temp\sa28.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\GPIO.X.production.o
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\GPIO.X.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\GPIO.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\araba\AppData\Local\Temp\sj4g.o
+___sp 0 0 STACK 2 stack C:\Users\araba\AppData\Local\Temp\sa28.o
 _main BF38 0 CODE 0 text0 dist/default/production\GPIO.X.production.o
-start 0 0 CODE 0 init C:\Users\araba\AppData\Local\Temp\sj4g.o
+start 0 0 CODE 0 init C:\Users\araba\AppData\Local\Temp\sa28.o
 __size_of_main 0 0 ABS 0 - dist/default/production\GPIO.X.production.o
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\GPIO.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\araba\AppData\Local\Temp\sj4g.o
-intlevel0 0 0 CODE 0 text C:\Users\araba\AppData\Local\Temp\sj4g.o
-intlevel1 0 0 CODE 0 text C:\Users\araba\AppData\Local\Temp\sj4g.o
-intlevel2 0 0 CODE 0 text C:\Users\araba\AppData\Local\Temp\sj4g.o
-intlevel3 0 0 CODE 0 text C:\Users\araba\AppData\Local\Temp\sj4g.o
+__accesstop 60 0 ABS 0 - C:\Users\araba\AppData\Local\Temp\sa28.o
+intlevel0 0 0 CODE 0 text C:\Users\araba\AppData\Local\Temp\sa28.o
+intlevel1 0 0 CODE 0 text C:\Users\araba\AppData\Local\Temp\sa28.o
+intlevel2 0 0 CODE 0 text C:\Users\araba\AppData\Local\Temp\sa28.o
+intlevel3 0 0 CODE 0 text C:\Users\araba\AppData\Local\Temp\sa28.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\GPIO.X.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\GPIO.X.production.o
 _CVRCONbits FB5 0 ABS 0 - dist/default/production\GPIO.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\GPIO.X.production.o
 _ADCON1 FC1 0 ABS 0 - dist/default/production\GPIO.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\araba\AppData\Local\Temp\sj4g.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\araba\AppData\Local\Temp\sj4g.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\araba\AppData\Local\Temp\sa28.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\araba\AppData\Local\Temp\sa28.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\GPIO.X.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\GPIO.X.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\GPIO.X.production.o
@@ -167,7 +167,7 @@ __Hbank11 0 0 ABS 0 bank11 dist/default/production\GPIO.X.production.o
 __Hbank12 0 0 ABS 0 bank12 dist/default/production\GPIO.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\GPIO.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\GPIO.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\araba\AppData\Local\Temp\sj4g.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\araba\AppData\Local\Temp\sa28.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\GPIO.X.production.o
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\GPIO.X.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\GPIO.X.production.o
@@ -237,8 +237,8 @@ _LATDbits F8C 0 ABS 0 - dist/default/production\GPIO.X.production.o
 _INIT_GPIO BF2A 0 CODE 0 text1 dist/default/production\GPIO.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\GPIO.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\GPIO.X.production.o
-stackhi CFF 0 ABS 0 - C:\Users\araba\AppData\Local\Temp\sj4g.o
-stacklo 60 0 ABS 0 - C:\Users\araba\AppData\Local\Temp\sj4g.o
+stackhi CFF 0 ABS 0 - C:\Users\araba\AppData\Local\Temp\sa28.o
+stacklo 60 0 ABS 0 - C:\Users\araba\AppData\Local\Temp\sa28.o
 __Lintcode 0 0 CODE 0 intcode dist/default/production\GPIO.X.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\GPIO.X.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\GPIO.X.production.o
@@ -257,7 +257,7 @@ __pcinit BF24 0 CODE 0 cinit dist/default/production\GPIO.X.production.o
 __ptext0 BF38 0 CODE 0 text0 dist/default/production\GPIO.X.production.o
 __ptext1 BF2A 0 CODE 0 text1 dist/default/production\GPIO.X.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\GPIO.X.production.o
-__ramtop D00 0 RAM 0 ramtop C:\Users\araba\AppData\Local\Temp\sj4g.o
+__ramtop D00 0 RAM 0 ramtop C:\Users\araba\AppData\Local\Temp\sa28.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\GPIO.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\GPIO.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\GPIO.X.production.o

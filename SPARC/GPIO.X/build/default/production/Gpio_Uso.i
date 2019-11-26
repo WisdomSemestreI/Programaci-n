@@ -12,6 +12,7 @@
 
 
 
+
 void INIT_GPIO(void);
 # 2 "Gpio_Uso.c" 2
 
@@ -17926,7 +17927,6 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 3 "Gpio_Uso.c" 2
-
 
 
 

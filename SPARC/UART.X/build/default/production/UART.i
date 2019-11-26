@@ -17923,7 +17923,10 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
+
+
 unsigned char RX_Data;
+
 
 void INIT_UART(void);
 
@@ -17946,18 +17949,17 @@ void INIT_UART() {
 }
 
 void SEND_UART(unsigned char TX_Data) {
-    while (!TXSTAbits.TRMT) {
+    while (TXSTAbits.TRMT == 0) {
     }
-    while (TXSTAbits.TRMT) {
-        TXREG = TX_Data;
-    }
+    TXREG = TX_Data;
     return;
 }
 
 unsigned char RECEIVE_UART() {
     while (PIR1bits.RCIF == 0) {
     }
-    RX_Data = RCREG1;
-    RCREG1 = 0;
+
+    RX_Data = RCREG;
+    RCREG = 0;
     return RX_Data;
 }

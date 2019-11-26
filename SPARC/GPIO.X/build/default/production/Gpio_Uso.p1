@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"4 ./GPIO.h
-[; ;./GPIO.h: 4: void INIT_GPIO(void);
+"5 ./GPIO.h
+[; ;./GPIO.h: 5: void INIT_GPIO(void);
 [v _INIT_GPIO `(v ~T0 @X0 0 ef ]
 "27064 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 27064:     struct {
@@ -1369,125 +1369,126 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32501
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 32501: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"7 Gpio_Uso.c
-[; ;Gpio_Uso.c: 7:   do { TRISCbits.TRISC0 = 0; } while(0);
+"6 Gpio_Uso.c
+[; ;Gpio_Uso.c: 6:   do { TRISDbits.TRISD0 = 0; } while(0);
 [p x OSC = IRCIO67 ]
+"7
+[; ;Gpio_Uso.c: 7:   do { TRISCbits.TRISC0 = 0; } while(0);
+[p x MCLRE = ON ]
 "8
 [; ;Gpio_Uso.c: 8:   while(1)
-[p x MCLRE = ON ]
+[p x PBADEN = OFF ]
 "9
 [; ;Gpio_Uso.c: 9:   {
-[p x PBADEN = OFF ]
-"10
-[; ;Gpio_Uso.c: 10:     do { LATBbits.LATB0 = 1; } while(0);
 [p x LVP = OFF ]
-"13
-[; ;Gpio_Uso.c: 13:     do { LATCbits.LATC0 = 0; } while(0);
+"12
+[; ;Gpio_Uso.c: 12:     do { LATAbits.LATA0 = 0; } while(0);
 [p x WDT = OFF ]
 [v $root$_main `(v ~T0 @X0 0 e ]
+"15
+[; ;Gpio_Uso.c: 15:     do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0);
+[v _main `(i ~T0 @X0 1 ef ]
 "16
 [; ;Gpio_Uso.c: 16:     do { LATDbits.LATD0 = ~LATDbits.LATD0; } while(0);
-[v _main `(i ~T0 @X0 1 ef ]
-"17
-[; ;Gpio_Uso.c: 17:     do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
 {
 [e :U _main ]
 [f ]
+"17
+[; ;Gpio_Uso.c: 17:     do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+[e ( _INIT_GPIO ..  ]
 "18
 [; ;Gpio_Uso.c: 18:     do { LATCbits.LATC0 = ~LATCbits.LATC0; } while(0);
-[e ( _INIT_GPIO ..  ]
-"19
-[; ;Gpio_Uso.c: 19:     _delay((unsigned long)((1000)*(4000000/4000.0)));
 [e :U 1093 ]
 {
 [e = . . _TRISBbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 1092 ]
-"20
-[; ;Gpio_Uso.c: 20:   }
+"19
+[; ;Gpio_Uso.c: 19:     _delay((unsigned long)((1000)*(4000000/4000.0)));
 [e :U 1096 ]
 {
 [e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 1095 ]
-"21
-[; ;Gpio_Uso.c: 21:   return 0;
+"20
+[; ;Gpio_Uso.c: 20:   }
 [e :U 1099 ]
 {
 [e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 1098 ]
-"22
-[; ;Gpio_Uso.c: 22: }
+"21
+[; ;Gpio_Uso.c: 21:   return 0;
 [e :U 1102 ]
 {
 [e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 1101 ]
-"23
+"22
+[; ;Gpio_Uso.c: 22: }
 [e :U 1104 ]
-"24
+"23
 {
-"25
+"24
 [e :U 1108 ]
 {
 [e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
 }
 [e :U 1107 ]
-"26
+"25
 [e :U 1111 ]
 {
 [e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
 }
 [e :U 1110 ]
-"27
+"26
 [e :U 1114 ]
 {
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 1113 ]
-"28
+"27
 [e :U 1117 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 1116 ]
-"29
+"28
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"30
+"29
 [e :U 1120 ]
 {
 [e = . . _LATBbits 0 0 -> ~ -> . . _LATBbits 0 0 `i `uc ]
 }
 [e :U 1119 ]
-"31
+"30
 [e :U 1123 ]
 {
 [e = . . _LATDbits 0 0 -> ~ -> . . _LATDbits 0 0 `i `uc ]
 }
 [e :U 1122 ]
-"32
+"31
 [e :U 1126 ]
 {
 [e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
 }
 [e :U 1125 ]
-"33
+"32
 [e :U 1129 ]
 {
 [e = . . _LATCbits 0 0 -> ~ -> . . _LATCbits 0 0 `i `uc ]
 }
 [e :U 1128 ]
-"34
+"33
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"35
+"34
 }
 [e :U 1103 ]
 [e $U 1104  ]
 [e :U 1105 ]
-"36
+"35
 [e ) -> 0 `i ]
 [e $UE 1090  ]
-"37
+"36
 [e :UE 1090 ]
 }

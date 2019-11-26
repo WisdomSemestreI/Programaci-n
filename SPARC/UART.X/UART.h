@@ -1,7 +1,10 @@
 #ifndef UART
 #define UART
 
+#define __XTAL_FREQ 4000000
+
 unsigned char RX_Data;
+
 
 void INIT_UART(void);
 

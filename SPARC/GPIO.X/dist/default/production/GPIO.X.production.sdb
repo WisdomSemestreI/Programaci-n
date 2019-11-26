@@ -29,7 +29,7 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "5 D:\MPLABXProjects\SPARC\GPIO.X\GPIO.c
 [v _INIT_GPIO INIT_GPIO `(v  1 e 1 0 ]
-"16 D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+"15 D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
 [v _main main `(i  1 e 2 0 ]
 [s S309 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
@@ -223,10 +223,10 @@
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "31596
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
-"16 D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
+"15 D:\MPLABXProjects\SPARC\GPIO.X\Gpio_Uso.c
 [v _main main `(i  1 e 2 0 ]
 {
-"37
+"36
 } 0
 "5 D:\MPLABXProjects\SPARC\GPIO.X\GPIO.c
 [v _INIT_GPIO INIT_GPIO `(v  1 e 1 0 ]

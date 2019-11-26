@@ -31,11 +31,11 @@
 [v _INIT_UART INIT_UART `(v  1 e 1 0 ]
 "16
 [v _SEND_UART SEND_UART `(v  1 e 1 0 ]
-"25
+"23
 [v _RECEIVE_UART RECEIVE_UART `(uc  1 e 1 0 ]
 "14 D:\MPLABXProjects\SPARC\UART.X\Uart_Uso.c
 [v _main main `(v  1 e 1 0 ]
-"4 D:\MPLABXProjects\SPARC\UART.X/UART.h
+"6 D:\MPLABXProjects\SPARC\UART.X/UART.h
 [v _RX_Data RX_Data `uc  1 e 1 0 ]
 [s S24 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
@@ -106,8 +106,8 @@
 [v _TXSTAbits TXSTAbits `VES90  1 e 1 @4012 ]
 "29246
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
-"29263
-[v _RCREG1 RCREG1 `VEuc  1 e 1 @4014 ]
+"29258
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
 "29270
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
 "29437
@@ -147,12 +147,12 @@
 [v SEND_UART@TX_Data TX_Data `uc  1 a 1 wreg ]
 [v SEND_UART@TX_Data TX_Data `uc  1 a 1 wreg ]
 [v SEND_UART@TX_Data TX_Data `uc  1 a 1 0 ]
-"23
+"21
 } 0
-"25
+"23
 [v _RECEIVE_UART RECEIVE_UART `(uc  1 e 1 0 ]
 {
-"31
+"30
 } 0
 "4
 [v _INIT_UART INIT_UART `(v  1 e 1 0 ]
