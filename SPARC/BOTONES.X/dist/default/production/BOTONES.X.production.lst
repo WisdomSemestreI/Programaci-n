@@ -1,0 +1,834 @@
+
+
+Microchip MPLAB XC8 Assembler V2.10 build 88905656 
+                                                                                               Mon Nov 25 15:27:39 2019
+
+Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
+     1                           	processor	18F4585
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	flic
+     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     7                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     8                           	psect	text1,global,reloc=2,class=CODE,delta=1
+     9                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    16                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    17                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    18  0000                     
+    19                           ; Version 2.10
+    20                           ; Generated 31/07/2019 GMT
+    21                           ; 
+    22                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    23                           ; All rights reserved.
+    24                           ; 
+    25                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    26                           ; 
+    27                           ; Redistribution and use in source and binary forms, with or without modification, are
+    28                           ; permitted provided that the following conditions are met:
+    29                           ; 
+    30                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    31                           ;        conditions and the following disclaimer.
+    32                           ; 
+    33                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    34                           ;        of conditions and the following disclaimer in the documentation and/or other
+    35                           ;        materials provided with the distribution.
+    36                           ; 
+    37                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    38                           ;        software without specific prior written permission.
+    39                           ; 
+    40                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    41                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    42                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    43                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    44                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    45                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    46                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    47                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    48                           ; 
+    49                           ; 
+    50                           ; Code-generator required, PIC18F4585 Definitions
+    51                           ; 
+    52                           ; SFR Addresses
+    53  0000                     _LATDbits	set	3980
+    54  0000                     _TRISDbits	set	3989
+    55  0000                     _ADCON1	set	4033
+    56  0000                     _CVRCONbits	set	4021
+    57  0000                     _CMCON	set	4020
+    58  0000                     _OSCCON	set	4051
+    59  0000                     _PORTCbits	set	3970
+    60  0000                     _TRISBbits	set	3987
+    61  0000                     _TRISCbits	set	3988
+    62                           
+    63                           ; #config settings
+    64  0000                     
+    65                           	psect	cinit
+    66  00BF82                     __pcinit:
+    67                           	opt callstack 0
+    68  00BF82                     start_initialization:
+    69                           	opt callstack 0
+    70  00BF82                     __initialization:
+    71                           	opt callstack 0
+    72  00BF82                     end_of_initialization:
+    73                           	opt callstack 0
+    74  00BF82                     __end_of__initialization:
+    75                           	opt callstack 0
+    76  00BF82  0100               	movlb	0
+    77  00BF84  EFF0  F05F         	goto	_main	;jump to C main() function
+    78                           
+    79                           	psect	cstackCOMRAM
+    80  000000                     __pcstackCOMRAM:
+    81                           	opt callstack 0
+    82  000000                     
+    83                           ; 1 bytes @ 0x0
+    84 ;;
+    85 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    86 ;;
+    87 ;; *************** function _main *****************
+    88 ;; Defined at:
+    89 ;;		line 15 in file "Botones_Uso.c"
+    90 ;; Parameters:    Size  Location     Type
+    91 ;;		None
+    92 ;; Auto vars:     Size  Location     Type
+    93 ;;		None
+    94 ;; Return value:  Size  Location     Type
+    95 ;;                  1    wreg      void 
+    96 ;; Registers used:
+    97 ;;		wreg, status,2, cstack
+    98 ;; Tracked objects:
+    99 ;;		On entry : 0/0
+   100 ;;		On exit  : 0/0
+   101 ;;		Unchanged: 0/0
+   102 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   103 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   104 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   105 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   106 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   107 ;;Total ram usage:        0 bytes
+   108 ;; Hardware stack levels required when called:    2
+   109 ;; This function calls:
+   110 ;;		_DOWN_PLATFORM
+   111 ;;		_INIT_BUTTONS
+   112 ;;		_INIT_DC
+   113 ;;		_INIT_GPIO
+   114 ;;		_UP_PLATFORM
+   115 ;; This function is called by:
+   116 ;;		Startup code after reset
+   117 ;; This function uses a non-reentrant model
+   118 ;;
+   119                           
+   120                           	psect	text0
+   121  00BFE0                     __ptext0:
+   122                           	opt callstack 0
+   123  00BFE0                     _main:
+   124                           	opt callstack 29
+   125  00BFE0  0E60               	movlw	96
+   126  00BFE2  6ED3               	movwf	211,c	;volatile
+   127  00BFE4  ECCD  F05F         	call	_INIT_GPIO	;wreg free
+   128  00BFE8  ECC8  F05F         	call	_INIT_DC	;wreg free
+   129  00BFEC  ECC4  F05F         	call	_INIT_BUTTONS	;wreg free
+   130  00BFF0                     l53:
+   131  00BFF0  ECE2  F05F         	call	_UP_PLATFORM	;wreg free
+   132  00BFF4  ECD4  F05F         	call	_DOWN_PLATFORM	;wreg free
+   133  00BFF8  EFF8  F05F         	goto	l53
+   134  00BFFC  EF00  F000         	goto	start
+   135  00C000                     __end_of_main:
+   136                           	opt callstack 0
+   137                           
+   138 ;; *************** function _UP_PLATFORM *****************
+   139 ;; Defined at:
+   140 ;;		line 16 in file "BOTONES.c"
+   141 ;; Parameters:    Size  Location     Type
+   142 ;;		None
+   143 ;; Auto vars:     Size  Location     Type
+   144 ;;		None
+   145 ;; Return value:  Size  Location     Type
+   146 ;;                  1    wreg      void 
+   147 ;; Registers used:
+   148 ;;		cstack
+   149 ;; Tracked objects:
+   150 ;;		On entry : 0/0
+   151 ;;		On exit  : 0/0
+   152 ;;		Unchanged: 0/0
+   153 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   154 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   155 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   156 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   157 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   158 ;;Total ram usage:        0 bytes
+   159 ;; Hardware stack levels used:    1
+   160 ;; Hardware stack levels required when called:    1
+   161 ;; This function calls:
+   162 ;;		_MOV_R_DC
+   163 ;;		_MOV_STOP_DC
+   164 ;; This function is called by:
+   165 ;;		_main
+   166 ;; This function uses a non-reentrant model
+   167 ;;
+   168                           
+   169                           	psect	text1
+   170  00BFC4                     __ptext1:
+   171                           	opt callstack 0
+   172  00BFC4                     _UP_PLATFORM:
+   173                           	opt callstack 29
+   174  00BFC4                     
+   175                           ;BOTONES.c: 17:     while (PORTCbits.RC4 == 1) {
+   176  00BFC4  EFE6  F05F         	goto	l783
+   177  00BFC8                     l781:
+   178                           
+   179                           ;BOTONES.c: 18:         MOV_R_DC();
+   180  00BFC8  ECBE  F05F         	call	_MOV_R_DC	;wreg free
+   181  00BFCC                     l783:
+   182                           
+   183                           ;BOTONES.c: 17:     while (PORTCbits.RC4 == 1) {
+   184  00BFCC  B882               	btfsc	130,4,c	;volatile
+   185  00BFCE  EFEB  F05F         	goto	u11
+   186  00BFD2  EFED  F05F         	goto	u10
+   187  00BFD6                     u11:
+   188  00BFD6  EFE4  F05F         	goto	l781
+   189  00BFDA                     u10:
+   190  00BFDA                     
+   191                           ;BOTONES.c: 20:     MOV_STOP_DC();
+   192  00BFDA  ECBB  F05F         	call	_MOV_STOP_DC	;wreg free
+   193  00BFDE  0012               	return		;funcret
+   194  00BFE0                     __end_of_UP_PLATFORM:
+   195                           	opt callstack 0
+   196                           
+   197 ;; *************** function _MOV_R_DC *****************
+   198 ;; Defined at:
+   199 ;;		line 12 in file "MOTORES_DC.c"
+   200 ;; Parameters:    Size  Location     Type
+   201 ;;		None
+   202 ;; Auto vars:     Size  Location     Type
+   203 ;;		None
+   204 ;; Return value:  Size  Location     Type
+   205 ;;                  1    wreg      void 
+   206 ;; Registers used:
+   207 ;;		None
+   208 ;; Tracked objects:
+   209 ;;		On entry : 0/0
+   210 ;;		On exit  : 0/0
+   211 ;;		Unchanged: 0/0
+   212 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   213 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   214 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   215 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   216 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   217 ;;Total ram usage:        0 bytes
+   218 ;; Hardware stack levels used:    1
+   219 ;; This function calls:
+   220 ;;		Nothing
+   221 ;; This function is called by:
+   222 ;;		_UP_PLATFORM
+   223 ;; This function uses a non-reentrant model
+   224 ;;
+   225                           
+   226                           	psect	text2
+   227  00BF7C                     __ptext2:
+   228                           	opt callstack 0
+   229  00BF7C                     _MOV_R_DC:
+   230                           	opt callstack 29
+   231  00BF7C  8A8C               	bsf	140,5,c	;volatile
+   232  00BF7E  9C8C               	bcf	140,6,c	;volatile
+   233  00BF80  0012               	return		;funcret
+   234  00BF82                     __end_of_MOV_R_DC:
+   235                           	opt callstack 0
+   236                           
+   237 ;; *************** function _INIT_GPIO *****************
+   238 ;; Defined at:
+   239 ;;		line 5 in file "GPIO.c"
+   240 ;; Parameters:    Size  Location     Type
+   241 ;;		None
+   242 ;; Auto vars:     Size  Location     Type
+   243 ;;		None
+   244 ;; Return value:  Size  Location     Type
+   245 ;;                  1    wreg      void 
+   246 ;; Registers used:
+   247 ;;		wreg, status,2
+   248 ;; Tracked objects:
+   249 ;;		On entry : 0/0
+   250 ;;		On exit  : 0/0
+   251 ;;		Unchanged: 0/0
+   252 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   253 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   254 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   255 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   256 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   257 ;;Total ram usage:        0 bytes
+   258 ;; Hardware stack levels used:    1
+   259 ;; This function calls:
+   260 ;;		Nothing
+   261 ;; This function is called by:
+   262 ;;		_main
+   263 ;; This function uses a non-reentrant model
+   264 ;;
+   265                           
+   266                           	psect	text3
+   267  00BF9A                     __ptext3:
+   268                           	opt callstack 0
+   269  00BF9A                     _INIT_GPIO:
+   270                           	opt callstack 30
+   271  00BF9A                     
+   272                           ;GPIO.c: 7:     OSCCON = 0X60;
+   273  00BF9A  0E60               	movlw	96
+   274  00BF9C  6ED3               	movwf	211,c	;volatile
+   275  00BF9E                     
+   276                           ;GPIO.c: 9:     CMCON = 0XFF;
+   277  00BF9E  68B4               	setf	180,c	;volatile
+   278  00BFA0                     
+   279                           ;GPIO.c: 10:     CVRCONbits.CVREN = 0;
+   280  00BFA0  9EB5               	bcf	181,7,c	;volatile
+   281                           
+   282                           ;GPIO.c: 11:     ADCON1 = 0X0F;
+   283  00BFA2  0E0F               	movlw	15
+   284  00BFA4  6EC1               	movwf	193,c	;volatile
+   285  00BFA6  0012               	return		;funcret
+   286  00BFA8                     __end_of_INIT_GPIO:
+   287                           	opt callstack 0
+   288                           
+   289 ;; *************** function _INIT_DC *****************
+   290 ;; Defined at:
+   291 ;;		line 5 in file "MOTORES_DC.c"
+   292 ;; Parameters:    Size  Location     Type
+   293 ;;		None
+   294 ;; Auto vars:     Size  Location     Type
+   295 ;;		None
+   296 ;; Return value:  Size  Location     Type
+   297 ;;                  1    wreg      void 
+   298 ;; Registers used:
+   299 ;;		None
+   300 ;; Tracked objects:
+   301 ;;		On entry : 0/0
+   302 ;;		On exit  : 0/0
+   303 ;;		Unchanged: 0/0
+   304 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   305 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   306 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   307 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   308 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   309 ;;Total ram usage:        0 bytes
+   310 ;; Hardware stack levels used:    1
+   311 ;; This function calls:
+   312 ;;		Nothing
+   313 ;; This function is called by:
+   314 ;;		_main
+   315 ;; This function uses a non-reentrant model
+   316 ;;
+   317                           
+   318                           	psect	text4
+   319  00BF90                     __ptext4:
+   320                           	opt callstack 0
+   321  00BF90                     _INIT_DC:
+   322                           	opt callstack 30
+   323  00BF90  9895               	bcf	149,4,c	;volatile
+   324  00BF92  9A95               	bcf	149,5,c	;volatile
+   325  00BF94  9C95               	bcf	149,6,c	;volatile
+   326  00BF96  888C               	bsf	140,4,c	;volatile
+   327  00BF98  0012               	return		;funcret
+   328  00BF9A                     __end_of_INIT_DC:
+   329                           	opt callstack 0
+   330                           
+   331 ;; *************** function _INIT_BUTTONS *****************
+   332 ;; Defined at:
+   333 ;;		line 6 in file "BOTONES.c"
+   334 ;; Parameters:    Size  Location     Type
+   335 ;;		None
+   336 ;; Auto vars:     Size  Location     Type
+   337 ;;		None
+   338 ;; Return value:  Size  Location     Type
+   339 ;;                  1    wreg      void 
+   340 ;; Registers used:
+   341 ;;		None
+   342 ;; Tracked objects:
+   343 ;;		On entry : 0/0
+   344 ;;		On exit  : 0/0
+   345 ;;		Unchanged: 0/0
+   346 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   347 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   348 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   349 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   350 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   351 ;;Total ram usage:        0 bytes
+   352 ;; Hardware stack levels used:    1
+   353 ;; This function calls:
+   354 ;;		Nothing
+   355 ;; This function is called by:
+   356 ;;		_main
+   357 ;; This function uses a non-reentrant model
+   358 ;;
+   359                           
+   360                           	psect	text5
+   361  00BF88                     __ptext5:
+   362                           	opt callstack 0
+   363  00BF88                     _INIT_BUTTONS:
+   364                           	opt callstack 30
+   365  00BF88  8894               	bsf	148,4,c	;volatile
+   366  00BF8A  8A94               	bsf	148,5,c	;volatile
+   367  00BF8C  8493               	bsf	147,2,c	;volatile
+   368  00BF8E  0012               	return		;funcret
+   369  00BF90                     __end_of_INIT_BUTTONS:
+   370                           	opt callstack 0
+   371                           
+   372 ;; *************** function _DOWN_PLATFORM *****************
+   373 ;; Defined at:
+   374 ;;		line 24 in file "BOTONES.c"
+   375 ;; Parameters:    Size  Location     Type
+   376 ;;		None
+   377 ;; Auto vars:     Size  Location     Type
+   378 ;;		None
+   379 ;; Return value:  Size  Location     Type
+   380 ;;                  1    wreg      void 
+   381 ;; Registers used:
+   382 ;;		cstack
+   383 ;; Tracked objects:
+   384 ;;		On entry : 0/0
+   385 ;;		On exit  : 0/0
+   386 ;;		Unchanged: 0/0
+   387 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   388 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   389 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   390 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   391 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   392 ;;Total ram usage:        0 bytes
+   393 ;; Hardware stack levels used:    1
+   394 ;; Hardware stack levels required when called:    1
+   395 ;; This function calls:
+   396 ;;		_MOV_L_DC
+   397 ;;		_MOV_STOP_DC
+   398 ;; This function is called by:
+   399 ;;		_main
+   400 ;; This function uses a non-reentrant model
+   401 ;;
+   402                           
+   403                           	psect	text6
+   404  00BFA8                     __ptext6:
+   405                           	opt callstack 0
+   406  00BFA8                     _DOWN_PLATFORM:
+   407                           	opt callstack 29
+   408  00BFA8                     
+   409                           ;BOTONES.c: 25:     while (PORTCbits.RC5 == 1) {
+   410  00BFA8  EFD8  F05F         	goto	l791
+   411  00BFAC                     l789:
+   412                           
+   413                           ;BOTONES.c: 26:         MOV_L_DC();
+   414  00BFAC  ECB8  F05F         	call	_MOV_L_DC	;wreg free
+   415  00BFB0                     l791:
+   416                           
+   417                           ;BOTONES.c: 25:     while (PORTCbits.RC5 == 1) {
+   418  00BFB0  BA82               	btfsc	130,5,c	;volatile
+   419  00BFB2  EFDD  F05F         	goto	u21
+   420  00BFB6  EFDF  F05F         	goto	u20
+   421  00BFBA                     u21:
+   422  00BFBA  EFD6  F05F         	goto	l789
+   423  00BFBE                     u20:
+   424  00BFBE                     
+   425                           ;BOTONES.c: 28:     MOV_STOP_DC();
+   426  00BFBE  ECBB  F05F         	call	_MOV_STOP_DC	;wreg free
+   427  00BFC2  0012               	return		;funcret
+   428  00BFC4                     __end_of_DOWN_PLATFORM:
+   429                           	opt callstack 0
+   430                           
+   431 ;; *************** function _MOV_STOP_DC *****************
+   432 ;; Defined at:
+   433 ;;		line 23 in file "MOTORES_DC.c"
+   434 ;; Parameters:    Size  Location     Type
+   435 ;;		None
+   436 ;; Auto vars:     Size  Location     Type
+   437 ;;		None
+   438 ;; Return value:  Size  Location     Type
+   439 ;;                  1    wreg      void 
+   440 ;; Registers used:
+   441 ;;		None
+   442 ;; Tracked objects:
+   443 ;;		On entry : 0/0
+   444 ;;		On exit  : 0/0
+   445 ;;		Unchanged: 0/0
+   446 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   447 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   448 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   449 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   450 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   451 ;;Total ram usage:        0 bytes
+   452 ;; Hardware stack levels used:    1
+   453 ;; This function calls:
+   454 ;;		Nothing
+   455 ;; This function is called by:
+   456 ;;		_UP_PLATFORM
+   457 ;;		_DOWN_PLATFORM
+   458 ;; This function uses a non-reentrant model
+   459 ;;
+   460                           
+   461                           	psect	text7
+   462  00BF76                     __ptext7:
+   463                           	opt callstack 0
+   464  00BF76                     _MOV_STOP_DC:
+   465                           	opt callstack 29
+   466  00BF76  9C8C               	bcf	140,6,c	;volatile
+   467  00BF78  9A8C               	bcf	140,5,c	;volatile
+   468  00BF7A  0012               	return		;funcret
+   469  00BF7C                     __end_of_MOV_STOP_DC:
+   470                           	opt callstack 0
+   471                           
+   472 ;; *************** function _MOV_L_DC *****************
+   473 ;; Defined at:
+   474 ;;		line 18 in file "MOTORES_DC.c"
+   475 ;; Parameters:    Size  Location     Type
+   476 ;;		None
+   477 ;; Auto vars:     Size  Location     Type
+   478 ;;		None
+   479 ;; Return value:  Size  Location     Type
+   480 ;;                  1    wreg      void 
+   481 ;; Registers used:
+   482 ;;		None
+   483 ;; Tracked objects:
+   484 ;;		On entry : 0/0
+   485 ;;		On exit  : 0/0
+   486 ;;		Unchanged: 0/0
+   487 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   488 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   489 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   490 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   491 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   492 ;;Total ram usage:        0 bytes
+   493 ;; Hardware stack levels used:    1
+   494 ;; This function calls:
+   495 ;;		Nothing
+   496 ;; This function is called by:
+   497 ;;		_DOWN_PLATFORM
+   498 ;; This function uses a non-reentrant model
+   499 ;;
+   500                           
+   501                           	psect	text8
+   502  00BF70                     __ptext8:
+   503                           	opt callstack 0
+   504  00BF70                     _MOV_L_DC:
+   505                           	opt callstack 29
+   506  00BF70  8C8C               	bsf	140,6,c	;volatile
+   507  00BF72  9A8C               	bcf	140,5,c	;volatile
+   508  00BF74  0012               	return		;funcret
+   509  00BF76                     __end_of_MOV_L_DC:
+   510                           	opt callstack 0
+   511  0000                     
+   512                           	psect	rparam
+   513  0000                     tosu	equ	0xFFF
+   514                           tosh	equ	0xFFE
+   515                           tosl	equ	0xFFD
+   516                           stkptr	equ	0xFFC
+   517                           pclatu	equ	0xFFB
+   518                           pclath	equ	0xFFA
+   519                           pcl	equ	0xFF9
+   520                           tblptru	equ	0xFF8
+   521                           tblptrh	equ	0xFF7
+   522                           tblptrl	equ	0xFF6
+   523                           tablat	equ	0xFF5
+   524                           prodh	equ	0xFF4
+   525                           prodl	equ	0xFF3
+   526                           indf0	equ	0xFEF
+   527                           postinc0	equ	0xFEE
+   528                           postdec0	equ	0xFED
+   529                           preinc0	equ	0xFEC
+   530                           plusw0	equ	0xFEB
+   531                           fsr0h	equ	0xFEA
+   532                           fsr0l	equ	0xFE9
+   533                           wreg	equ	0xFE8
+   534                           indf1	equ	0xFE7
+   535                           postinc1	equ	0xFE6
+   536                           postdec1	equ	0xFE5
+   537                           preinc1	equ	0xFE4
+   538                           plusw1	equ	0xFE3
+   539                           fsr1h	equ	0xFE2
+   540                           fsr1l	equ	0xFE1
+   541                           bsr	equ	0xFE0
+   542                           indf2	equ	0xFDF
+   543                           postinc2	equ	0xFDE
+   544                           postdec2	equ	0xFDD
+   545                           preinc2	equ	0xFDC
+   546                           plusw2	equ	0xFDB
+   547                           fsr2h	equ	0xFDA
+   548                           fsr2l	equ	0xFD9
+   549                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      0       0
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+    BANK8           256      0       0
+    BANK9           256      0       0
+    BANK10          256      0       0
+    BANK11          256      0       0
+    BANK12          256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _main in BANK8
+
+    None.
+
+Critical Paths under _main in BANK9
+
+    None.
+
+Critical Paths under _main in BANK10
+
+    None.
+
+Critical Paths under _main in BANK11
+
+    None.
+
+Critical Paths under _main in BANK12
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+                      _DOWN_PLATFORM
+                       _INIT_BUTTONS
+                            _INIT_DC
+                          _INIT_GPIO
+                        _UP_PLATFORM
+ ---------------------------------------------------------------------------------
+ (1) _UP_PLATFORM                                          0     0      0       0
+                           _MOV_R_DC
+                        _MOV_STOP_DC
+ ---------------------------------------------------------------------------------
+ (2) _MOV_R_DC                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _INIT_GPIO                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _INIT_DC                                              0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _INIT_BUTTONS                                         0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _DOWN_PLATFORM                                        0     0      0       0
+                           _MOV_L_DC
+                        _MOV_STOP_DC
+ ---------------------------------------------------------------------------------
+ (2) _MOV_STOP_DC                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _MOV_L_DC                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _DOWN_PLATFORM
+     _MOV_L_DC
+     _MOV_STOP_DC
+   _INIT_BUTTONS
+   _INIT_DC
+   _INIT_GPIO
+   _UP_PLATFORM
+     _MOV_R_DC
+     _MOV_STOP_DC
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             400      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      0       0       1        0.0%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+ABS                  0      0       0      20        0.0%
+BITBANK8           100      0       0      21        0.0%
+BANK8              100      0       0      22        0.0%
+BITBANK9           100      0       0      23        0.0%
+BANK9              100      0       0      24        0.0%
+BITBANK10          100      0       0      25        0.0%
+BANK10             100      0       0      26        0.0%
+BITBANK11          100      0       0      27        0.0%
+BANK11             100      0       0      28        0.0%
+BITBANK12          100      0       0      29        0.0%
+BANK12             100      0       0      30        0.0%
+BIGRAM             CFF      0       0      31        0.0%
+BITSFR_3             0      0       0     200        0.0%
+SFR_3                0      0       0     200        0.0%
+BITSFR_2             0      0       0     200        0.0%
+SFR_2                0      0       0     200        0.0%
+BITSFR_1             0      0       0     200        0.0%
+SFR_1                0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
+Symbol Table                                                                                   Mon Nov 25 15:27:39 2019
+
+          _DOWN_PLATFORM BFA8                       l21 BF8E                       l30 BFDE  
+                     l15 BF88                       l17 BF8A                       l19 BF8C  
+                     l36 BFC2                       l53 BFF0                       l80 BF96  
+                     l82 BF98                       l74 BF90                       l67 BFA6  
+                     l92 BF70                       l76 BF92                       l85 BF7C  
+                     l94 BF72                       l78 BF94                       l87 BF7E  
+                     l96 BF74                       l89 BF80                       l99 BF76  
+                     u10 BFDA                       u11 BFD6                       u20 BFBE  
+                     u21 BFBA                      l101 BF78                      l103 BF7A  
+                    l801 BFE0                      l803 BFE4                      l781 BFC8  
+                    l791 BFB0                      l783 BFCC                      l793 BFBE  
+                    l785 BFDA                      l787 BFA8                      l795 BF9A  
+                    l779 BFC4                      l789 BFAC                      l797 BF9E  
+                    l799 BFA0             __CFG_LVP$OFF 000000          __end_of_INIT_DC BF9A  
+           __CFG_WDT$OFF 000000                     _main BFE0                     start 0000  
+            _UP_PLATFORM BFC4       __size_of_INIT_GPIO 000E            __CFG_MCLRE$ON 000000  
+         ?_DOWN_PLATFORM 0000             ___param_bank 000000                    ?_main 0000  
+                  _CMCON 000FB4            ?_INIT_BUTTONS 0000         __end_of_MOV_L_DC BF76  
+       __end_of_MOV_R_DC BF82          __initialization BF82             __end_of_main C000  
+         ??_INIT_BUTTONS 0000                   ??_main 0000            __activetblptr 000000  
+              ??_INIT_DC 0000        __end_of_INIT_GPIO BFA8                   _ADCON1 000FC1  
+                 _OSCCON 000FD3             ?_MOV_STOP_DC 0000          ??_DOWN_PLATFORM 0000  
+             __accesstop 0060  __end_of__initialization BF82          __CFG_PBADEN$OFF 000000  
+          ___rparam_used 000001           __pcstackCOMRAM 0000                ?_MOV_L_DC 0000  
+              ?_MOV_R_DC 0000     __end_of_INIT_BUTTONS BF90             ?_UP_PLATFORM 0000  
+             ??_MOV_L_DC 0000               ??_MOV_R_DC 0000                  _INIT_DC BF90  
+                __Hparam 0000                  __Lparam 0000     __size_of_MOV_STOP_DC 0006  
+                __pcinit BF82                  __ramtop 0D00                  __ptext0 BFE0  
+                __ptext1 BFC4                  __ptext2 BF7C                  __ptext3 BF9A  
+                __ptext4 BF90                  __ptext5 BF88                  __ptext6 BFA8  
+                __ptext7 BF76                  __ptext8 BF70     end_of_initialization BF82  
+              _INIT_GPIO BF9A                _PORTCbits 000F82                _TRISBbits 000F93  
+              _TRISCbits 000F94                _TRISDbits 000F95    __size_of_INIT_BUTTONS 0008  
+             ?_INIT_GPIO 0000    __end_of_DOWN_PLATFORM BFC4     __size_of_UP_PLATFORM 001C  
+      __size_of_MOV_L_DC 0006        __size_of_MOV_R_DC 0006             _INIT_BUTTONS BF88  
+    start_initialization BF82         __CFG_OSC$IRCIO67 000000                 ?_INIT_DC 0000  
+            ??_INIT_GPIO 0000                 _LATDbits 000F8C            ??_MOV_STOP_DC 0000  
+               _MOV_L_DC BF70                 _MOV_R_DC BF7C         __size_of_INIT_DC 000A  
+               __Hrparam 0000                 __Lrparam 0000      __end_of_MOV_STOP_DC BF7C  
+          __size_of_main 0020            ??_UP_PLATFORM 0000               _CVRCONbits 000FB5  
+ __size_of_DOWN_PLATFORM 001C              _MOV_STOP_DC BF76      __end_of_UP_PLATFORM BFE0  
