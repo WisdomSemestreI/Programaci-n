@@ -1,0 +1,842 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4585 ]
+[d frameptr 4065 ]
+"6 D:\MPLABXProjects\SPARC\SPARC_4585.X\BOTONES.c
+[v _INIT_BUTTONS INIT_BUTTONS `(v  1 e 1 0 ]
+"12
+[v _UP_PLATFORM UP_PLATFORM `(v  1 e 1 0 ]
+"20
+[v _DOWN_PLATFORM DOWN_PLATFORM `(v  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"5 D:\MPLABXProjects\SPARC\SPARC_4585.X\GPIO.c
+[v _INIT_GPIO INIT_GPIO `(v  1 e 1 0 ]
+"5 D:\MPLABXProjects\SPARC\SPARC_4585.X\LEDS.c
+[v _INIT_LEDS INIT_LEDS `(v  1 e 1 0 ]
+"11
+[v _LEDS_OFF LEDS_OFF `(v  1 e 1 0 ]
+"17
+[v _ERROR_LEDS ERROR_LEDS `(v  1 e 1 0 ]
+"23
+[v _PROCESO_LEDS PROCESO_LEDS `(v  1 e 1 0 ]
+"29
+[v _TERMINADO_LEDS TERMINADO_LEDS `(v  1 e 1 0 ]
+"6 D:\MPLABXProjects\SPARC\SPARC_4585.X\MENSAJES.c
+[v _ERROR_NO_COMANDO ERROR_NO_COMANDO `(v  1 e 1 0 ]
+"12
+[v _ERROR_FUERA_LIMITE ERROR_FUERA_LIMITE `(v  1 e 1 0 ]
+"18
+[v _TERMINADO TERMINADO `(v  1 e 1 0 ]
+"24
+[v _PROCESO PROCESO `(v  1 e 1 0 ]
+"5 D:\MPLABXProjects\SPARC\SPARC_4585.X\MOTORES_DC.c
+[v _INIT_DC INIT_DC `(v  1 e 1 0 ]
+"11
+[v _MOV_R_DC MOV_R_DC `(v  1 e 1 0 ]
+"17
+[v _MOV_L_DC MOV_L_DC `(v  1 e 1 0 ]
+"23
+[v _MOV_STOP_DC MOV_STOP_DC `(v  1 e 1 0 ]
+"5 D:\MPLABXProjects\SPARC\SPARC_4585.X\SERIAL.c
+[v _SEND_STRING SEND_STRING `(v  1 e 1 0 ]
+[v i2_SEND_STRING SEND_STRING `(v  1 e 1 0 ]
+"15
+[v _RECEIVE_STRING RECEIVE_STRING `(v  1 e 1 0 ]
+"27 D:\MPLABXProjects\SPARC\SPARC_4585.X\SPARC_4585.c
+[v _main main `(v  1 e 1 0 ]
+"197
+[v _INT_isr INT_isr `IIH(v  1 e 1 0 ]
+"224
+[v _INIT_INT INIT_INT `(v  1 e 1 0 ]
+"6 D:\MPLABXProjects\SPARC\SPARC_4585.X\STEP_MOTOR.c
+[v _INIT_STEP INIT_STEP `(v  1 e 1 0 ]
+"15
+[v _MOV_R_PASOS_X MOV_R_PASOS_X `(us  1 e 2 0 ]
+[v i2_MOV_R_PASOS_X MOV_R_PASOS_X `(us  1 e 2 0 ]
+"33
+[v _MOV_L_PASOS_X MOV_L_PASOS_X `(us  1 e 2 0 ]
+[v i2_MOV_L_PASOS_X MOV_L_PASOS_X `(us  1 e 2 0 ]
+"51
+[v _MOV_R_PASOS_Y MOV_R_PASOS_Y `(us  1 e 2 0 ]
+[v i2_MOV_R_PASOS_Y MOV_R_PASOS_Y `(us  1 e 2 0 ]
+"69
+[v _MOV_L_PASOS_Y MOV_L_PASOS_Y `(us  1 e 2 0 ]
+[v i2_MOV_L_PASOS_Y MOV_L_PASOS_Y `(us  1 e 2 0 ]
+"4 D:\MPLABXProjects\SPARC\SPARC_4585.X\UART.c
+[v _INIT_UART INIT_UART `(v  1 e 1 0 ]
+"16
+[v _SEND_UART SEND_UART `(v  1 e 1 0 ]
+[v i2_SEND_UART SEND_UART `(v  1 e 1 0 ]
+"23
+[v _RECEIVE_UART RECEIVE_UART `(uc  1 e 1 0 ]
+"6 D:\MPLABXProjects\SPARC\SPARC_4585.X/UART.h
+[v _RX_Data RX_Data `uc  1 e 1 0 ]
+"25505 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h
+[v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+[s S73 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"25563
+[s S778 . 1 `uc 1 AN0 1 0 :1:0 
+`uc 1 AN1 1 0 :1:1 
+`uc 1 AN2 1 0 :1:2 
+`uc 1 AN3 1 0 :1:3 
+`uc 1 T0CKI 1 0 :1:4 
+`uc 1 AN4 1 0 :1:5 
+`uc 1 OSC2 1 0 :1:6 
+`uc 1 OSC1 1 0 :1:7 
+]
+[s S787 . 1 `uc 1 CVREF 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 VREFM 1 0 :1:2 
+`uc 1 VREFP 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 HLVDIN 1 0 :1:5 
+`uc 1 CLKO 1 0 :1:6 
+`uc 1 CLKI 1 0 :1:7 
+]
+[s S796 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LVDIN 1 0 :1:5 
+]
+[s S799 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SS 1 0 :1:5 
+]
+[s S802 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_SS 1 0 :1:5 
+]
+[s S805 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 nSS 1 0 :1:5 
+]
+[s S808 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+`uc 1 . 1 0 :6:1 
+`uc 1 RJPU 1 0 :1:7 
+]
+[u S812 . 1 `S73 1 . 1 0 `S778 1 . 1 0 `S787 1 . 1 0 `S796 1 . 1 0 `S799 1 . 1 0 `S802 1 . 1 0 `S805 1 . 1 0 `S808 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES812  1 e 1 @3968 ]
+"25708
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"25882
+[v _PORTC PORTC `VEuc  1 e 1 @3970 ]
+[s S33 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"25927
+[s S117 . 1 `uc 1 T1OSO 1 0 :1:0 
+`uc 1 T1OSI 1 0 :1:1 
+`uc 1 CCP1 1 0 :1:2 
+`uc 1 SCK 1 0 :1:3 
+`uc 1 SDI 1 0 :1:4 
+`uc 1 SDO 1 0 :1:5 
+`uc 1 TX 1 0 :1:6 
+`uc 1 RX 1 0 :1:7 
+]
+[s S126 . 1 `uc 1 T13CKI 1 0 :1:0 
+`uc 1 . 1 0 :2:1 
+`uc 1 SCL 1 0 :1:3 
+`uc 1 SDA 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CK 1 0 :1:6 
+`uc 1 DT 1 0 :1:7 
+]
+[s S134 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 CCP2 1 0 :1:1 
+`uc 1 PA1 1 0 :1:2 
+]
+[s S138 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 PA2 1 0 :1:1 
+]
+[u S141 . 1 `S33 1 . 1 0 `S117 1 . 1 0 `S126 1 . 1 0 `S134 1 . 1 0 `S138 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES141  1 e 1 @3970 ]
+"26052
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
+[s S269 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"26097
+[s S430 . 1 `uc 1 PSP0 1 0 :1:0 
+`uc 1 PSP1 1 0 :1:1 
+`uc 1 PSP2 1 0 :1:2 
+`uc 1 PSP3 1 0 :1:3 
+`uc 1 PSP4 1 0 :1:4 
+`uc 1 PSP5 1 0 :1:5 
+`uc 1 PSP6 1 0 :1:6 
+`uc 1 PSP7 1 0 :1:7 
+]
+[s S439 . 1 `uc 1 C1INB 1 0 :1:0 
+`uc 1 C1INA 1 0 :1:1 
+`uc 1 C2INB 1 0 :1:2 
+`uc 1 C2INA 1 0 :1:3 
+`uc 1 P1A 1 0 :1:4 
+`uc 1 P1B 1 0 :1:5 
+`uc 1 P1C 1 0 :1:6 
+`uc 1 P1D 1 0 :1:7 
+]
+[s S448 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 ECCP1 1 0 :1:4 
+]
+[s S451 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 SS2 1 0 :1:7 
+]
+[u S454 . 1 `S269 1 . 1 0 `S430 1 . 1 0 `S439 1 . 1 0 `S448 1 . 1 0 `S451 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES454  1 e 1 @3971 ]
+"26232
+[v _PORTE PORTE `VEuc  1 e 1 @3972 ]
+[s S887 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+`uc 1 RE3 1 0 :1:3 
+]
+"26261
+[s S892 . 1 `uc 1 PD2 1 0 :1:0 
+`uc 1 PC2 1 0 :1:1 
+`uc 1 CCP10 1 0 :1:2 
+`uc 1 CCP9E 1 0 :1:3 
+]
+[s S897 . 1 `uc 1 RDE 1 0 :1:0 
+`uc 1 WRE 1 0 :1:1 
+`uc 1 CS 1 0 :1:2 
+`uc 1 PC3E 1 0 :1:3 
+]
+[s S902 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PB2 1 0 :1:2 
+]
+[u S905 . 1 `S887 1 . 1 0 `S892 1 . 1 0 `S897 1 . 1 0 `S902 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES905  1 e 1 @3972 ]
+[s S1424 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"26470
+[s S1433 . 1 `uc 1 LB0 1 0 :1:0 
+`uc 1 LB1 1 0 :1:1 
+`uc 1 LB2 1 0 :1:2 
+`uc 1 LB3 1 0 :1:3 
+`uc 1 LB4 1 0 :1:4 
+`uc 1 LB5 1 0 :1:5 
+`uc 1 LB6 1 0 :1:6 
+`uc 1 LB7 1 0 :1:7 
+]
+[u S1442 . 1 `S1424 1 . 1 0 `S1433 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1442  1 e 1 @3978 ]
+[s S300 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"26694
+[s S309 . 1 `uc 1 LD0 1 0 :1:0 
+`uc 1 LD1 1 0 :1:1 
+`uc 1 LD2 1 0 :1:2 
+`uc 1 LD3 1 0 :1:3 
+`uc 1 LD4 1 0 :1:4 
+`uc 1 LD5 1 0 :1:5 
+`uc 1 LD6 1 0 :1:6 
+`uc 1 LD7 1 0 :1:7 
+]
+[u S318 . 1 `S300 1 . 1 0 `S309 1 . 1 0 ]
+[v _LATDbits LATDbits `VES318  1 e 1 @3980 ]
+[s S64 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"26863
+[u S82 . 1 `S64 1 . 1 0 `S73 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES82  1 e 1 @3986 ]
+[s S1118 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"27085
+[s S1127 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+[u S1136 . 1 `S1118 1 . 1 0 `S1127 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES1136  1 e 1 @3987 ]
+[s S24 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"27307
+[u S42 . 1 `S24 1 . 1 0 `S33 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES42  1 e 1 @3988 ]
+[s S260 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"27529
+[u S278 . 1 `S260 1 . 1 0 `S269 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES278  1 e 1 @3989 ]
+[s S729 . 1 `uc 1 TRISE0 1 0 :1:0 
+`uc 1 TRISE1 1 0 :1:1 
+`uc 1 TRISE2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 PSPMODE 1 0 :1:4 
+`uc 1 IBOV 1 0 :1:5 
+`uc 1 OBF 1 0 :1:6 
+`uc 1 IBF 1 0 :1:7 
+]
+"27746
+[s S738 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+]
+[u S742 . 1 `S729 1 . 1 0 `S738 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES742  1 e 1 @3990 ]
+[s S659 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"28042
+[s S668 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+]
+[u S672 . 1 `S659 1 . 1 0 `S668 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES672  1 e 1 @3998 ]
+"28780
+[v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
+[s S966 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"28821
+[s S975 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S978 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[s S981 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S984 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S987 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[u S989 . 1 `S966 1 . 1 0 `S975 1 . 1 0 `S978 1 . 1 0 `S981 1 . 1 0 `S984 1 . 1 0 `S987 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES989  1 e 1 @4011 ]
+"28990
+[v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
+[s S606 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"29029
+[s S615 . 1 `uc 1 TX9D1 1 0 :1:0 
+`uc 1 TRMT1 1 0 :1:1 
+`uc 1 BRGH1 1 0 :1:2 
+`uc 1 SENDB1 1 0 :1:3 
+`uc 1 SYNC1 1 0 :1:4 
+`uc 1 TXEN1 1 0 :1:5 
+`uc 1 TX91 1 0 :1:6 
+`uc 1 CSRC1 1 0 :1:7 
+]
+[s S624 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[s S627 . 1 `uc 1 TXD8 1 0 :1:0 
+]
+[u S629 . 1 `S606 1 . 1 0 `S615 1 . 1 0 `S624 1 . 1 0 `S627 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES629  1 e 1 @4012 ]
+"29246
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"29258
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
+"29270
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+"29437
+[v _CMCON CMCON `VEuc  1 e 1 @4020 ]
+[s S218 . 1 `uc 1 CVR 1 0 :4:0 
+`uc 1 CVRSS 1 0 :1:4 
+`uc 1 CVRR 1 0 :1:5 
+`uc 1 CVROE 1 0 :1:6 
+`uc 1 CVREN 1 0 :1:7 
+]
+"29552
+[s S224 . 1 `uc 1 CVR0 1 0 :1:0 
+`uc 1 CVR1 1 0 :1:1 
+`uc 1 CVR2 1 0 :1:2 
+`uc 1 CVR3 1 0 :1:3 
+`uc 1 CVREF 1 0 :1:4 
+]
+[s S230 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 CVROEN 1 0 :1:6 
+]
+[u S233 . 1 `S218 1 . 1 0 `S224 1 . 1 0 `S230 1 . 1 0 ]
+[v _CVRCONbits CVRCONbits `VES233  1 e 1 @4021 ]
+"30189
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+[s S1158 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+]
+"31208
+[s S1160 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_POR 1 0 :1:1 
+]
+[s S1163 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_PD 1 0 :1:2 
+]
+[s S1166 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_TO 1 0 :1:3 
+]
+[s S1169 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NOT_RI 1 0 :1:4 
+]
+[s S1172 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 nPD 1 0 :1:2 
+`uc 1 nTO 1 0 :1:3 
+`uc 1 nRI 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 SBOREN 1 0 :1:6 
+`uc 1 IPEN 1 0 :1:7 
+]
+[s S1181 . 1 `uc 1 BOR 1 0 :1:0 
+`uc 1 POR 1 0 :1:1 
+`uc 1 PD 1 0 :1:2 
+`uc 1 TO 1 0 :1:3 
+`uc 1 RI 1 0 :1:4 
+]
+[u S1187 . 1 `S1158 1 . 1 0 `S1160 1 . 1 0 `S1163 1 . 1 0 `S1166 1 . 1 0 `S1169 1 . 1 0 `S1172 1 . 1 0 `S1181 1 . 1 0 ]
+[v _RCONbits RCONbits `VES1187  1 e 1 @4048 ]
+"31596
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+[s S1078 . 1 `uc 1 INT1IF 1 0 :1:0 
+`uc 1 INT2IF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 INT1IE 1 0 :1:3 
+`uc 1 INT2IE 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 INT1IP 1 0 :1:6 
+`uc 1 INT2IP 1 0 :1:7 
+]
+"32050
+[s S1087 . 1 `uc 1 INT1F 1 0 :1:0 
+`uc 1 INT2F 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 INT1E 1 0 :1:3 
+`uc 1 INT2E 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 INT1P 1 0 :1:6 
+`uc 1 INT2P 1 0 :1:7 
+]
+[u S1096 . 1 `S1078 1 . 1 0 `S1087 1 . 1 0 ]
+[v _INTCON3bits INTCON3bits `VES1096  1 e 1 @4080 ]
+[s S1225 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RBPU 1 0 :1:7 
+]
+"32142
+[s S1228 . 1 `uc 1 RBIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+[s S1237 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IP 1 0 :1:2 
+`uc 1 . 1 0 :4:3 
+`uc 1 RBPU 1 0 :1:7 
+]
+[u S1242 . 1 `S1225 1 . 1 0 `S1228 1 . 1 0 `S1237 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES1242  1 e 1 @4081 ]
+[s S1029 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"32224
+[s S1038 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S1047 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S1051 . 1 `S1029 1 . 1 0 `S1038 1 . 1 0 `S1047 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1051  1 e 1 @4082 ]
+"16 D:\MPLABXProjects\SPARC\SPARC_4585.X\SPARC_4585.c
+[v _BuscandoHomeX BuscandoHomeX `uc  1 e 1 0 ]
+"17
+[v _BuscandoHomeY BuscandoHomeY `uc  1 e 1 0 ]
+"18
+[v _TaskReceive TaskReceive `uc  1 e 1 0 ]
+"19
+[v _AjusteZ AjusteZ `uc  1 e 1 0 ]
+"20
+[v _X X `us  1 e 2 0 ]
+"21
+[v _Y Y `us  1 e 2 0 ]
+"22
+[v _XReceive XReceive `us  1 e 2 0 ]
+"23
+[v _YReceive YReceive `us  1 e 2 0 ]
+"24
+[v _PosicionX PosicionX `us  1 e 2 0 ]
+"25
+[v _PosicionY PosicionY `us  1 e 2 0 ]
+"27
+[v _main main `(v  1 e 1 0 ]
+{
+"139
+[v main@Ptrcoordenadas Ptrcoordenadas `*.39uc  1 a 2 34 ]
+"153
+[v main@Unidady Unidady `us  1 a 2 32 ]
+"152
+[v main@Decenasy Decenasy `us  1 a 2 30 ]
+"151
+[v main@Centenasy Centenasy `us  1 a 2 28 ]
+"147
+[v main@Unidadx Unidadx `us  1 a 2 26 ]
+"146
+[v main@Decenasx Decenasx `us  1 a 2 24 ]
+"145
+[v main@Centenasx Centenasx `us  1 a 2 22 ]
+[s S759 . 6 `[3]uc 1 x 3 0 `[3]uc 1 y 3 3 ]
+"58
+[u S762 . 6 `[6]uc 1 coordenadas 6 0 `S759 1 coordenada 6 0 ]
+[v main@Instruccion Instruccion `S762  1 a 6 37 ]
+"60
+[v main@Task Task `uc  1 a 1 36 ]
+"195
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 17 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 13 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 15 ]
+"53
+} 0
+"12 D:\MPLABXProjects\SPARC\SPARC_4585.X\BOTONES.c
+[v _UP_PLATFORM UP_PLATFORM `(v  1 e 1 0 ]
+{
+"18
+} 0
+"11 D:\MPLABXProjects\SPARC\SPARC_4585.X\MOTORES_DC.c
+[v _MOV_R_DC MOV_R_DC `(v  1 e 1 0 ]
+{
+"15
+} 0
+"29 D:\MPLABXProjects\SPARC\SPARC_4585.X\LEDS.c
+[v _TERMINADO_LEDS TERMINADO_LEDS `(v  1 e 1 0 ]
+{
+"33
+} 0
+"18 D:\MPLABXProjects\SPARC\SPARC_4585.X\MENSAJES.c
+[v _TERMINADO TERMINADO `(v  1 e 1 0 ]
+{
+"22
+} 0
+"15 D:\MPLABXProjects\SPARC\SPARC_4585.X\SERIAL.c
+[v _RECEIVE_STRING RECEIVE_STRING `(v  1 e 1 0 ]
+{
+"16
+[v RECEIVE_STRING@i i `uc  1 a 1 16 ]
+"15
+[v RECEIVE_STRING@guardarscan guardarscan `*.39uc  1 p 2 13 ]
+[v RECEIVE_STRING@numcaracteres numcaracteres `uc  1 p 1 15 ]
+"19
+} 0
+"23 D:\MPLABXProjects\SPARC\SPARC_4585.X\UART.c
+[v _RECEIVE_UART RECEIVE_UART `(uc  1 e 1 0 ]
+{
+"29
+} 0
+"23 D:\MPLABXProjects\SPARC\SPARC_4585.X\LEDS.c
+[v _PROCESO_LEDS PROCESO_LEDS `(v  1 e 1 0 ]
+{
+"27
+} 0
+"24 D:\MPLABXProjects\SPARC\SPARC_4585.X\MENSAJES.c
+[v _PROCESO PROCESO `(v  1 e 1 0 ]
+{
+"28
+} 0
+"51 D:\MPLABXProjects\SPARC\SPARC_4585.X\STEP_MOTOR.c
+[v _MOV_R_PASOS_Y MOV_R_PASOS_Y `(us  1 e 2 0 ]
+{
+"56
+[v MOV_R_PASOS_Y@i i `uc  1 a 1 17 ]
+"51
+[v MOV_R_PASOS_Y@posicion posicion `us  1 p 2 13 ]
+[v MOV_R_PASOS_Y@coordenada coordenada `us  1 p 2 15 ]
+"67
+} 0
+"15
+[v _MOV_R_PASOS_X MOV_R_PASOS_X `(us  1 e 2 0 ]
+{
+"20
+[v MOV_R_PASOS_X@i i `uc  1 a 1 17 ]
+"15
+[v MOV_R_PASOS_X@posicion posicion `us  1 p 2 13 ]
+[v MOV_R_PASOS_X@coordenada coordenada `us  1 p 2 15 ]
+"31
+} 0
+"69
+[v _MOV_L_PASOS_Y MOV_L_PASOS_Y `(us  1 e 2 0 ]
+{
+"74
+[v MOV_L_PASOS_Y@i i `uc  1 a 1 17 ]
+"69
+[v MOV_L_PASOS_Y@posicion posicion `us  1 p 2 13 ]
+[v MOV_L_PASOS_Y@coordenada coordenada `us  1 p 2 15 ]
+"85
+} 0
+"33
+[v _MOV_L_PASOS_X MOV_L_PASOS_X `(us  1 e 2 0 ]
+{
+"38
+[v MOV_L_PASOS_X@i i `uc  1 a 1 17 ]
+"33
+[v MOV_L_PASOS_X@posicion posicion `us  1 p 2 13 ]
+[v MOV_L_PASOS_X@coordenada coordenada `us  1 p 2 15 ]
+"49
+} 0
+"11 D:\MPLABXProjects\SPARC\SPARC_4585.X\LEDS.c
+[v _LEDS_OFF LEDS_OFF `(v  1 e 1 0 ]
+{
+"15
+} 0
+"4 D:\MPLABXProjects\SPARC\SPARC_4585.X\UART.c
+[v _INIT_UART INIT_UART `(v  1 e 1 0 ]
+{
+"14
+} 0
+"6 D:\MPLABXProjects\SPARC\SPARC_4585.X\STEP_MOTOR.c
+[v _INIT_STEP INIT_STEP `(v  1 e 1 0 ]
+{
+"13
+} 0
+"5 D:\MPLABXProjects\SPARC\SPARC_4585.X\LEDS.c
+[v _INIT_LEDS INIT_LEDS `(v  1 e 1 0 ]
+{
+"9
+} 0
+"224 D:\MPLABXProjects\SPARC\SPARC_4585.X\SPARC_4585.c
+[v _INIT_INT INIT_INT `(v  1 e 1 0 ]
+{
+"242
+} 0
+"5 D:\MPLABXProjects\SPARC\SPARC_4585.X\GPIO.c
+[v _INIT_GPIO INIT_GPIO `(v  1 e 1 0 ]
+{
+"12
+} 0
+"5 D:\MPLABXProjects\SPARC\SPARC_4585.X\MOTORES_DC.c
+[v _INIT_DC INIT_DC `(v  1 e 1 0 ]
+{
+"9
+} 0
+"6 D:\MPLABXProjects\SPARC\SPARC_4585.X\BOTONES.c
+[v _INIT_BUTTONS INIT_BUTTONS `(v  1 e 1 0 ]
+{
+"10
+} 0
+"6 D:\MPLABXProjects\SPARC\SPARC_4585.X\MENSAJES.c
+[v _ERROR_NO_COMANDO ERROR_NO_COMANDO `(v  1 e 1 0 ]
+{
+"10
+} 0
+"17 D:\MPLABXProjects\SPARC\SPARC_4585.X\LEDS.c
+[v _ERROR_LEDS ERROR_LEDS `(v  1 e 1 0 ]
+{
+"21
+} 0
+"12 D:\MPLABXProjects\SPARC\SPARC_4585.X\MENSAJES.c
+[v _ERROR_FUERA_LIMITE ERROR_FUERA_LIMITE `(v  1 e 1 0 ]
+{
+"16
+} 0
+"5 D:\MPLABXProjects\SPARC\SPARC_4585.X\SERIAL.c
+[v _SEND_STRING SEND_STRING `(v  1 e 1 0 ]
+{
+"6
+[v SEND_STRING@i i `uc  1 a 1 19 ]
+"5
+[v SEND_STRING@PointString PointString `*.35uc  1 p 2 14 ]
+"12
+} 0
+"16 D:\MPLABXProjects\SPARC\SPARC_4585.X\UART.c
+[v _SEND_UART SEND_UART `(v  1 e 1 0 ]
+{
+[v SEND_UART@TX_Data TX_Data `uc  1 a 1 wreg ]
+[v SEND_UART@TX_Data TX_Data `uc  1 a 1 wreg ]
+[v SEND_UART@TX_Data TX_Data `uc  1 a 1 13 ]
+"21
+} 0
+"20 D:\MPLABXProjects\SPARC\SPARC_4585.X\BOTONES.c
+[v _DOWN_PLATFORM DOWN_PLATFORM `(v  1 e 1 0 ]
+{
+"25
+} 0
+"23 D:\MPLABXProjects\SPARC\SPARC_4585.X\MOTORES_DC.c
+[v _MOV_STOP_DC MOV_STOP_DC `(v  1 e 1 0 ]
+{
+"28
+} 0
+"17
+[v _MOV_L_DC MOV_L_DC `(v  1 e 1 0 ]
+{
+"21
+} 0
+"197 D:\MPLABXProjects\SPARC\SPARC_4585.X\SPARC_4585.c
+[v _INT_isr INT_isr `IIH(v  1 e 1 0 ]
+{
+"222
+} 0
+"5 D:\MPLABXProjects\SPARC\SPARC_4585.X\SERIAL.c
+[v i2_SEND_STRING SEND_STRING `(v  1 e 1 0 ]
+{
+[v i2SEND_STRING@i SEND_STRING `uc  1 a 1 6 ]
+[v i2SEND_STRING@PointString PointString `*.35uc  1 p 2 1 ]
+"12
+} 0
+"16 D:\MPLABXProjects\SPARC\SPARC_4585.X\UART.c
+[v i2_SEND_UART SEND_UART `(v  1 e 1 0 ]
+{
+[v i2SEND_UART@TX_Data TX_Data `uc  1 a 1 wreg ]
+[v i2SEND_UART@TX_Data TX_Data `uc  1 a 1 wreg ]
+[v i2SEND_UART@TX_Data TX_Data `uc  1 a 1 0 ]
+"21
+} 0
+"51 D:\MPLABXProjects\SPARC\SPARC_4585.X\STEP_MOTOR.c
+[v i2_MOV_R_PASOS_Y MOV_R_PASOS_Y `(us  1 e 2 0 ]
+{
+[v i2MOV_R_PASOS_Y@i MOV_R_PASOS_Y `uc  1 a 1 4 ]
+[v i2MOV_R_PASOS_Y@posicion posicion `us  1 p 2 0 ]
+[v i2MOV_R_PASOS_Y@coordenada coordenada `us  1 p 2 2 ]
+"67
+} 0
+"15
+[v i2_MOV_R_PASOS_X MOV_R_PASOS_X `(us  1 e 2 0 ]
+{
+[v i2MOV_R_PASOS_X@i MOV_R_PASOS_X `uc  1 a 1 4 ]
+[v i2MOV_R_PASOS_X@posicion posicion `us  1 p 2 0 ]
+[v i2MOV_R_PASOS_X@coordenada coordenada `us  1 p 2 2 ]
+"31
+} 0
+"69
+[v i2_MOV_L_PASOS_Y MOV_L_PASOS_Y `(us  1 e 2 0 ]
+{
+[v i2MOV_L_PASOS_Y@i MOV_L_PASOS_Y `uc  1 a 1 4 ]
+[v i2MOV_L_PASOS_Y@posicion posicion `us  1 p 2 0 ]
+[v i2MOV_L_PASOS_Y@coordenada coordenada `us  1 p 2 2 ]
+"85
+} 0
+"33
+[v i2_MOV_L_PASOS_X MOV_L_PASOS_X `(us  1 e 2 0 ]
+{
+[v i2MOV_L_PASOS_X@i MOV_L_PASOS_X `uc  1 a 1 4 ]
+[v i2MOV_L_PASOS_X@posicion posicion `us  1 p 2 0 ]
+[v i2MOV_L_PASOS_X@coordenada coordenada `us  1 p 2 2 ]
+"49
+} 0
