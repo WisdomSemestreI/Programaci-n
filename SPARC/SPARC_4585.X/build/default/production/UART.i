@@ -17936,6 +17936,7 @@ unsigned char RECEIVE_UART(void);
 # 2 "UART.c" 2
 
 
+
 void INIT_UART() {
 
 
@@ -17956,7 +17957,12 @@ void SEND_UART(unsigned char TX_Data) {
 }
 
 unsigned char RECEIVE_UART() {
+    unsigned long Cont = 0;
     while (PIR1bits.RCIF == 0) {
+        if (Cont == 750000) {
+            return ((void*)0);
+        }
+        Cont++;
     }
     RX_Data = RCREG;
     RCREG = 0;

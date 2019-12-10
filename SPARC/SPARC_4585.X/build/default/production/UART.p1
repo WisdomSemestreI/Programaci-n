@@ -1312,91 +1312,110 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6 ./UART.h
 [; ;./UART.h: 6: unsigned char RX_Data;
 [v _RX_Data `uc ~T0 @X0 1 e ]
-"4 UART.c
-[; ;UART.c: 4: void INIT_UART() {
+"5 UART.c
+[; ;UART.c: 5: void INIT_UART() {
 [v _INIT_UART `(v ~T0 @X0 1 ef ]
 {
 [e :U _INIT_UART ]
 [f ]
-"8
-[; ;UART.c: 8:     TRISCbits.TRISC7 = 1;
-[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
 "9
-[; ;UART.c: 9:     TRISCbits.TRISC6 = 0;
-[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
+[; ;UART.c: 9:     TRISCbits.TRISC7 = 1;
+[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
 "10
-[; ;UART.c: 10:     TXSTA = 0b00100110;
-[e = _TXSTA -> -> 38 `i `uc ]
+[; ;UART.c: 10:     TRISCbits.TRISC6 = 0;
+[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
 "11
-[; ;UART.c: 11:     RCSTA = 0b10010000;
+[; ;UART.c: 11:     TXSTA = 0b00100110;
+[e = _TXSTA -> -> 38 `i `uc ]
+"12
+[; ;UART.c: 12:     RCSTA = 0b10010000;
 [e = _RCSTA -> -> 144 `i `uc ]
-"13
-[; ;UART.c: 13:     SPBRG = 25;
-[e = _SPBRG -> -> 25 `i `uc ]
 "14
-[; ;UART.c: 14: }
+[; ;UART.c: 14:     SPBRG = 25;
+[e = _SPBRG -> -> 25 `i `uc ]
+"15
+[; ;UART.c: 15: }
 [e :UE 1090 ]
 }
-"16
-[; ;UART.c: 16: void SEND_UART(unsigned char TX_Data) {
+"17
+[; ;UART.c: 17: void SEND_UART(unsigned char TX_Data) {
 [v _SEND_UART `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _SEND_UART ]
 [v _TX_Data `uc ~T0 @X0 1 r1 ]
 [f ]
-"17
-[; ;UART.c: 17:     while (TXSTAbits.TRMT == 0) {
+"18
+[; ;UART.c: 18:     while (TXSTAbits.TRMT == 0) {
 [e $U 1092  ]
 [e :U 1093 ]
 {
-"18
-[; ;UART.c: 18:     }
+"19
+[; ;UART.c: 19:     }
 }
 [e :U 1092 ]
-"17
-[; ;UART.c: 17:     while (TXSTAbits.TRMT == 0) {
+"18
+[; ;UART.c: 18:     while (TXSTAbits.TRMT == 0) {
 [e $ == -> . . _TXSTAbits 0 1 `i -> 0 `i 1093  ]
 [e :U 1094 ]
-"19
-[; ;UART.c: 19:     TXREG = TX_Data;
-[e = _TXREG _TX_Data ]
 "20
-[; ;UART.c: 20:     return;
-[e $UE 1091  ]
+[; ;UART.c: 20:     TXREG = TX_Data;
+[e = _TXREG _TX_Data ]
 "21
-[; ;UART.c: 21: }
+[; ;UART.c: 21:     return;
+[e $UE 1091  ]
+"22
+[; ;UART.c: 22: }
 [e :UE 1091 ]
 }
-"23
-[; ;UART.c: 23: unsigned char RECEIVE_UART() {
+"24
+[; ;UART.c: 24: unsigned char RECEIVE_UART() {
 [v _RECEIVE_UART `(uc ~T0 @X0 1 ef ]
 {
 [e :U _RECEIVE_UART ]
 [f ]
-"24
-[; ;UART.c: 24:     while (PIR1bits.RCIF == 0) {
+"25
+[; ;UART.c: 25:     unsigned long Cont = 0;
+[v _Cont `ul ~T0 @X0 1 a ]
+[e = _Cont -> -> -> 0 `i `l `ul ]
+"26
+[; ;UART.c: 26:     while (PIR1bits.RCIF == 0) {
 [e $U 1096  ]
 [e :U 1097 ]
 {
-"25
-[; ;UART.c: 25:     }
-}
-[e :U 1096 ]
-"24
-[; ;UART.c: 24:     while (PIR1bits.RCIF == 0) {
-[e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 1097  ]
-[e :U 1098 ]
-"26
-[; ;UART.c: 26:     RX_Data = RCREG;
-[e = _RX_Data _RCREG ]
 "27
-[; ;UART.c: 27:     RCREG = 0;
-[e = _RCREG -> -> 0 `i `uc ]
+[; ;UART.c: 27:         if (Cont == 750000) {
+[e $ ! == _Cont -> -> 750000 `l `ul 1099  ]
+{
 "28
-[; ;UART.c: 28:     return RX_Data;
-[e ) _RX_Data ]
+[; ;UART.c: 28:             return ((void*)0);
+[e ) -> -> -> 0 `i `*v `uc ]
 [e $UE 1095  ]
 "29
-[; ;UART.c: 29: }
+[; ;UART.c: 29:         }
+}
+[e :U 1099 ]
+"30
+[; ;UART.c: 30:         Cont++;
+[e ++ _Cont -> -> -> 1 `i `l `ul ]
+"31
+[; ;UART.c: 31:     }
+}
+[e :U 1096 ]
+"26
+[; ;UART.c: 26:     while (PIR1bits.RCIF == 0) {
+[e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 1097  ]
+[e :U 1098 ]
+"32
+[; ;UART.c: 32:     RX_Data = RCREG;
+[e = _RX_Data _RCREG ]
+"33
+[; ;UART.c: 33:     RCREG = 0;
+[e = _RCREG -> -> 0 `i `uc ]
+"34
+[; ;UART.c: 34:     return RX_Data;
+[e ) _RX_Data ]
+[e $UE 1095  ]
+"35
+[; ;UART.c: 35: }
 [e :UE 1095 ]
 }

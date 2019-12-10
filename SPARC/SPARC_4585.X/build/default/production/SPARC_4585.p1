@@ -1,6 +1,39 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"25505 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h
+"29258 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 29258: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
+[v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
+"27286
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 27286:     struct {
+[s S872 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S872 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"27296
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 27296:     struct {
+[s S873 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S873 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"27285
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 27285: typedef union {
+[u S871 `S872 1 `S873 1 ]
+[n S871 . . . ]
+"27307
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 27307: extern volatile TRISCbits_t TRISCbits __attribute__((address(0xF94)));
+[v _TRISCbits `VS871 ~T0 @X0 0 e@3988 ]
+"26842
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 26842:     struct {
+[s S860 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S860 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
+"26852
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 26852:     struct {
+[s S861 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S861 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"26841
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 26841: typedef union {
+[u S859 `S860 1 `S861 1 ]
+[n S859 . . . ]
+"26863
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 26863: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
+[v _TRISAbits `VS859 ~T0 @X0 0 e@3986 ]
+"25505
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 25505: extern volatile unsigned char PORTA __attribute__((address(0xF80)));
 [v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
 "25708
@@ -51,12 +84,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27746
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 27746: extern volatile TRISEbits_t TRISEbits __attribute__((address(0xF96)));
 [v _TRISEbits `VS883 ~T0 @X0 0 e@3990 ]
-"54 SPARC_4585.c
-[; ;SPARC_4585.c: 54:         struct {
+"60 SPARC_4585.c
+[; ;SPARC_4585.c: 60:         struct {
 [s S1092 `uc -> 3 `i `uc -> 3 `i ]
 [n S1092 . x y ]
-"51
-[; ;SPARC_4585.c: 51:     union {
+"57
+[; ;SPARC_4585.c: 57:     union {
 [u S1091 `uc -> 6 `i `S1092 1 ]
 [n S1091 . coordenadas coordenada ]
 "8 ./STEP_MOTOR.h
@@ -110,9 +143,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25563
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4585.h: 25563: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
 [v _PORTAbits `VS812 ~T0 @X0 0 e@3968 ]
-"7 ./SERIAL.h
-[; ;./SERIAL.h: 7: void SEND_STRING (unsigned char *PointString);
-[v _SEND_STRING `(v ~T0 @X0 0 ef1`*uc ]
 "13 ./UART.h
 [; ;./UART.h: 13: unsigned char RECEIVE_UART(void);
 [v _RECEIVE_UART `(uc ~T0 @X0 0 ef ]
@@ -221,7 +251,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5 ./SERIAL.h
 [; ;./SERIAL.h: 5: void RECEIVE_STRING (unsigned char *guardarscan, unsigned char numcaracteres);
 [v _RECEIVE_STRING `(v ~T0 @X0 0 ef2`*uc`uc ]
-"5 ./MENSAJES.h
+"8 ./MENSAJES.h
+[; ;./MENSAJES.h: 8: void FALTA_DATO (void);
+[v _FALTA_DATO `(v ~T0 @X0 0 ef ]
+"5
 [; ;./MENSAJES.h: 5: void ERROR_FUERA_LIMITE (void);
 [v _ERROR_FUERA_LIMITE `(v ~T0 @X0 0 ef ]
 "6 ./STEP_MOTOR.h
@@ -1640,648 +1673,703 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _PosicionY
 -> -> 0 `i `us
 ]
+"26
+[; ;SPARC_4585.c: 26: unsigned char NoNull = 0;
+[v _NoNull `uc ~T0 @X0 1 e ]
+[i _NoNull
+-> -> 0 `i `uc
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"27
-[; ;SPARC_4585.c: 27: void main(void) {
+"28
+[; ;SPARC_4585.c: 28: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
+"30
+[; ;SPARC_4585.c: 30:     RCREG = 0;
+[e = _RCREG -> -> 0 `i `uc ]
 "32
-[; ;SPARC_4585.c: 32:     PORTA = 0x00;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;SPARC_4585.c: 32:     TRISCbits.RC0 = 1;
+[e = . . _TRISCbits 1 0 -> -> 1 `i `uc ]
 "33
-[; ;SPARC_4585.c: 33:     PORTB = 0x00;
+[; ;SPARC_4585.c: 33:     TRISAbits.RA4 = 1;
+[e = . . _TRISAbits 1 4 -> -> 1 `i `uc ]
+"38
+[; ;SPARC_4585.c: 38:     PORTA = 0x00;
+[e = _PORTA -> -> 0 `i `uc ]
+"39
+[; ;SPARC_4585.c: 39:     PORTB = 0x00;
 [e = _PORTB -> -> 0 `i `uc ]
-"34
-[; ;SPARC_4585.c: 34:     PORTC = 0x00;
+"40
+[; ;SPARC_4585.c: 40:     PORTC = 0x00;
 [e = _PORTC -> -> 0 `i `uc ]
-"35
-[; ;SPARC_4585.c: 35:     PORTD = 0x00;
-[e = _PORTD -> -> 0 `i `uc ]
-"36
-[; ;SPARC_4585.c: 36:     PORTE = 0x00;
-[e = _PORTE -> -> 0 `i `uc ]
 "41
-[; ;SPARC_4585.c: 41:     INIT_GPIO();
-[e ( _INIT_GPIO ..  ]
+[; ;SPARC_4585.c: 41:     PORTD = 0x00;
+[e = _PORTD -> -> 0 `i `uc ]
 "42
-[; ;SPARC_4585.c: 42:     INIT_INT();
-[e ( _INIT_INT ..  ]
-"43
-[; ;SPARC_4585.c: 43:     INIT_UART();
-[e ( _INIT_UART ..  ]
-"44
-[; ;SPARC_4585.c: 44:     INIT_STEP();
-[e ( _INIT_STEP ..  ]
-"45
-[; ;SPARC_4585.c: 45:     INIT_BUTTONS();
-[e ( _INIT_BUTTONS ..  ]
-"46
-[; ;SPARC_4585.c: 46:     INIT_DC();
-[e ( _INIT_DC ..  ]
+[; ;SPARC_4585.c: 42:     PORTE = 0x00;
+[e = _PORTE -> -> 0 `i `uc ]
 "47
-[; ;SPARC_4585.c: 47:     INIT_LEDS();
-[e ( _INIT_LEDS ..  ]
+[; ;SPARC_4585.c: 47:     INIT_GPIO();
+[e ( _INIT_GPIO ..  ]
+"48
+[; ;SPARC_4585.c: 48:     INIT_INT();
+[e ( _INIT_INT ..  ]
 "49
-[; ;SPARC_4585.c: 49:     TRISEbits.RE0 = 0;
+[; ;SPARC_4585.c: 49:     INIT_UART();
+[e ( _INIT_UART ..  ]
+"50
+[; ;SPARC_4585.c: 50:     INIT_STEP();
+[e ( _INIT_STEP ..  ]
+"51
+[; ;SPARC_4585.c: 51:     INIT_BUTTONS();
+[e ( _INIT_BUTTONS ..  ]
+"52
+[; ;SPARC_4585.c: 52:     INIT_DC();
+[e ( _INIT_DC ..  ]
+"53
+[; ;SPARC_4585.c: 53:     INIT_LEDS();
+[e ( _INIT_LEDS ..  ]
+"55
+[; ;SPARC_4585.c: 55:     TRISEbits.RE0 = 0;
 [e = . . _TRISEbits 1 0 -> -> 0 `i `uc ]
-"58
-[; ;SPARC_4585.c: 58:     } Instruccion;
+"64
+[; ;SPARC_4585.c: 64:     } Instruccion;
 [v _Instruccion `S1091 ~T0 @X0 1 a ]
-"60
-[; ;SPARC_4585.c: 60:     unsigned char Task = 0;
+"66
+[; ;SPARC_4585.c: 66:     unsigned char Task = 0;
 [v _Task `uc ~T0 @X0 1 a ]
 [e = _Task -> -> 0 `i `uc ]
-"62
-[; ;SPARC_4585.c: 62:     while (BuscandoHomeX == 0 || BuscandoHomeY == 0) {
+"68
+[; ;SPARC_4585.c: 68:     while (BuscandoHomeX == 0 || BuscandoHomeY == 0) {
 [e $U 1093  ]
 [e :U 1094 ]
 {
-"63
-[; ;SPARC_4585.c: 63:         while (BuscandoHomeX == 0) {
+"69
+[; ;SPARC_4585.c: 69:         while (BuscandoHomeX == 0) {
 [e $U 1096  ]
 [e :U 1097 ]
 {
-"64
-[; ;SPARC_4585.c: 64:             MOV_L_PASOS_X(300, 0);
+"70
+[; ;SPARC_4585.c: 70:             MOV_L_PASOS_X(300, 0);
 [e ( _MOV_L_PASOS_X (2 , -> -> 300 `i `us -> -> 0 `i `us ]
-"65
-[; ;SPARC_4585.c: 65:         }
+"71
+[; ;SPARC_4585.c: 71:         }
 }
 [e :U 1096 ]
-"63
-[; ;SPARC_4585.c: 63:         while (BuscandoHomeX == 0) {
+"69
+[; ;SPARC_4585.c: 69:         while (BuscandoHomeX == 0) {
 [e $ == -> _BuscandoHomeX `i -> 0 `i 1097  ]
 [e :U 1098 ]
-"66
-[; ;SPARC_4585.c: 66:         while (BuscandoHomeY == 0) {
+"72
+[; ;SPARC_4585.c: 72:         while (BuscandoHomeY == 0) {
 [e $U 1099  ]
 [e :U 1100 ]
 {
-"67
-[; ;SPARC_4585.c: 67:             MOV_L_PASOS_Y(300, 0);
+"73
+[; ;SPARC_4585.c: 73:             MOV_L_PASOS_Y(300, 0);
 [e ( _MOV_L_PASOS_Y (2 , -> -> 300 `i `us -> -> 0 `i `us ]
-"68
-[; ;SPARC_4585.c: 68:         }
+"74
+[; ;SPARC_4585.c: 74:         }
 }
 [e :U 1099 ]
-"66
-[; ;SPARC_4585.c: 66:         while (BuscandoHomeY == 0) {
+"72
+[; ;SPARC_4585.c: 72:         while (BuscandoHomeY == 0) {
 [e $ == -> _BuscandoHomeY `i -> 0 `i 1100  ]
 [e :U 1101 ]
-"69
-[; ;SPARC_4585.c: 69:     }
+"75
+[; ;SPARC_4585.c: 75:     }
 }
 [e :U 1093 ]
-"62
-[; ;SPARC_4585.c: 62:     while (BuscandoHomeX == 0 || BuscandoHomeY == 0) {
+"68
+[; ;SPARC_4585.c: 68:     while (BuscandoHomeX == 0 || BuscandoHomeY == 0) {
 [e $ || == -> _BuscandoHomeX `i -> 0 `i == -> _BuscandoHomeY `i -> 0 `i 1094  ]
 [e :U 1095 ]
-"71
-[; ;SPARC_4585.c: 71:     while (AjusteZ == 0) {
+"77
+[; ;SPARC_4585.c: 77:     while (AjusteZ == 0) {
 [e $U 1102  ]
 [e :U 1103 ]
 {
-"72
-[; ;SPARC_4585.c: 72:         UP_PLATFORM();
+"78
+[; ;SPARC_4585.c: 78:         UP_PLATFORM();
 [e ( _UP_PLATFORM ..  ]
-"73
-[; ;SPARC_4585.c: 73:         DOWN_PLATFORM();
+"79
+[; ;SPARC_4585.c: 79:         DOWN_PLATFORM();
 [e ( _DOWN_PLATFORM ..  ]
-"74
-[; ;SPARC_4585.c: 74:         if (PORTAbits.RA5 == 1) {
+"80
+[; ;SPARC_4585.c: 80:         if (PORTAbits.RA5 == 1) {
 [e $ ! == -> . . _PORTAbits 0 5 `i -> 1 `i 1105  ]
 {
-"75
-[; ;SPARC_4585.c: 75:             AjusteZ = 1;
+"81
+[; ;SPARC_4585.c: 81:             AjusteZ = 1;
 [e = _AjusteZ -> -> 1 `i `uc ]
-"76
-[; ;SPARC_4585.c: 76:             SEND_STRING("LISTO AJUSTE Z");
-[e ( _SEND_STRING (1 :s 1C ]
-"77
-[; ;SPARC_4585.c: 77:         }
+"82
+[; ;SPARC_4585.c: 82:         }
 }
 [e :U 1105 ]
-"78
-[; ;SPARC_4585.c: 78:     }
+"83
+[; ;SPARC_4585.c: 83:     }
 }
 [e :U 1102 ]
-"71
-[; ;SPARC_4585.c: 71:     while (AjusteZ == 0) {
+"77
+[; ;SPARC_4585.c: 77:     while (AjusteZ == 0) {
 [e $ == -> _AjusteZ `i -> 0 `i 1103  ]
 [e :U 1104 ]
-"80
-[; ;SPARC_4585.c: 80:     while (1) {
+"85
+[; ;SPARC_4585.c: 85:     while (1) {
 [e :U 1107 ]
 {
-"81
-[; ;SPARC_4585.c: 81:         while (TaskReceive == 0) {
+"86
+[; ;SPARC_4585.c: 86:         while (TaskReceive == 0) {
 [e $U 1109  ]
 [e :U 1110 ]
 {
-"83
-[; ;SPARC_4585.c: 83:             Task = RECEIVE_UART();
+"88
+[; ;SPARC_4585.c: 88:             Task = RECEIVE_UART();
 [e = _Task ( _RECEIVE_UART ..  ]
-"85
-[; ;SPARC_4585.c: 85:             if (Task != 72 && Task != 71 && Task != 84 && Task != 83) {
+"90
+[; ;SPARC_4585.c: 90:             if (Task != 72 && Task != 71 && Task != 84 && Task != 83) {
 [e $ ! && && && != -> _Task `i -> 72 `i != -> _Task `i -> 71 `i != -> _Task `i -> 84 `i != -> _Task `i -> 83 `i 1112  ]
 {
-"86
-[; ;SPARC_4585.c: 86:                 ERROR_NO_COMANDO();
+"91
+[; ;SPARC_4585.c: 91:                 ERROR_NO_COMANDO();
 [e ( _ERROR_NO_COMANDO ..  ]
-"87
-[; ;SPARC_4585.c: 87:                 LEDS_OFF();
+"92
+[; ;SPARC_4585.c: 92:                 LEDS_OFF();
 [e ( _LEDS_OFF ..  ]
-"88
-[; ;SPARC_4585.c: 88:                 ERROR_LEDS();
+"93
+[; ;SPARC_4585.c: 93:                 ERROR_LEDS();
 [e ( _ERROR_LEDS ..  ]
-"89
-[; ;SPARC_4585.c: 89:             }
+"94
+[; ;SPARC_4585.c: 94:             }
 }
 [e :U 1112 ]
-"90
-[; ;SPARC_4585.c: 90:             if (Task == 72) {
+"95
+[; ;SPARC_4585.c: 95:             if (Task == 72) {
 [e $ ! == -> _Task `i -> 72 `i 1113  ]
 {
-"91
-[; ;SPARC_4585.c: 91:                 LEDS_OFF();
-[e ( _LEDS_OFF ..  ]
-"92
-[; ;SPARC_4585.c: 92:                 PROCESO();
-[e ( _PROCESO ..  ]
-"93
-[; ;SPARC_4585.c: 93:                 PROCESO_LEDS();
-[e ( _PROCESO_LEDS ..  ]
-"94
-[; ;SPARC_4585.c: 94:                 PORTEbits.RE0 = 0;
-[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
-"95
-[; ;SPARC_4585.c: 95:                 PosicionX = MOV_L_PASOS_X(PosicionX, 0);
-[e = _PosicionX ( _MOV_L_PASOS_X (2 , _PosicionX -> -> 0 `i `us ]
 "96
-[; ;SPARC_4585.c: 96:                 PosicionY = MOV_L_PASOS_Y(PosicionY, 0);
-[e = _PosicionY ( _MOV_L_PASOS_Y (2 , _PosicionY -> -> 0 `i `us ]
+[; ;SPARC_4585.c: 96:                 LEDS_OFF();
+[e ( _LEDS_OFF ..  ]
 "97
-[; ;SPARC_4585.c: 97:                 TERMINADO_LEDS();
-[e ( _TERMINADO_LEDS ..  ]
+[; ;SPARC_4585.c: 97:                 PROCESO();
+[e ( _PROCESO ..  ]
 "98
-[; ;SPARC_4585.c: 98:                 TERMINADO();
-[e ( _TERMINADO ..  ]
+[; ;SPARC_4585.c: 98:                 PROCESO_LEDS();
+[e ( _PROCESO_LEDS ..  ]
 "99
-[; ;SPARC_4585.c: 99:                 TXSTAbits.TXEN = 0;
-[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
+[; ;SPARC_4585.c: 99:                 PORTEbits.RE0 = 0;
+[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
 "100
-[; ;SPARC_4585.c: 100:                 RCSTAbits.CREN = 0;
-[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+[; ;SPARC_4585.c: 100:                 PosicionX = MOV_L_PASOS_X(PosicionX, 0);
+[e = _PosicionX ( _MOV_L_PASOS_X (2 , _PosicionX -> -> 0 `i `us ]
 "101
-[; ;SPARC_4585.c: 101:                 TXSTAbits.TXEN = 1;
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+[; ;SPARC_4585.c: 101:                 PosicionY = MOV_L_PASOS_Y(PosicionY, 0);
+[e = _PosicionY ( _MOV_L_PASOS_Y (2 , _PosicionY -> -> 0 `i `us ]
 "102
-[; ;SPARC_4585.c: 102:                 RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+[; ;SPARC_4585.c: 102:                 TERMINADO_LEDS();
+[e ( _TERMINADO_LEDS ..  ]
 "103
-[; ;SPARC_4585.c: 103:             }
+[; ;SPARC_4585.c: 103:                 TERMINADO();
+[e ( _TERMINADO ..  ]
+"104
+[; ;SPARC_4585.c: 104:                 TXSTAbits.TXEN = 0;
+[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
+"105
+[; ;SPARC_4585.c: 105:                 RCSTAbits.CREN = 0;
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+"106
+[; ;SPARC_4585.c: 106:                 TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"107
+[; ;SPARC_4585.c: 107:                 RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"108
+[; ;SPARC_4585.c: 108:             }
 }
 [e :U 1113 ]
-"104
-[; ;SPARC_4585.c: 104:             if (Task == 71) {
+"109
+[; ;SPARC_4585.c: 109:             if (Task == 71) {
 [e $ ! == -> _Task `i -> 71 `i 1114  ]
 {
-"105
-[; ;SPARC_4585.c: 105:                 LEDS_OFF();
-[e ( _LEDS_OFF ..  ]
-"106
-[; ;SPARC_4585.c: 106:                 PORTEbits.RE0 = 0;
-[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
-"107
-[; ;SPARC_4585.c: 107:                 TaskReceive = 1;
-[e = _TaskReceive -> -> 1 `i `uc ]
-"108
-[; ;SPARC_4585.c: 108:                 XReceive = 0;
-[e = _XReceive -> -> 0 `i `us ]
-"109
-[; ;SPARC_4585.c: 109:                 YReceive = 0;
-[e = _YReceive -> -> 0 `i `us ]
 "110
-[; ;SPARC_4585.c: 110:             }
+[; ;SPARC_4585.c: 110:                 LEDS_OFF();
+[e ( _LEDS_OFF ..  ]
+"111
+[; ;SPARC_4585.c: 111:                 PORTEbits.RE0 = 0;
+[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
+"112
+[; ;SPARC_4585.c: 112:                 TaskReceive = 1;
+[e = _TaskReceive -> -> 1 `i `uc ]
+"113
+[; ;SPARC_4585.c: 113:                 XReceive = 0;
+[e = _XReceive -> -> 0 `i `us ]
+"114
+[; ;SPARC_4585.c: 114:                 YReceive = 0;
+[e = _YReceive -> -> 0 `i `us ]
+"115
+[; ;SPARC_4585.c: 115:             }
 }
 [e :U 1114 ]
-"111
-[; ;SPARC_4585.c: 111:             if (Task == 84) {
+"116
+[; ;SPARC_4585.c: 116:             if (Task == 84) {
 [e $ ! == -> _Task `i -> 84 `i 1115  ]
 {
-"112
-[; ;SPARC_4585.c: 112:                 LEDS_OFF();
-[e ( _LEDS_OFF ..  ]
-"113
-[; ;SPARC_4585.c: 113:                 PROCESO();
-[e ( _PROCESO ..  ]
-"114
-[; ;SPARC_4585.c: 114:                 PROCESO_LEDS();
-[e ( _PROCESO_LEDS ..  ]
-"115
-[; ;SPARC_4585.c: 115:                 PORTEbits.RE0 = 0;
-[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
-"116
-[; ;SPARC_4585.c: 116:                 _delay((unsigned long)((50)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "117
-[; ;SPARC_4585.c: 117:                 PORTEbits.RE0 = 1;
-[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
+[; ;SPARC_4585.c: 117:                 LEDS_OFF();
+[e ( _LEDS_OFF ..  ]
 "118
-[; ;SPARC_4585.c: 118:                 _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;SPARC_4585.c: 118:                 PROCESO();
+[e ( _PROCESO ..  ]
 "119
-[; ;SPARC_4585.c: 119:                 PORTEbits.RE0 = 0;
-[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
+[; ;SPARC_4585.c: 119:                 PROCESO_LEDS();
+[e ( _PROCESO_LEDS ..  ]
 "120
-[; ;SPARC_4585.c: 120:                 TERMINADO_LEDS();
-[e ( _TERMINADO_LEDS ..  ]
+[; ;SPARC_4585.c: 120:                 PORTEbits.RE0 = 0;
+[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
 "121
-[; ;SPARC_4585.c: 121:                 TERMINADO();
-[e ( _TERMINADO ..  ]
+[; ;SPARC_4585.c: 121:                 _delay((unsigned long)((50)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "122
-[; ;SPARC_4585.c: 122:                 TXSTAbits.TXEN = 0;
-[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
+[; ;SPARC_4585.c: 122:                 PORTEbits.RE0 = 1;
+[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
 "123
-[; ;SPARC_4585.c: 123:                 RCSTAbits.CREN = 0;
-[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+[; ;SPARC_4585.c: 123:                 _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "124
-[; ;SPARC_4585.c: 124:                 TXSTAbits.TXEN = 1;
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+[; ;SPARC_4585.c: 124:                 PORTEbits.RE0 = 0;
+[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
 "125
-[; ;SPARC_4585.c: 125:                 RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+[; ;SPARC_4585.c: 125:                 TERMINADO_LEDS();
+[e ( _TERMINADO_LEDS ..  ]
 "126
-[; ;SPARC_4585.c: 126:             }
+[; ;SPARC_4585.c: 126:                 TERMINADO();
+[e ( _TERMINADO ..  ]
+"127
+[; ;SPARC_4585.c: 127:                 TXSTAbits.TXEN = 0;
+[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
+"128
+[; ;SPARC_4585.c: 128:                 RCSTAbits.CREN = 0;
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+"129
+[; ;SPARC_4585.c: 129:                 TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"130
+[; ;SPARC_4585.c: 130:                 RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"131
+[; ;SPARC_4585.c: 131:             }
 }
 [e :U 1115 ]
-"127
-[; ;SPARC_4585.c: 127:             if (Task == 83) {
+"132
+[; ;SPARC_4585.c: 132:             if (Task == 83) {
 [e $ ! == -> _Task `i -> 83 `i 1116  ]
 {
-"128
-[; ;SPARC_4585.c: 128:                 LEDS_OFF();
-[e ( _LEDS_OFF ..  ]
-"129
-[; ;SPARC_4585.c: 129:                 PORTEbits.RE0 = 1;
-[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
-"130
-[; ;SPARC_4585.c: 130:                 TaskReceive = 1;
-[e = _TaskReceive -> -> 1 `i `uc ]
-"131
-[; ;SPARC_4585.c: 131:                 XReceive = 0;
-[e = _XReceive -> -> 0 `i `us ]
-"132
-[; ;SPARC_4585.c: 132:                 YReceive = 0;
-[e = _YReceive -> -> 0 `i `us ]
 "133
-[; ;SPARC_4585.c: 133:             }
+[; ;SPARC_4585.c: 133:                 LEDS_OFF();
+[e ( _LEDS_OFF ..  ]
+"134
+[; ;SPARC_4585.c: 134:                 PORTEbits.RE0 = 1;
+[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
+"135
+[; ;SPARC_4585.c: 135:                 TaskReceive = 1;
+[e = _TaskReceive -> -> 1 `i `uc ]
+"136
+[; ;SPARC_4585.c: 136:                 XReceive = 0;
+[e = _XReceive -> -> 0 `i `us ]
+"137
+[; ;SPARC_4585.c: 137:                 YReceive = 0;
+[e = _YReceive -> -> 0 `i `us ]
+"138
+[; ;SPARC_4585.c: 138:             }
 }
 [e :U 1116 ]
-"135
-[; ;SPARC_4585.c: 135:         }
+"139
+[; ;SPARC_4585.c: 139:             RCREG = 0;
+[e = _RCREG -> -> 0 `i `uc ]
+"140
+[; ;SPARC_4585.c: 140:         }
 }
 [e :U 1109 ]
-"81
-[; ;SPARC_4585.c: 81:         while (TaskReceive == 0) {
+"86
+[; ;SPARC_4585.c: 86:         while (TaskReceive == 0) {
 [e $ == -> _TaskReceive `i -> 0 `i 1110  ]
 [e :U 1111 ]
-"137
-[; ;SPARC_4585.c: 137:         while (XReceive == 0 && YReceive == 0) {
+"142
+[; ;SPARC_4585.c: 142:         while (XReceive == 0 && YReceive == 0) {
 [e $U 1117  ]
 [e :U 1118 ]
 {
-"139
-[; ;SPARC_4585.c: 139:             unsigned char *Ptrcoordenadas = (unsigned char*) &Instruccion.coordenadas[0];
+"144
+[; ;SPARC_4585.c: 144:             unsigned char *Ptrcoordenadas = (unsigned char*) &Instruccion.coordenadas[0];
 [v _Ptrcoordenadas `*uc ~T0 @X0 1 a ]
 [e = _Ptrcoordenadas &U *U + &U . _Instruccion 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Instruccion 0 `ui `ux ]
-"141
-[; ;SPARC_4585.c: 141:             RECEIVE_STRING(Ptrcoordenadas, 6);
+"146
+[; ;SPARC_4585.c: 146:             RECEIVE_STRING(Ptrcoordenadas, 6);
 [e ( _RECEIVE_STRING (2 , _Ptrcoordenadas -> -> 6 `i `uc ]
-"143
-[; ;SPARC_4585.c: 143:             SEND_STRING(Ptrcoordenadas);
-[e ( _SEND_STRING (1 _Ptrcoordenadas ]
-"145
-[; ;SPARC_4585.c: 145:             unsigned short Centenasx = (Instruccion.coordenada.x[0] - 48) * 100;
+"148
+[; ;SPARC_4585.c: 148:             unsigned short Centenasx = (Instruccion.coordenada.x[0] - 48) * 100;
 [v _Centenasx `us ~T0 @X0 1 a ]
 [e = _Centenasx -> * - -> *U + &U . . _Instruccion 1 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _Instruccion 1 0 `ui `ux `i -> 48 `i -> 100 `i `us ]
-"146
-[; ;SPARC_4585.c: 146:             unsigned short Decenasx = (Instruccion.coordenada.x[1] - 48) * 10;
+"149
+[; ;SPARC_4585.c: 149:             unsigned short Decenasx = (Instruccion.coordenada.x[1] - 48) * 10;
 [v _Decenasx `us ~T0 @X0 1 a ]
 [e = _Decenasx -> * - -> *U + &U . . _Instruccion 1 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _Instruccion 1 0 `ui `ux `i -> 48 `i -> 10 `i `us ]
-"147
-[; ;SPARC_4585.c: 147:             unsigned short Unidadx = Instruccion.coordenada.x[2] - 48;
+"150
+[; ;SPARC_4585.c: 150:             unsigned short Unidadx = Instruccion.coordenada.x[2] - 48;
 [v _Unidadx `us ~T0 @X0 1 a ]
 [e = _Unidadx -> - -> *U + &U . . _Instruccion 1 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . . _Instruccion 1 0 `ui `ux `i -> 48 `i `us ]
-"149
-[; ;SPARC_4585.c: 149:             X = Centenasx + Decenasx + Unidadx;
+"152
+[; ;SPARC_4585.c: 152:             X = Centenasx + Decenasx + Unidadx;
 [e = _X -> + + -> _Centenasx `ui -> _Decenasx `ui -> _Unidadx `ui `us ]
-"151
-[; ;SPARC_4585.c: 151:             unsigned short Centenasy = (Instruccion.coordenada.y[0] - 48) * 100;
+"154
+[; ;SPARC_4585.c: 154:             unsigned short Centenasy = (Instruccion.coordenada.y[0] - 48) * 100;
 [v _Centenasy `us ~T0 @X0 1 a ]
 [e = _Centenasy -> * - -> *U + &U . . _Instruccion 1 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _Instruccion 1 1 `ui `ux `i -> 48 `i -> 100 `i `us ]
-"152
-[; ;SPARC_4585.c: 152:             unsigned short Decenasy = (Instruccion.coordenada.y[1] - 48) * 10;
+"155
+[; ;SPARC_4585.c: 155:             unsigned short Decenasy = (Instruccion.coordenada.y[1] - 48) * 10;
 [v _Decenasy `us ~T0 @X0 1 a ]
 [e = _Decenasy -> * - -> *U + &U . . _Instruccion 1 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _Instruccion 1 1 `ui `ux `i -> 48 `i -> 10 `i `us ]
-"153
-[; ;SPARC_4585.c: 153:             unsigned short Unidady = Instruccion.coordenada.y[2] - 48;
+"156
+[; ;SPARC_4585.c: 156:             unsigned short Unidady = Instruccion.coordenada.y[2] - 48;
 [v _Unidady `us ~T0 @X0 1 a ]
 [e = _Unidady -> - -> *U + &U . . _Instruccion 1 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . . _Instruccion 1 1 `ui `ux `i -> 48 `i `us ]
-"155
-[; ;SPARC_4585.c: 155:             Y = Centenasy + Decenasy + Unidady;
-[e = _Y -> + + -> _Centenasy `ui -> _Decenasy `ui -> _Unidady `ui `us ]
-"157
-[; ;SPARC_4585.c: 157:             if (X > 300 || Y > 300) {
-[e $ ! || > -> _X `ui -> -> 300 `i `ui > -> _Y `ui -> -> 300 `i `ui 1120  ]
-{
 "158
-[; ;SPARC_4585.c: 158:                 ERROR_FUERA_LIMITE();
-[e ( _ERROR_FUERA_LIMITE ..  ]
-"159
-[; ;SPARC_4585.c: 159:                 ERROR_LEDS();
-[e ( _ERROR_LEDS ..  ]
+[; ;SPARC_4585.c: 158:             Y = Centenasy + Decenasy + Unidady;
+[e = _Y -> + + -> _Centenasy `ui -> _Decenasy `ui -> _Unidady `ui `us ]
 "160
-[; ;SPARC_4585.c: 160:             }
+[; ;SPARC_4585.c: 160:             if (Instruccion.coordenada.x[0] == ((void*)0) || Instruccion.coordenada.y[0] == ((void*)0)) {
+[e $ ! || == -> -> *U + &U . . _Instruccion 1 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _Instruccion 1 0 `ui `ux `i `*v -> -> 0 `i `*v == -> -> *U + &U . . _Instruccion 1 1 * -> -> -> 0 `i `ui `ux -> -> # *U &U . . _Instruccion 1 1 `ui `ux `i `*v -> -> 0 `i `*v 1120  ]
+{
+"161
+[; ;SPARC_4585.c: 161:                 FALTA_DATO();
+[e ( _FALTA_DATO ..  ]
+"162
+[; ;SPARC_4585.c: 162:                 NoNull = 1;
+[e = _NoNull -> -> 1 `i `uc ]
+"163
+[; ;SPARC_4585.c: 163:             }
 }
 [e :U 1120 ]
-"161
-[; ;SPARC_4585.c: 161:             if (X < 301 && Y < 301) {
-[e $ ! && < -> _X `ui -> -> 301 `i `ui < -> _Y `ui -> -> 301 `i `ui 1121  ]
-{
-"162
-[; ;SPARC_4585.c: 162:                 LEDS_OFF();
-[e ( _LEDS_OFF ..  ]
-"163
-[; ;SPARC_4585.c: 163:                 PROCESO();
-[e ( _PROCESO ..  ]
 "164
-[; ;SPARC_4585.c: 164:                 PROCESO_LEDS();
-[e ( _PROCESO_LEDS ..  ]
+[; ;SPARC_4585.c: 164:             if (Instruccion.coordenada.x[1] == ((void*)0) || Instruccion.coordenada.y[1] == ((void*)0)) {
+[e $ ! || == -> -> *U + &U . . _Instruccion 1 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _Instruccion 1 0 `ui `ux `i `*v -> -> 0 `i `*v == -> -> *U + &U . . _Instruccion 1 1 * -> -> -> 1 `i `ui `ux -> -> # *U &U . . _Instruccion 1 1 `ui `ux `i `*v -> -> 0 `i `*v 1121  ]
+{
 "165
-[; ;SPARC_4585.c: 165:                 if (PosicionX < X) {
-[e $ ! < -> _PosicionX `ui -> _X `ui 1122  ]
-{
+[; ;SPARC_4585.c: 165:                 FALTA_DATO();
+[e ( _FALTA_DATO ..  ]
 "166
-[; ;SPARC_4585.c: 166:                     TXSTAbits.TXEN = 0;
-[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
+[; ;SPARC_4585.c: 166:                 NoNull = 1;
+[e = _NoNull -> -> 1 `i `uc ]
 "167
-[; ;SPARC_4585.c: 167:                     RCSTAbits.CREN = 0;
-[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
-"168
-[; ;SPARC_4585.c: 168:                     PosicionX = MOV_R_PASOS_X(PosicionX, X);
-[e = _PosicionX ( _MOV_R_PASOS_X (2 , _PosicionX _X ]
-"169
-[; ;SPARC_4585.c: 169:                 }
-}
-[e :U 1122 ]
-"170
-[; ;SPARC_4585.c: 170:                 if (PosicionX > X) {
-[e $ ! > -> _PosicionX `ui -> _X `ui 1123  ]
-{
-"171
-[; ;SPARC_4585.c: 171:                     TXSTAbits.TXEN = 0;
-[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
-"172
-[; ;SPARC_4585.c: 172:                     RCSTAbits.CREN = 0;
-[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
-"173
-[; ;SPARC_4585.c: 173:                     PosicionX = MOV_L_PASOS_X(PosicionX, X);
-[e = _PosicionX ( _MOV_L_PASOS_X (2 , _PosicionX _X ]
-"174
-[; ;SPARC_4585.c: 174:                 }
-}
-[e :U 1123 ]
-"175
-[; ;SPARC_4585.c: 175:                 if (PosicionY < Y) {
-[e $ ! < -> _PosicionY `ui -> _Y `ui 1124  ]
-{
-"176
-[; ;SPARC_4585.c: 176:                     TXSTAbits.TXEN = 0;
-[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
-"177
-[; ;SPARC_4585.c: 177:                     RCSTAbits.CREN = 0;
-[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
-"178
-[; ;SPARC_4585.c: 178:                     PosicionY = MOV_R_PASOS_Y(PosicionY, Y);
-[e = _PosicionY ( _MOV_R_PASOS_Y (2 , _PosicionY _Y ]
-"179
-[; ;SPARC_4585.c: 179:                 }
-}
-[e :U 1124 ]
-"180
-[; ;SPARC_4585.c: 180:                 if (PosicionY > Y) {
-[e $ ! > -> _PosicionY `ui -> _Y `ui 1125  ]
-{
-"181
-[; ;SPARC_4585.c: 181:                     TXSTAbits.TXEN = 0;
-[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
-"182
-[; ;SPARC_4585.c: 182:                     RCSTAbits.CREN = 0;
-[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
-"183
-[; ;SPARC_4585.c: 183:                     PosicionY = MOV_L_PASOS_Y(PosicionY, Y);
-[e = _PosicionY ( _MOV_L_PASOS_Y (2 , _PosicionY _Y ]
-"184
-[; ;SPARC_4585.c: 184:                 }
-}
-[e :U 1125 ]
-"185
-[; ;SPARC_4585.c: 185:                 TXSTAbits.TXEN = 1;
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"186
-[; ;SPARC_4585.c: 186:                 RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"187
-[; ;SPARC_4585.c: 187:                 TERMINADO_LEDS();
-[e ( _TERMINADO_LEDS ..  ]
-"188
-[; ;SPARC_4585.c: 188:                 TERMINADO();
-[e ( _TERMINADO ..  ]
-"189
-[; ;SPARC_4585.c: 189:                 TaskReceive = 0;
-[e = _TaskReceive -> -> 0 `i `uc ]
-"190
-[; ;SPARC_4585.c: 190:                 XReceive = 1;
-[e = _XReceive -> -> 1 `i `us ]
-"191
-[; ;SPARC_4585.c: 191:                 YReceive = 1;
-[e = _YReceive -> -> 1 `i `us ]
-"192
-[; ;SPARC_4585.c: 192:             }
+[; ;SPARC_4585.c: 167:             }
 }
 [e :U 1121 ]
+"168
+[; ;SPARC_4585.c: 168:             if (Instruccion.coordenada.x[2] == ((void*)0) || Instruccion.coordenada.y[2] == ((void*)0)) {
+[e $ ! || == -> -> *U + &U . . _Instruccion 1 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . . _Instruccion 1 0 `ui `ux `i `*v -> -> 0 `i `*v == -> -> *U + &U . . _Instruccion 1 1 * -> -> -> 2 `i `ui `ux -> -> # *U &U . . _Instruccion 1 1 `ui `ux `i `*v -> -> 0 `i `*v 1122  ]
+{
+"169
+[; ;SPARC_4585.c: 169:                 FALTA_DATO();
+[e ( _FALTA_DATO ..  ]
+"170
+[; ;SPARC_4585.c: 170:                 NoNull = 1;
+[e = _NoNull -> -> 1 `i `uc ]
+"171
+[; ;SPARC_4585.c: 171:             }
+}
+[e :U 1122 ]
+"173
+[; ;SPARC_4585.c: 173:             if (NoNull == 0) {
+[e $ ! == -> _NoNull `i -> 0 `i 1123  ]
+{
+"174
+[; ;SPARC_4585.c: 174:                 if (X > 300 || Y > 300) {
+[e $ ! || > -> _X `ui -> -> 300 `i `ui > -> _Y `ui -> -> 300 `i `ui 1124  ]
+{
+"175
+[; ;SPARC_4585.c: 175:                     ERROR_FUERA_LIMITE();
+[e ( _ERROR_FUERA_LIMITE ..  ]
+"176
+[; ;SPARC_4585.c: 176:                     ERROR_LEDS();
+[e ( _ERROR_LEDS ..  ]
+"177
+[; ;SPARC_4585.c: 177:                 }
+}
+[e :U 1124 ]
+"178
+[; ;SPARC_4585.c: 178:                 if (X < 301 && Y < 301) {
+[e $ ! && < -> _X `ui -> -> 301 `i `ui < -> _Y `ui -> -> 301 `i `ui 1125  ]
+{
+"179
+[; ;SPARC_4585.c: 179:                     LEDS_OFF();
+[e ( _LEDS_OFF ..  ]
+"180
+[; ;SPARC_4585.c: 180:                     PROCESO();
+[e ( _PROCESO ..  ]
+"181
+[; ;SPARC_4585.c: 181:                     PROCESO_LEDS();
+[e ( _PROCESO_LEDS ..  ]
+"182
+[; ;SPARC_4585.c: 182:                     if (PosicionX < X) {
+[e $ ! < -> _PosicionX `ui -> _X `ui 1126  ]
+{
+"183
+[; ;SPARC_4585.c: 183:                         TXSTAbits.TXEN = 0;
+[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
+"184
+[; ;SPARC_4585.c: 184:                         RCSTAbits.CREN = 0;
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+"185
+[; ;SPARC_4585.c: 185:                         PosicionX = MOV_R_PASOS_X(PosicionX, X);
+[e = _PosicionX ( _MOV_R_PASOS_X (2 , _PosicionX _X ]
+"186
+[; ;SPARC_4585.c: 186:                     }
+}
+[e :U 1126 ]
+"187
+[; ;SPARC_4585.c: 187:                     if (PosicionX > X) {
+[e $ ! > -> _PosicionX `ui -> _X `ui 1127  ]
+{
+"188
+[; ;SPARC_4585.c: 188:                         TXSTAbits.TXEN = 0;
+[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
+"189
+[; ;SPARC_4585.c: 189:                         RCSTAbits.CREN = 0;
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+"190
+[; ;SPARC_4585.c: 190:                         PosicionX = MOV_L_PASOS_X(PosicionX, X);
+[e = _PosicionX ( _MOV_L_PASOS_X (2 , _PosicionX _X ]
+"191
+[; ;SPARC_4585.c: 191:                     }
+}
+[e :U 1127 ]
+"192
+[; ;SPARC_4585.c: 192:                     if (PosicionY < Y) {
+[e $ ! < -> _PosicionY `ui -> _Y `ui 1128  ]
+{
 "193
-[; ;SPARC_4585.c: 193:         }
+[; ;SPARC_4585.c: 193:                         TXSTAbits.TXEN = 0;
+[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
+"194
+[; ;SPARC_4585.c: 194:                         RCSTAbits.CREN = 0;
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+"195
+[; ;SPARC_4585.c: 195:                         PosicionY = MOV_R_PASOS_Y(PosicionY, Y);
+[e = _PosicionY ( _MOV_R_PASOS_Y (2 , _PosicionY _Y ]
+"196
+[; ;SPARC_4585.c: 196:                     }
+}
+[e :U 1128 ]
+"197
+[; ;SPARC_4585.c: 197:                     if (PosicionY > Y) {
+[e $ ! > -> _PosicionY `ui -> _Y `ui 1129  ]
+{
+"198
+[; ;SPARC_4585.c: 198:                         TXSTAbits.TXEN = 0;
+[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
+"199
+[; ;SPARC_4585.c: 199:                         RCSTAbits.CREN = 0;
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+"200
+[; ;SPARC_4585.c: 200:                         PosicionY = MOV_L_PASOS_Y(PosicionY, Y);
+[e = _PosicionY ( _MOV_L_PASOS_Y (2 , _PosicionY _Y ]
+"201
+[; ;SPARC_4585.c: 201:                     }
+}
+[e :U 1129 ]
+"202
+[; ;SPARC_4585.c: 202:                     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"203
+[; ;SPARC_4585.c: 203:                     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"204
+[; ;SPARC_4585.c: 204:                     TERMINADO_LEDS();
+[e ( _TERMINADO_LEDS ..  ]
+"205
+[; ;SPARC_4585.c: 205:                     TERMINADO();
+[e ( _TERMINADO ..  ]
+"206
+[; ;SPARC_4585.c: 206:                     TaskReceive = 0;
+[e = _TaskReceive -> -> 0 `i `uc ]
+"207
+[; ;SPARC_4585.c: 207:                     XReceive = 1;
+[e = _XReceive -> -> 1 `i `us ]
+"208
+[; ;SPARC_4585.c: 208:                     YReceive = 1;
+[e = _YReceive -> -> 1 `i `us ]
+"209
+[; ;SPARC_4585.c: 209:                 }
+}
+[e :U 1125 ]
+"210
+[; ;SPARC_4585.c: 210:             }
+}
+[e :U 1123 ]
+"211
+[; ;SPARC_4585.c: 211:             NoNull = 0;
+[e = _NoNull -> -> 0 `i `uc ]
+"212
+[; ;SPARC_4585.c: 212:             RCREG = 0;
+[e = _RCREG -> -> 0 `i `uc ]
+"213
+[; ;SPARC_4585.c: 213:         }
 }
 [e :U 1117 ]
-"137
-[; ;SPARC_4585.c: 137:         while (XReceive == 0 && YReceive == 0) {
+"142
+[; ;SPARC_4585.c: 142:         while (XReceive == 0 && YReceive == 0) {
 [e $ && == -> _XReceive `ui -> -> 0 `i `ui == -> _YReceive `ui -> -> 0 `i `ui 1118  ]
 [e :U 1119 ]
-"194
-[; ;SPARC_4585.c: 194:     }
+"214
+[; ;SPARC_4585.c: 214:     }
 }
 [e :U 1106 ]
 [e $U 1107  ]
 [e :U 1108 ]
-"195
-[; ;SPARC_4585.c: 195: }
+"215
+[; ;SPARC_4585.c: 215: }
 [e :UE 1090 ]
 }
 [v $root$_INT_isr `(v ~T0 @X0 0 e ]
-"197
-[; ;SPARC_4585.c: 197: void __attribute__((picinterrupt(("")))) INT_isr(void) {
+"217
+[; ;SPARC_4585.c: 217: void __attribute__((picinterrupt(("")))) INT_isr(void) {
 [v _INT_isr `(v ~T47 @X0 1 ef ]
 {
 [e :U _INT_isr ]
 [f ]
-"198
-[; ;SPARC_4585.c: 198:     if (INTCONbits.INT0IF == 1) {
-[e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 1127  ]
-{
-"199
-[; ;SPARC_4585.c: 199:         SEND_STRING("INTERRUPCION 0");
-[e ( _SEND_STRING (1 :s 2C ]
-"200
-[; ;SPARC_4585.c: 200:         MOV_L_PASOS_X(350, 0);
-[e ( _MOV_L_PASOS_X (2 , -> -> 350 `i `us -> -> 0 `i `us ]
-"201
-[; ;SPARC_4585.c: 201:         MOV_L_PASOS_Y(350, 0);
-[e ( _MOV_L_PASOS_Y (2 , -> -> 350 `i `us -> -> 0 `i `us ]
-"202
-[; ;SPARC_4585.c: 202:         INTCONbits.INT0IF = 0;
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"203
-[; ;SPARC_4585.c: 203:         INTCON3bits.INT1IF = 0;
-[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-"204
-[; ;SPARC_4585.c: 204:         INTCON3bits.INT2IF = 0;
-[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
-"205
-[; ;SPARC_4585.c: 205:     }
-}
-[e :U 1127 ]
-"206
-[; ;SPARC_4585.c: 206:     if (INTCON3bits.INT1IF == 1) {
-[e $ ! == -> . . _INTCON3bits 0 0 `i -> 1 `i 1128  ]
-{
-"207
-[; ;SPARC_4585.c: 207:         SEND_STRING("INTERRUPCION 1");
-[e ( _SEND_STRING (1 :s 3C ]
-"208
-[; ;SPARC_4585.c: 208:         MOV_R_PASOS_X(0, 10);
-[e ( _MOV_R_PASOS_X (2 , -> -> 0 `i `us -> -> 10 `i `us ]
-"209
-[; ;SPARC_4585.c: 209:         BuscandoHomeX = 1;
-[e = _BuscandoHomeX -> -> 1 `i `uc ]
-"210
-[; ;SPARC_4585.c: 210:         INTCONbits.INT0IF = 0;
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"211
-[; ;SPARC_4585.c: 211:         INTCON3bits.INT1IF = 0;
-[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-"212
-[; ;SPARC_4585.c: 212:         INTCON3bits.INT2IF = 0;
-[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
-"213
-[; ;SPARC_4585.c: 213:     }
-}
-[e :U 1128 ]
-"214
-[; ;SPARC_4585.c: 214:     if (INTCON3bits.INT2IF == 1) {
-[e $ ! == -> . . _INTCON3bits 0 1 `i -> 1 `i 1129  ]
-{
-"215
-[; ;SPARC_4585.c: 215:         SEND_STRING("INTERRUPCION 2");
-[e ( _SEND_STRING (1 :s 4C ]
-"216
-[; ;SPARC_4585.c: 216:         MOV_R_PASOS_Y(0, 10);
-[e ( _MOV_R_PASOS_Y (2 , -> -> 0 `i `us -> -> 10 `i `us ]
-"217
-[; ;SPARC_4585.c: 217:         BuscandoHomeY = 1;
-[e = _BuscandoHomeY -> -> 1 `i `uc ]
 "218
-[; ;SPARC_4585.c: 218:         INTCONbits.INT0IF = 0;
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;SPARC_4585.c: 218:     if (INTCONbits.INT0IF == 1) {
+[e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 1131  ]
+{
 "219
-[; ;SPARC_4585.c: 219:         INTCON3bits.INT1IF = 0;
-[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+[; ;SPARC_4585.c: 219:         MOV_L_PASOS_X(50, 0);
+[e ( _MOV_L_PASOS_X (2 , -> -> 50 `i `us -> -> 0 `i `us ]
 "220
-[; ;SPARC_4585.c: 220:         INTCON3bits.INT2IF = 0;
-[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
+[; ;SPARC_4585.c: 220:         MOV_L_PASOS_Y(50, 0);
+[e ( _MOV_L_PASOS_Y (2 , -> -> 50 `i `us -> -> 0 `i `us ]
 "221
-[; ;SPARC_4585.c: 221:     }
-}
-[e :U 1129 ]
+[; ;SPARC_4585.c: 221:         INTCONbits.INT0IF = 0;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
 "222
-[; ;SPARC_4585.c: 222: }
-[e :UE 1126 ]
-}
+[; ;SPARC_4585.c: 222:         INTCON3bits.INT1IF = 0;
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+"223
+[; ;SPARC_4585.c: 223:         INTCON3bits.INT2IF = 0;
+[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
 "224
-[; ;SPARC_4585.c: 224: void INIT_INT(void) {
+[; ;SPARC_4585.c: 224:     }
+}
+[e :U 1131 ]
+"225
+[; ;SPARC_4585.c: 225:     if (INTCON3bits.INT1IF == 1) {
+[e $ ! == -> . . _INTCON3bits 0 0 `i -> 1 `i 1132  ]
+{
+"226
+[; ;SPARC_4585.c: 226:         MOV_R_PASOS_X(0, 10);
+[e ( _MOV_R_PASOS_X (2 , -> -> 0 `i `us -> -> 10 `i `us ]
+"227
+[; ;SPARC_4585.c: 227:         BuscandoHomeX = 1;
+[e = _BuscandoHomeX -> -> 1 `i `uc ]
+"228
+[; ;SPARC_4585.c: 228:         INTCONbits.INT0IF = 0;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+"229
+[; ;SPARC_4585.c: 229:         INTCON3bits.INT1IF = 0;
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+"230
+[; ;SPARC_4585.c: 230:         INTCON3bits.INT2IF = 0;
+[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
+"231
+[; ;SPARC_4585.c: 231:     }
+}
+[e :U 1132 ]
+"232
+[; ;SPARC_4585.c: 232:     if (INTCON3bits.INT2IF == 1) {
+[e $ ! == -> . . _INTCON3bits 0 1 `i -> 1 `i 1133  ]
+{
+"233
+[; ;SPARC_4585.c: 233:         MOV_R_PASOS_Y(0, 10);
+[e ( _MOV_R_PASOS_Y (2 , -> -> 0 `i `us -> -> 10 `i `us ]
+"234
+[; ;SPARC_4585.c: 234:         BuscandoHomeY = 1;
+[e = _BuscandoHomeY -> -> 1 `i `uc ]
+"235
+[; ;SPARC_4585.c: 235:         INTCONbits.INT0IF = 0;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+"236
+[; ;SPARC_4585.c: 236:         INTCON3bits.INT1IF = 0;
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+"237
+[; ;SPARC_4585.c: 237:         INTCON3bits.INT2IF = 0;
+[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
+"238
+[; ;SPARC_4585.c: 238:     }
+}
+[e :U 1133 ]
+"239
+[; ;SPARC_4585.c: 239: }
+[e :UE 1130 ]
+}
+"241
+[; ;SPARC_4585.c: 241: void INIT_INT(void) {
 [v _INIT_INT `(v ~T0 @X0 1 ef ]
 {
 [e :U _INIT_INT ]
 [f ]
-"225
-[; ;SPARC_4585.c: 225:     TRISBbits.RB0 = 1;
-[e = . . _TRISBbits 1 0 -> -> 1 `i `uc ]
-"226
-[; ;SPARC_4585.c: 226:     TRISBbits.RB1 = 1;
-[e = . . _TRISBbits 1 1 -> -> 1 `i `uc ]
-"227
-[; ;SPARC_4585.c: 227:     TRISBbits.RB2 = 1;
-[e = . . _TRISBbits 1 2 -> -> 1 `i `uc ]
-"228
-[; ;SPARC_4585.c: 228:     RCONbits.IPEN = 0;
-[e = . . _RCONbits 5 7 -> -> 0 `i `uc ]
-"229
-[; ;SPARC_4585.c: 229:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"230
-[; ;SPARC_4585.c: 230:     INTCONbits.PEIE = 0;
-[e = . . _INTCONbits 1 6 -> -> 0 `i `uc ]
-"231
-[; ;SPARC_4585.c: 231:     INTCONbits.INT0IE = 1;
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-"232
-[; ;SPARC_4585.c: 232:     INTCONbits.INT0IF = 0;
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"233
-[; ;SPARC_4585.c: 233:     INTCON2bits.INTEDG0 = 1;
-[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
-"234
-[; ;SPARC_4585.c: 234:     INTCON2bits.INTEDG1 = 1;
-[e = . . _INTCON2bits 1 5 -> -> 1 `i `uc ]
-"235
-[; ;SPARC_4585.c: 235:     INTCON2bits.INTEDG2 = 1;
-[e = . . _INTCON2bits 1 4 -> -> 1 `i `uc ]
-"236
-[; ;SPARC_4585.c: 236:     INTCON3bits.INT2IP = 1;
-[e = . . _INTCON3bits 0 7 -> -> 1 `i `uc ]
-"237
-[; ;SPARC_4585.c: 237:     INTCON3bits.INT1IP = 1;
-[e = . . _INTCON3bits 0 6 -> -> 1 `i `uc ]
-"238
-[; ;SPARC_4585.c: 238:     INTCON3bits.INT2IE = 1;
-[e = . . _INTCON3bits 0 4 -> -> 1 `i `uc ]
-"239
-[; ;SPARC_4585.c: 239:     INTCON3bits.INT1IE = 1;
-[e = . . _INTCON3bits 0 3 -> -> 1 `i `uc ]
-"240
-[; ;SPARC_4585.c: 240:     INTCON3bits.INT2IF = 0;
-[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
-"241
-[; ;SPARC_4585.c: 241:     INTCON3bits.INT1IF = 0;
-[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
 "242
-[; ;SPARC_4585.c: 242: }
-[e :UE 1130 ]
+[; ;SPARC_4585.c: 242:     TRISBbits.RB0 = 1;
+[e = . . _TRISBbits 1 0 -> -> 1 `i `uc ]
+"243
+[; ;SPARC_4585.c: 243:     TRISBbits.RB1 = 1;
+[e = . . _TRISBbits 1 1 -> -> 1 `i `uc ]
+"244
+[; ;SPARC_4585.c: 244:     TRISBbits.RB2 = 1;
+[e = . . _TRISBbits 1 2 -> -> 1 `i `uc ]
+"245
+[; ;SPARC_4585.c: 245:     RCONbits.IPEN = 0;
+[e = . . _RCONbits 5 7 -> -> 0 `i `uc ]
+"246
+[; ;SPARC_4585.c: 246:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"247
+[; ;SPARC_4585.c: 247:     INTCONbits.PEIE = 0;
+[e = . . _INTCONbits 1 6 -> -> 0 `i `uc ]
+"248
+[; ;SPARC_4585.c: 248:     INTCONbits.INT0IE = 1;
+[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
+"249
+[; ;SPARC_4585.c: 249:     INTCONbits.INT0IF = 0;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+"250
+[; ;SPARC_4585.c: 250:     INTCON2bits.INTEDG0 = 1;
+[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
+"251
+[; ;SPARC_4585.c: 251:     INTCON2bits.INTEDG1 = 1;
+[e = . . _INTCON2bits 1 5 -> -> 1 `i `uc ]
+"252
+[; ;SPARC_4585.c: 252:     INTCON2bits.INTEDG2 = 1;
+[e = . . _INTCON2bits 1 4 -> -> 1 `i `uc ]
+"253
+[; ;SPARC_4585.c: 253:     INTCON3bits.INT2IP = 1;
+[e = . . _INTCON3bits 0 7 -> -> 1 `i `uc ]
+"254
+[; ;SPARC_4585.c: 254:     INTCON3bits.INT1IP = 1;
+[e = . . _INTCON3bits 0 6 -> -> 1 `i `uc ]
+"255
+[; ;SPARC_4585.c: 255:     INTCON3bits.INT2IE = 1;
+[e = . . _INTCON3bits 0 4 -> -> 1 `i `uc ]
+"256
+[; ;SPARC_4585.c: 256:     INTCON3bits.INT1IE = 1;
+[e = . . _INTCON3bits 0 3 -> -> 1 `i `uc ]
+"257
+[; ;SPARC_4585.c: 257:     INTCON3bits.INT2IF = 0;
+[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
+"258
+[; ;SPARC_4585.c: 258:     INTCON3bits.INT1IF = 0;
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+"259
+[; ;SPARC_4585.c: 259: }
+[e :UE 1134 ]
 }
-[a 1C 76 73 83 84 79 32 65 74 85 83 84 69 32 90 0 ]
-[a 4C 73 78 84 69 82 82 85 80 67 73 79 78 32 50 0 ]
-[a 3C 73 78 84 69 82 82 85 80 67 73 79 78 32 49 0 ]
-[a 2C 73 78 84 69 82 82 85 80 67 73 79 78 32 48 0 ]

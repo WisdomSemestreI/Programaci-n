@@ -15,6 +15,7 @@ void ERROR_NO_COMANDO (void);
 void ERROR_FUERA_LIMITE (void);
 void TERMINADO (void);
 void PROCESO (void);
+void FALTA_DATO (void);
 # 1 "MENSAJES.c" 2
 
 # 1 "./UART.h" 1
@@ -17959,23 +17960,29 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 void ERROR_NO_COMANDO() {
     SEND_UART(10);
     SEND_STRING("Comando no reconocido");
-    SEND_UART(10);
+    SEND_UART(13);
 }
 
 void ERROR_FUERA_LIMITE() {
     SEND_UART(10);
     SEND_STRING("coordenadas fuera del limite");
-    SEND_UART(10);
+    SEND_UART(13);
 }
 
 void TERMINADO() {
     SEND_UART(10);
     SEND_STRING("Proceso completado");
-    SEND_UART(10);
+    SEND_UART(13);
 }
 
 void PROCESO() {
     SEND_UART(10);
     SEND_STRING("En proceso");
+    SEND_UART(13);
+}
+
+void FALTA_DATO() {
     SEND_UART(10);
+    SEND_STRING("Falta Dato");
+    SEND_UART(13);
 }

@@ -23,11 +23,15 @@ unsigned short XReceive = 0; //Variable to check if needs X coordinate
 unsigned short YReceive = 0; //Variable to check if needs Y coordinate
 unsigned short PosicionX = 0; //Position in X
 unsigned short PosicionY = 0; //Position in Y
+unsigned char NoNull = 0; //The array has no Nulls
 
 void main(void) {
+    
+    RCREG = 0; //Clean of receive register
 
     TRISCbits.RC0 = 1;
-    
+    TRISAbits.RA4 = 1;
+
     ////////////////////////////////////////////////////////////////////////////
     ///////////////////////////PORT CLEANING////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
@@ -69,13 +73,12 @@ void main(void) {
             MOV_L_PASOS_Y(300, 0); //Puts Y in the origin
         }
     }
-
+   
     while (AjusteZ == 0) {
         UP_PLATFORM(); //Move platform up
         DOWN_PLATFORM(); //Move platform down
         if (PORTAbits.RA5 == 1) { //If button ok is pressed
             AjusteZ = 1; //The adjust is ready
-            SEND_STRING("LISTO AJUSTE Z");
         }
     }
 
@@ -86,11 +89,11 @@ void main(void) {
 
             if (Task != 72 && Task != 71 && Task != 84 && Task != 83) { //Task is wrong
                 ERROR_NO_COMANDO(); //The command is wrong
-                LEDS_OFF();//LED off
+                LEDS_OFF(); //LED off
                 ERROR_LEDS(); //Error LED is on
             }
             if (Task == 72) { //Task is HOME
-                LEDS_OFF();//LED off
+                LEDS_OFF(); //LED off
                 PROCESO(); //Is in process
                 PROCESO_LEDS(); //Process LED is on
                 PORTEbits.RE0 = 0; //Actuator deactivation
@@ -104,14 +107,14 @@ void main(void) {
                 RCSTAbits.CREN = 1; //Receive is on
             }
             if (Task == 71) { //Task is GO
-                LEDS_OFF();//LED off
+                LEDS_OFF(); //LED off
                 PORTEbits.RE0 = 0; //Actuator deactivation
                 TaskReceive = 1; //Task is correctly receive
                 XReceive = 0; //X needs a coordinate
                 YReceive = 0; //Y needs a coordinate
             }
             if (Task == 84) { //Task is TOUCH
-                LEDS_OFF();//LED off
+                LEDS_OFF(); //LED off
                 PROCESO(); //Is in process
                 PROCESO_LEDS(); //Process LED is on
                 PORTEbits.RE0 = 0; //Actuator deactivation
@@ -127,13 +130,13 @@ void main(void) {
                 RCSTAbits.CREN = 1; //Receive is on
             }
             if (Task == 83) { //Task is SWEEP
-                LEDS_OFF();//LED off
+                LEDS_OFF(); //LED off
                 PORTEbits.RE0 = 1; //Actuator activation
                 TaskReceive = 1; //Task is correctly receive
                 XReceive = 0; //X needs a coordinate
                 YReceive = 0; //Y needs a coordinate
             }
-
+            RCREG = 0; //Clean of receive register
         }
 
         while (XReceive == 0 && YReceive == 0) {
@@ -141,8 +144,6 @@ void main(void) {
             unsigned char *Ptrcoordenadas = (unsigned char*) &Instruccion.coordenadas[0]; //Pointer to coordinates address
 
             RECEIVE_STRING(Ptrcoordenadas, 6); //Values of coordinates are received
-
-            SEND_STRING(Ptrcoordenadas); //Se muestra el valor de las coordenadas
 
             unsigned short Centenasx = (Instruccion.coordenada.x[0] - 48) * 100; //Hundreds
             unsigned short Decenasx = (Instruccion.coordenada.x[1] - 48) * 10; //Tens
@@ -155,58 +156,73 @@ void main(void) {
             unsigned short Unidady = Instruccion.coordenada.y[2] - 48; //Units
 
             Y = Centenasy + Decenasy + Unidady; //Decimal value of Y
+            
+            if (Instruccion.coordenada.x[0] == NULL || Instruccion.coordenada.y[0] == NULL) {
+                FALTA_DATO();
+                NoNull = 1;
+            }
+            if (Instruccion.coordenada.x[1] == NULL || Instruccion.coordenada.y[1] == NULL) {
+                FALTA_DATO();
+                NoNull = 1;
+            }
+            if (Instruccion.coordenada.x[2] == NULL || Instruccion.coordenada.y[2] == NULL) {
+                FALTA_DATO();
+                NoNull = 1;
+            }
 
-            if (X > 300 || Y > 300) { //Coordinates are bigger than the workspace
-                ERROR_FUERA_LIMITE();
-                ERROR_LEDS(); //Error LED is on
+            if (NoNull == 0) {
+                if (X > 300 || Y > 300) { //Coordinates are bigger than the workspace
+                    ERROR_FUERA_LIMITE();
+                    ERROR_LEDS(); //Error LED is on
+                }
+                if (X < 301 && Y < 301) { //Coordinates are correct
+                    LEDS_OFF(); //LED off
+                    PROCESO(); //Is in process
+                    PROCESO_LEDS(); //Process LED is on
+                    if (PosicionX < X) { //X position is lower than the desired
+                        TXSTAbits.TXEN = 0; //Transmit is off
+                        RCSTAbits.CREN = 0; //Receive is off
+                        PosicionX = MOV_R_PASOS_X(PosicionX, X); //Move X to the right
+                    }
+                    if (PosicionX > X) { //X position is higher than the desired
+                        TXSTAbits.TXEN = 0; //Transmit is off
+                        RCSTAbits.CREN = 0; //Receive is off
+                        PosicionX = MOV_L_PASOS_X(PosicionX, X); //Move X to the left
+                    }
+                    if (PosicionY < Y) { //La posicion y actual es menor a la deseada
+                        TXSTAbits.TXEN = 0; //Transmit is off
+                        RCSTAbits.CREN = 0; //Receive is off
+                        PosicionY = MOV_R_PASOS_Y(PosicionY, Y); //Move Y to the right
+                    }
+                    if (PosicionY > Y) { //La posicion Y actual es mayor a la deseada
+                        TXSTAbits.TXEN = 0; //Transmit is off
+                        RCSTAbits.CREN = 0; //Receive is off
+                        PosicionY = MOV_L_PASOS_Y(PosicionY, Y); //Move Y to the left
+                    }
+                    TXSTAbits.TXEN = 1; //Transmit is on
+                    RCSTAbits.CREN = 1; //Receive is on
+                    TERMINADO_LEDS(); //Led of process done is on
+                    TERMINADO(); //Process is done
+                    TaskReceive = 0; //A new task is needed
+                    XReceive = 1; //X was received
+                    YReceive = 1; //Y was received
+                }
             }
-            if (X < 301 && Y < 301) { //Coordinates are correct
-                LEDS_OFF();//LED off
-                PROCESO(); //Is in process
-                PROCESO_LEDS(); //Process LED is on
-                if (PosicionX < X) { //X position is lower than the desired
-                    TXSTAbits.TXEN = 0; //Transmit is off
-                    RCSTAbits.CREN = 0; //Receive is off
-                    PosicionX = MOV_R_PASOS_X(PosicionX, X); //Move X to the right
-                }
-                if (PosicionX > X) { //X position is higher than the desired
-                    TXSTAbits.TXEN = 0; //Transmit is off
-                    RCSTAbits.CREN = 0; //Receive is off
-                    PosicionX = MOV_L_PASOS_X(PosicionX, X); //Move X to the left
-                }
-                if (PosicionY < Y) { //La posicion y actual es menor a la deseada
-                    TXSTAbits.TXEN = 0; //Transmit is off
-                    RCSTAbits.CREN = 0; //Receive is off
-                    PosicionY = MOV_R_PASOS_Y(PosicionY, Y); //Move Y to the right
-                }
-                if (PosicionY > Y) { //La posicion Y actual es mayor a la deseada
-                    TXSTAbits.TXEN = 0; //Transmit is off
-                    RCSTAbits.CREN = 0; //Receive is off
-                    PosicionY = MOV_L_PASOS_Y(PosicionY, Y); //Move Y to the left
-                }
-                TXSTAbits.TXEN = 1; //Transmit is on
-                RCSTAbits.CREN = 1; //Receive is on
-                TERMINADO_LEDS(); //Led of process done is on
-                TERMINADO(); //Process is done
-                TaskReceive = 0; //A new task is needed
-                XReceive = 1; //X was received
-                YReceive = 1; //Y was received
-            }
+            NoNull = 0;
+            RCREG = 0;//Clean of receive register
         }
     }
 }
 
 void __interrupt() INT_isr(void) {
     if (INTCONbits.INT0IF == 1) {
-        SEND_STRING("INTERRUPCION 0");
-        MOV_L_PASOS_X(350, 0); //Move X to the left
-        MOV_L_PASOS_Y(350, 0); //Move Y to the left
+        MOV_L_PASOS_X(50, 0); //Move X to the left
+        MOV_L_PASOS_Y(50, 0); //Move Y to the left
         INTCONbits.INT0IF = 0; //Clear Interruption Flag 0
         INTCON3bits.INT1IF = 0; //Clear Interruption Flag 1
         INTCON3bits.INT2IF = 0; //Clear Interruption Flag 1
     }
     if (INTCON3bits.INT1IF == 1) {
-        SEND_STRING("INTERRUPCION 1");
         MOV_R_PASOS_X(0, 10); //Adjust X
         BuscandoHomeX = 1; //HomeX was found
         INTCONbits.INT0IF = 0; //Clear Interruption Flag 0
@@ -214,7 +230,6 @@ void __interrupt() INT_isr(void) {
         INTCON3bits.INT2IF = 0; //Clear Interruption Flag 1
     }
     if (INTCON3bits.INT2IF == 1) {
-        SEND_STRING("INTERRUPCION 2");
         MOV_R_PASOS_Y(0, 10); //Adjust Y
         BuscandoHomeY = 1; //HomeY was found
         INTCONbits.INT0IF = 0; //Clear Interruption Flag 0

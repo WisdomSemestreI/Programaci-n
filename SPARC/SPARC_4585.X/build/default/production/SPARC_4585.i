@@ -18003,6 +18003,7 @@ void ERROR_NO_COMANDO (void);
 void ERROR_FUERA_LIMITE (void);
 void TERMINADO (void);
 void PROCESO (void);
+void FALTA_DATO (void);
 # 9 "SPARC_4585.c" 2
 
 # 1 "./LEDS.h" 1
@@ -18037,8 +18038,14 @@ unsigned short XReceive = 0;
 unsigned short YReceive = 0;
 unsigned short PosicionX = 0;
 unsigned short PosicionY = 0;
+unsigned char NoNull = 0;
 
 void main(void) {
+
+    RCREG = 0;
+
+    TRISCbits.RC0 = 1;
+    TRISAbits.RA4 = 1;
 
 
 
@@ -18087,7 +18094,6 @@ void main(void) {
         DOWN_PLATFORM();
         if (PORTAbits.RA5 == 1) {
             AjusteZ = 1;
-            SEND_STRING("LISTO AJUSTE Z");
         }
     }
 
@@ -18145,7 +18151,7 @@ void main(void) {
                 XReceive = 0;
                 YReceive = 0;
             }
-
+            RCREG = 0;
         }
 
         while (XReceive == 0 && YReceive == 0) {
@@ -18153,8 +18159,6 @@ void main(void) {
             unsigned char *Ptrcoordenadas = (unsigned char*) &Instruccion.coordenadas[0];
 
             RECEIVE_STRING(Ptrcoordenadas, 6);
-
-            SEND_STRING(Ptrcoordenadas);
 
             unsigned short Centenasx = (Instruccion.coordenada.x[0] - 48) * 100;
             unsigned short Decenasx = (Instruccion.coordenada.x[1] - 48) * 10;
@@ -18168,57 +18172,72 @@ void main(void) {
 
             Y = Centenasy + Decenasy + Unidady;
 
-            if (X > 300 || Y > 300) {
-                ERROR_FUERA_LIMITE();
-                ERROR_LEDS();
+            if (Instruccion.coordenada.x[0] == ((void*)0) || Instruccion.coordenada.y[0] == ((void*)0)) {
+                FALTA_DATO();
+                NoNull = 1;
             }
-            if (X < 301 && Y < 301) {
-                LEDS_OFF();
-                PROCESO();
-                PROCESO_LEDS();
-                if (PosicionX < X) {
-                    TXSTAbits.TXEN = 0;
-                    RCSTAbits.CREN = 0;
-                    PosicionX = MOV_R_PASOS_X(PosicionX, X);
-                }
-                if (PosicionX > X) {
-                    TXSTAbits.TXEN = 0;
-                    RCSTAbits.CREN = 0;
-                    PosicionX = MOV_L_PASOS_X(PosicionX, X);
-                }
-                if (PosicionY < Y) {
-                    TXSTAbits.TXEN = 0;
-                    RCSTAbits.CREN = 0;
-                    PosicionY = MOV_R_PASOS_Y(PosicionY, Y);
-                }
-                if (PosicionY > Y) {
-                    TXSTAbits.TXEN = 0;
-                    RCSTAbits.CREN = 0;
-                    PosicionY = MOV_L_PASOS_Y(PosicionY, Y);
-                }
-                TXSTAbits.TXEN = 1;
-                RCSTAbits.CREN = 1;
-                TERMINADO_LEDS();
-                TERMINADO();
-                TaskReceive = 0;
-                XReceive = 1;
-                YReceive = 1;
+            if (Instruccion.coordenada.x[1] == ((void*)0) || Instruccion.coordenada.y[1] == ((void*)0)) {
+                FALTA_DATO();
+                NoNull = 1;
             }
+            if (Instruccion.coordenada.x[2] == ((void*)0) || Instruccion.coordenada.y[2] == ((void*)0)) {
+                FALTA_DATO();
+                NoNull = 1;
+            }
+
+            if (NoNull == 0) {
+                if (X > 300 || Y > 300) {
+                    ERROR_FUERA_LIMITE();
+                    ERROR_LEDS();
+                }
+                if (X < 301 && Y < 301) {
+                    LEDS_OFF();
+                    PROCESO();
+                    PROCESO_LEDS();
+                    if (PosicionX < X) {
+                        TXSTAbits.TXEN = 0;
+                        RCSTAbits.CREN = 0;
+                        PosicionX = MOV_R_PASOS_X(PosicionX, X);
+                    }
+                    if (PosicionX > X) {
+                        TXSTAbits.TXEN = 0;
+                        RCSTAbits.CREN = 0;
+                        PosicionX = MOV_L_PASOS_X(PosicionX, X);
+                    }
+                    if (PosicionY < Y) {
+                        TXSTAbits.TXEN = 0;
+                        RCSTAbits.CREN = 0;
+                        PosicionY = MOV_R_PASOS_Y(PosicionY, Y);
+                    }
+                    if (PosicionY > Y) {
+                        TXSTAbits.TXEN = 0;
+                        RCSTAbits.CREN = 0;
+                        PosicionY = MOV_L_PASOS_Y(PosicionY, Y);
+                    }
+                    TXSTAbits.TXEN = 1;
+                    RCSTAbits.CREN = 1;
+                    TERMINADO_LEDS();
+                    TERMINADO();
+                    TaskReceive = 0;
+                    XReceive = 1;
+                    YReceive = 1;
+                }
+            }
+            NoNull = 0;
+            RCREG = 0;
         }
     }
 }
 
 void __attribute__((picinterrupt(("")))) INT_isr(void) {
     if (INTCONbits.INT0IF == 1) {
-        SEND_STRING("INTERRUPCION 0");
-        MOV_L_PASOS_X(350, 0);
-        MOV_L_PASOS_Y(350, 0);
+        MOV_L_PASOS_X(50, 0);
+        MOV_L_PASOS_Y(50, 0);
         INTCONbits.INT0IF = 0;
         INTCON3bits.INT1IF = 0;
         INTCON3bits.INT2IF = 0;
     }
     if (INTCON3bits.INT1IF == 1) {
-        SEND_STRING("INTERRUPCION 1");
         MOV_R_PASOS_X(0, 10);
         BuscandoHomeX = 1;
         INTCONbits.INT0IF = 0;
@@ -18226,7 +18245,6 @@ void __attribute__((picinterrupt(("")))) INT_isr(void) {
         INTCON3bits.INT2IF = 0;
     }
     if (INTCON3bits.INT2IF == 1) {
-        SEND_STRING("INTERRUPCION 2");
         MOV_R_PASOS_Y(0, 10);
         BuscandoHomeY = 1;
         INTCONbits.INT0IF = 0;

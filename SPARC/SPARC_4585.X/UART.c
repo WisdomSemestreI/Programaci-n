@@ -1,6 +1,7 @@
 #include <xc.h>
 #include "UART.h"
 
+
 void INIT_UART() {
     ///////////////////////////////////////////////
     //inicialización del módulo USART PIC en el XC8 modo asíncrono, a 8bits,
@@ -21,7 +22,12 @@ void SEND_UART(unsigned char TX_Data) {
 }
 
 unsigned char RECEIVE_UART() {
+    unsigned long Cont = 0;
     while (PIR1bits.RCIF == 0) {
+        if (Cont == 750000) {
+            return NULL;
+        }
+        Cont++;
     }
     RX_Data = RCREG;
     RCREG = 0;

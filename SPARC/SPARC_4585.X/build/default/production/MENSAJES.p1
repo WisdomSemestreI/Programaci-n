@@ -1263,8 +1263,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MENSAJES.c: 8:     SEND_STRING("Comando no reconocido");
 [e ( _SEND_STRING (1 :s 1C ]
 "9
-[; ;MENSAJES.c: 9:     SEND_UART(10);
-[e ( _SEND_UART (1 -> -> 10 `i `uc ]
+[; ;MENSAJES.c: 9:     SEND_UART(13);
+[e ( _SEND_UART (1 -> -> 13 `i `uc ]
 "10
 [; ;MENSAJES.c: 10: }
 [e :UE 1090 ]
@@ -1282,8 +1282,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MENSAJES.c: 14:     SEND_STRING("coordenadas fuera del limite");
 [e ( _SEND_STRING (1 :s 2C ]
 "15
-[; ;MENSAJES.c: 15:     SEND_UART(10);
-[e ( _SEND_UART (1 -> -> 10 `i `uc ]
+[; ;MENSAJES.c: 15:     SEND_UART(13);
+[e ( _SEND_UART (1 -> -> 13 `i `uc ]
 "16
 [; ;MENSAJES.c: 16: }
 [e :UE 1091 ]
@@ -1301,8 +1301,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MENSAJES.c: 20:     SEND_STRING("Proceso completado");
 [e ( _SEND_STRING (1 :s 3C ]
 "21
-[; ;MENSAJES.c: 21:     SEND_UART(10);
-[e ( _SEND_UART (1 -> -> 10 `i `uc ]
+[; ;MENSAJES.c: 21:     SEND_UART(13);
+[e ( _SEND_UART (1 -> -> 13 `i `uc ]
 "22
 [; ;MENSAJES.c: 22: }
 [e :UE 1092 ]
@@ -1320,12 +1320,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MENSAJES.c: 26:     SEND_STRING("En proceso");
 [e ( _SEND_STRING (1 :s 4C ]
 "27
-[; ;MENSAJES.c: 27:     SEND_UART(10);
-[e ( _SEND_UART (1 -> -> 10 `i `uc ]
+[; ;MENSAJES.c: 27:     SEND_UART(13);
+[e ( _SEND_UART (1 -> -> 13 `i `uc ]
 "28
 [; ;MENSAJES.c: 28: }
 [e :UE 1093 ]
 }
+"30
+[; ;MENSAJES.c: 30: void FALTA_DATO() {
+[v _FALTA_DATO `(v ~T0 @X0 1 ef ]
+{
+[e :U _FALTA_DATO ]
+[f ]
+"31
+[; ;MENSAJES.c: 31:     SEND_UART(10);
+[e ( _SEND_UART (1 -> -> 10 `i `uc ]
+"32
+[; ;MENSAJES.c: 32:     SEND_STRING("Falta Dato");
+[e ( _SEND_STRING (1 :s 5C ]
+"33
+[; ;MENSAJES.c: 33:     SEND_UART(13);
+[e ( _SEND_UART (1 -> -> 13 `i `uc ]
+"34
+[; ;MENSAJES.c: 34: }
+[e :UE 1094 ]
+}
+[a 5C 70 97 108 116 97 32 68 97 116 111 0 ]
 [a 4C 69 110 32 112 114 111 99 101 115 111 0 ]
 [a 1C 67 111 109 97 110 100 111 32 110 111 32 114 101 99 111 110 111 99 105 100 111 0 ]
 [a 3C 80 114 111 99 101 115 111 32 99 111 109 112 108 101 116 97 100 111 0 ]
