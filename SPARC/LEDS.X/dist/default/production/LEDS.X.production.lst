@@ -1,0 +1,741 @@
+
+
+Microchip MPLAB XC8 Assembler V2.10 build 88905656 
+                                                                                               Thu Nov 28 15:31:09 2019
+
+Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
+     1                           	processor	18F4585
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	flic
+     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     7                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     8                           	psect	text1,global,reloc=2,class=CODE,delta=1
+     9                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    14                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    15                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    16  0000                     
+    17                           ; Version 2.10
+    18                           ; Generated 31/07/2019 GMT
+    19                           ; 
+    20                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    21                           ; All rights reserved.
+    22                           ; 
+    23                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    24                           ; 
+    25                           ; Redistribution and use in source and binary forms, with or without modification, are
+    26                           ; permitted provided that the following conditions are met:
+    27                           ; 
+    28                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    29                           ;        conditions and the following disclaimer.
+    30                           ; 
+    31                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    32                           ;        of conditions and the following disclaimer in the documentation and/or other
+    33                           ;        materials provided with the distribution.
+    34                           ; 
+    35                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    36                           ;        software without specific prior written permission.
+    37                           ; 
+    38                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    39                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    40                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    41                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    42                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    43                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    44                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    45                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    46                           ; 
+    47                           ; 
+    48                           ; Code-generator required, PIC18F4585 Definitions
+    49                           ; 
+    50                           ; SFR Addresses
+    51  0000                     _ADCON1	set	4033
+    52  0000                     _CVRCONbits	set	4021
+    53  0000                     _CMCON	set	4020
+    54  0000                     _OSCCON	set	4051
+    55  0000                     _LATBbits	set	3978
+    56  0000                     _TRISBbits	set	3987
+    57                           
+    58                           ; #config settings
+    59  0000                     
+    60                           	psect	cinit
+    61  00BF4C                     __pcinit:
+    62                           	opt callstack 0
+    63  00BF4C                     start_initialization:
+    64                           	opt callstack 0
+    65  00BF4C                     __initialization:
+    66                           	opt callstack 0
+    67  00BF4C                     end_of_initialization:
+    68                           	opt callstack 0
+    69  00BF4C                     __end_of__initialization:
+    70                           	opt callstack 0
+    71  00BF4C  0100               	movlb	0
+    72  00BF4E  EFC4  F05F         	goto	_main	;jump to C main() function
+    73                           
+    74                           	psect	cstackCOMRAM
+    75  000001                     __pcstackCOMRAM:
+    76                           	opt callstack 0
+    77  000001                     ??_main:
+    78                           
+    79                           ; 1 bytes @ 0x0
+    80  000001                     	ds	2
+    81                           
+    82 ;;
+    83 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+    84 ;;
+    85 ;; *************** function _main *****************
+    86 ;; Defined at:
+    87 ;;		line 16 in file "Leds_Uso.c"
+    88 ;; Parameters:    Size  Location     Type
+    89 ;;		None
+    90 ;; Auto vars:     Size  Location     Type
+    91 ;;		None
+    92 ;; Return value:  Size  Location     Type
+    93 ;;                  1    wreg      void 
+    94 ;; Registers used:
+    95 ;;		wreg, status,2, cstack
+    96 ;; Tracked objects:
+    97 ;;		On entry : 0/0
+    98 ;;		On exit  : 0/0
+    99 ;;		Unchanged: 0/0
+   100 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   101 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   102 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   103 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   104 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   105 ;;Total ram usage:        2 bytes
+   106 ;; Hardware stack levels required when called:    1
+   107 ;; This function calls:
+   108 ;;		_ERROR_LEDS
+   109 ;;		_INIT_GPIO
+   110 ;;		_INIT_LEDS
+   111 ;;		_LEDS_OFF
+   112 ;;		_PROCESO_LEDS
+   113 ;;		_TERMINADO_LEDS
+   114 ;; This function is called by:
+   115 ;;		Startup code after reset
+   116 ;; This function uses a non-reentrant model
+   117 ;;
+   118                           
+   119                           	psect	text0
+   120  00BF88                     __ptext0:
+   121                           	opt callstack 0
+   122  00BF88                     _main:
+   123                           	opt callstack 30
+   124  00BF88                     
+   125                           ;Leds_Uso.c: 17: }
+   126  00BF88  ECBD  F05F         	call	_INIT_GPIO	;wreg free
+   127  00BF8C  ECAD  F05F         	call	_INIT_LEDS	;wreg free
+   128  00BF90                     l768:
+   129  00BF90  ECA9  F05F         	call	_ERROR_LEDS	;wreg free
+   130  00BF94  0E06               	movlw	6
+   131  00BF96  6E02               	movwf	(??_main+1)^0,c
+   132  00BF98  0E13               	movlw	19
+   133  00BF9A  6E01               	movwf	??_main^0,c
+   134  00BF9C  0EAE               	movlw	174
+   135  00BF9E                     u17:
+   136  00BF9E  2EE8               	decfsz	wreg,f,c
+   137  00BFA0  D7FE               	bra	u17
+   138  00BFA2  2E01               	decfsz	??_main^0,f,c
+   139  00BFA4  D7FC               	bra	u17
+   140  00BFA6  2E02               	decfsz	(??_main+1)^0,f,c
+   141  00BFA8  D7FA               	bra	u17
+   142  00BFAA  ECB5  F05F         	call	_PROCESO_LEDS	;wreg free
+   143  00BFAE  0E06               	movlw	6
+   144  00BFB0  6E02               	movwf	(??_main+1)^0,c
+   145  00BFB2  0E13               	movlw	19
+   146  00BFB4  6E01               	movwf	??_main^0,c
+   147  00BFB6  0EAE               	movlw	174
+   148  00BFB8                     u27:
+   149  00BFB8  2EE8               	decfsz	wreg,f,c
+   150  00BFBA  D7FE               	bra	u27
+   151  00BFBC  2E01               	decfsz	??_main^0,f,c
+   152  00BFBE  D7FC               	bra	u27
+   153  00BFC0  2E02               	decfsz	(??_main+1)^0,f,c
+   154  00BFC2  D7FA               	bra	u27
+   155  00BFC4  ECB9  F05F         	call	_TERMINADO_LEDS	;wreg free
+   156  00BFC8  0E06               	movlw	6
+   157  00BFCA  6E02               	movwf	(??_main+1)^0,c
+   158  00BFCC  0E13               	movlw	19
+   159  00BFCE  6E01               	movwf	??_main^0,c
+   160  00BFD0  0EAE               	movlw	174
+   161  00BFD2                     u37:
+   162  00BFD2  2EE8               	decfsz	wreg,f,c
+   163  00BFD4  D7FE               	bra	u37
+   164  00BFD6  2E01               	decfsz	??_main^0,f,c
+   165  00BFD8  D7FC               	bra	u37
+   166  00BFDA  2E02               	decfsz	(??_main+1)^0,f,c
+   167  00BFDC  D7FA               	bra	u37
+   168  00BFDE  ECB1  F05F         	call	_LEDS_OFF	;wreg free
+   169  00BFE2  0E06               	movlw	6
+   170  00BFE4  6E02               	movwf	(??_main+1)^0,c
+   171  00BFE6  0E13               	movlw	19
+   172  00BFE8  6E01               	movwf	??_main^0,c
+   173  00BFEA  0EAE               	movlw	174
+   174  00BFEC                     u47:
+   175  00BFEC  2EE8               	decfsz	wreg,f,c
+   176  00BFEE  D7FE               	bra	u47
+   177  00BFF0  2E01               	decfsz	??_main^0,f,c
+   178  00BFF2  D7FC               	bra	u47
+   179  00BFF4  2E02               	decfsz	(??_main+1)^0,f,c
+   180  00BFF6  D7FA               	bra	u47
+   181  00BFF8  EFC8  F05F         	goto	l768
+   182  00BFFC  EF00  F000         	goto	start
+   183  00C000                     __end_of_main:
+   184                           	opt callstack 0
+   185                           
+   186 ;; *************** function _TERMINADO_LEDS *****************
+   187 ;; Defined at:
+   188 ;;		line 29 in file "LEDS.c"
+   189 ;; Parameters:    Size  Location     Type
+   190 ;;		None
+   191 ;; Auto vars:     Size  Location     Type
+   192 ;;		None
+   193 ;; Return value:  Size  Location     Type
+   194 ;;                  1    wreg      void 
+   195 ;; Registers used:
+   196 ;;		None
+   197 ;; Tracked objects:
+   198 ;;		On entry : 0/0
+   199 ;;		On exit  : 0/0
+   200 ;;		Unchanged: 0/0
+   201 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   202 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   203 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   204 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   205 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   206 ;;Total ram usage:        0 bytes
+   207 ;; Hardware stack levels used:    1
+   208 ;; This function calls:
+   209 ;;		Nothing
+   210 ;; This function is called by:
+   211 ;;		_main
+   212 ;; This function uses a non-reentrant model
+   213 ;;
+   214                           
+   215                           	psect	text1
+   216  00BF72                     __ptext1:
+   217                           	opt callstack 0
+   218  00BF72                     _TERMINADO_LEDS:
+   219                           	opt callstack 30
+   220  00BF72  9A8A               	bcf	138,5,c	;volatile
+   221  00BF74  8C8A               	bsf	138,6,c	;volatile
+   222  00BF76  9E8A               	bcf	138,7,c	;volatile
+   223  00BF78  0012               	return		;funcret
+   224  00BF7A                     __end_of_TERMINADO_LEDS:
+   225                           	opt callstack 0
+   226                           
+   227 ;; *************** function _PROCESO_LEDS *****************
+   228 ;; Defined at:
+   229 ;;		line 23 in file "LEDS.c"
+   230 ;; Parameters:    Size  Location     Type
+   231 ;;		None
+   232 ;; Auto vars:     Size  Location     Type
+   233 ;;		None
+   234 ;; Return value:  Size  Location     Type
+   235 ;;                  1    wreg      void 
+   236 ;; Registers used:
+   237 ;;		None
+   238 ;; Tracked objects:
+   239 ;;		On entry : 0/0
+   240 ;;		On exit  : 0/0
+   241 ;;		Unchanged: 0/0
+   242 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   243 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   244 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   245 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   246 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   247 ;;Total ram usage:        0 bytes
+   248 ;; Hardware stack levels used:    1
+   249 ;; This function calls:
+   250 ;;		Nothing
+   251 ;; This function is called by:
+   252 ;;		_main
+   253 ;; This function uses a non-reentrant model
+   254 ;;
+   255                           
+   256                           	psect	text2
+   257  00BF6A                     __ptext2:
+   258                           	opt callstack 0
+   259  00BF6A                     _PROCESO_LEDS:
+   260                           	opt callstack 30
+   261  00BF6A  9A8A               	bcf	138,5,c	;volatile
+   262  00BF6C  9C8A               	bcf	138,6,c	;volatile
+   263  00BF6E  8E8A               	bsf	138,7,c	;volatile
+   264  00BF70  0012               	return		;funcret
+   265  00BF72                     __end_of_PROCESO_LEDS:
+   266                           	opt callstack 0
+   267                           
+   268 ;; *************** function _LEDS_OFF *****************
+   269 ;; Defined at:
+   270 ;;		line 11 in file "LEDS.c"
+   271 ;; Parameters:    Size  Location     Type
+   272 ;;		None
+   273 ;; Auto vars:     Size  Location     Type
+   274 ;;		None
+   275 ;; Return value:  Size  Location     Type
+   276 ;;                  1    wreg      void 
+   277 ;; Registers used:
+   278 ;;		None
+   279 ;; Tracked objects:
+   280 ;;		On entry : 0/0
+   281 ;;		On exit  : 0/0
+   282 ;;		Unchanged: 0/0
+   283 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   284 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   285 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   286 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   287 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   288 ;;Total ram usage:        0 bytes
+   289 ;; Hardware stack levels used:    1
+   290 ;; This function calls:
+   291 ;;		Nothing
+   292 ;; This function is called by:
+   293 ;;		_main
+   294 ;; This function uses a non-reentrant model
+   295 ;;
+   296                           
+   297                           	psect	text3
+   298  00BF62                     __ptext3:
+   299                           	opt callstack 0
+   300  00BF62                     _LEDS_OFF:
+   301                           	opt callstack 30
+   302  00BF62  9A8A               	bcf	138,5,c	;volatile
+   303  00BF64  9C8A               	bcf	138,6,c	;volatile
+   304  00BF66  9E8A               	bcf	138,7,c	;volatile
+   305  00BF68  0012               	return		;funcret
+   306  00BF6A                     __end_of_LEDS_OFF:
+   307                           	opt callstack 0
+   308                           
+   309 ;; *************** function _INIT_LEDS *****************
+   310 ;; Defined at:
+   311 ;;		line 5 in file "LEDS.c"
+   312 ;; Parameters:    Size  Location     Type
+   313 ;;		None
+   314 ;; Auto vars:     Size  Location     Type
+   315 ;;		None
+   316 ;; Return value:  Size  Location     Type
+   317 ;;                  1    wreg      void 
+   318 ;; Registers used:
+   319 ;;		None
+   320 ;; Tracked objects:
+   321 ;;		On entry : 0/0
+   322 ;;		On exit  : 0/0
+   323 ;;		Unchanged: 0/0
+   324 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   325 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   326 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   327 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   328 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   329 ;;Total ram usage:        0 bytes
+   330 ;; Hardware stack levels used:    1
+   331 ;; This function calls:
+   332 ;;		Nothing
+   333 ;; This function is called by:
+   334 ;;		_main
+   335 ;; This function uses a non-reentrant model
+   336 ;;
+   337                           
+   338                           	psect	text4
+   339  00BF5A                     __ptext4:
+   340                           	opt callstack 0
+   341  00BF5A                     _INIT_LEDS:
+   342                           	opt callstack 30
+   343  00BF5A  9A93               	bcf	147,5,c	;volatile
+   344  00BF5C  9C93               	bcf	147,6,c	;volatile
+   345  00BF5E  9E93               	bcf	147,7,c	;volatile
+   346  00BF60  0012               	return		;funcret
+   347  00BF62                     __end_of_INIT_LEDS:
+   348                           	opt callstack 0
+   349                           
+   350 ;; *************** function _INIT_GPIO *****************
+   351 ;; Defined at:
+   352 ;;		line 5 in file "GPIO.c"
+   353 ;; Parameters:    Size  Location     Type
+   354 ;;		None
+   355 ;; Auto vars:     Size  Location     Type
+   356 ;;		None
+   357 ;; Return value:  Size  Location     Type
+   358 ;;                  1    wreg      void 
+   359 ;; Registers used:
+   360 ;;		wreg, status,2
+   361 ;; Tracked objects:
+   362 ;;		On entry : 0/0
+   363 ;;		On exit  : 0/0
+   364 ;;		Unchanged: 0/0
+   365 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   366 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   367 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   368 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   369 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   370 ;;Total ram usage:        0 bytes
+   371 ;; Hardware stack levels used:    1
+   372 ;; This function calls:
+   373 ;;		Nothing
+   374 ;; This function is called by:
+   375 ;;		_main
+   376 ;; This function uses a non-reentrant model
+   377 ;;
+   378                           
+   379                           	psect	text5
+   380  00BF7A                     __ptext5:
+   381                           	opt callstack 0
+   382  00BF7A                     _INIT_GPIO:
+   383                           	opt callstack 30
+   384  00BF7A                     
+   385                           ;GPIO.c: 7:     OSCCON = 0X60;
+   386  00BF7A  0E60               	movlw	96
+   387  00BF7C  6ED3               	movwf	211,c	;volatile
+   388  00BF7E                     
+   389                           ;GPIO.c: 9:     CMCON = 0XFF;
+   390  00BF7E  68B4               	setf	180,c	;volatile
+   391  00BF80                     
+   392                           ;GPIO.c: 10:     CVRCONbits.CVREN = 0;
+   393  00BF80  9EB5               	bcf	181,7,c	;volatile
+   394                           
+   395                           ;GPIO.c: 11:     ADCON1 = 0X0F;
+   396  00BF82  0E0F               	movlw	15
+   397  00BF84  6EC1               	movwf	193,c	;volatile
+   398  00BF86  0012               	return		;funcret
+   399  00BF88                     __end_of_INIT_GPIO:
+   400                           	opt callstack 0
+   401                           
+   402 ;; *************** function _ERROR_LEDS *****************
+   403 ;; Defined at:
+   404 ;;		line 17 in file "LEDS.c"
+   405 ;; Parameters:    Size  Location     Type
+   406 ;;		None
+   407 ;; Auto vars:     Size  Location     Type
+   408 ;;		None
+   409 ;; Return value:  Size  Location     Type
+   410 ;;                  1    wreg      void 
+   411 ;; Registers used:
+   412 ;;		None
+   413 ;; Tracked objects:
+   414 ;;		On entry : 0/0
+   415 ;;		On exit  : 0/0
+   416 ;;		Unchanged: 0/0
+   417 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12
+   418 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   419 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   420 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   421 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0
+   422 ;;Total ram usage:        0 bytes
+   423 ;; Hardware stack levels used:    1
+   424 ;; This function calls:
+   425 ;;		Nothing
+   426 ;; This function is called by:
+   427 ;;		_main
+   428 ;; This function uses a non-reentrant model
+   429 ;;
+   430                           
+   431                           	psect	text6
+   432  00BF52                     __ptext6:
+   433                           	opt callstack 0
+   434  00BF52                     _ERROR_LEDS:
+   435                           	opt callstack 30
+   436  00BF52  8A8A               	bsf	138,5,c	;volatile
+   437  00BF54  9C8A               	bcf	138,6,c	;volatile
+   438  00BF56  9E8A               	bcf	138,7,c	;volatile
+   439  00BF58  0012               	return		;funcret
+   440  00BF5A                     __end_of_ERROR_LEDS:
+   441                           	opt callstack 0
+   442  0000                     
+   443                           	psect	rparam
+   444  0000                     tosu	equ	0xFFF
+   445                           tosh	equ	0xFFE
+   446                           tosl	equ	0xFFD
+   447                           stkptr	equ	0xFFC
+   448                           pclatu	equ	0xFFB
+   449                           pclath	equ	0xFFA
+   450                           pcl	equ	0xFF9
+   451                           tblptru	equ	0xFF8
+   452                           tblptrh	equ	0xFF7
+   453                           tblptrl	equ	0xFF6
+   454                           tablat	equ	0xFF5
+   455                           prodh	equ	0xFF4
+   456                           prodl	equ	0xFF3
+   457                           indf0	equ	0xFEF
+   458                           postinc0	equ	0xFEE
+   459                           postdec0	equ	0xFED
+   460                           preinc0	equ	0xFEC
+   461                           plusw0	equ	0xFEB
+   462                           fsr0h	equ	0xFEA
+   463                           fsr0l	equ	0xFE9
+   464                           wreg	equ	0xFE8
+   465                           indf1	equ	0xFE7
+   466                           postinc1	equ	0xFE6
+   467                           postdec1	equ	0xFE5
+   468                           preinc1	equ	0xFE4
+   469                           plusw1	equ	0xFE3
+   470                           fsr1h	equ	0xFE2
+   471                           fsr1l	equ	0xFE1
+   472                           bsr	equ	0xFE0
+   473                           indf2	equ	0xFDF
+   474                           postinc2	equ	0xFDE
+   475                           postdec2	equ	0xFDD
+   476                           preinc2	equ	0xFDC
+   477                           plusw2	equ	0xFDB
+   478                           fsr2h	equ	0xFDA
+   479                           fsr2l	equ	0xFD9
+   480                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      2       2
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+    BANK8           256      0       0
+    BANK9           256      0       0
+    BANK10          256      0       0
+    BANK11          256      0       0
+    BANK12          256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _main in BANK8
+
+    None.
+
+Critical Paths under _main in BANK9
+
+    None.
+
+Critical Paths under _main in BANK10
+
+    None.
+
+Critical Paths under _main in BANK11
+
+    None.
+
+Critical Paths under _main in BANK12
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 2     2      0       0
+                                              0 COMRAM     2     2      0
+                         _ERROR_LEDS
+                          _INIT_GPIO
+                          _INIT_LEDS
+                           _LEDS_OFF
+                       _PROCESO_LEDS
+                     _TERMINADO_LEDS
+ ---------------------------------------------------------------------------------
+ (1) _TERMINADO_LEDS                                       0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _PROCESO_LEDS                                         0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _LEDS_OFF                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _INIT_LEDS                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _INIT_GPIO                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _ERROR_LEDS                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _ERROR_LEDS
+   _INIT_GPIO
+   _INIT_LEDS
+   _LEDS_OFF
+   _PROCESO_LEDS
+   _TERMINADO_LEDS
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             400      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      2       2       1        2.1%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+ABS                  0      0       0      20        0.0%
+BITBANK8           100      0       0      21        0.0%
+BANK8              100      0       0      22        0.0%
+BITBANK9           100      0       0      23        0.0%
+BANK9              100      0       0      24        0.0%
+BITBANK10          100      0       0      25        0.0%
+BANK10             100      0       0      26        0.0%
+BITBANK11          100      0       0      27        0.0%
+BANK11             100      0       0      28        0.0%
+BITBANK12          100      0       0      29        0.0%
+BANK12             100      0       0      30        0.0%
+BIGRAM             CFF      0       0      31        0.0%
+BITSFR_3             0      0       0     200        0.0%
+SFR_3                0      0       0     200        0.0%
+BITSFR_2             0      0       0     200        0.0%
+SFR_2                0      0       0     200        0.0%
+BITSFR_1             0      0       0     200        0.0%
+SFR_1                0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
+Symbol Table                                                                                   Thu Nov 28 15:31:09 2019
+
+                      l7 BF5A                        l9 BF5C                       l11 BF5E  
+                     l20 BF66                       l13 BF60                       l22 BF68  
+                     l31 BF58                       l16 BF62                       l40 BF70  
+                     l25 BF52                       l18 BF64                       l34 BF6A  
+                     l27 BF54                       l43 BF72                       l36 BF6C  
+                     l29 BF56                       l45 BF74                       l38 BF6E  
+                     l47 BF76                       l49 BF78                       l82 BF86  
+                     u17 BF9E                       u27 BFB8                       u37 BFD2  
+                     u47 BFEC              ?_ERROR_LEDS 0001                      l760 BF7E  
+                    l762 BF80                      l770 BF94                      l780 BFDE  
+                    l772 BFAA                      l764 BF88                      l758 BF7A  
+                    l782 BFE2                      l774 BFAE                      l766 BF8C  
+                    l776 BFC4                      l768 BF90                      l778 BFC8  
+                    wreg 000FE8             __CFG_LVP$OFF 000000             __CFG_WDT$OFF 000000  
+                   _main BF88                     start 0000       __size_of_INIT_LEDS 0008  
+     __size_of_INIT_GPIO 000E            __CFG_MCLRE$ON 000000             ___param_bank 000000  
+       __end_of_LEDS_OFF BF6A                    ?_main 0001                    _CMCON 000FB4  
+         _TERMINADO_LEDS BF72      __size_of_ERROR_LEDS 0008          __initialization BF4C  
+           __end_of_main C000                   ??_main 0001            __activetblptr 000000  
+ __end_of_TERMINADO_LEDS BF7A        __end_of_INIT_LEDS BF62        __end_of_INIT_GPIO BF88  
+                 _ADCON1 000FC1                   _OSCCON 000FD3          ?_TERMINADO_LEDS 0001  
+              ?_LEDS_OFF 0001               __accesstop 0060  __end_of__initialization BF4C  
+        __CFG_PBADEN$OFF 000000            ___rparam_used 000001           __pcstackCOMRAM 0001  
+           ??_ERROR_LEDS 0001               ??_LEDS_OFF 0001       __end_of_ERROR_LEDS BF5A  
+          ?_PROCESO_LEDS 0001           ??_PROCESO_LEDS 0001                  __Hparam 0000  
+                __Lparam 0000                  __pcinit BF4C                  __ramtop 0D00  
+                __ptext0 BF88                  __ptext1 BF72                  __ptext2 BF6A  
+                __ptext3 BF62                  __ptext4 BF5A                  __ptext5 BF7A  
+                __ptext6 BF52     end_of_initialization BF4C                _INIT_LEDS BF5A  
+              _INIT_GPIO BF7A         ??_TERMINADO_LEDS 0001                _TRISBbits 000F93  
+             ?_INIT_LEDS 0001               ?_INIT_GPIO 0001        __size_of_LEDS_OFF 0008  
+    start_initialization BF4C     __end_of_PROCESO_LEDS BF72         __CFG_OSC$IRCIO67 000000  
+            ??_INIT_LEDS 0001              ??_INIT_GPIO 0001                 _LEDS_OFF BF62  
+               _LATBbits 000F8A    __size_of_PROCESO_LEDS 0008                 __Hrparam 0000  
+               __Lrparam 0000             _PROCESO_LEDS BF6A            __size_of_main 0078  
+             _CVRCONbits 000FB5               _ERROR_LEDS BF52  __size_of_TERMINADO_LEDS 0008  
