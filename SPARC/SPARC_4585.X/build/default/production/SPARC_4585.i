@@ -18089,6 +18089,8 @@ void main(void) {
         }
     }
 
+    INTCONbits.GIE = 0;
+
     while (AjusteZ == 0) {
         UP_PLATFORM();
         DOWN_PLATFORM();
@@ -18099,7 +18101,7 @@ void main(void) {
 
     while (1) {
         while (TaskReceive == 0) {
-
+            PORTEbits.RE0 = 0;
             Task = RECEIVE_UART();
 
             if (Task != 72 && Task != 71 && Task != 84 && Task != 83) {
@@ -18231,14 +18233,14 @@ void main(void) {
 
 void __attribute__((picinterrupt(("")))) INT_isr(void) {
     if (INTCONbits.INT0IF == 1) {
-        MOV_L_PASOS_X(50, 0);
-        MOV_L_PASOS_Y(50, 0);
+        MOV_L_PASOS_X(PosicionX, 0);
+        MOV_L_PASOS_Y(PosicionY, 0);
         INTCONbits.INT0IF = 0;
         INTCON3bits.INT1IF = 0;
         INTCON3bits.INT2IF = 0;
     }
     if (INTCON3bits.INT1IF == 1) {
-        MOV_R_PASOS_X(0, 10);
+        MOV_R_PASOS_X(0, 20);
         BuscandoHomeX = 1;
         INTCONbits.INT0IF = 0;
         INTCON3bits.INT1IF = 0;

@@ -26,7 +26,7 @@ unsigned short PosicionY = 0; //Position in Y
 unsigned char NoNull = 0; //The array has no Nulls
 
 void main(void) {
-    
+
     RCREG = 0; //Clean of receive register
 
     TRISCbits.RC0 = 1;
@@ -73,7 +73,9 @@ void main(void) {
             MOV_L_PASOS_Y(300, 0); //Puts Y in the origin
         }
     }
-   
+
+    INTCONbits.GIE = 0; //Disable interruptions
+
     while (AjusteZ == 0) {
         UP_PLATFORM(); //Move platform up
         DOWN_PLATFORM(); //Move platform down
@@ -84,7 +86,7 @@ void main(void) {
 
     while (1) {
         while (TaskReceive == 0) { //Meanwhile Task is not received
-
+            PORTEbits.RE0 = 0; //Actuator deactivation
             Task = RECEIVE_UART(); //The task is receive and saved in Task
 
             if (Task != 72 && Task != 71 && Task != 84 && Task != 83) { //Task is wrong
@@ -156,7 +158,7 @@ void main(void) {
             unsigned short Unidady = Instruccion.coordenada.y[2] - 48; //Units
 
             Y = Centenasy + Decenasy + Unidady; //Decimal value of Y
-            
+
             if (Instruccion.coordenada.x[0] == NULL || Instruccion.coordenada.y[0] == NULL) {
                 FALTA_DATO();
                 NoNull = 1;
@@ -209,21 +211,21 @@ void main(void) {
                 }
             }
             NoNull = 0;
-            RCREG = 0;//Clean of receive register
+            RCREG = 0; //Clean of receive register
         }
     }
 }
 
 void __interrupt() INT_isr(void) {
     if (INTCONbits.INT0IF == 1) {
-        MOV_L_PASOS_X(50, 0); //Move X to the left
-        MOV_L_PASOS_Y(50, 0); //Move Y to the left
+        MOV_L_PASOS_X(PosicionX, 0); //Move X to the left
+        MOV_L_PASOS_Y(PosicionY, 0); //Move Y to the left
         INTCONbits.INT0IF = 0; //Clear Interruption Flag 0
         INTCON3bits.INT1IF = 0; //Clear Interruption Flag 1
         INTCON3bits.INT2IF = 0; //Clear Interruption Flag 1
     }
     if (INTCON3bits.INT1IF == 1) {
-        MOV_R_PASOS_X(0, 10); //Adjust X
+        MOV_R_PASOS_X(0, 20); //Adjust X
         BuscandoHomeX = 1; //HomeX was found
         INTCONbits.INT0IF = 0; //Clear Interruption Flag 0
         INTCON3bits.INT1IF = 0; //Clear Interruption Flag 1
